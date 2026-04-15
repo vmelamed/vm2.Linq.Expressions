@@ -9,14 +9,12 @@
         <File Path=".github/workflows/Release.yaml" />
     </Folder>
     <Folder Name="/benchmarks/">
-        <Project Path="benchmarks/Linq.Expressions.Benchmarks/Linq.Expressions.Benchmarks.csproj" />
     </Folder>
     <Folder Name="/changelog/">
         <File Path="changelog/cliff.prerelease.toml" />
         <File Path="changelog/cliff.release-header.toml" />
     </Folder>
     <Folder Name="/examples/">
-        <File Path="examples/Program.cs" />
     </Folder>
     <Folder Name="/solution Items/">
         <File Path=".editorconfig" />
@@ -31,9 +29,11 @@
         <File Path="test.runsettings" />
     </Folder>
     <Folder Name="/src/">
-        <Project Path="src/Linq.Expressions/Linq.Expressions.csproj" />
+        <Project Path="src/DeepEquals/DeepEquals.csproj" />
+        <Project Path="src/Serialization.Abstractions/Serialization.Abstractions.csproj" />
     </Folder>
     <Folder Name="/test/">
-        <Project Path="test/Linq.Expressions.Tests/Linq.Expressions.Tests.csproj" />
+        <Project Path="test/DeepEquals.Tests/DeepEquals.Tests.csproj" />
+        <Project Path="test/Serialization.Abstractions.Tests/Serialization.Abstractions.Tests.csproj" />
     </Folder>
 </Solution>

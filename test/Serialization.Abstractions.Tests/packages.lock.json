@@ -213,9 +213,9 @@
       },
       "vm2.TestUtilities": {
         "type": "Direct",
-        "requested": "[1.4.2, )",
-        "resolved": "1.4.2",
-        "contentHash": "/EedoknMVrBdTjxDIvdYhLqeLHzLuFc+MCmof5vDR9uMYJIwvheoU92uIo4G7osDJCf+BEAOoc7Zsh/Ds3cMQg==",
+        "requested": "[1.4.4, )",
+        "resolved": "1.4.4",
+        "contentHash": "1GOEzqL698z8hhSq1JAXZj7Vck8vpsgUPuZ7dGhhzk1EQumgcpZC++QExETGeEtvmsK3SNxAuLY+b8UUZWNczA==",
         "dependencies": {
           "FluentAssertions": "8.9.0",
           "Microsoft.Extensions.Configuration.Binder": "10.0.5",
@@ -493,7 +493,7 @@
           "xunit.v3.runner.common": "[3.2.2]"
         }
       },
-      "vm2.Linq.Expressions": {
+      "vm2.Linq.Expressions.Serialization.Abstractions": {
         "type": "Project",
         "dependencies": {
           "Microsoft.Extensions.Configuration.Binder": "[10.0.5, )",

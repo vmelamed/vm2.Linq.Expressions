@@ -1,14 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <RootNamespace>vm2.Linq.Expressions</RootNamespace>
+        <RootNamespace>vm2.Linq.Expressions.DeepEquals</RootNamespace>
     </PropertyGroup>
 
     <PropertyGroup Label="NuGet">
-        <PackageId>vm2.Linq.Expressions</PackageId>
-        <Title>vm2 Linq.Expressions</Title>
-        <Description>vm2 Linq.Expressions package skeleton.</Description>
-        <PackageTags>vm2 Linq.Expressions library template</PackageTags>
+        <PackageId>vm2.Linq.Expressions.DeepEquals</PackageId>
+        <Title>vm2 Linq Expressions Deep Equals</Title>
+        <Description>Traverses the ASTs of two LINQ expression trees and compares them node-by-node, value-by-value. Also provides structural hash code computation.</Description>
+        <PackageTags>C# LINQ expression deep equals comparison AST vm vm2</PackageTags>
         <PackageProjectUrl>https://github.com/vmelamed/vm2.Linq.Expressions</PackageProjectUrl>
         <RepositoryUrl>https://github.com/vmelamed/vm2.Linq.Expressions</RepositoryUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>

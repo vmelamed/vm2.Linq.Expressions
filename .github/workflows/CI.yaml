@@ -41,7 +41,7 @@ env:
     ]
   TEST_PROJECTS: >-
     [
-    "test/Linq.Expressions.Tests/Linq.Expressions.Tests.csproj"
+    "test/DeepEquals.Tests/DeepEquals.Tests.csproj"
     ]
   BENCHMARK_PROJECTS: >-
     [
@@ -49,7 +49,7 @@ env:
     ]
   PACKAGE_PROJECTS: >-
     [
-    "src/Linq.Expressions/Linq.Expressions.csproj"
+    "src/DeepEquals/DeepEquals.csproj"
     ]
   RUNNERS_OS: >-
     [
