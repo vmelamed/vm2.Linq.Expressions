@@ -348,6 +348,17 @@ public class B
     public static B operator !(B x) => new() { _b = !x._b };
 }
 
+[DataContract]
+public class D
+{
+    [DataMember]
+    public int _d;
+
+    public static bool operator true(D x) => x._d != 0;
+
+    public static bool operator false(D x) => x._d == 0;
+}
+
 #pragma warning disable CS0649
 [DataContract]
 public class C : A
