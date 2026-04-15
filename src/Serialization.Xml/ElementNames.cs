@@ -1,5 +1,6 @@
 ﻿namespace vm2.Linq.Expressions.Serialization.Xml;
 
+[ExcludeFromCodeCoverage]
 static class ElementNames
 {
     public static XName Expression => Namespaces.Exs + Vocabulary.Expression;

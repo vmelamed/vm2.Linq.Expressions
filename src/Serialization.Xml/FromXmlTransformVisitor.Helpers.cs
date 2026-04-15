@@ -5,6 +5,7 @@ public partial class FromXmlTransformVisitor
     readonly Dictionary<string, ParameterExpression> _parameters = [];
     readonly Dictionary<string, LabelTarget> _labelTargets = [];
 
+    [ExcludeFromCodeCoverage]
     internal void ResetVisitState()
     {
         _parameters.Clear();
