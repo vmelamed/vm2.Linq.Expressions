@@ -43,6 +43,10 @@ public static class UnaryTestData
         { TestLine(), "(A a) => +a",                    "UnaryPlusMethod" },
         { TestLine(), "(A a) => -a",                    "UnaryMinusMethod" },
         { TestLine(), "(B b) => !b",                    "UnaryNotMethod" },
+
+        { TestLine(), "IsTrue(D)",                       "IsTrue" },
+        { TestLine(), "IsFalse(D)",                      "IsFalse" },
+        { TestLine(), "Unbox(object->int)",              "Unbox" },
     };
 
     static ParameterExpression _pa = Expression.Parameter(typeof(int), "a");
@@ -81,5 +85,9 @@ public static class UnaryTestData
         ["(A a) => +a"]                     = (A a) => +a,
         ["(A a) => -a"]                     = (A a) => -a,
         ["(B b) => !b"]                     = (B b) => !b,
+
+        ["IsTrue(D)"]                       = Expression.IsTrue(Expression.Parameter(typeof(D), "d")),
+        ["IsFalse(D)"]                      = Expression.IsFalse(Expression.Parameter(typeof(D), "d")),
+        ["Unbox(object->int)"]              = Expression.Unbox(Expression.Parameter(typeof(object), "o"), typeof(int)),
     };
 }

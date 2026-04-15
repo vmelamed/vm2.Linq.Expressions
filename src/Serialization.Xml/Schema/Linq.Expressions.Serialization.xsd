@@ -1139,25 +1139,12 @@
         <xs:complexContent>
             <xs:extension base="memberInfoType">
                 <xs:sequence>
-                    <xs:element name="get"
+                    <xs:element name="parameterSpecs"
+                        type="parameterSpecListType"
                         minOccurs="0">
-                        <xs:complexType>
-                            <xs:sequence>
-                                <xs:element name="parameterSpecs"
-                                    type="parameterSpecListType"
-                                    minOccurs="0" />
-                            </xs:sequence>
-                        </xs:complexType>
-                    </xs:element>
-                    <xs:element name="set"
-                        minOccurs="0">
-                        <xs:complexType>
-                            <xs:sequence>
-                                <xs:element name="parameterSpecs"
-                                    type="parameterSpecListType"
-                                    minOccurs="0" />
-                            </xs:sequence>
-                        </xs:complexType>
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en-us"> The index parameters of the property (for indexer properties). </xs:documentation>
+                        </xs:annotation>
                     </xs:element>
                 </xs:sequence>
                 <xs:attribute name="type"

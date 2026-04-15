@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- IsFalse(d) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <isFalse
+        type="boolean">
+        <parameter
+            type="vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+            id="P1"
+            name="d" />
+        <method
+            declaringType="vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+            static="true"
+            type="boolean"
+            name="op_False">
+            <parameterSpecs>
+                <parameterSpec
+                    type="vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                    name="x" />
+            </parameterSpecs>
+        </method>
+    </isFalse>
+</expression>
