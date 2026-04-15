@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- (x **= z) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <powerAssign
+        type="double">
+        <parameter
+            type="double"
+            id="P1"
+            name="x" />
+        <parameter
+            type="double"
+            id="P2"
+            name="z" />
+        <method
+            declaringType="System.Math, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+            static="true"
+            type="double"
+            name="Pow">
+            <parameterSpecs>
+                <parameterSpec
+                    type="double"
+                    name="x" />
+                <parameterSpec
+                    type="double"
+                    name="y" />
+            </parameterSpecs>
+        </method>
+    </powerAssign>
+</expression>

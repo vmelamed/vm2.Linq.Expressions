@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- a => Not(a) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <lambda
+        type="boolean">
+        <parameters>
+            <parameter
+                type="boolean"
+                id="P1"
+                name="a" />
+        </parameters>
+        <body>
+            <not
+                type="boolean">
+                <parameter
+                    type="boolean"
+                    id="P1"
+                    name="a" />
+            </not>
+        </body>
+    </lambda>
+</expression>

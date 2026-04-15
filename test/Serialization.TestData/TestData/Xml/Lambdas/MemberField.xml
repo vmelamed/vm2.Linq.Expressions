@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- a => a._a -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <lambda
+        type="int">
+        <parameters>
+            <parameter
+                type="vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                id="P1"
+                name="a" />
+        </parameters>
+        <body>
+            <memberAccess
+                type="int">
+                <object>
+                    <parameter
+                        type="vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                        id="P1"
+                        name="a" />
+                </object>
+                <field
+                    declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                    readOnly="true"
+                    type="int"
+                    name="_a" />
+            </memberAccess>
+        </body>
+    </lambda>
+</expression>

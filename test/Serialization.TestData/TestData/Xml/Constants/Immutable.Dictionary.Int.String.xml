@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- value(System.Collections.Immutable.ImmutableDictionary`2[System.Int32,System.String]) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <constant>
+        <!--  System.Collections.Immutable.ImmutableDictionary<int, string>  -->
+        <dictionary
+            type="System.Collections.Immutable.ImmutableDictionary`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Collections.Immutable, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+            length="2">
+            <key-value>
+                <int>1</int>
+                <string>one</string>
+            </key-value>
+            <key-value>
+                <int>2</int>
+                <string>two</string>
+            </key-value>
+        </dictionary>
+    </constant>
+</expression>

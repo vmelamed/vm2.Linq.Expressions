@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- () => new Dictionary`2() {Void Add(Int32, System.String)(1, "one"), Void Add(Int32, System.String)(2, "two"), Void Add(Int32, System.String)(3, "three")} -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <lambda
+        type="System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+        <parameters />
+        <body>
+            <listInit>
+                <new>
+                    <constructor
+                        declaringType="System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+                        <parameterSpecs />
+                    </constructor>
+                    <arguments />
+                </new>
+                <initializers>
+                    <elementInit>
+                        <method
+                            declaringType="System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                            type="void"
+                            name="Add">
+                            <parameterSpecs>
+                                <parameterSpec
+                                    type="int"
+                                    name="key" />
+                                <parameterSpec
+                                    type="string"
+                                    name="value" />
+                            </parameterSpecs>
+                        </method>
+                        <arguments>
+                            <constant>
+                                <int>1</int>
+                            </constant>
+                            <constant>
+                                <string>one</string>
+                            </constant>
+                        </arguments>
+                    </elementInit>
+                    <elementInit>
+                        <method
+                            declaringType="System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                            type="void"
+                            name="Add">
+                            <parameterSpecs>
+                                <parameterSpec
+                                    type="int"
+                                    name="key" />
+                                <parameterSpec
+                                    type="string"
+                                    name="value" />
+                            </parameterSpecs>
+                        </method>
+                        <arguments>
+                            <constant>
+                                <int>2</int>
+                            </constant>
+                            <constant>
+                                <string>two</string>
+                            </constant>
+                        </arguments>
+                    </elementInit>
+                    <elementInit>
+                        <method
+                            declaringType="System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                            type="void"
+                            name="Add">
+                            <parameterSpecs>
+                                <parameterSpec
+                                    type="int"
+                                    name="key" />
+                                <parameterSpec
+                                    type="string"
+                                    name="value" />
+                            </parameterSpecs>
+                        </method>
+                        <arguments>
+                            <constant>
+                                <int>3</int>
+                            </constant>
+                            <constant>
+                                <string>three</string>
+                            </constant>
+                        </arguments>
+                    </elementInit>
+                </initializers>
+            </listInit>
+        </body>
+    </lambda>
+</expression>

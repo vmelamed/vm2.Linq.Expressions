@@ -36,5 +36,7 @@
     <Folder Name="/test/">
         <Project Path="test/DeepEquals.Tests/DeepEquals.Tests.csproj" />
         <Project Path="test/Serialization.Abstractions.Tests/Serialization.Abstractions.Tests.csproj" />
+        <Project Path="test/Serialization.TestData/Serialization.TestData.csproj" />
+        <Project Path="test/Serialization.Xml.Tests/Serialization.Xml.Tests.csproj" />
     </Folder>
 </Solution>

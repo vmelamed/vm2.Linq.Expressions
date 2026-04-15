@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- value(vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1[]) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <constant>
+        <!--  vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1[]  -->
+        <sequence
+            type="vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1[], Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+            elementType="vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <!--  vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1  -->
+            <object
+                type="vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+                <ClassDataContract1
+                    xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+                    xmlns="http://schemas.datacontract.org/2004/07/vm2.Linq.Expressions.Serialization.TestData">
+                    <IntProperty>0</IntProperty>
+                    <StringProperty>vm</StringProperty>
+                </ClassDataContract1>
+            </object>
+            <object
+                type="vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+                <ClassDataContract1
+                    xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+                    xmlns="http://schemas.datacontract.org/2004/07/vm2.Linq.Expressions.Serialization.TestData">
+                    <IntProperty>1</IntProperty>
+                    <StringProperty>vm2 vm</StringProperty>
+                </ClassDataContract1>
+            </object>
+        </sequence>
+    </constant>
+</expression>

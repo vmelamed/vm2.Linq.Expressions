@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- a => a.Method3(1, 1.1) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <lambda
+        type="int">
+        <parameters>
+            <parameter
+                type="vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                id="P1"
+                name="a" />
+        </parameters>
+        <body>
+            <call
+                type="int">
+                <object>
+                    <parameter
+                        type="vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                        id="P1"
+                        name="a" />
+                </object>
+                <method
+                    declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                    type="int"
+                    name="Method3">
+                    <parameterSpecs>
+                        <parameterSpec
+                            type="int"
+                            name="i" />
+                        <parameterSpec
+                            type="double"
+                            name="_" />
+                    </parameterSpecs>
+                </method>
+                <arguments>
+                    <constant>
+                        <int>1</int>
+                    </constant>
+                    <constant>
+                        <double>1.1</double>
+                    </constant>
+                </arguments>
+            </call>
+        </body>
+    </lambda>
+</expression>

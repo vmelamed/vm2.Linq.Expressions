@@ -352,6 +352,17 @@ static partial class FromXmlDataTransform
         Type[] kvTypes;
         Type genericType = typeof(Hashtable);
 
+        var dictInterface = dictType.GetInterfaces()
+                                    .FirstOrDefault(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IDictionary<,>));
+
+        if (dictInterface is not null)
+        {
+            kvTypes = dictInterface.GetGenericArguments();
+            genericType = dictType.IsGenericType
+                            ? dictType.GetGenericTypeDefinition() ?? throw new InternalTransformErrorException($"Could not get the generic type definition of a generic type `{dictType.FullName}`.")
+                            : dictType;
+        }
+        else
         if (dictType.IsGenericType)
         {
             kvTypes = dictType.GetGenericArguments();
@@ -369,7 +380,7 @@ static partial class FromXmlDataTransform
         if (_typeToPrep.TryGetValue(genericType, out var prep))
             return prep(kvTypes);
         else
-        if (dictType.Name.EndsWith("FrozenDictionary`2"))   // TODO: this is pretty wonky but I don't know how to detect the internal "SmallValueTypeComparableFrozenDictionary`1" or "SmallFrozenDictionary`1"
+        if (dictType.IsAssignableTo(typeof(IDictionary)) && dictType.FullName?.Contains("FrozenDictionary") == true)
             return PrepForFrozenDictionary(kvTypes);
 
         throw new InternalTransformErrorException($"Don't know how to deserialize `{dictType}`.");

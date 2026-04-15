@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- value(System.Collections.Frozen.SmallValueTypeDefaultComparerFrozenSet`1[System.Nullable`1[vm2.Linq.Expressions.Serialization.TestData.EnumTest]]) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <constant>
+        <!--  System.Collections.Frozen.SmallValueTypeDefaultComparerFrozenSet<nullable<vm2.Linq.Expressions.Serialization.TestData.EnumTest>>  -->
+        <sequence
+            type="System.Collections.Frozen.SmallValueTypeDefaultComparerFrozenSet`1[[System.Nullable`1[[vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Collections.Immutable, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+            elementType="System.Nullable`1[[vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+            length="3">
+            <!--  nullable<vm2.Linq.Expressions.Serialization.TestData.EnumTest>  -->
+            <nullable>
+                <!--  vm2.Linq.Expressions.Serialization.TestData.EnumTest  -->
+                <enum
+                    type="vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                    baseValue="0">One</enum>
+            </nullable>
+            <nullable>
+                <!--  vm2.Linq.Expressions.Serialization.TestData.EnumTest  -->
+                <enum
+                    type="vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                    baseValue="1">Two</enum>
+            </nullable>
+            <nullable
+                type="vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                i:nil="true" />
+        </sequence>
+    </constant>
+</expression>

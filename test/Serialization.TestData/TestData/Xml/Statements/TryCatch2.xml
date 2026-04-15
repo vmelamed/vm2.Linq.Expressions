@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- try { ... } -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <try>
+        <block>
+            <call
+                type="void">
+                <method
+                    declaringType="System.Console, System.Console, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                    static="true"
+                    type="void"
+                    name="WriteLine">
+                    <parameterSpecs>
+                        <parameterSpec
+                            type="string"
+                            name="value" />
+                    </parameterSpecs>
+                </method>
+                <arguments>
+                    <constant>
+                        <string>TryBody</string>
+                    </constant>
+                </arguments>
+            </call>
+            <throw>
+                <new>
+                    <constructor
+                        declaringType="System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+                        <parameterSpecs />
+                    </constructor>
+                    <arguments />
+                </new>
+            </throw>
+        </block>
+        <catch
+            type="System.ArgumentException, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+            <body>
+                <call
+                    type="void">
+                    <method
+                        declaringType="System.Console, System.Console, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                        static="true"
+                        type="void"
+                        name="WriteLine">
+                        <parameterSpecs>
+                            <parameterSpec
+                                type="string"
+                                name="value" />
+                        </parameterSpecs>
+                    </method>
+                    <arguments>
+                        <constant>
+                            <string>caught (ArgumentException) {}</string>
+                        </constant>
+                    </arguments>
+                </call>
+            </body>
+        </catch>
+    </try>
+</expression>

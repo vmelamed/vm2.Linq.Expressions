@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- m => IIF((ArrayLength(m.ArrayProperty) > 0), m.ArrayProperty[(ArrayLength(m.ArrayProperty) - 1)], -1) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <lambda
+        type="int">
+        <parameters>
+            <parameter
+                type="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                id="P1"
+                name="m" />
+        </parameters>
+        <body>
+            <conditional
+                type="int">
+                <greaterThan
+                    type="boolean">
+                    <arrayLength
+                        type="int">
+                        <memberAccess
+                            type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+                            <object>
+                                <parameter
+                                    type="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                                    id="P1"
+                                    name="m" />
+                            </object>
+                            <property
+                                declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                                type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                                name="ArrayProperty" />
+                        </memberAccess>
+                    </arrayLength>
+                    <constant>
+                        <int>0</int>
+                    </constant>
+                </greaterThan>
+                <arrayIndex
+                    type="int">
+                    <memberAccess
+                        type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+                        <object>
+                            <parameter
+                                type="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                                id="P1"
+                                name="m" />
+                        </object>
+                        <property
+                            declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                            type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                            name="ArrayProperty" />
+                    </memberAccess>
+                    <subtract
+                        type="int">
+                        <arrayLength
+                            type="int">
+                            <memberAccess
+                                type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+                                <object>
+                                    <parameter
+                                        type="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                                        id="P1"
+                                        name="m" />
+                                </object>
+                                <property
+                                    declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                                    type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                                    name="ArrayProperty" />
+                            </memberAccess>
+                        </arrayLength>
+                        <constant>
+                            <int>1</int>
+                        </constant>
+                    </subtract>
+                </arrayIndex>
+                <constant>
+                    <int>-1</int>
+                </constant>
+            </conditional>
+        </body>
+    </lambda>
+</expression>
