@@ -1,5 +1,6 @@
 ﻿namespace vm2.Linq.Expressions.Serialization.Xml;
 
+[ExcludeFromCodeCoverage]
 static class AttributeNames
 {
     public static XName Nil => Namespaces.Xsi + "nil";

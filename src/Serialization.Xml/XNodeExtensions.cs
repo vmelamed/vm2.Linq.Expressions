@@ -97,6 +97,7 @@ public static class XNodeExtensions
     /// </summary>
     /// <param name="element">The element.</param>
     /// <returns><c>true</c> if the specified element is nil; otherwise, <c>false</c>.</returns>
+    [ExcludeFromCodeCoverage]
     public static string GetName(this XElement element)
         => TryGetName(element, out var name)
                 ? name ?? throw new InternalTransformErrorException($"Could not get the name attribute of the element `{element.Name}`.")
@@ -125,6 +126,7 @@ public static class XNodeExtensions
     /// <param name="element">The element.</param>
     /// <returns><c>true</c> if the specified element is nil; otherwise, <c>false</c>.</returns>
     /// <exception cref="SerializationException"/>
+    [ExcludeFromCodeCoverage]
     public static int GetLength(this XElement element)
         => TryGetLength(element, out var length)
                 ? length
@@ -156,6 +158,7 @@ public static class XNodeExtensions
     /// <param name="element">The element.</param>
     /// <param name="attributeName">Name of the attribute (if null - defaults to <see cref="AttributeNames.Type"/>).</param>
     /// <returns>The <see cref="Type"/>  if getting the type was successful; otherwise, <c>false</c>.</returns>
+    [ExcludeFromCodeCoverage]
     public static Type GetTypeFromAttribute(this XElement element, XName? attributeName = null)
         => element.TryGetElementType(out var type, attributeName ?? AttributeNames.Type)
                 ? type!
@@ -200,6 +203,7 @@ public static class XNodeExtensions
     /// <param name="attributeName">Name of the attribute (if null - defaults to <see cref="AttributeNames.Type"/>).</param>
     /// <returns><c>true</c> if getting the type was successful; otherwise, <c>false</c>.</returns>
     /// <exception cref="SerializationException"/>
+    [ExcludeFromCodeCoverage]
     public static string GetTypeName(this XElement element, XName? attributeName = null)
         => element.TryGetTypeName(out var name, attributeName) && name is not null
                         ? name

@@ -57,6 +57,7 @@ public partial class XmlOptions : DocumentOptions
     /// </summary>
     /// <param name="schemaUri">The schema identifier (most likely <see cref="Exs"/> which is not URL).</param>
     /// <param name="url">The location of the schema file.</param>
+    [ExcludeFromCodeCoverage]
     public static void SetSchemaLocation(string schemaUri, string? url)
     {
         using var _ = _schemasLock.WriterLock();
@@ -141,6 +142,7 @@ public partial class XmlOptions : DocumentOptions
     /// <summary>
     /// Determines whether the expressions schemaUri <see cref="Exs"/> was added.
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public override bool HasExpressionSchema
     {
         get
@@ -176,6 +178,7 @@ public partial class XmlOptions : DocumentOptions
     /// Validates the specified element against the schema.
     /// </summary>
     /// <param name="element">The element.</param>
+    [ExcludeFromCodeCoverage]
     public void Validate(XElement element)
     {
         if (!MustValidate)
@@ -242,6 +245,7 @@ public partial class XmlOptions : DocumentOptions
     /// </summary>
     /// <param name="parent">The parent.</param>
     /// <param name="comment">The comment.</param>
+    [ExcludeFromCodeCoverage]
     internal void AddComment(XContainer parent, string comment)
     {
         if (AddComments)
@@ -253,6 +257,7 @@ public partial class XmlOptions : DocumentOptions
     /// </summary>
     /// <param name="parent">The parent.</param>
     /// <param name="expression">The expression.</param>
+    [ExcludeFromCodeCoverage]
     internal void AddComment(XContainer parent, Expression expression)
     {
         if (AddComments)
@@ -275,6 +280,7 @@ public partial class XmlOptions : DocumentOptions
     /// <summary>
     /// Gets the XML writer settings.
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public XmlWriterSettings XmlWriterSettings
         => field is not null && !Changed
                 ? field
