@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <RootNamespace>vm2.Linq.Expressions.Serialization.Xml</RootNamespace>
+        <!-- Expression tree serialization inherently uses reflection (Type.GetType, MakeGenericType,
+             DataContractSerializer, etc.). Suppress trim analysis warnings at the project level. -->
+        <EnableTrimAnalyzer>false</EnableTrimAnalyzer>
+        <IsTrimmable>false</IsTrimmable>
+    </PropertyGroup>
+
+    <PropertyGroup Label="NuGet">
+        <PackageId>vm2.Linq.Expressions.Serialization.Xml</PackageId>
+        <Title>vm2 Linq Expressions Serialization XML</Title>
+        <Description>Serialization and deserialization of LINQ expression trees to and from documents in XML format.</Description>
+        <PackageTags>C# LINQ expression serialize deserialize XML vm vm2</PackageTags>
+        <PackageProjectUrl>https://github.com/vmelamed/vm2.Linq.Expressions</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/vmelamed/vm2.Linq.Expressions</RepositoryUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="System.ServiceModel.Primitives" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../Serialization.Abstractions/Serialization.Abstractions.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="../../README.md" Pack="true" PackagePath="\">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="../../LICENSE" Pack="true" PackagePath="\">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="../../CHANGELOG.md" Pack="true" PackagePath="\">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Schema/Linq.Expressions.Serialization.xsd" LogicalName="Linq.Expressions.Serialization.xsd" />
+        <EmbeddedResource Include="Schema/DataContract.xsd" LogicalName="DataContract.xsd" />
+        <EmbeddedResource Include="Schema/Microsoft.Serialization.xsd" LogicalName="Microsoft.Serialization.xsd" />
+    </ItemGroup>
+
+</Project>
