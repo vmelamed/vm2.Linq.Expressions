@@ -1,0 +1,16 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " value(vm2.Linq.Expressions.Serialization.TestData.StructSerializable1) ",
+  "expression": {
+    "constant": {
+      "$comment": " vm2.Linq.Expressions.Serialization.TestData.StructSerializable1 ",
+      "object": {
+        "type": "vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "value": {
+          "IntProperty": 7,
+          "StringProperty": "vm"
+        }
+      }
+    }
+  }
+}

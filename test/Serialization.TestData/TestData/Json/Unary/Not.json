@@ -1,0 +1,28 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " a =\u003E Not(a) ",
+  "expression": {
+    "lambda": {
+      "type": "boolean",
+      "parameters": [
+        {
+          "type": "boolean",
+          "name": "a",
+          "id": "P1"
+        }
+      ],
+      "body": {
+        "not": {
+          "type": "boolean",
+          "operand": {
+            "parameter": {
+              "type": "boolean",
+              "name": "a",
+              "id": "P1"
+            }
+          }
+        }
+      }
+    }
+  }
+}

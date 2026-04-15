@@ -1,0 +1,28 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " c =\u003E (c As A) ",
+  "expression": {
+    "lambda": {
+      "type": "vm2.Linq.Expressions.Serialization.TestData.A, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "parameters": [
+        {
+          "type": "vm2.Linq.Expressions.Serialization.TestData.C, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "name": "c",
+          "id": "P1"
+        }
+      ],
+      "body": {
+        "typeAs": {
+          "type": "vm2.Linq.Expressions.Serialization.TestData.A, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "operand": {
+            "parameter": {
+              "type": "vm2.Linq.Expressions.Serialization.TestData.C, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "name": "c",
+              "id": "P1"
+            }
+          }
+        }
+      }
+    }
+  }
+}

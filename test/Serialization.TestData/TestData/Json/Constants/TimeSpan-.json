@@ -1,0 +1,9 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " -3.04:15:32 ",
+  "expression": {
+    "constant": {
+      "duration": "-P3DT4H15M32S"
+    }
+  }
+}

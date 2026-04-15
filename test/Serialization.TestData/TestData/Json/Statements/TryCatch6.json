@@ -1,0 +1,146 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " try { ... } ",
+  "expression": {
+    "try": {
+      "body": {
+        "block": {
+          "expressions": [
+            {
+              "call": {
+                "type": "void",
+                "method": {
+                  "declaringType": "System.Console, System.Console, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+                  "static": true,
+                  "type": "void",
+                  "name": "WriteLine",
+                  "parameterSpecs": [
+                    {
+                      "type": "string",
+                      "name": "value"
+                    }
+                  ]
+                },
+                "arguments": [
+                  {
+                    "constant": {
+                      "string": "TryBody"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "throw": {
+                "operand": {
+                  "new": {
+                    "constructor": {
+                      "declaringType": "System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                      "parameterSpecs": []
+                    },
+                    "arguments": []
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "catches": [
+        {
+          "type": "System.ArgumentException, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+          "exception": {
+            "type": "System.ArgumentException, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+            "name": "x",
+            "id": "P1"
+          },
+          "filter": {
+            "equal": {
+              "type": "boolean",
+              "operands": [
+                {
+                  "memberAccess": {
+                    "type": "string",
+                    "object": {
+                      "parameter": {
+                        "type": "System.ArgumentException, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                        "name": "x",
+                        "id": "P1"
+                      }
+                    },
+                    "member": {
+                      "property": {
+                        "declaringType": "System.ArgumentException, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                        "type": "string",
+                        "name": "ParamName"
+                      }
+                    }
+                  }
+                },
+                {
+                  "constant": {
+                    "string": "x"
+                  }
+                }
+              ],
+              "method": {
+                "declaringType": "string",
+                "static": true,
+                "type": "boolean",
+                "name": "op_Equality",
+                "parameterSpecs": [
+                  {
+                    "type": "string",
+                    "name": "a"
+                  },
+                  {
+                    "type": "string",
+                    "name": "b"
+                  }
+                ]
+              }
+            }
+          },
+          "body": {
+            "call": {
+              "type": "void",
+              "method": {
+                "declaringType": "System.Console, System.Console, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+                "static": true,
+                "type": "void",
+                "name": "WriteLine",
+                "parameterSpecs": [
+                  {
+                    "type": "string",
+                    "name": "value"
+                  }
+                ]
+              },
+              "arguments": [
+                {
+                  "memberAccess": {
+                    "type": "string",
+                    "object": {
+                      "parameter": {
+                        "type": "System.ArgumentException, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                        "name": "x",
+                        "id": "P1"
+                      }
+                    },
+                    "member": {
+                      "property": {
+                        "declaringType": "System.ArgumentException, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                        "type": "string",
+                        "name": "ParamName"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

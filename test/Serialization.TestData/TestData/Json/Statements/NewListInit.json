@@ -1,0 +1,83 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " () =\u003E new List\u00601() {Void Add(System.String)(\u0022aaa\u0022), Void Add(System.String)(\u0022bbb\u0022), Void Add(System.String)(\u0022ccc\u0022)} ",
+  "expression": {
+    "lambda": {
+      "type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+      "parameters": [],
+      "body": {
+        "listInit": {
+          "new": {
+            "constructor": {
+              "declaringType": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+              "parameterSpecs": []
+            },
+            "arguments": []
+          },
+          "initializers": [
+            {
+              "method": {
+                "declaringType": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                "type": "void",
+                "name": "Add",
+                "parameterSpecs": [
+                  {
+                    "type": "string",
+                    "name": "item"
+                  }
+                ]
+              },
+              "arguments": [
+                {
+                  "constant": {
+                    "string": "aaa"
+                  }
+                }
+              ]
+            },
+            {
+              "method": {
+                "declaringType": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                "type": "void",
+                "name": "Add",
+                "parameterSpecs": [
+                  {
+                    "type": "string",
+                    "name": "item"
+                  }
+                ]
+              },
+              "arguments": [
+                {
+                  "constant": {
+                    "string": "bbb"
+                  }
+                }
+              ]
+            },
+            {
+              "method": {
+                "declaringType": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                "type": "void",
+                "name": "Add",
+                "parameterSpecs": [
+                  {
+                    "type": "string",
+                    "name": "item"
+                  }
+                ]
+              },
+              "arguments": [
+                {
+                  "constant": {
+                    "string": "ccc"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " (x **= z) ",
+  "expression": {
+    "powerAssign": {
+      "type": "double",
+      "operands": [
+        {
+          "parameter": {
+            "type": "double",
+            "name": "x",
+            "id": "P1"
+          }
+        },
+        {
+          "parameter": {
+            "type": "double",
+            "name": "z",
+            "id": "P2"
+          }
+        }
+      ],
+      "method": {
+        "declaringType": "System.Math, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "static": true,
+        "type": "double",
+        "name": "Pow",
+        "parameterSpecs": [
+          {
+            "type": "double",
+            "name": "x"
+          },
+          {
+            "type": "double",
+            "name": "y"
+          }
+        ]
+      }
+    }
+  }
+}

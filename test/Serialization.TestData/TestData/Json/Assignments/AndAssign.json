@@ -1,0 +1,25 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " (a \u0026= b) ",
+  "expression": {
+    "andAssign": {
+      "type": "int",
+      "operands": [
+        {
+          "parameter": {
+            "type": "int",
+            "name": "a",
+            "id": "P1"
+          }
+        },
+        {
+          "parameter": {
+            "type": "int",
+            "name": "b",
+            "id": "P2"
+          }
+        }
+      ]
+    }
+  }
+}

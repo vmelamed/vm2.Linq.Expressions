@@ -1,0 +1,16 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " Unbox(o) ",
+  "expression": {
+    "unbox": {
+      "type": "int",
+      "operand": {
+        "parameter": {
+          "type": "object",
+          "name": "o",
+          "id": "P1"
+        }
+      }
+    }
+  }
+}

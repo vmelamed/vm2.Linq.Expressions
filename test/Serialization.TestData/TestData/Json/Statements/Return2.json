@@ -1,0 +1,82 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " {var a; ... } ",
+  "expression": {
+    "block": {
+      "variables": [
+        {
+          "type": "int",
+          "name": "a",
+          "id": "P1"
+        }
+      ],
+      "expressions": [
+        {
+          "assign": {
+            "type": "int",
+            "operands": [
+              {
+                "parameter": {
+                  "type": "int",
+                  "name": "a",
+                  "id": "P1"
+                }
+              },
+              {
+                "constant": {
+                  "int": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "increment": {
+            "type": "int",
+            "operand": {
+              "parameter": {
+                "type": "int",
+                "name": "a",
+                "id": "P1"
+              }
+            }
+          }
+        },
+        {
+          "goto": {
+            "target": {
+              "id": "L1"
+            },
+            "value": {
+              "parameter": {
+                "type": "int",
+                "name": "a",
+                "id": "P1"
+              }
+            },
+            "kind": "return"
+          }
+        },
+        {
+          "increment": {
+            "type": "int",
+            "operand": {
+              "parameter": {
+                "type": "int",
+                "name": "a",
+                "id": "P1"
+              }
+            }
+          }
+        },
+        {
+          "label": {
+            "target": {
+              "id": "L1"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

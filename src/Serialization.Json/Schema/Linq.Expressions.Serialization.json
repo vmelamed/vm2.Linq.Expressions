@@ -1,0 +1,3196 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+    "title": "LINQ Expression Serialization",
+    "description": "Schema of the JSON documents representing serialized Microsoft .NET LINQ expression trees.",
+    "type": "object",
+    "properties": {
+        "expression": {
+            "$ref": "#/$defs/expression"
+        }
+    },
+    "required": [
+        "expression"
+    ],
+    "$defs": {
+        "expression": {
+            "title": "Represents a JSON serialized LINQ expression",
+            "oneOf": [
+                {
+                    "title": "Constant expression (e.g. `42`)",
+                    "type": "object",
+                    "properties": {
+                        "constant": {
+                            "$ref": "#/$defs/constant"
+                        }
+                    },
+                    "required": [
+                        "constant"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Default value for the specified type (`default(int)`)",
+                    "type": "object",
+                    "properties": {
+                        "default": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "type"
+                            ],
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "default"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Parameter or Variable declaration or reference expression (e.g. `int i;`)",
+                    "type": "object",
+                    "properties": {
+                        "parameter": {
+                            "$ref": "#/$defs/parameter"
+                        }
+                    },
+                    "required": [
+                        "parameter"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Lambda expression (`(int a, int b) => a+b`)",
+                    "$ref": "#/$defs/lambda"
+                },
+                {
+                    "title": "Array length expression (int[] a; ...; a.Length; ...)",
+                    "type": "object",
+                    "properties": {
+                        "arrayLength": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "arrayLength"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Convert (cast) expression (`(double)i`)",
+                    "type": "object",
+                    "properties": {
+                        "convert": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "convert"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Convert (cast) checked expression (`checked((int)d)`)",
+                    "type": "object",
+                    "properties": {
+                        "convertChecked": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "convertChecked"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Negate expression (`-a`)",
+                    "type": "object",
+                    "properties": {
+                        "negate": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "negate"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Negate checked expression (`checked(-a)`)",
+                    "type": "object",
+                    "properties": {
+                        "negateChecked": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "negateChecked"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Logical Not expression (`!a`)",
+                    "type": "object",
+                    "properties": {
+                        "not": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "not"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Quote expression (returns the expression structure - no C# equivalent)",
+                    "type": "object",
+                    "properties": {
+                        "quote": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "quote"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Type as (dynamic cast) expression (`(int?)5`)",
+                    "type": "object",
+                    "properties": {
+                        "typeAs": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "typeAs"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Unary plus expression (`+a`)",
+                    "type": "object",
+                    "properties": {
+                        "unaryPlus": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "unaryPlus"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Ones complement (bitwise not) expression (`~a`)",
+                    "type": "object",
+                    "properties": {
+                        "onesComplement": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "onesComplement"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Throw (exception) expression (`throw new Exception()`)",
+                    "type": "object",
+                    "properties": {
+                        "throw": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "throw"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Unbox expression (`object a; ...; int b = (int)a; ...`)",
+                    "type": "object",
+                    "properties": {
+                        "unbox": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "unbox"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "IsFalse expression",
+                    "type": "object",
+                    "properties": {
+                        "isFalse": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "isFalse"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "IsTrue expression",
+                    "type": "object",
+                    "properties": {
+                        "isTrue": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "isTrue"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Subtracts 1 from the operand (a-1)",
+                    "type": "object",
+                    "properties": {
+                        "decrement": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "decrement"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Adds 1 to the operand (a+1)",
+                    "type": "object",
+                    "properties": {
+                        "increment": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "increment"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Subtracts 1 from the operand (--a)",
+                    "type": "object",
+                    "properties": {
+                        "preDecrementAssign": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "preDecrementAssign"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Adds 1 to the operand (++a)",
+                    "type": "object",
+                    "properties": {
+                        "preIncrementAssign": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "preIncrementAssign"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Subtracts 1 from the operand (a--)",
+                    "type": "object",
+                    "properties": {
+                        "postDecrementAssign": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "postDecrementAssign"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Adds 1 to the operand (a++)",
+                    "type": "object",
+                    "properties": {
+                        "postIncrementAssign": {
+                            "$ref": "#/$defs/unary"
+                        }
+                    },
+                    "required": [
+                        "postIncrementAssign"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Add expression (`a+b`)",
+                    "type": "object",
+                    "properties": {
+                        "add": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "add"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Add checked expression (`checked(a+b)`)",
+                    "type": "object",
+                    "properties": {
+                        "addChecked": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "addChecked"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Bitwise and expression (`a & b`)",
+                    "type": "object",
+                    "properties": {
+                        "and": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "and"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Logical and expression (`a && b`)",
+                    "type": "object",
+                    "properties": {
+                        "andAlso": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "andAlso"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Index array expression (`arr[i]`)",
+                    "type": "object",
+                    "properties": {
+                        "arrayIndex": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "arrayIndex"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Divide expression (`a/b`)",
+                    "type": "object",
+                    "properties": {
+                        "divide": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "divide"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Equal expression (`a==b`)",
+                    "type": "object",
+                    "properties": {
+                        "equal": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "equal"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Exclusive or expression (`a^b`)",
+                    "type": "object",
+                    "properties": {
+                        "exclusiveOr": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "exclusiveOr"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "GreaterThan expression (`a>b`)",
+                    "type": "object",
+                    "properties": {
+                        "greaterThan": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "greaterThan"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Greater than or equal expression (`a>=b`)",
+                    "type": "object",
+                    "properties": {
+                        "greaterThanOrEqual": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "greaterThanOrEqual"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Left shift expression (`a << b`)",
+                    "type": "object",
+                    "properties": {
+                        "leftShift": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "leftShift"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Less than expression (`a<b`)",
+                    "type": "object",
+                    "properties": {
+                        "lessThan": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "lessThan"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Less than or equal expression (`a<=b`)",
+                    "type": "object",
+                    "properties": {
+                        "lessThanOrEqual": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "lessThanOrEqual"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Modulo expression (`a%b`)",
+                    "type": "object",
+                    "properties": {
+                        "modulo": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "modulo"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Multiply expression (`a*b`)",
+                    "type": "object",
+                    "properties": {
+                        "multiply": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "multiply"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Multiply checked expression (`checked(a*b)`)",
+                    "type": "object",
+                    "properties": {
+                        "multiplyChecked": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "multiplyChecked"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Not equal expression (`a!=b`)",
+                    "type": "object",
+                    "properties": {
+                        "notEqual": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "notEqual"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Or expression (`a|b`)",
+                    "type": "object",
+                    "properties": {
+                        "or": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "or"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Or else expression (`a||b`)",
+                    "type": "object",
+                    "properties": {
+                        "orElse": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "orElse"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Power expression (VBasic: `a**b`)",
+                    "type": "object",
+                    "properties": {
+                        "power": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "power"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Right shift expression (`a >> b`)",
+                    "type": "object",
+                    "properties": {
+                        "rightShift": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "rightShift"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Subtract expression (`a-b`)",
+                    "type": "object",
+                    "properties": {
+                        "subtract": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "subtract"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Subtract checked expression (`checked(a-b)`)",
+                    "type": "object",
+                    "properties": {
+                        "subtractChecked": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "subtractChecked"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Coalesce expression (`a ?? b`)",
+                    "type": "object",
+                    "properties": {
+                        "coalesce": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "coalesce"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Type equal expression (no C# equivalent operation but can be expressed as `a.GetType() == typeof(T)`)",
+                    "type": "object",
+                    "properties": {
+                        "typeEqual": {
+                            "$ref": "#/$defs/typeBinary"
+                        }
+                    },
+                    "required": [
+                        "typeEqual"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Type is expression (`a is string`)",
+                    "type": "object",
+                    "properties": {
+                        "typeIs": {
+                            "$ref": "#/$defs/typeBinary"
+                        }
+                    },
+                    "required": [
+                        "typeIs"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Assign the value of right to the left (`a=42`)",
+                    "type": "object",
+                    "properties": {
+                        "assign": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "assign"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Add the left and the right and assign the result to the left (`a+=42`)",
+                    "type": "object",
+                    "properties": {
+                        "addAssign": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "addAssign"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Add checked the left and the right and assign the result to the left (`checked(a+=42)`)",
+                    "type": "object",
+                    "properties": {
+                        "addAssignChecked": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "addAssignChecked"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "And the left and the right and assign the result to the left (`a&=42`)",
+                    "type": "object",
+                    "properties": {
+                        "andAssign": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "andAssign"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Divide the left by the right and assign the result to the left (`a/=42`)",
+                    "type": "object",
+                    "properties": {
+                        "divideAssign": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "divideAssign"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Xor the left and the right and assign the result to the left (`a^=42`)",
+                    "type": "object",
+                    "properties": {
+                        "exclusiveOrAssign": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "exclusiveOrAssign"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Left shift the left right times and assign the result to the left (`a<<=42`)",
+                    "type": "object",
+                    "properties": {
+                        "leftShiftAssign": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "leftShiftAssign"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Modulo divide the left by the right and assign the result to the left (`a%=42`)",
+                    "type": "object",
+                    "properties": {
+                        "moduloAssign": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "moduloAssign"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Multiply the left by the right and assign the result to the left (`a*=42`)",
+                    "type": "object",
+                    "properties": {
+                        "multiplyAssign": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "multiplyAssign"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Multiply checked the left by the right and assign the result to the left (`checked(a*=42)`)",
+                    "type": "object",
+                    "properties": {
+                        "multiplyAssignChecked": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "multiplyAssignChecked"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Power the left by the right and assign the result to the left (`a**=42`)",
+                    "type": "object",
+                    "properties": {
+                        "powerAssign": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "powerAssign"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Or the left and the right and assign the result to the left (`a|=42`)",
+                    "type": "object",
+                    "properties": {
+                        "orAssign": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "orAssign"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Right shift the left right times and assign the result to the left (`a>>=42`)",
+                    "type": "object",
+                    "properties": {
+                        "rightShiftAssign": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "rightShiftAssign"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Subtract from the left the right and assign the result to the left (`a-=42`)",
+                    "type": "object",
+                    "properties": {
+                        "subtractAssign": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "subtractAssign"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Subtract checked the right from the left and assign the result to the left (`a-=42`)",
+                    "type": "object",
+                    "properties": {
+                        "subtractAssignChecked": {
+                            "$ref": "#/$defs/binary"
+                        }
+                    },
+                    "required": [
+                        "subtractAssignChecked"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Block expression (`{ ...; ...; }`)",
+                    "type": "object",
+                    "properties": {
+                        "block": {
+                            "type": "object",
+                            "properties": {
+                                "variables": {
+                                    "$ref": "#/$defs/parameterList"
+                                },
+                                "expressions": {
+                                    "$ref": "#/$defs/arrayExpressions"
+                                }
+                            },
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "block"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Represents indexing operation on an object with one or more indexes",
+                    "type": "object",
+                    "properties": {
+                        "index": {
+                            "type": "object",
+                            "properties": {
+                                "object": {
+                                    "$ref": "#/$defs/expression"
+                                },
+                                "indexes": {
+                                    "$ref": "#/$defs/arrayExpressions"
+                                },
+                                "indexer": {
+                                    "$comment": "Present if the expression represents an indexed property",
+                                    "$ref": "#/$defs/property"
+                                }
+                            },
+                            "required": [
+                                "object",
+                                "indexes"
+                            ],
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "index"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Represents a method call (`a.Method(x, y)`)",
+                    "type": "object",
+                    "properties": {
+                        "call": {
+                            "type": "object",
+                            "properties": {
+                                "object": {
+                                    "$ref": "#/$defs/expression"
+                                },
+                                "method": {
+                                    "$ref": "#/$defs/method"
+                                },
+                                "arguments": {
+                                    "$ref": "#/$defs/arrayExpressions"
+                                }
+                            },
+                            "required": [
+                                "method",
+                                "arguments"
+                            ],
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "call"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Represents invoking a delegate with one or more arguments(`Func<T1, T2> f; ...; f(42, 1.2);`)",
+                    "type": "object",
+                    "properties": {
+                        "invoke": {
+                            "type": "object",
+                            "properties": {
+                                "delegate": {
+                                    "$ref": "#/$defs/expression"
+                                },
+                                "arguments": {
+                                    "$ref": "#/$defs/arrayExpressions"
+                                }
+                            },
+                            "required": [
+                                "delegate",
+                                "arguments"
+                            ],
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "invoke"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Represents conditional statement (`if (e0) e1; else e2;`)",
+                    "type": "object",
+                    "properties": {
+                        "conditional": {
+                            "type": "object",
+                            "properties": {
+                                "if": {
+                                    "$ref": "#/$defs/expression"
+                                },
+                                "then": {
+                                    "$ref": "#/$defs/expression"
+                                },
+                                "else": {
+                                    "$ref": "#/$defs/expression"
+                                }
+                            },
+                            "required": [
+                                "if",
+                                "then"
+                            ],
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "conditional"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Represents a label to jump to.",
+                    "type": "object",
+                    "properties": {
+                        "label": {
+                            "type": "object",
+                            "properties": {
+                                "target": {
+                                    "$ref": "#/$defs/labels/target"
+                                },
+                                "default": {
+                                    "$ref": "#/$defs/expression"
+                                }
+                            },
+                            "required": [
+                                "target"
+                            ],
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "label"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Represents a unconditional jump operation.",
+                    "type": "object",
+                    "properties": {
+                        "goto": {
+                            "type": "object",
+                            "properties": {
+                                "target": {
+                                    "$ref": "#/$defs/labels/target"
+                                },
+                                "value": {
+                                    "$ref": "#/$defs/expression"
+                                },
+                                "kind": {
+                                    "enum": [
+                                        "goto",
+                                        "return",
+                                        "break",
+                                        "continue"
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "target",
+                                "kind"
+                            ],
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "goto"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Represents creating a new object with the specified arguments.",
+                    "type": "object",
+                    "properties": {
+                        "new": {
+                            "$ref": "#/$defs/new"
+                        }
+                    },
+                    "required": [
+                        "new"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "$ref": "#/$defs/new"
+                },
+                {
+                    "title": "Represents creating a new array with an expression for each bound (dimension)",
+                    "type": "object",
+                    "properties": {
+                        "newArrayBounds": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "bounds": {
+                                    "$ref": "#/$defs/arrayExpressions"
+                                }
+                            },
+                            "required": [
+                                "type",
+                                "bounds"
+                            ],
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "newArrayBounds"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Represents creating a new, 1-dimensional array with an expression for each element",
+                    "type": "object",
+                    "properties": {
+                        "newArrayInit": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "elements": {
+                                    "$ref": "#/$defs/arrayExpressions"
+                                }
+                            },
+                            "required": [
+                                "type",
+                                "elements"
+                            ],
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "newArrayInit"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Represents creating a new, list with a collection initializer",
+                    "type": "object",
+                    "properties": {
+                        "listInit": {
+                            "type": "object",
+                            "properties": {
+                                "new": {
+                                    "$ref": "#/$defs/new"
+                                },
+                                "initializers": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/$defs/elementInit"
+                                    }
+                                }
+                            },
+                            "required": [
+                                "new",
+                                "initializers"
+                            ],
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "listInit"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Represents a loop",
+                    "type": "object",
+                    "properties": {
+                        "loop": {
+                            "type": "object",
+                            "properties": {
+                                "body": {
+                                    "$ref": "#/$defs/expression"
+                                },
+                                "continueLabel": {
+                                    "type": "object",
+                                    "items": {
+                                        "$ref": "#/$defs/labels/target"
+                                    }
+                                },
+                                "breakLabel": {
+                                    "type": "object",
+                                    "items": {
+                                        "$ref": "#/$defs/labels/target"
+                                    }
+                                }
+                            },
+                            "required": [
+                                "body"
+                            ],
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "loop"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Represents a switch",
+                    "type": "object",
+                    "properties": {
+                        "switch": {
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "$ref": "#/$defs/expression"
+                                },
+                                "comparison": {
+                                    "$ref": "#/$defs/method"
+                                },
+                                "cases": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/$defs/switchCase"
+                                    }
+                                },
+                                "defaultCase": {
+                                    "$ref": "#/$defs/expression"
+                                }
+                            },
+                            "required": [
+                                "value",
+                                "cases"
+                            ],
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "switch"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Represents a try-catch-finally statement",
+                    "type": "object",
+                    "properties": {
+                        "try": {
+                            "type": "object",
+                            "properties": {
+                                "body": {
+                                    "$ref": "#/$defs/expression"
+                                },
+                                "catches": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/$defs/catch"
+                                    }
+                                },
+                                "fault": {
+                                    "$ref": "#/$defs/expression"
+                                },
+                                "finally": {
+                                    "$ref": "#/$defs/expression"
+                                }
+                            },
+                            "required": [
+                                "body"
+                            ],
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "try"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Defines the type of elements that represent access to members of objects and structs.",
+                    "type": "object",
+                    "properties": {
+                        "memberAccess": {
+                            "type": "object",
+                            "properties": {
+                                "object": {
+                                    "$ref": "#/$defs/expression"
+                                },
+                                "member": {
+                                    "$ref": "#/$defs/propertyOrField"
+                                }
+                            },
+                            "required": [
+                                "member"
+                            ],
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "memberAccess"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "title": "Defines the type of elements that represent initialization of members of objects and structs.",
+                    "type": "object",
+                    "properties": {
+                        "memberInit": {
+                            "type": "object",
+                            "properties": {
+                                "new": {
+                                    "$ref": "#/$defs/new"
+                                },
+                                "bindings": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/$defs/memberBinding"
+                                    }
+                                }
+                            },
+                            "required": [
+                                "new",
+                                "bindings"
+                            ],
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "memberInit"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "constant": {
+            "title": "Constant value in a LINQ expression.",
+            "type": "object",
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/boolean"
+                },
+                {
+                    "$ref": "#/$defs/byte"
+                },
+                {
+                    "$ref": "#/$defs/char"
+                },
+                {
+                    "$ref": "#/$defs/double"
+                },
+                {
+                    "$ref": "#/$defs/float"
+                },
+                {
+                    "$ref": "#/$defs/halfConstant"
+                },
+                {
+                    "$ref": "#/$defs/intConstant"
+                },
+                {
+                    "$ref": "#/$defs/intPtr"
+                },
+                {
+                    "$ref": "#/$defs/long"
+                },
+                {
+                    "$ref": "#/$defs/short"
+                },
+                {
+                    "$ref": "#/$defs/signedByte"
+                },
+                {
+                    "$ref": "#/$defs/unsignedInt"
+                },
+                {
+                    "$ref": "#/$defs/unsignedIntPtr"
+                },
+                {
+                    "$ref": "#/$defs/unsignedLong"
+                },
+                {
+                    "$ref": "#/$defs/unsignedShort"
+                },
+                {
+                    "$ref": "#/$defs/dateTime"
+                },
+                {
+                    "$ref": "#/$defs/dateTimeOffset"
+                },
+                {
+                    "$ref": "#/$defs/decimal"
+                },
+                {
+                    "$ref": "#/$defs/timeSpan"
+                },
+                {
+                    "$ref": "#/$defs/guid"
+                },
+                {
+                    "$ref": "#/$defs/enumeration"
+                },
+                {
+                    "$ref": "#/$defs/string"
+                },
+                {
+                    "$ref": "#/$defs/dbNull"
+                },
+                {
+                    "$ref": "#/$defs/uri"
+                },
+                {
+                    "$ref": "#/$defs/object"
+                },
+                {
+                    "$ref": "#/$defs/anonymous"
+                },
+                {
+                    "$ref": "#/$defs/byteSequence"
+                },
+                {
+                    "$ref": "#/$defs/sequence"
+                },
+                {
+                    "$ref": "#/$defs/dictionary"
+                },
+                {
+                    "$ref": "#/$defs/tuple"
+                },
+                {
+                    "$ref": "#/$defs/nullable"
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
+        "boolean": {
+            "title": "Boolean constants",
+            "type": "object",
+            "properties": {
+                "boolean": {
+                    "type": "boolean"
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "boolean"
+            ]
+        },
+        "byte": {
+            "title": "Byte constants",
+            "description": "Unsigned 8-bit integer value",
+            "type": "object",
+            "properties": {
+                "byte": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 255
+                }
+            },
+            "required": [
+                "byte"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "char": {
+            "title": "Unicode character value",
+            "type": "object",
+            "properties": {
+                "char": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "char"
+            ]
+        },
+        "double": {
+            "title": "Double precision, floating point numerical value",
+            "type": "object",
+            "properties": {
+                "double": {
+                    "oneOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "string",
+                            "pattern": "^(?:NaN)|(?:-?INF)$"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "double"
+            ]
+        },
+        "float": {
+            "title": "Floating point numerical value.",
+            "type": "object",
+            "properties": {
+                "float": {
+                    "oneOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "string",
+                            "pattern": "^(?:NaN)|(?:-?INF)$"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "float"
+            ]
+        },
+        "halfConstant": {
+            "title": "Half precision floating point numerical value.",
+            "type": "object",
+            "properties": {
+                "half": {
+                    "oneOf": [
+                        {
+                            "type": "number",
+                            "minimum": -65504,
+                            "maximum": 65504
+                        },
+                        {
+                            "type": "string",
+                            "pattern": "^(?:NaN)|(?:-?INF)$"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "half"
+            ]
+        },
+        "intConstant": {
+            "title": "32-bit, signed, integer, numeric value",
+            "type": "object",
+            "properties": {
+                "int": {
+                    "type": "integer",
+                    "minimum": -2147483648,
+                    "maximum": 2147483647
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "int"
+            ]
+        },
+        "intPtr": {
+            "title": "Architecture dependent 32 or 64 bit, signed, integer, numeric value (.NET specific)",
+            "description": "Represents architecture dependent 32 or 64 bit, signed, integer numeric values. Note: it is a well-known problem that different languages represent internally big integer values differently: e.g. JavaScript and Go internally represent these JSON values as integers when they are in the range of [-2^53+1, 2^53-1] and as double precision values outside of that region. Therefore to avoid ambiguity and loss of fidelity this schema allows the integer values to be expressed also as string values, subject to pattern constrains.  The larger/smaller values of this type definitely may suffer from loss of fidelity.",
+            "type": "object",
+            "properties": {
+                "intPtr": {
+                    "oneOf": [
+                        {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                        },
+                        {
+                            "type": "string",
+                            "pattern": "^(-0*9223372036854775808)|([-+]?0*922337203685477580[0-7])|([-+]?0*9223372036854775[0-7][0-9]{2})|([-+]?0*922337203685477[0-4][0-9]{3})|([-+]?0*92233720368547[0-6][0-9]{4})|([-+]?0*9223372036854[0-6][0-9]{5})|([-+]?0*922337203685[0-3][0-9]{6})|([-+]?0*92233720368[0-4][0-9]{7})|([-+]?0*9223372036[0-7][0-9]{8})|([-+]?0*922337203[0-5][0-9]{9})|([-+]?0*92233720[0-2][0-9]{10})|([-+]?0*922337[0-1][0-9]{12})|([-+]?0*92233[0-6][0-9]{13})|([-+]?0*9223[0-2][0-9]{14})|([-+]?0*922[0-2][0-9]{15})|([-+]?0*92[0-1][0-9]{16})|([-+]?0*9[0-1][0-9]{17})|([-+]?0*[0-8][0-9]{18})|([-+]?0*[0-9]{1,18})$"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "intPtr"
+            ]
+        },
+        "long": {
+            "title": "64-bit, signed, integer, numeric value",
+            "description": "Represents 64-bit, signed, integer numeric values. Note: it is a well-known problem that different languages represent internally big integer values differently: e.g. JavaScript and Go internally represent these JSON values as integers when they are in the range of [-2^53+1, 2^53-1] and as double precision values outside of that region. Therefore to avoid ambiguity and loss of fidelity this schema allows the integer values to be expressed also as string values, subject to pattern constrains. The larger/smaller values of this type definitely may suffer from loss of fidelity.",
+            "type": "object",
+            "properties": {
+                "long": {
+                    "oneOf": [
+                        {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                        },
+                        {
+                            "type": "string",
+                            "pattern": "^(-0*9223372036854775808)|([-+]?0*922337203685477580[0-7])|([-+]?0*9223372036854775[0-7][0-9]{2})|([-+]?0*922337203685477[0-4][0-9]{3})|([-+]?0*92233720368547[0-6][0-9]{4})|([-+]?0*9223372036854[0-6][0-9]{5})|([-+]?0*922337203685[0-3][0-9]{6})|([-+]?0*92233720368[0-4][0-9]{7})|([-+]?0*9223372036[0-7][0-9]{8})|([-+]?0*922337203[0-5][0-9]{9})|([-+]?0*92233720[0-2][0-9]{10})|([-+]?0*922337[0-1][0-9]{12})|([-+]?0*92233[0-6][0-9]{13})|([-+]?0*9223[0-2][0-9]{14})|([-+]?0*922[0-2][0-9]{15})|([-+]?0*92[0-1][0-9]{16})|([-+]?0*9[0-1][0-9]{17})|([-+]?0*[0-8][0-9]{18})|([-+]?0*[0-9]{1,18})$"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "long"
+            ]
+        },
+        "short": {
+            "title": "16-bit, signed, integer, numeric value",
+            "type": "object",
+            "properties": {
+                "short": {
+                    "type": "integer",
+                    "minimum": -32768,
+                    "maximum": 32767
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "short"
+            ]
+        },
+        "signedByte": {
+            "title": "8-bit, signed, integer, numeric value",
+            "description": "Represents an 8-bit, unsigned, integer numeric values.",
+            "type": "object",
+            "properties": {
+                "signedByte": {
+                    "type": "integer",
+                    "minimum": -128,
+                    "maximum": 127
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "signedByte"
+            ]
+        },
+        "unsignedInt": {
+            "title": "32-bit, unsigned, integer, numeric value",
+            "type": "object",
+            "properties": {
+                "unsignedInt": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 4294967295
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "unsignedInt"
+            ]
+        },
+        "unsignedIntPtr": {
+            "title": "32 or 64 bit, unsigned, integer, numeric value (.NET specific)",
+            "description": "Represents architecture dependent 32 or 64 bit, unsigned, integer numeric values. Note: it is a well-known problem that different languages represent internally big integer values differently: e.g. JavaScript and Go internally represent these JSON values as integers when they are in the range of [-2^53+1, 2^53-1] and as double precision values outside of that region. Therefore to avoid ambiguity and loss of fidelity this schema allows the integer values to be expressed also as string values, subject to pattern constrains.  The larger/smaller values of this type definitely may suffer from loss of fidelity.",
+            "type": "object",
+            "properties": {
+                "unsignedIntPtr": {
+                    "oneOf": [
+                        {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 9007199254740991
+                        },
+                        {
+                            "type": "string",
+                            "pattern": "^(0*1844674407370955161[0-5])|(0*1844674407370955160[0-9])|(0*18446744073709551[0-5][0-9]{2})|(0*18446744073709550[0-9]{3})|(0*184467440737095[0-4][0-9]{4})|(0*18446744073709[0-4][0-9]{5})|(0*1844674407370[0-8][0-9]{6})|(0*18446744073[0-6][0-9]{8})|(0*1844674407[0-2][0-9]{9})|(0*184467440[0-6][0-9]{10})|(0*1844674[0-3][0-9]{12})|(0*184467[0-3][0-9]{13})|(0*18446[0-6][0-9]{14})|(0*1844[0-5][0-9]{15})|(0*184[0-3][0-9]{16})|(0*18[0-3][0-9]{17})|(0*1[0-7][0-9]{18})|(0*[0-9]{1,19})$"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "unsignedIntPtr"
+            ]
+        },
+        "unsignedLong": {
+            "title": "64-bit, unsigned, integer, numeric value",
+            "description": "Represents 64-bit, unsigned, integer numeric values. Note: it is a well-known problem that different languages represent internally big integer values differently: e.g. JavaScript and Go internally represent these JSON values as integers when they are in the range of [-2^53+1, 2^53-1] and as double precision values outside of that region. Therefore to avoid ambiguity and loss of fidelity this schema allows the integer values to be expressed also as string values, subject to pattern constrains.  The larger/smaller values of this type definitely may suffer from loss of fidelity.",
+            "type": "object",
+            "properties": {
+                "unsignedLong": {
+                    "oneOf": [
+                        {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 9007199254740991
+                        },
+                        {
+                            "type": "string",
+                            "pattern": "^(0*1844674407370955161[0-5])|(0*1844674407370955160[0-9])|(0*18446744073709551[0-5][0-9]{2})|(0*18446744073709550[0-9]{3})|(0*184467440737095[0-4][0-9]{4})|(0*18446744073709[0-4][0-9]{5})|(0*1844674407370[0-8][0-9]{6})|(0*18446744073[0-6][0-9]{8})|(0*1844674407[0-2][0-9]{9})|(0*184467440[0-6][0-9]{10})|(0*1844674[0-3][0-9]{12})|(0*184467[0-3][0-9]{13})|(0*18446[0-6][0-9]{14})|(0*1844[0-5][0-9]{15})|(0*184[0-3][0-9]{16})|(0*18[0-3][0-9]{17})|(0*1[0-7][0-9]{18})|(0*[0-9]{1,19})$"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "unsignedLong"
+            ]
+        },
+        "unsignedShort": {
+            "title": "16-bit, unsigned, integer, numeric value",
+            "type": "object",
+            "properties": {
+                "unsignedShort": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 65535
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "unsignedShort"
+            ]
+        },
+        "dateTime": {
+            "title": "Date and time values",
+            "description": "Represents points in time (date and time) as strings following RFC3339 and ISO 8601. If the UTC relation information is omitted, it is assumed that it is \"local time\".",
+            "type": "object",
+            "properties": {
+                "dateTime": {
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[0-1])[T ](?:[01][0-9]|2[0-3]):(?:[0-5][0-9]):(?:[0-5][0-9])(\\.[0-9]+)?(Z|([-+]([01][0-9]|2[0-3])(:?[0-5][0-9])?))?$"
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "dateTime"
+            ]
+        },
+        "dateTimeOffset": {
+            "title": "Date and time values represented as offset from UTC.",
+            "description": "Represents points in time (date and time) as strings following RFC3339 and ISO 8601",
+            "type": "object",
+            "properties": {
+                "dateTimeOffset": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^[0-9]{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[0-1])[T ](?:[01][0-9]|2[0-3]):(?:[0-5][0-9]):(?:[0-5][0-9])(\\.[0-9]+)?(Z|([-+]([01][0-9]|2[0-3])(:?[0-5][0-9])?))$"
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "dateTimeOffset"
+            ]
+        },
+        "dbNull": {
+            "title": "DBNull type",
+            "type": "object",
+            "properties": {
+                "dbNull": {
+                    "type": "null",
+                    "default": null
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "dbNull"
+            ]
+        },
+        "decimal": {
+            "title": "Represents decimal, fixed point values.",
+            "description": "The values can be represented as both numeric and string JSON values.",
+            "type": "object",
+            "properties": {
+                "decimal": {
+                    "type": "string",
+                    "pattern": "^[-+]?([0-9]+(\\.[0-9]*))|(([0-9]*\\.)?([0-9])+)$"
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "decimal"
+            ]
+        },
+        "timeSpan": {
+            "title": "Time duration values",
+            "description": "Represents time duration as strings following ISO 8601.",
+            "type": "object",
+            "properties": {
+                "duration": {
+                    "type": "string",
+                    "pattern": "^-?P((([0-9]+D)|([0-9]+M)(([0-9]+D))?|([0-9]+Y)(([0-9]+M)(([0-9]+D))?)?)(T((([0-9]+H)(([0-9]+M)(([0-9]+S))?)?|([0-9]+M)(([0-9]+S))?|([0-9]+S))))?|T((([0-9]+H)(([0-9]+M)(([0-9]+S))?)?|([0-9]+M)(([0-9]+S))?|([0-9]+S)))|([0-9]+W))$"
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "duration"
+            ]
+        },
+        "guid": {
+            "title": "UUID (a.k.a. GUID) values",
+            "type": "object",
+            "properties": {
+                "guid": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^(?:(?:[\\(\\{]?)[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}(?:[\\}\\)]?))|(?:[0-9A-Fa-f]{32})$"
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "guid"
+            ]
+        },
+        "string": {
+            "title": "Unicode string values",
+            "type": "object",
+            "properties": {
+                "string": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "string"
+            ]
+        },
+        "uri": {
+            "title": "URI and IRI values",
+            "type": "object",
+            "properties": {
+                "uri": {
+                    "oneOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "type": "string",
+                            "format": "iri-reference"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "uri"
+            ]
+        },
+        "enumeration": {
+            "title": "Enumeration type",
+            "type": "object",
+            "properties": {
+                "enum": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "$comment": "When the enum type is marked with FlagsAttribute",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            ]
+                        },
+                        "baseType": {
+                            "type": "string",
+                            "default": "int"
+                        },
+                        "baseValue": {
+                            "type": "integer"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "type",
+                        "value"
+                    ]
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "enum"
+            ]
+        },
+        "byteSequence": {
+            "title": "Arbitrary sequence of bytes",
+            "description": "This type represents a sequence of bytes Base64 encoded. The value can be a single string or an array of strings. It can be also null.",
+            "type": "object",
+            "properties": {
+                "byteSequence": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "oneOf": [
+                                {
+                                    "type": "null"
+                                },
+                                {
+                                    "type": "string",
+                                    "pattern": "^[0-9A-Za-z/+]*={0,2}$",
+                                    "contentMediaType": "application/octet-stream"
+                                },
+                                {
+                                    "$comment": "when the value is encoded with multiline Base64 it should be array of strings",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "pattern": "^[0-9A-Za-z/+]*={0,2}$",
+                                        "contentMediaType": "application/octet-stream"
+                                    }
+                                }
+                            ]
+                        },
+                        "length": {
+                            "type": "integer"
+                        }
+                    },
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "required": [
+                        "type",
+                        "value"
+                    ]
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "byteSequence"
+            ]
+        },
+        "anonymous": {
+            "title": "JSON serialized anonymous object",
+            "type": "object",
+            "properties": {
+                "anonymous": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "type": "object",
+                            "patternProperties": {
+                                "^@?[A-Z_a-z][0-9A-Z_a-z]*$": {
+                                    "$ref": "#/$defs/constant"
+                                }
+                            },
+                            "minProperties": 1,
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "value"
+                    ]
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "anonymous"
+            ]
+        },
+        "tuple": {
+            "title": "Represents a .NET tuple (class Tuple<> or ValueTuple<>)",
+            "type": "object",
+            "properties": {
+                "tuple": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "oneOf": [
+                                {
+                                    "type": "null"
+                                },
+                                {
+                                    "type": "object",
+                                    "patternProperties": {
+                                        "^Item[1-8]$": {
+                                            "$ref": "#/$defs/constant"
+                                        }
+                                    },
+                                    "minProperties": 1,
+                                    "maxProperties": 8,
+                                    "additionalProperties": false
+                                }
+                            ]
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "value"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "tuple"
+            ]
+        },
+        "sequence": {
+            "title": "Represents sequences of values (array, list, set, etc.)",
+            "type": "object",
+            "properties": {
+                "sequence": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "oneOf": [
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/$defs/constant"
+                                    }
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ]
+                        },
+                        "length": {
+                            "type": "integer"
+                        }
+                    },
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "required": [
+                        "type",
+                        "value"
+                    ]
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "sequence"
+            ]
+        },
+        "dictionary": {
+            "title": "Represents a dictionary (hashtable, dictionary, etc.) of key - value pairs",
+            "type": "object",
+            "properties": {
+                "dictionary": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "oneOf": [
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "key": {
+                                                "$ref": "#/$defs/constant"
+                                            },
+                                            "value": {
+                                                "$ref": "#/$defs/constant"
+                                            }
+                                        },
+                                        "additionalProperties": {
+                                            "type": "string"
+                                        },
+                                        "required": [
+                                            "key",
+                                            "value"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ]
+                        },
+                        "length": {
+                            "type": "integer"
+                        }
+                    },
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "required": [
+                        "type",
+                        "value"
+                    ]
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "dictionary"
+            ]
+        },
+        "object": {
+            "title": "JSON serialized object",
+            "type": "object",
+            "properties": {
+                "object": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        },
+                        "concreteType": {
+                            "$comment": "The actual type of the object can be different from the declared type if the type of the object is derived from the declared type.",
+                            "type": "string"
+                        },
+                        "value": {
+                            "oneOf": [
+                                {
+                                    "type": "object"
+                                },
+                                {
+                                    "$comment": "Only reference types can have value null.",
+                                    "type": "null"
+                                }
+                            ]
+                        }
+                    },
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "required": [
+                        "type",
+                        "value"
+                    ]
+                }
+            },
+            "additionalProperties": {
+                "type": "string"
+            },
+            "required": [
+                "object"
+            ]
+        },
+        "nullable": {
+            "title": "Represents Nullable<> .NET types",
+            "type": "object",
+            "properties": {
+                "nullable": {
+                    "oneOf": [
+                        {
+                            "title": "Null Nullable<T>",
+                            "$comment": "Represents a Nullable<T> value for which `HasValue` is `false`.",
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "value": {
+                                    "type": "null"
+                                }
+                            },
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "required": [
+                                "type"
+                            ]
+                        },
+                        {
+                            "$ref": "#/$defs/boolean"
+                        },
+                        {
+                            "$ref": "#/$defs/byte"
+                        },
+                        {
+                            "$ref": "#/$defs/char"
+                        },
+                        {
+                            "$ref": "#/$defs/double"
+                        },
+                        {
+                            "$ref": "#/$defs/float"
+                        },
+                        {
+                            "$ref": "#/$defs/halfConstant"
+                        },
+                        {
+                            "$ref": "#/$defs/intConstant"
+                        },
+                        {
+                            "$ref": "#/$defs/intPtr"
+                        },
+                        {
+                            "$ref": "#/$defs/long"
+                        },
+                        {
+                            "$ref": "#/$defs/short"
+                        },
+                        {
+                            "$ref": "#/$defs/signedByte"
+                        },
+                        {
+                            "$ref": "#/$defs/unsignedInt"
+                        },
+                        {
+                            "$ref": "#/$defs/unsignedIntPtr"
+                        },
+                        {
+                            "$ref": "#/$defs/unsignedLong"
+                        },
+                        {
+                            "$ref": "#/$defs/unsignedShort"
+                        },
+                        {
+                            "$ref": "#/$defs/dateTime"
+                        },
+                        {
+                            "$ref": "#/$defs/dateTimeOffset"
+                        },
+                        {
+                            "$ref": "#/$defs/decimal"
+                        },
+                        {
+                            "$ref": "#/$defs/timeSpan"
+                        },
+                        {
+                            "$ref": "#/$defs/guid"
+                        },
+                        {
+                            "$ref": "#/$defs/enumeration"
+                        },
+                        {
+                            "$comment": "Here we mean only struct object values but I don't know how to constrain that.",
+                            "$ref": "#/$defs/object"
+                        },
+                        {
+                            "$comment": "Here we mean only struct object values (e.g. Memory<>, ReadOnlyMemory<> or ArraySegment<>) I don't know how to constrain that.",
+                            "$ref": "#/$defs/sequence"
+                        },
+                        {
+                            "$comment": "Here we mean only struct object values (i.e. ValueTuple<>) I don't know how to constrain that.",
+                            "$ref": "#/$defs/tuple"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "nullable"
+            ]
+        },
+        "identifier": {
+            "type": "string",
+            "pattern": "^@?[A-Z_a-z][0-9A-Z_a-z]*$"
+        },
+        "parameterIdType": {
+            "type": "string",
+            "pattern": "^P[0-9]+$"
+        },
+        "labelTargetIdType": {
+            "type": "string",
+            "pattern": "^L[0-9]+$"
+        },
+        "parameterSpec": {
+            "title": "Represents a parameter specification as in a MethodInfo or delegate",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "$ref": "#/$defs/identifier"
+                },
+                "isByRef": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "parameterSpecList": {
+            "title": "Represents a list of parameter specifications",
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/parameterSpec"
+            }
+        },
+        "parameter": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "$ref": "#/$defs/identifier"
+                },
+                "isByRef": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "$ref": "#/$defs/parameterIdType"
+                }
+            },
+            "required": [
+                "type",
+                "name",
+                "id"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "parameterList": {
+            "title": "Represents a list of parameters",
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/parameter"
+            }
+        },
+        "labels": {
+            "target": {
+                "title": "Represents a location target in an (e.g. block) expression or a reference to a location target in a goto, break, continue, return statements.",
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "$ref": "#/$defs/identifier"
+                    },
+                    "id": {
+                        "$ref": "#/$defs/labelTargetIdType"
+                    }
+                },
+                "required": [
+                    "id"
+                ],
+                "additionalProperties": {
+                    "type": "string"
+                }
+            }
+        },
+        "visibility": {
+            "enum": [
+                "private",
+                "protected",
+                "assembly",
+                "familyAndAssembly",
+                "familyOrAssembly",
+                "public"
+            ],
+            "default": "public"
+        },
+        "constructor": {
+            "title": "Represents ConstructorInfo",
+            "type": "object",
+            "properties": {
+                "declaringType": {
+                    "type": "string"
+                },
+                "visibility": {
+                    "$ref": "#/$defs/visibility"
+                },
+                "parameterSpecs": {
+                    "$ref": "#/$defs/parameterSpecList"
+                }
+            },
+            "required": [
+                "declaringType",
+                "parameterSpecs"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "property": {
+            "title": "Represents PropertyInfo",
+            "type": "object",
+            "properties": {
+                "declaringType": {
+                    "type": "string"
+                },
+                "visibility": {
+                    "$ref": "#/$defs/visibility"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "$ref": "#/$defs/identifier"
+                },
+                "parameterSpecs": {
+                    "$ref": "#/$defs/parameterSpecList"
+                }
+            },
+            "required": [
+                "declaringType",
+                "type",
+                "name"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "method": {
+            "title": "Represents MethodInfo",
+            "type": "object",
+            "properties": {
+                "declaringType": {
+                    "type": "string"
+                },
+                "static": {
+                    "type": "boolean"
+                },
+                "visibility": {
+                    "$ref": "#/$defs/visibility"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "$ref": "#/$defs/identifier"
+                },
+                "parameterSpecs": {
+                    "$ref": "#/$defs/parameterSpecList"
+                }
+            },
+            "required": [
+                "declaringType",
+                "type",
+                "name",
+                "parameterSpecs"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "event": {
+            "title": "Represents EventInfo",
+            "type": "object",
+            "properties": {
+                "declaringType": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "$ref": "#/$defs/identifier"
+                }
+            },
+            "required": [
+                "declaringType",
+                "type",
+                "name"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "field": {
+            "title": "Represents FieldInfo",
+            "type": "object",
+            "properties": {
+                "declaringType": {
+                    "type": "string"
+                },
+                "static": {
+                    "type": "boolean"
+                },
+                "visibility": {
+                    "$ref": "#/$defs/visibility"
+                },
+                "readOnly": {
+                    "type": "boolean"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "$ref": "#/$defs/identifier"
+                }
+            },
+            "required": [
+                "declaringType",
+                "type",
+                "name"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "member": {
+            "type": "object",
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "constructor": {
+                            "$ref": "#/$defs/constructor"
+                        }
+                    },
+                    "required": [
+                        "constructor"
+                    ]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "method": {
+                            "$ref": "#/$defs/method"
+                        }
+                    },
+                    "required": [
+                        "method"
+                    ]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "property": {
+                            "$ref": "#/$defs/property"
+                        }
+                    },
+                    "required": [
+                        "property"
+                    ]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "field": {
+                            "$ref": "#/$defs/field"
+                        }
+                    },
+                    "required": [
+                        "field"
+                    ]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "event": {
+                            "$ref": "#/$defs/event"
+                        }
+                    },
+                    "required": [
+                        "event"
+                    ]
+                }
+            ]
+        },
+        "propertyOrField": {
+            "type": "object",
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "property": {
+                            "$ref": "#/$defs/property"
+                        }
+                    },
+                    "required": [
+                        "property"
+                    ]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "field": {
+                            "$ref": "#/$defs/field"
+                        }
+                    },
+                    "required": [
+                        "field"
+                    ]
+                }
+            ]
+        },
+        "propertyFieldOrMethod": {
+            "type": "object",
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "property": {
+                            "$ref": "#/$defs/property"
+                        }
+                    },
+                    "required": [
+                        "property"
+                    ]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "field": {
+                            "$ref": "#/$defs/field"
+                        }
+                    },
+                    "required": [
+                        "field"
+                    ]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "method": {
+                            "$ref": "#/$defs/method"
+                        }
+                    },
+                    "required": [
+                        "method"
+                    ]
+                }
+            ]
+        },
+        "lambda": {
+            "title": "Defines an expression that defines a lambda function (`(int a, int b) => a+b`)",
+            "type": "object",
+            "properties": {
+                "lambda": {
+                    "type": "object",
+                    "properties": {
+                        "parameters": {
+                            "$ref": "#/$defs/parameterList"
+                        },
+                        "body": {
+                            "$ref": "#/$defs/expression"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "delegateType": {
+                            "type": "string"
+                        },
+                        "type": {
+                            "type": "string"
+                        },
+                        "tailCall": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "parameters",
+                        "body"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "lambda"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "arrayExpressions": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/expression"
+            }
+        },
+        "unary": {
+            "title": "Defines an operation on single operand (expression): Negate, NegateChecked, Not, ArrayLength, Convert, ConvertChecked, Quote, TypeAs, UnaryPlus",
+            "type": "object",
+            "properties": {
+                "operand": {
+                    "$ref": "#/$defs/expression"
+                },
+                "method": {
+                    "$ref": "#/$defs/method"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "lifted": {
+                    "type": "boolean"
+                },
+                "liftedToNull": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "operand"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "binary": {
+            "title": "Defines an operation between two operands (expressions): Add, Subtract, etc.",
+            "type": "object",
+            "properties": {
+                "operands": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/expression"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                },
+                "method": {
+                    "$ref": "#/$defs/method"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "conversion": {
+                    "$ref": "#/$defs/lambda"
+                },
+                "lifted": {
+                    "type": "boolean"
+                },
+                "liftedToNull": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "operands"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "typeBinary": {
+            "title": "Defines an operation between an expression and a type.",
+            "type": "object",
+            "properties": {
+                "operands": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/expression"
+                    },
+                    "minItems": 1,
+                    "maxItems": 1
+                },
+                "typeOperand": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "operands",
+                "typeOperand"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "new": {
+            "title": "Defines constructor call with the specified arguments.",
+            "type": "object",
+            "properties": {
+                "constructor": {
+                    "$ref": "#/$defs/constructor"
+                },
+                "arguments": {
+                    "$ref": "#/$defs/arrayExpressions"
+                },
+                "members": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/member"
+                    }
+                }
+            },
+            "required": [
+                "constructor"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "elementInit": {
+            "title": "Defines the type of elements that represent a sequence initializer.",
+            "type": "object",
+            "properties": {
+                "method": {
+                    "$ref": "#/$defs/method"
+                },
+                "arguments": {
+                    "$ref": "#/$defs/arrayExpressions"
+                }
+            },
+            "required": [
+                "method",
+                "arguments"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "switchCase": {
+            "title": "Defines the type of elements that represent a switch statement's case'.",
+            "type": "object",
+            "properties": {
+                "caseValues": {
+                    "$ref": "#/$defs/arrayExpressions"
+                },
+                "body": {
+                    "$ref": "#/$defs/expression"
+                }
+            },
+            "required": [
+                "caseValues",
+                "body"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "catch": {
+            "title": "Defines the type of elements that represent a try statement's catch clause'.",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "exception": {
+                    "$ref": "#/$defs/parameter"
+                },
+                "filter": {
+                    "$ref": "#/$defs/expression"
+                },
+                "body": {
+                    "$ref": "#/$defs/expression"
+                }
+            },
+            "required": [
+                "type",
+                "body"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "assignmentBinding": {
+            "title": "Defines the initializing a member with the value of an expression.",
+            "type": "object",
+            "properties": {
+                "member": {
+                    "$ref": "#/$defs/propertyFieldOrMethod"
+                },
+                "value": {
+                    "$ref": "#/$defs/expression"
+                }
+            },
+            "required": [
+                "member",
+                "value"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "memberMemberBinding": {
+            "title": "Defines the recursively initializing members of a member (the member is a class or struct).",
+            "type": "object",
+            "properties": {
+                "member": {
+                    "$ref": "#/$defs/propertyFieldOrMethod"
+                },
+                "bindings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/memberBinding"
+                    }
+                }
+            },
+            "required": [
+                "member",
+                "bindings"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "memberListBinding": {
+            "title": "Defines the initializing a member of type `IList` or `ICollection<T>` from a list of elements.",
+            "type": "object",
+            "properties": {
+                "member": {
+                    "$ref": "#/$defs/propertyFieldOrMethod"
+                },
+                "initializers": {
+                    "$ref": "#/$defs/elementInit"
+                }
+            },
+            "required": [
+                "member",
+                "initializers"
+            ],
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "memberBinding": {
+            "title": "Used by 'memberMemberBinding' to recursively initialize the struct or class member's members",
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "assignmentBinding": {
+                            "$ref": "#/$defs/assignmentBinding"
+                        }
+                    },
+                    "required": [
+                        "assignmentBinding"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "memberMemberBinding": {
+                            "$ref": "#/$defs/memberMemberBinding"
+                        }
+                    },
+                    "required": [
+                        "memberMemberBinding"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "memberListBinding": {
+                            "$ref": "#/$defs/memberListBinding"
+                        }
+                    },
+                    "required": [
+                        "memberListBinding"
+                    ],
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            ]
+        }
+    }
+}

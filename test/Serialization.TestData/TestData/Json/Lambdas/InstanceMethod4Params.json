@@ -1,0 +1,55 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " a =\u003E a.Method4(42, 3.14) ",
+  "expression": {
+    "lambda": {
+      "type": "void",
+      "parameters": [
+        {
+          "type": "vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "name": "a",
+          "id": "P1"
+        }
+      ],
+      "body": {
+        "call": {
+          "type": "void",
+          "object": {
+            "parameter": {
+              "type": "vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "name": "a",
+              "id": "P1"
+            }
+          },
+          "method": {
+            "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "type": "void",
+            "name": "Method4",
+            "parameterSpecs": [
+              {
+                "type": "int",
+                "name": "i"
+              },
+              {
+                "type": "double",
+                "name": "d"
+              }
+            ]
+          },
+          "arguments": [
+            {
+              "constant": {
+                "int": 42
+              }
+            },
+            {
+              "constant": {
+                "double": 3.14
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

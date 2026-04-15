@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <RootNamespace>vm2.Linq.Expressions.Serialization.Json</RootNamespace>
+        <!-- Expression tree serialization inherently uses reflection (Type.GetType, MakeGenericType, etc.).
+             Suppress trim analysis warnings at the project level. -->
+        <EnableTrimAnalyzer>false</EnableTrimAnalyzer>
+        <IsTrimmable>false</IsTrimmable>
+    </PropertyGroup>
+
+    <!--
+    Defining JSON_SCHEMA switches JSON validation to be done with Json.Schema from https://docs.json-everything.net/.
+    It has some problems with floating point numbers and with the huge recursive schema in some more complex cases.
+    It uses System.Text.Json like this project.
+
+    Otherwise JSON validation is done with Newtonsoft but it is
+    1. paid if you want more than 1000 validations per hour and
+    2. yet another JSON parser.
+
+    ATTENTION: The definition of JSON_SCHEMA switch must be equivalent in all the projects that use
+               schema validation, e.g. Serialization.Json.csproj and Serialization.Json.Tests.csproj.
+    -->
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DefineConstants>$(DefineConstants);JSON_SCHEMA</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <DefineConstants>$(DefineConstants);JSON_SCHEMA</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Label="NuGet">
+        <PackageId>vm2.Linq.Expressions.Serialization.Json</PackageId>
+        <Title>vm2 Linq Expressions Serialization JSON</Title>
+        <Description>Serialization and deserialization of LINQ expression trees to and from documents in JSON format.</Description>
+        <PackageTags>C# LINQ expression serialize deserialize JSON vm vm2</PackageTags>
+        <PackageProjectUrl>https://github.com/vmelamed/vm2.Linq.Expressions</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/vmelamed/vm2.Linq.Expressions</RepositoryUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="JsonSchema.Net" Condition="$([System.Text.RegularExpressions.Regex]::IsMatch($(DefineConstants), '^(.*;)*JSON_SCHEMA(;.*)*$'))" />
+        <PackageReference Include="Newtonsoft.Json.Schema" Condition="!$([System.Text.RegularExpressions.Regex]::IsMatch($(DefineConstants), '^(.*;)*JSON_SCHEMA(;.*)*$'))" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../Serialization.Abstractions/Serialization.Abstractions.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="../../README.md" Pack="true" PackagePath="\">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="../../LICENSE" Pack="true" PackagePath="\">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="../../CHANGELOG.md" Pack="true" PackagePath="\">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Schema/Linq.Expressions.Serialization.json" LogicalName="Linq.Expressions.Serialization.json" />
+    </ItemGroup>
+
+</Project>

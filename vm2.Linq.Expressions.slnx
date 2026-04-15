@@ -31,11 +31,13 @@
     <Folder Name="/src/">
         <Project Path="src/DeepEquals/DeepEquals.csproj" />
         <Project Path="src/Serialization.Abstractions/Serialization.Abstractions.csproj" />
+        <Project Path="src/Serialization.Json/Serialization.Json.csproj" />
         <Project Path="src/Serialization.Xml/Serialization.Xml.csproj" />
     </Folder>
     <Folder Name="/test/">
         <Project Path="test/DeepEquals.Tests/DeepEquals.Tests.csproj" />
         <Project Path="test/Serialization.Abstractions.Tests/Serialization.Abstractions.Tests.csproj" />
+        <Project Path="test/Serialization.Json.Tests/Serialization.Json.Tests.csproj" />
         <Project Path="test/Serialization.TestData/Serialization.TestData.csproj" />
         <Project Path="test/Serialization.Xml.Tests/Serialization.Xml.Tests.csproj" />
     </Folder>

@@ -1,0 +1,28 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " a =\u003E (a As ClassDataContract1) ",
+  "expression": {
+    "lambda": {
+      "type": "vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "parameters": [
+        {
+          "type": "vm2.Linq.Expressions.Serialization.TestData.ClassDataContract2, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "name": "a",
+          "id": "P1"
+        }
+      ],
+      "body": {
+        "typeAs": {
+          "type": "vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "operand": {
+            "parameter": {
+              "type": "vm2.Linq.Expressions.Serialization.TestData.ClassDataContract2, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "name": "a",
+              "id": "P1"
+            }
+          }
+        }
+      }
+    }
+  }
+}

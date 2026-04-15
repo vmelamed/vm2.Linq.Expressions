@@ -1,0 +1,108 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " (i, j) =\u003E {var a;var b; ... } ",
+  "expression": {
+    "lambda": {
+      "type": "double",
+      "parameters": [
+        {
+          "type": "int",
+          "name": "i",
+          "id": "P2"
+        },
+        {
+          "type": "double",
+          "name": "j",
+          "id": "P4"
+        }
+      ],
+      "body": {
+        "block": {
+          "type": "double",
+          "variables": [
+            {
+              "type": "int",
+              "name": "a",
+              "id": "P1"
+            },
+            {
+              "type": "double",
+              "name": "b",
+              "id": "P3"
+            }
+          ],
+          "expressions": [
+            {
+              "assign": {
+                "type": "int",
+                "operands": [
+                  {
+                    "parameter": {
+                      "type": "int",
+                      "name": "a",
+                      "id": "P1"
+                    }
+                  },
+                  {
+                    "parameter": {
+                      "type": "int",
+                      "name": "i",
+                      "id": "P2"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "assign": {
+                "type": "double",
+                "operands": [
+                  {
+                    "parameter": {
+                      "type": "double",
+                      "name": "b",
+                      "id": "P3"
+                    }
+                  },
+                  {
+                    "parameter": {
+                      "type": "double",
+                      "name": "j",
+                      "id": "P4"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "add": {
+                "type": "double",
+                "operands": [
+                  {
+                    "convert": {
+                      "type": "double",
+                      "operand": {
+                        "parameter": {
+                          "type": "int",
+                          "name": "a",
+                          "id": "P1"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "parameter": {
+                      "type": "double",
+                      "name": "b",
+                      "id": "P3"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

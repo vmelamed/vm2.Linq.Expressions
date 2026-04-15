@@ -1,0 +1,150 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " {var _result; ... } ",
+  "expression": {
+    "block": {
+      "variables": [
+        {
+          "type": "int",
+          "name": "_result",
+          "id": "P2"
+        }
+      ],
+      "expressions": [
+        {
+          "assign": {
+            "type": "int",
+            "operands": [
+              {
+                "parameter": {
+                  "type": "int",
+                  "name": "_value",
+                  "id": "P1"
+                }
+              },
+              {
+                "constant": {
+                  "int": 5
+                }
+              }
+            ]
+          }
+        },
+        {
+          "assign": {
+            "type": "int",
+            "operands": [
+              {
+                "parameter": {
+                  "type": "int",
+                  "name": "_result",
+                  "id": "P2"
+                }
+              },
+              {
+                "constant": {
+                  "int": 1
+                }
+              }
+            ]
+          }
+        },
+        {
+          "loop": {
+            "body": {
+              "block": {
+                "expressions": [
+                  {
+                    "conditional": {
+                      "if": {
+                        "greaterThan": {
+                          "type": "boolean",
+                          "operands": [
+                            {
+                              "parameter": {
+                                "type": "int",
+                                "name": "_value",
+                                "id": "P1"
+                              }
+                            },
+                            {
+                              "constant": {
+                                "int": 1
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "then": {
+                        "block": {
+                          "expressions": [
+                            {
+                              "multiplyAssign": {
+                                "type": "int",
+                                "operands": [
+                                  {
+                                    "parameter": {
+                                      "type": "int",
+                                      "name": "_result",
+                                      "id": "P2"
+                                    }
+                                  },
+                                  {
+                                    "postDecrementAssign": {
+                                      "type": "int",
+                                      "operand": {
+                                        "parameter": {
+                                          "type": "int",
+                                          "name": "_value",
+                                          "id": "P1"
+                                        }
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "goto": {
+                                "target": {
+                                  "name": "continue",
+                                  "id": "L2"
+                                },
+                                "kind": "continue"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "else": {
+                        "goto": {
+                          "target": {
+                            "name": "break",
+                            "id": "L1"
+                          },
+                          "kind": "break"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "continueLabel": {
+              "target": {
+                "name": "continue",
+                "id": "L2"
+              }
+            },
+            "breakLabel": {
+              "target": {
+                "name": "break",
+                "id": "L1"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

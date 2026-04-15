@@ -1,0 +1,121 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " {var m; ... } ",
+  "expression": {
+    "block": {
+      "type": "int",
+      "variables": [
+        {
+          "type": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "name": "m",
+          "id": "P1"
+        }
+      ],
+      "expressions": [
+        {
+          "assign": {
+            "type": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "operands": [
+              {
+                "parameter": {
+                  "type": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                  "name": "m",
+                  "id": "P1"
+                }
+              },
+              {
+                "new": {
+                  "constructor": {
+                    "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "parameterSpecs": []
+                  },
+                  "arguments": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "goto": {
+            "type": "int",
+            "target": {
+              "type": "int",
+              "id": "L1"
+            },
+            "value": {
+              "add": {
+                "type": "int",
+                "operands": [
+                  {
+                    "memberAccess": {
+                      "type": "int",
+                      "object": {
+                        "parameter": {
+                          "type": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                          "name": "m",
+                          "id": "P1"
+                        }
+                      },
+                      "member": {
+                        "property": {
+                          "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                          "type": "int",
+                          "name": "TheOuterIntProperty"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "memberAccess": {
+                      "type": "int",
+                      "object": {
+                        "memberAccess": {
+                          "type": "vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                          "object": {
+                            "parameter": {
+                              "type": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                              "name": "m",
+                              "id": "P1"
+                            }
+                          },
+                          "member": {
+                            "property": {
+                              "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                              "type": "vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                              "name": "InnerProperty"
+                            }
+                          }
+                        }
+                      },
+                      "member": {
+                        "property": {
+                          "declaringType": "vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                          "type": "int",
+                          "name": "IntProperty"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "kind": "return"
+          }
+        },
+        {
+          "label": {
+            "target": {
+              "type": "int",
+              "id": "L1"
+            },
+            "default": {
+              "constant": {
+                "int": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " { ObjectProperty = , NullIntProperty = , NullLongProperty = 1, BoolProperty = True, CharProperty = A, ByteProperty = 1, SByteProperty = 1, ShortProperty = 1, IntProperty = 1, LongProperty = 1, UShortProperty = 1, UIntProperty = 1, ULongProperty = 1, DoubleProperty = 1, FloatProperty = 1, DecimalProperty = 1, GuidProperty = 00000000-0000-0000-0000-000000000000, UriProperty = http://localhost/, DateTimeProperty = 1/13/2013 12:00:00\u202FAM, DateTimeOffsetProperty = 1/13/2013 12:00:00\u202FAM -05:00, TimeSpanProperty = 1.02:03:04 } ",
+  "expression": {
+    "constant": {
+      "$comment": " \u003C\u003Ef__AnonymousType0\u003Cobject, nullable\u003Cint\u003E, nullable\u003Clong\u003E, boolean, char, byte, signedByte, short, int, long, unsignedShort, unsignedInt, unsignedLong, double, float, decimal, guid, uri, dateTime, dateTimeOffset, duration\u003E ",
+      "anonymous": {
+        "type": "\u003C\u003Ef__AnonymousType0\u006021[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable\u00601[[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Char, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.SByte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt16, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.UInt64, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Guid, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Uri, System.Private.Uri, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a],[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTimeOffset, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.TimeSpan, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "value": {
+          "ObjectProperty": {
+            "object": {
+              "type": "object",
+              "value": null
+            }
+          },
+          "NullIntProperty": {
+            "nullable": {
+              "type": "int",
+              "value": null
+            }
+          },
+          "NullLongProperty": {
+            "nullable": {
+              "long": 1
+            }
+          },
+          "BoolProperty": {
+            "boolean": true
+          },
+          "CharProperty": {
+            "char": "A"
+          },
+          "ByteProperty": {
+            "byte": 1
+          },
+          "SByteProperty": {
+            "signedByte": 1
+          },
+          "ShortProperty": {
+            "short": 1
+          },
+          "IntProperty": {
+            "int": 1
+          },
+          "LongProperty": {
+            "long": 1
+          },
+          "UShortProperty": {
+            "unsignedShort": 1
+          },
+          "UIntProperty": {
+            "unsignedInt": 1
+          },
+          "ULongProperty": {
+            "unsignedLong": 1
+          },
+          "DoubleProperty": {
+            "double": 1
+          },
+          "FloatProperty": {
+            "float": 1
+          },
+          "DecimalProperty": {
+            "decimal": "1"
+          },
+          "GuidProperty": {
+            "guid": "00000000-0000-0000-0000-000000000000"
+          },
+          "UriProperty": {
+            "uri": "http://localhost/"
+          },
+          "DateTimeProperty": {
+            "dateTime": "2013-01-13T00:00:00.0000000"
+          },
+          "DateTimeOffsetProperty": {
+            "dateTimeOffset": "2013-01-13T00:00:00.0000000-05:00"
+          },
+          "TimeSpanProperty": {
+            "duration": "P1DT2H3M4S"
+          }
+        }
+      }
+    }
+  }
+}
