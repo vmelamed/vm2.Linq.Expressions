@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <RootNamespace>vm2.Linq.Expressions.Serialization.Tests</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\Serialization.Abstractions\Serialization.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>

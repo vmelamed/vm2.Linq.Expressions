@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <RootNamespace>vm2.Linq.Expressions.Serialization</RootNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup Label="NuGet">
+        <PackageId>vm2.Linq.Expressions.Serialization.Abstractions</PackageId>
+        <Title>vm2 Linq Expressions Serialization Abstractions</Title>
+        <Description>Shared abstractions, conventions, vocabulary, and extension methods for serializing and deserializing LINQ expression trees to and from document formats (XML, JSON).</Description>
+        <PackageTags>C# LINQ expression serialization abstractions transform AST vm vm2</PackageTags>
+        <PackageProjectUrl>https://github.com/vmelamed/vm2.Linq.Expressions</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/vmelamed/vm2.Linq.Expressions</RepositoryUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="../../README.md" Pack="true" PackagePath="\">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="../../LICENSE" Pack="true" PackagePath="\">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="../../CHANGELOG.md" Pack="true" PackagePath="\">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+</Project>
