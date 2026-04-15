@@ -1,0 +1,1756 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    targetNamespace="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    elementFormDefault="qualified"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:es="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml">
+    <xs:annotation>
+        <xs:documentation xml:lang="en-us"> Schema of the XML documents representing serialized Microsoft .NET LINQ expression trees. In the annotations in this schema they are referred to as just "expressions". </xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="expression"
+        type="expressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Specifies a single expression element. </xs:documentation>
+        </xs:annotation>
+
+    </xs:element>
+
+    <xs:complexType name="expressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines the single expression base type (C# Expression&lt;BaseType&gt;). </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="expressionBaseGroup" />
+    </xs:complexType>
+
+    <xs:group name="expressionBaseGroup">
+        <xs:choice>
+            <xs:element name="parameter"
+                type="parameterType" />
+
+            <xs:element name="constant"
+                type="constantExpressionType" />
+
+            <xs:element name="lambda"
+                type="lambdaExpressionType" />
+
+            <!-- unary expressions -->
+            <xs:element name="arrayLength"
+                type="unaryExpressionType" />
+            <xs:element name="convert"
+                type="unaryExpressionType" />
+            <xs:element name="convertChecked"
+                type="unaryExpressionType" />
+            <xs:element name="negate"
+                type="unaryExpressionType" />
+            <xs:element name="negateChecked"
+                type="unaryExpressionType" />
+            <xs:element name="not"
+                type="unaryExpressionType" />
+            <xs:element name="quote"
+                type="unaryExpressionType" />
+            <xs:element name="typeAs"
+                type="unaryExpressionType" />
+            <xs:element name="unaryPlus"
+                type="unaryExpressionType" />
+            <xs:element name="onesComplement"
+                type="unaryExpressionType" />
+            <xs:element name="throw"
+                type="unaryExpressionType" />
+            <xs:element name="unbox"
+                type="unaryExpressionType" />
+
+            <!-- binary expressions -->
+            <xs:element name="add"
+                type="binaryExpressionType" />
+            <xs:element name="addChecked"
+                type="binaryExpressionType" />
+            <xs:element name="and"
+                type="binaryExpressionType" />
+            <xs:element name="andAlso"
+                type="binaryExpressionType" />
+            <xs:element name="arrayIndex"
+                type="binaryExpressionType" />
+            <xs:element name="divide"
+                type="binaryExpressionType" />
+            <xs:element name="equal"
+                type="binaryExpressionType" />
+            <xs:element name="exclusiveOr"
+                type="binaryExpressionType" />
+            <xs:element name="greaterThan"
+                type="binaryExpressionType" />
+            <xs:element name="greaterThanOrEqual"
+                type="binaryExpressionType" />
+            <xs:element name="leftShift"
+                type="binaryExpressionType" />
+            <xs:element name="lessThan"
+                type="binaryExpressionType" />
+            <xs:element name="lessThanOrEqual"
+                type="binaryExpressionType" />
+            <xs:element name="modulo"
+                type="binaryExpressionType" />
+            <xs:element name="multiply"
+                type="binaryExpressionType" />
+            <xs:element name="multiplyChecked"
+                type="binaryExpressionType" />
+            <xs:element name="notEqual"
+                type="binaryExpressionType" />
+            <xs:element name="or"
+                type="binaryExpressionType" />
+            <xs:element name="orElse"
+                type="binaryExpressionType" />
+            <xs:element name="power"
+                type="binaryExpressionType" />
+            <xs:element name="rightShift"
+                type="binaryExpressionType" />
+            <xs:element name="subtractChecked"
+                type="binaryExpressionType" />
+            <xs:element name="subtract"
+                type="binaryExpressionType" />
+            <xs:element name="coalesce"
+                type="coalesceExpressionType" />
+
+            <xs:element name="typeIs"
+                type="typeBinaryType" />
+            <xs:element name="typeEqual"
+                type="typeBinaryType" />
+
+            <!-- assignment expressions -->
+            <xs:element name="assign"
+                type="compoundAssignmentExpressionType" />
+            <xs:element name="addAssign"
+                type="compoundAssignmentExpressionType" />
+            <xs:element name="addAssignChecked"
+                type="compoundAssignmentExpressionType" />
+            <xs:element name="andAssign"
+                type="compoundAssignmentExpressionType" />
+            <xs:element name="divideAssign"
+                type="compoundAssignmentExpressionType" />
+            <xs:element name="exclusiveOrAssign"
+                type="compoundAssignmentExpressionType" />
+            <xs:element name="leftShiftAssign"
+                type="compoundAssignmentExpressionType" />
+            <xs:element name="moduloAssign"
+                type="compoundAssignmentExpressionType" />
+            <xs:element name="multiplyAssign"
+                type="compoundAssignmentExpressionType" />
+            <xs:element name="multiplyAssignChecked"
+                type="compoundAssignmentExpressionType" />
+            <xs:element name="powerAssign"
+                type="compoundAssignmentExpressionType" />
+            <xs:element name="orAssign"
+                type="compoundAssignmentExpressionType" />
+            <xs:element name="rightShiftAssign"
+                type="compoundAssignmentExpressionType" />
+            <xs:element name="subtractAssign"
+                type="compoundAssignmentExpressionType" />
+            <xs:element name="subtractAssignChecked"
+                type="compoundAssignmentExpressionType" />
+
+            <!-- change by one expressions -->
+            <xs:element name="decrement"
+                type="changeByOneExpressionType" />
+            <xs:element name="increment"
+                type="changeByOneExpressionType" />
+            <xs:element name="postDecrementAssign"
+                type="changeByOneExpressionType" />
+            <xs:element name="postIncrementAssign"
+                type="changeByOneExpressionType" />
+            <xs:element name="preDecrementAssign"
+                type="changeByOneExpressionType" />
+            <xs:element name="preIncrementAssign"
+                type="changeByOneExpressionType" />
+
+            <!-- statements -->
+            <xs:element name="block"
+                type="blockExpressionType" />
+
+            <xs:element name="call"
+                type="callExpressionType" />
+            <xs:element name="invoke"
+                type="invokeType" />
+            <xs:element name="memberAccess"
+                type="memberAccessExpressionType" />
+
+            <xs:element name="conditional"
+                type="conditionalExpressionType" />
+
+            <xs:element name="default"
+                type="defaultExpressionType" />
+
+            <xs:element name="new"
+                type="newExpressionType" />
+            <xs:element name="memberInit"
+                type="memberInitExpressionType" />
+            <xs:element name="listInit"
+                type="listInitType" />
+
+            <xs:element name="newArrayBounds"
+                type="newArrayBoundsType" />
+            <xs:element name="newArrayInit"
+                type="newArrayInitType" />
+
+            <xs:element name="index"
+                type="indexType" />
+
+            <xs:element name="isFalse"
+                type="unaryExpressionType" />
+            <xs:element name="isTrue"
+                type="unaryExpressionType" />
+
+            <xs:element name="goto"
+                type="gotoExpressionType" />
+            <xs:element name="label"
+                type="labelExpressionType" />
+
+            <xs:element name="loop"
+                type="loopType" />
+
+            <xs:element name="switch"
+                type="switchType" />
+
+            <xs:element name="try"
+                type="tryType" />
+
+            <!--
+            Not implemented:
+                <xs:element name="extension" type="extensionType"/>
+                <xs:element name="dynamic" type="dynamicType"/>
+                <xs:element name="debugInfo" type="debugInfoType"/>
+                <xs:element name="runtimeVariables" type="runtimeVariablesType"/>
+            -->
+        </xs:choice>
+    </xs:group>
+
+    <xs:group name="constantBaseGroup">
+        <xs:choice>
+            <xs:element name="boolean"
+                type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a boolean value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="byte"
+                type="xs:unsignedByte">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies an unsigned byte value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="char"
+                type="xs:string"
+                minOccurs="1"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a char value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="double"
+                type="xs:double">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a double precision floating point value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="float"
+                type="xs:float">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a single precision floating point value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="int"
+                type="xs:int">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies an integer (32bit) value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="intPtr"
+                type="xs:long">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a .NET IntPtr (32bit) value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="long"
+                type="xs:long">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a long integer (64bit) value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="short"
+                type="xs:short">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a short integer (16bit) value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="signedByte"
+                type="xs:byte">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a signed byte value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="unsignedInt"
+                type="xs:unsignedInt">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a unsigned integer (32bit) value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="unsignedIntPtr"
+                type="xs:unsignedLong">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a .NET UIntPtr (32bit) value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="unsignedLong"
+                type="xs:unsignedLong">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a unsigned long integer (64bit) value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="unsignedShort"
+                type="xs:unsignedShort">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a unsigned short integer (16bit) value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="dateTime"
+                type="xs:dateTime">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a date and time value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="dateTimeOffset"
+                type="xs:dateTime">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a date, time, and UTC offset in minutes in a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="dbNull">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a data base NULL (C# DBNull) value of a constant expression. </xs:documentation>
+                </xs:annotation>
+                <xs:complexType />
+            </xs:element>
+
+            <xs:element name="decimal"
+                type="xs:decimal">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a decimal value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="duration"
+                type="xs:duration">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a time duration (C# TimeSpan) value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="guid">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a GUID value of a constant expression. </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="([\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12})|([\da-fA-F]){32}" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="half"
+                type="xs:float">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a half precision floating point value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="string"
+                type="xs:string"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a string value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="uri"
+                type="xs:anyURI"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a URI value of a constant expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="object"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies an object of custom type of value (C# user defined class or struct) in a constant expression. </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation> The content, if present (i:nil=true), can be pretty much any well-formed XML but this implementation uses data contract serialization or XML serialization. so the contents is valid accordsing to the schemas http://schemas.microsoft.com/2003/10/Serialization/, http://schemas.datacontract.org/2004/07/System. </xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:any processContents="lax"
+                            minOccurs="0" />
+                    </xs:sequence>
+                    <xs:attribute name="type"
+                        type="xs:token"
+                        use="optional">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en-us"> Specifies the type of the object type as a .NET fully qualified name. If omitted it is System.Object. </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="concreteType"
+                        type="xs:token"
+                        use="optional">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en-us"> Specifies the concrete type of the object type as a .NET fully qualified name. Required if different (e.g. derived) from @type. </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="nullable"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a nullable value (C# Nullable&lt;&gt;) in a constant expression. </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:group ref="constantBaseGroup"
+                        minOccurs="0"
+                        maxOccurs="1">
+                        <xs:annotation>
+                            <xs:documentation> Specifies the underlying value of the constant. The element is optional if i:nil=$quot;true$quot; </xs:documentation>
+                        </xs:annotation>
+                    </xs:group>
+                    <xs:attribute name="type"
+                        type="xs:token"
+                        use="optional">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en-us"> Specifies the type of the underlying value of the constant. The attribute is mandatory if i:nil=$quot;true$quot; </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="enum">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies an enumeration value (C# enum) in a constant expression. </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:token">
+                            <xs:attribute name="type"
+                                type="xs:token"
+                                use="required">
+                                <xs:annotation>
+                                    <xs:documentation> Specifies the name of the enum type of the constant. </xs:documentation>
+                                </xs:annotation>
+                            </xs:attribute>
+                            <xs:attribute name="baseType"
+                                type="xs:token"
+                                default="int">
+                                <xs:annotation>
+                                    <xs:documentation> Specifies the base type of the enum type of the constant. </xs:documentation>
+                                </xs:annotation>
+                            </xs:attribute>
+                            <xs:attribute name="baseValue"
+                                type="xs:token"
+                                use="optional">
+                                <xs:annotation>
+                                    <xs:documentation> Specifies the base type value of the enum value. </xs:documentation>
+                                </xs:annotation>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="anonymous">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies an anonymous type (C#) of a constant expression. </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en-us"> Specifies a property of an anonymous type in a constant expression. </xs:documentation>
+                        </xs:annotation>
+                        <xs:element name="property"
+                            minOccurs="0"
+                            maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:group ref="constantBaseGroup" />
+                                </xs:sequence>
+                                <xs:attribute name="name"
+                                    type="xs:token"
+                                    use="required">
+                                    <xs:annotation>
+                                        <xs:documentation xml:lang="en-us"> Specifies the name of the property of the an anonymous type in a constant expression. </xs:documentation>
+                                    </xs:annotation>
+                                </xs:attribute>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="type"
+                        type="xs:token"
+                        use="required">
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="byteSequence"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies an array of bytes (C# byte[]) in a constant expression. The bytes are Base64 encoded in the element's contents. </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:base64Binary">
+                            <xs:attribute name="type"
+                                type="xs:token"
+                                use="required">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="en-us"> Specifies the type of the list. </xs:documentation>
+                                </xs:annotation>
+                            </xs:attribute>
+                            <xs:attribute name="length"
+                                type="xs:int"
+                                use="optional">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="en-us"> Specifies the length of the sequence of bytes. </xs:documentation>
+                                </xs:annotation>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="sequence"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a sequence of items (array, list, etc.) in a constant expression. </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence minOccurs="0"
+                        maxOccurs="unbounded">
+                        <xs:group ref="constantBaseGroup" />
+                    </xs:sequence>
+                    <xs:attribute name="type"
+                        type="xs:token"
+                        use="required">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en-us"> Specifies the type of the list. </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="elementType"
+                        type="xs:token"
+                        use="required">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en-us"> Specifies the type of the elements in the list. </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="length"
+                        type="xs:int"
+                        use="optional">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en-us"> Specifies the length of the array. </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="dictionary"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a dictionary value (sequence of key-value pairs) in a constant expression. </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="key-value"
+                            minOccurs="0"
+                            maxOccurs="unbounded"
+                            nillable="true">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en-us"> Specifies an item from a tuple in a constant expression. </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:group ref="constantBaseGroup">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="en-us"> Specifies the current pair's key. </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:group>
+                                    <xs:group ref="constantBaseGroup">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="en-us"> Specifies the current pair's value. </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:group>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="type"
+                        type="xs:token"
+                        use="required">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en-us"> Specifies an type of the dictionary in a constant expression. </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="length"
+                        type="xs:int"
+                        use="optional">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en-us"> Specifies the length of the dictionary in a constant expression. </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="tuple"
+                nillable="true">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies a tuple value (C# ValueNullable&lt;&gt; or Nullable&lt;&gt;) in a constant expression. </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="item"
+                            minOccurs="0"
+                            maxOccurs="unbounded"
+                            nillable="true">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en-us"> Specifies an item from a tuple in a constant expression. </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:group ref="constantBaseGroup" />
+                                </xs:sequence>
+                                <xs:attribute name="name"
+                                    type="xs:token"
+                                    use="required">
+                                    <xs:annotation>
+                                        <xs:documentation xml:lang="en-us"> Specifies the name of an item from a tuple in a constant expression. </xs:documentation>
+                                    </xs:annotation>
+                                </xs:attribute>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="type"
+                        type="xs:token"
+                        use="required">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en-us"> Specifies an type of the tuple in a constant expression. </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+        </xs:choice>
+    </xs:group>
+
+    <xs:complexType name="constantExpressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Specifies a constant value in an expression. </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="constantBaseGroup" />
+    </xs:complexType>
+
+    <xs:complexType name="parameterSpecType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines an element type that represents a parameter specification: name, type, by reference. Used in methodInfo. </xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="required" />
+        <xs:attribute name="name"
+            type="xs:token"
+            use="optional" />
+        <xs:attribute name="isByRef"
+            use="optional"
+            default="false"
+            type="xs:boolean" />
+    </xs:complexType>
+
+    <xs:complexType name="parameterSpecListType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines a type of element that lists method parameter specifications. Used in methodInfo. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="parameterSpec"
+                type="parameterSpecType"
+                minOccurs="0"
+                maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="parameterType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines an element type that represents a parameter definition: name, type and internal Id. </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="parameterSpecType">
+                <xs:attribute name="id"
+                    type="xs:token"
+                    use="required" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="parameterListType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines a type of element that lists method parameters. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="parameter"
+                type="parameterType"
+                minOccurs="0"
+                maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="argumentListType">
+        <xs:annotation>
+            <xs:documentation> Specifies a list of arguments passed to a method. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:group ref="expressionBaseGroup"
+                minOccurs="0"
+                maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="lambdaExpressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Specifies a lambda expression. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="parameters"
+                type="parameterListType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents the list of parameters of a lambda expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="body"
+                type="expressionType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents the body of a lambda expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="tailCall"
+            type="xs:boolean"
+            use="optional"
+            default="false">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Indicates if tail call optimization will be applied when compiling the deserialized expression. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="name"
+            type="xs:token"
+            use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> The name of the lambda. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="delegateType"
+            type="xs:token"
+            use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Gets the delegate type of the lambda. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> The return type of the lambda. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="blockExpressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines a type of element that represents a block as: { int a; a = 1; a++; a*5; } </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="variables"
+                type="parameterListType"
+                minOccurs="0" />
+            <xs:sequence>
+                <xs:group ref="expressionBaseGroup"
+                    minOccurs="0"
+                    maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:sequence>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="optional" />
+    </xs:complexType>
+
+    <xs:complexType name="unaryExpressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Specifies a unary expression: Negate, NegateChecked, Not, ArrayLength, Convert, ConvertChecked, Quote, TypeAs, UnaryPlus </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:group ref="expressionBaseGroup">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents the expression (operand) to that the unary expression should be applied. </xs:documentation>
+                </xs:annotation>
+            </xs:group>
+            <xs:element name="method"
+                type="methodInfoType"
+                minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents the optional method that overloads the unary expression. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Required if a type conversion of the result to the specified type needs to take place. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="isLifted"
+            type="xs:boolean"
+            use="optional"
+            default="false">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Used if a type conversion of the result to the specified type needs to take place. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="isLiftedToNull"
+            type="xs:boolean"
+            use="optional"
+            default="false">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Used if a type conversion of null to the specified type needs to take place. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="binaryExpressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Specifies a binary expression: Arithmetic: Add (+), AddChecked (+), Divide (/), Modulo (%), Multiply (*), MultiplyChecked (*), Power (VB ^), Subtract (-), SubtractChecked (-) Bitwise: And (&amp;), Or (|), ExclusiveOr (^) Shift: LeftShift (&lt;&lt;), RightShift (&gt;&gt;) Boolean: AndAlso (&amp;&amp;), OrElse (||) Comparison: Equal (==), NotEqual (!=), GreaterThanOrEqual (&gt;=), GreaterThan (&gt;), LessThan (&lt;), LessThanOrEqual (&lt;=), Coalesce: Coalesce (??) Array indexing: ArrayIndex (a[i]) Assignments: Assign (=), AddAssign (+=), AddCheckedAssign (+=), AndAssign (&amp;=), etc. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:group ref="expressionBaseGroup">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents the left expression (operand) to that the unary expression should be applied. </xs:documentation>
+                </xs:annotation>
+            </xs:group>
+            <xs:group ref="expressionBaseGroup">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents the right expression (operand) to that the unary expression should be applied. </xs:documentation>
+                </xs:annotation>
+            </xs:group>
+            <xs:element name="method"
+                type="methodInfoType"
+                minOccurs="0" />
+        </xs:sequence>
+        <xs:attribute name="lifted"
+            type="xs:boolean"
+            use="optional"
+            default="false">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Used if a type conversion of the result to the specified type needs to take place. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="liftedToNull"
+            type="xs:boolean"
+            use="optional"
+            default="false">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Used if a type conversion of null to the specified type needs to take place. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="optional">
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="coalesceExpressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines a type of element that represents a coalesce operator as: a ?? b. </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="binaryExpressionType">
+                <xs:choice>
+                    <xs:element name="convertLambda"
+                        type="lambdaExpressionType"
+                        minOccurs="0" />
+                </xs:choice>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="compoundAssignmentExpressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines a type of element that represents a compound assignment expression as: a += 42. </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="binaryExpressionType">
+                <xs:choice>
+                    <xs:element name="convertLambda"
+                        type="lambdaExpressionType"
+                        minOccurs="0" />
+                </xs:choice>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="memberAccessExpressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Specifies accessing either a field or a property. E.g. obj.Name </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element
+                name="object"
+                minOccurs="0"
+                maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:group ref="expressionBaseGroup">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en-us"> Represents the expression which evaluates to the instance whose member is being accessed. </xs:documentation>
+                            </xs:annotation>
+                        </xs:group>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:choice>
+                <xs:element name="property"
+                    type="propertyInfoType" />
+                <xs:element name="field"
+                    type="fieldInfoType" />
+            </xs:choice>
+        </xs:sequence>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="optional" />
+    </xs:complexType>
+
+    <xs:complexType name="indexType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines the type of elements that represent applying an array index operator. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:group ref="expressionBaseGroup">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents the expression which evaluates to the object being indexed. </xs:documentation>
+                </xs:annotation>
+            </xs:group>
+            <xs:element name="indexes">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:group ref="expressionBaseGroup"
+                            minOccurs="1"
+                            maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en-us"> Represent the expressions which evaluate to the array indexe(s). The count of the expressions in this sequence should be equal to the array's rank. </xs:documentation>
+                            </xs:annotation>
+                        </xs:group>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="indexer"
+                type="propertyInfoType"
+                minOccurs="0"
+                maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="optional" />
+    </xs:complexType>
+
+    <xs:complexType name="callExpressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Specifies a static or instance method call. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element
+                name="object"
+                minOccurs="0"
+                maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:group ref="expressionBaseGroup">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en-us"> Represents the expression which evaluates to the instance whose member is being accessed. </xs:documentation>
+                            </xs:annotation>
+                        </xs:group>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="method"
+                type="methodInfoType" />
+            <xs:element name="arguments"
+                type="argumentListType" />
+        </xs:sequence>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="optional" />
+    </xs:complexType>
+
+    <xs:complexType name="conditionalExpressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Specifies a terniary expression as b ? a : x. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:group ref="expressionBaseGroup">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents the test expression (operand) of the conditional expression. </xs:documentation>
+                </xs:annotation>
+            </xs:group>
+            <xs:group ref="expressionBaseGroup">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents the expression (operand) that should be calculates if the test expression evaluates to True. </xs:documentation>
+                </xs:annotation>
+            </xs:group>
+            <xs:group ref="expressionBaseGroup">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents the expression (operand) that should be calculates if the test expression evaluates to False. </xs:documentation>
+                </xs:annotation>
+            </xs:group>
+        </xs:sequence>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="optional" />
+    </xs:complexType>
+
+    <xs:complexType name="changeByOneExpressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Specifies increment, decrement, pre-increment, pre-decrement, post-increment, post-decrement. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:group ref="expressionBaseGroup">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents the entity that to be changed by one. </xs:documentation>
+                </xs:annotation>
+            </xs:group>
+            <xs:element name="method"
+                type="methodInfoType"
+                minOccurs="0" />
+        </xs:sequence>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="optional" />
+    </xs:complexType>
+
+    <xs:complexType name="defaultExpressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Specifies the default type, e.g. default(int). </xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="newExpressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Specifies allocating memory for and calling a constructor of the specified type. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="constructor"
+                type="constructorInfoType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents the constructor. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="arguments"
+                type="argumentListType" />
+            <xs:element name="members"
+                minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> If members is not empty, it must have the same number of elements as arguments. Each element of members must be a &quot;propertyInfo&quot;, &quot;fieldInfo&quot; or &quot;methodInfo&quot; that represents an instance member on the type represented by the attribute &quot;type&quot;. If it represents a property, the property must be able to retrieve the value of the associated field. The corresponding element of arguments for each element of members must have a Type property that represents a type that is assignable to the type of the member that the members element represents. </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:group ref="memberGroup"
+                            minOccurs="0"
+                            maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="optional" />
+    </xs:complexType>
+
+    <xs:complexType name="memberInfoType"
+        abstract="true">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines the type of elements that represent member information. </xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="declaringType"
+            type="xs:token"
+            use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Represents the type that declares the the member. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="static"
+            type="xs:boolean"
+            use="optional"
+            default="false">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Specifies whether the member is static or instance. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="visibility"
+            use="optional"
+            default="public">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Represents the visibility of the member. </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="private" />
+                    <xs:enumeration value="family" />
+                    <xs:enumeration value="assembly" />
+                    <xs:enumeration value="familyAndAssembly" />
+                    <xs:enumeration value="familyOrAssembly" />
+                    <xs:enumeration value="public" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="propertyInfoType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines the type of elements that represent properties. </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="memberInfoType">
+                <xs:sequence>
+                    <xs:element name="get"
+                        minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="parameterSpecs"
+                                    type="parameterSpecListType"
+                                    minOccurs="0" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="set"
+                        minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="parameterSpecs"
+                                    type="parameterSpecListType"
+                                    minOccurs="0" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+                <xs:attribute name="type"
+                    type="xs:token"
+                    use="required">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-us"> Represents the type of the property. </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="name"
+                    type="xs:token"
+                    use="required">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-us"> Represents the name of the property. </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="methodInfoType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines an element that describes a method (MethodInfo). </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="memberInfoType">
+                <xs:sequence>
+                    <xs:element name="parameterSpecs"
+                        type="parameterSpecListType" />
+                </xs:sequence>
+                <xs:attribute name="type"
+                    type="xs:token"
+                    use="required">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-us"> Represents the type of the return value. </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="name"
+                    type="xs:token"
+                    use="required">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-us"> Represents the name of the method. </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="constructorInfoType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines an element that describes a method (MethodInfo). </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="memberInfoType">
+                <xs:sequence>
+                    <xs:element name="parameterSpecs"
+                        type="parameterSpecListType" />
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="fieldInfoType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines the type of elements that represent properties. </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="memberInfoType">
+                <xs:attribute name="readOnly"
+                    type="xs:boolean"
+                    use="optional"
+                    default="false">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-us"> Specifies whether the property or field is readonly. </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="const"
+                    type="xs:boolean"
+                    use="optional"
+                    default="false">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-us"> Specifies whether the property or field is constant. </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="type"
+                    type="xs:token"
+                    use="required">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-us"> Represents the type of the field. </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="name"
+                    type="xs:token"
+                    use="required">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-us"> Represents the name of the field. </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="eventInfoType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines the type of elements that represent events. </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="memberInfoType">
+                <xs:sequence>
+                    <xs:element name="add"
+                        minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="parameterSpecs"
+                                    type="parameterSpecListType"
+                                    minOccurs="0" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="remove"
+                        minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="parameterSpecs"
+                                    type="parameterSpecListType"
+                                    minOccurs="0" />
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+                <xs:attribute name="type"
+                    type="xs:token"
+                    use="required">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-us"> Represents the type of the event. </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="name"
+                    type="xs:token"
+                    use="required">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-us"> Represents the name of the event. </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:group name="memberGroup">
+        <xs:choice>
+            <xs:element name="property"
+                type="propertyInfoType" />
+            <xs:element name="field"
+                type="fieldInfoType" />
+            <xs:element name="method"
+                type="methodInfoType" />
+            <xs:element name="event"
+                type="eventInfoType" />
+        </xs:choice>
+    </xs:group>
+
+    <xs:complexType name="invokeType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines the type of elements that represent applying a delegate or lambda to a list of arguments. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:group ref="expressionBaseGroup">
+            </xs:group>
+            <xs:element name="arguments"
+                type="argumentListType" />
+        </xs:sequence>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="typeBinaryType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines the type of elements that represent an expression between an expression and a type, e.g. &lt;as&gt; and &lt;is&gt; </xs:documentation>
+        </xs:annotation>
+        <xs:group ref="expressionBaseGroup" />
+        <xs:attribute name="typeOperand"
+            type="xs:token"
+            use="required" />
+        <xs:attribute name="type"
+            type="xs:token"
+            use="optional" />
+    </xs:complexType>
+
+    <xs:complexType name="targetType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines the type of elements that represent label targets. </xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="name"
+            type="xs:string"
+            use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Defines the name associated with the label target. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="id"
+            type="xs:token"
+            use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Identifies a label target marking a location and target(s) for jumping to. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Defines the type of value that is passed when jumping to the label. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="labelExpressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines the type of elements that represent label expressions. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="target"
+                type="targetType" />
+            <xs:group ref="expressionBaseGroup"
+                minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> This expression gives the default value of this LabelExpression when the label is reached through regular control flow - not jump to, e.g. `return "banana";`. </xs:documentation>
+                </xs:annotation>
+            </xs:group>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="gotoExpressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines the type of elements that represent the goto expressions: goto, return, break, continue. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="target"
+                type="targetType" />
+            <xs:group ref="expressionBaseGroup"
+                minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> The value of to pass to the goto target. </xs:documentation>
+                </xs:annotation>
+            </xs:group>
+        </xs:sequence>
+        <xs:attribute name="kind">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Defines the type of the goto expression. </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:enumeration value="goto" />
+                    <xs:enumeration value="return" />
+                    <xs:enumeration value="break" />
+                    <xs:enumeration value="continue" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Defines the type of the returned value. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="loopType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines the type of elements that represent loop expressions. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:group ref="expressionBaseGroup" />
+
+            <xs:element name="continueLabel"
+                minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Defines the optional continue target used by the loop body. </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="target" type="targetType" minOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="breakLabel"
+                minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Defines the optional break target used by the loop body. </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="target" type="targetType" minOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+        </xs:sequence>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Defines the type of the returned value. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="switchType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines the type of elements that represents a switch expression. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:group ref="expressionBaseGroup">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents the expression which value is to be tested against each case. </xs:documentation>
+                </xs:annotation>
+            </xs:group>
+            <xs:element name="method"
+                type="methodInfoType"
+                minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents the non-default equality comparison method to use. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:sequence>
+                <xs:element name="case"
+                    minOccurs="0"
+                    maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en-us"> Represents the set of cases for this switch expression. </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="caseValues">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="en-us"> Represents the values of this case. </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:group ref="expressionBaseGroup"
+                                        minOccurs="1"
+                                        maxOccurs="unbounded" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="body">
+                                <xs:complexType>
+                                    <xs:group ref="expressionBaseGroup">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="en-us"> Represents the body of this case. </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:group>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:element name="defaultCase"
+                minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents the expression which should be executed if the switch expression's value does not match any of the cases. </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:group ref="expressionBaseGroup" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="optional" />
+    </xs:complexType>
+
+    <xs:complexType name="tryType">
+        <xs:sequence>
+            <xs:group ref="expressionBaseGroup">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents the body of the try statement. </xs:documentation>
+                </xs:annotation>
+            </xs:group>
+            <xs:element name="catch"
+                minOccurs="0"
+                maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents a catch type, filter and body. </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="exception"
+                            type="parameterType"
+                            minOccurs="0" />
+                        <xs:element name="filter"
+                            type="expressionType"
+                            minOccurs="0" />
+                        <xs:element name="body">
+                            <xs:complexType>
+                                <xs:group ref="expressionBaseGroup" />
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="type"
+                        type="xs:token"
+                        use="required" />
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="fault"
+                minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents a typeless, filterless catch, e.g. try {...} catch {...} </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:group ref="expressionBaseGroup" />
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="finally"
+                minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Represents the body of the finally part of the try statement. </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:group ref="expressionBaseGroup" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="optional" />
+    </xs:complexType>
+
+    <xs:complexType name="elementInitType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines the type of elements that represent initializers for a single element of an IEnumerable sequence. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="method"
+                type="methodInfoType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en-us"> Specifies the instance method that is used to add an element to an IEnumerable sequence. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="arguments">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:group ref="expressionBaseGroup"
+                            minOccurs="0"
+                            maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="listInitType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines the type of elements that represent a sequence initializer. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="new"
+                type="newExpressionType" />
+            <xs:element name="initializers">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="elementInit"
+                            type="elementInitType"
+                            minOccurs="0"
+                            maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="newArrayInitType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines the type of elements that represent creating a one-dimensional array and initializing it from a list of elements. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="elements">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:group ref="expressionBaseGroup"
+                            minOccurs="0"
+                            maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Defines the type of elements that represents the element type of the array. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="newArrayBoundsType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Defines the type of elements that represent creating an array that has a specified rank. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="bounds">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:group ref="expressionBaseGroup"
+                            minOccurs="1"
+                            maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en-us"> Defines the type of elements that represents the element type of the array. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="memberInitExpressionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Specifies an expression that creates a new object and initializes a property of the object. </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="new"
+                type="newExpressionType" />
+            <xs:element name="bindings">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:group ref="memberBinding"
+                            minOccurs="0"
+                            maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="type"
+            type="xs:token"
+            use="optional" />
+    </xs:complexType>
+
+    <xs:complexType name="memberBindingType"
+        abstract="true">
+        <xs:annotation>
+            <xs:documentation xml:lang="en-us"> Provides the base type for the elements that represent bindings that are used to initialize members of a newly created object derive. </xs:documentation>
+        </xs:annotation>
+
+        <xs:group ref="memberGroup" />
+    </xs:complexType>
+
+    <xs:complexType name="assignmentBindingType">
+        <xs:complexContent>
+            <xs:extension base="memberBindingType">
+                <xs:group ref="expressionBaseGroup" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="memberMemberBindingType">
+        <xs:complexContent>
+            <xs:extension base="memberBindingType">
+                <xs:sequence>
+                    <xs:group ref="memberBinding"
+                        minOccurs="0"
+                        maxOccurs="unbounded" />
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="memberListBindingType">
+        <xs:complexContent>
+            <xs:extension base="memberBindingType">
+                <xs:sequence>
+                    <xs:element name="elementInit"
+                        type="elementInitType"
+                        minOccurs="0"
+                        maxOccurs="unbounded" />
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:group name="memberBinding">
+        <xs:choice>
+            <xs:element name="assignmentBinding"
+                type="assignmentBindingType" />
+            <xs:element name="memberMemberBinding"
+                type="memberMemberBindingType" />
+            <xs:element name="memberListBinding"
+                type="memberListBindingType" />
+        </xs:choice>
+    </xs:group>
+
+</xs:schema>
