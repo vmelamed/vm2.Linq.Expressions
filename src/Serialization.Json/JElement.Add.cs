@@ -164,7 +164,7 @@ public partial struct JElement
 
     /// <summary>
     /// Adds a the elements from the parameter to the current <see cref="Node"/> if the type of the element is
-    /// <see cref="JsonArray"/> or <c>null</c> (in which case the method creates a new JsonObject element). If any of the
+    /// <see cref="JsonArray"/> or <c>null</c> (in which case the method creates a new JsonArray element). If any of the
     /// elements in the <paramref key="elements"/> are <c>null</c> the method quietly skips them.
     /// </summary>
     /// <param key="elements"></param>
@@ -174,7 +174,7 @@ public partial struct JElement
     /// </exception>
     public JElement Add(IEnumerable<JsonNode?> elements)
     {
-        Node ??= new JsonObject();
+        Node ??= new JsonArray();
 
         if (Node is not JsonArray jArray)
             throw new InternalTransformErrorException($"Trying to add JsonNode-s to a Node of `{Node.GetValueKind()}` type of JSON element. The Node must be JsonArray type.");

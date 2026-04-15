@@ -10,7 +10,8 @@
 
     <!--
     Defining JSON_SCHEMA switches JSON validation to be done with Json.Schema from https://docs.json-everything.net/.
-    It has some problems with floating point numbers and with the huge recursive schema in some more complex cases.
+    As of v9.2 floating-point issues are fixed, but it still fails on deeply nested oneOf + recursive $ref
+    schemas (see StatementTests NewMembersInit1/2). Its SchemaRegistry.Global is also not thread-safe.
     It uses System.Text.Json like this project.
 
     Otherwise JSON validation is done with Newtonsoft but it is

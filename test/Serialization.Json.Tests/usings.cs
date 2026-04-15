@@ -7,6 +7,7 @@ global using System.Text.Json.Nodes;
 
 global using vm2.Linq.Expressions.DeepEquals;
 global using vm2.Linq.Expressions.Serialization;
+global using vm2.Linq.Expressions.Serialization.Conventions;
 global using vm2.Linq.Expressions.Serialization.Exceptions;
 global using vm2.Linq.Expressions.Serialization.Json;
 global using vm2.Linq.Expressions.Serialization.TestData;
