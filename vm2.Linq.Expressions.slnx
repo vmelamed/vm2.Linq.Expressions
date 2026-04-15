@@ -15,6 +15,7 @@
         <File Path="changelog/cliff.release-header.toml" />
     </Folder>
     <Folder Name="/examples/">
+        <File Path="toFromXml.cs" />
     </Folder>
     <Folder Name="/solution Items/">
         <File Path=".editorconfig" />
