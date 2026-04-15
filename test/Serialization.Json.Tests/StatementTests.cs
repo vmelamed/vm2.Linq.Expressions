@@ -7,7 +7,7 @@ public partial class StatementTests(JsonTestsFixture fixture, ITestOutputHelper 
 
     [Theory]
     [MemberData(nameof(StatementTestData.Data), MemberType = typeof(StatementTestData))]
-#if !JSON_SCHEMA
+#if !JSON_SCHEMA // JsonSchema.Net v9.2 fails on deeply nested oneOf + recursive $ref (NewMembersInit1/2)
     [MemberData(nameof(StatementTestDataNs.Data), MemberType = typeof(StatementTestDataNs))]
 #endif
     public async Task StatementToJsonTestAsync(string testFileLine, string expressionString, string fileName)
@@ -15,7 +15,7 @@ public partial class StatementTests(JsonTestsFixture fixture, ITestOutputHelper 
 
     [Theory]
     [MemberData(nameof(StatementTestData.Data), MemberType = typeof(StatementTestData))]
-#if !JSON_SCHEMA
+#if !JSON_SCHEMA // JsonSchema.Net v9.2 fails on deeply nested oneOf + recursive $ref (NewMembersInit1/2)
     [MemberData(nameof(StatementTestDataNs.Data), MemberType = typeof(StatementTestDataNs))]
 #endif
     public async Task StatementFromJsonTestAsync(string testFileLine, string expressionString, string fileName)

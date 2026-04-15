@@ -108,6 +108,10 @@ public partial class JsonOptions : DocumentOptions
 #if JSON_SCHEMA
     JsonSchema? _schema;
 
+    // JsonSchema.Net's SchemaRegistry.Global is not thread-safe.
+    // Serialize all FromFile/Build calls that touch the global registry.
+    static readonly ReaderWriterLockSlim _globalRegistryLock = new(LockRecursionPolicy.SupportsRecursion);
+
     static readonly EvaluationOptions _evaluationOptions = new() {
         OutputFormat            = OutputFormat.Hierarchical,
         RequireFormatValidation = true,
@@ -121,6 +125,7 @@ public partial class JsonOptions : DocumentOptions
     public void LoadSchema(string schemaFilePath)
     {
         using var _ = _syncSchema.WriterLock();
+        using var __ = _globalRegistryLock.WriterLock();
 
         try
         {
@@ -164,6 +169,7 @@ public partial class JsonOptions : DocumentOptions
         EvaluationResults results;
 
         using (_syncSchema.ReaderLock())
+        using (_globalRegistryLock.ReaderLock())
         {
             if (_schema is null)
                 throw new InvalidOperationException("The schema is not loaded. Use JsonOptions.LoadSchema.");

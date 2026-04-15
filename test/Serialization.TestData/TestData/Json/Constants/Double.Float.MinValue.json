@@ -1,0 +1,9 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " -3.4028234663852886E\u002B38 ",
+  "expression": {
+    "constant": {
+      "double": -3.4028234663852886E+38
+    }
+  }
+}

@@ -12,9 +12,9 @@
     2. this is yet another JSON parser (we use System.Text.Json)
 
     If JSON_SCHEMA is defined, it switches the JSON validation to Json.Schema from https://docs.json-everything.net/.
-    1. it has some problems with floating point numbers
-    2. it has problems with large recursive schemas like ours
-    3. but it uses System.Text.Json like this project
+    As of v9.2 floating-point issues are fixed, but it still fails on deeply nested oneOf + recursive $ref
+    (see StatementTests NewMembersInit1/2). Its SchemaRegistry.Global is also not thread-safe.
+    It uses System.Text.Json like this project.
 
     ATTENTION: The definition of JSON_SCHEMA switch must be equivalent in all projects that use schema validation, e.g.
         Serialization.Json.csproj,
