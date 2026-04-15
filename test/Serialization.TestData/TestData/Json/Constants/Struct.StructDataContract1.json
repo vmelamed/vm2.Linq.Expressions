@@ -1,0 +1,16 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " StructDataContract1 ",
+  "expression": {
+    "constant": {
+      "$comment": " vm2.Linq.Expressions.Serialization.TestData.StructDataContract1 ",
+      "object": {
+        "type": "vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "value": {
+          "IntProperty": 0,
+          "StringProperty": ""
+        }
+      }
+    }
+  }
+}

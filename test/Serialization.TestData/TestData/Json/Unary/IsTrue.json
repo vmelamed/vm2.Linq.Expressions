@@ -1,0 +1,28 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " IsTrue(d) ",
+  "expression": {
+    "isTrue": {
+      "type": "boolean",
+      "operand": {
+        "parameter": {
+          "type": "vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "name": "d",
+          "id": "P1"
+        }
+      },
+      "method": {
+        "declaringType": "vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "static": true,
+        "type": "boolean",
+        "name": "op_True",
+        "parameterSpecs": [
+          {
+            "type": "vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "name": "x"
+          }
+        ]
+      }
+    }
+  }
+}

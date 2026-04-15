@@ -1,0 +1,43 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " () =\u003E (2 ** 3) ",
+  "expression": {
+    "lambda": {
+      "type": "double",
+      "parameters": [],
+      "body": {
+        "power": {
+          "type": "double",
+          "operands": [
+            {
+              "constant": {
+                "double": 2
+              }
+            },
+            {
+              "constant": {
+                "double": 3
+              }
+            }
+          ],
+          "method": {
+            "declaringType": "System.Math, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+            "static": true,
+            "type": "double",
+            "name": "Pow",
+            "parameterSpecs": [
+              {
+                "type": "double",
+                "name": "x"
+              },
+              {
+                "type": "double",
+                "name": "y"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

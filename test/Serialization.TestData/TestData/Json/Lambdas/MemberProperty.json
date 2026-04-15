@@ -1,0 +1,35 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " a =\u003E a.A ",
+  "expression": {
+    "lambda": {
+      "type": "int",
+      "parameters": [
+        {
+          "type": "vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "name": "a",
+          "id": "P1"
+        }
+      ],
+      "body": {
+        "memberAccess": {
+          "type": "int",
+          "object": {
+            "parameter": {
+              "type": "vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "name": "a",
+              "id": "P1"
+            }
+          },
+          "member": {
+            "property": {
+              "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "type": "int",
+              "name": "A"
+            }
+          }
+        }
+      }
+    }
+  }
+}

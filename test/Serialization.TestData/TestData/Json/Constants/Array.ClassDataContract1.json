@@ -1,0 +1,35 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " value(vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1[]) ",
+  "expression": {
+    "constant": {
+      "$comment": " vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1[] ",
+      "sequence": {
+        "type": "vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1[], Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "$comment": " vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1 ",
+        "value": [
+          {
+            "object": {
+              "type": "vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "value": {
+                "$id": "1",
+                "IntProperty": 0,
+                "StringProperty": "vm"
+              }
+            }
+          },
+          {
+            "object": {
+              "type": "vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "value": {
+                "$id": "1",
+                "IntProperty": 1,
+                "StringProperty": "vm2 vm"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

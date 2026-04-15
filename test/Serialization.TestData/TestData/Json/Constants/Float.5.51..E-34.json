@@ -1,0 +1,9 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " 5.5123453E-34 ",
+  "expression": {
+    "constant": {
+      "float": 5.5123453E-34
+    }
+  }
+}

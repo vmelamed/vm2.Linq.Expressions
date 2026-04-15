@@ -1,0 +1,32 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " () =\u003E new System.String[,,](2, 3, 4) ",
+  "expression": {
+    "lambda": {
+      "type": "System.String[,,], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+      "parameters": [],
+      "body": {
+        "newArrayBounds": {
+          "type": "string",
+          "bounds": [
+            {
+              "constant": {
+                "int": 2
+              }
+            },
+            {
+              "constant": {
+                "int": 3
+              }
+            },
+            {
+              "constant": {
+                "int": 4
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

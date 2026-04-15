@@ -1,0 +1,42 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " (a, i) =\u003E a[i] ",
+  "expression": {
+    "lambda": {
+      "type": "int",
+      "parameters": [
+        {
+          "type": "System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+          "name": "a",
+          "id": "P1"
+        },
+        {
+          "type": "int",
+          "name": "i",
+          "id": "P2"
+        }
+      ],
+      "body": {
+        "arrayIndex": {
+          "type": "int",
+          "operands": [
+            {
+              "parameter": {
+                "type": "System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                "name": "a",
+                "id": "P1"
+              }
+            },
+            {
+              "parameter": {
+                "type": "int",
+                "name": "i",
+                "id": "P2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

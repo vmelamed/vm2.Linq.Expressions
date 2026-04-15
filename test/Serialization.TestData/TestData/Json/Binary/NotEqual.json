@@ -1,0 +1,42 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " (a, b) =\u003E (a != b) ",
+  "expression": {
+    "lambda": {
+      "type": "boolean",
+      "parameters": [
+        {
+          "type": "int",
+          "name": "a",
+          "id": "P1"
+        },
+        {
+          "type": "int",
+          "name": "b",
+          "id": "P2"
+        }
+      ],
+      "body": {
+        "notEqual": {
+          "type": "boolean",
+          "operands": [
+            {
+              "parameter": {
+                "type": "int",
+                "name": "a",
+                "id": "P1"
+              }
+            },
+            {
+              "parameter": {
+                "type": "int",
+                "name": "b",
+                "id": "P2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

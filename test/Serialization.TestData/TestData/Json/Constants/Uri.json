@@ -1,0 +1,9 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " http://www.acme.com/ ",
+  "expression": {
+    "constant": {
+      "uri": "http://www.acme.com/"
+    }
+  }
+}

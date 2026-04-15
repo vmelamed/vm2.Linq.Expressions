@@ -1,0 +1,40 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " a =\u003E -a ",
+  "expression": {
+    "lambda": {
+      "type": "vm2.Linq.Expressions.Serialization.TestData.A, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "parameters": [
+        {
+          "type": "vm2.Linq.Expressions.Serialization.TestData.A, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "name": "a",
+          "id": "P1"
+        }
+      ],
+      "body": {
+        "negate": {
+          "type": "vm2.Linq.Expressions.Serialization.TestData.A, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "operand": {
+            "parameter": {
+              "type": "vm2.Linq.Expressions.Serialization.TestData.A, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "name": "a",
+              "id": "P1"
+            }
+          },
+          "method": {
+            "declaringType": "vm2.Linq.Expressions.Serialization.TestData.A, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "static": true,
+            "type": "vm2.Linq.Expressions.Serialization.TestData.A, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "name": "op_UnaryNegation",
+            "parameterSpecs": [
+              {
+                "type": "vm2.Linq.Expressions.Serialization.TestData.A, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "name": "x"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

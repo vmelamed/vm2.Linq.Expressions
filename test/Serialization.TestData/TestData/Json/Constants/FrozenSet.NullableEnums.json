@@ -1,0 +1,42 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " value(System.Collections.Frozen.SmallValueTypeDefaultComparerFrozenSet\u00601[System.Nullable\u00601[vm2.Linq.Expressions.Serialization.TestData.EnumTest]]) ",
+  "expression": {
+    "constant": {
+      "$comment": " System.Collections.Frozen.SmallValueTypeDefaultComparerFrozenSet\u003Cnullable\u003Cvm2.Linq.Expressions.Serialization.TestData.EnumTest\u003E\u003E ",
+      "sequence": {
+        "type": "System.Collections.Frozen.SmallValueTypeDefaultComparerFrozenSet\u00601[[System.Nullable\u00601[[vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Collections.Immutable, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+        "$comment": " nullable\u003Cvm2.Linq.Expressions.Serialization.TestData.EnumTest\u003E ",
+        "value": [
+          {
+            "nullable": {
+              "$comment": " vm2.Linq.Expressions.Serialization.TestData.EnumTest ",
+              "enum": {
+                "type": "vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "value": "One",
+                "baseValue": 0
+              }
+            }
+          },
+          {
+            "nullable": {
+              "$comment": " vm2.Linq.Expressions.Serialization.TestData.EnumTest ",
+              "enum": {
+                "type": "vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "value": "Two",
+                "baseValue": 1
+              }
+            }
+          },
+          {
+            "nullable": {
+              "type": "vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "value": null
+            }
+          }
+        ],
+        "length": 3
+      }
+    }
+  }
+}

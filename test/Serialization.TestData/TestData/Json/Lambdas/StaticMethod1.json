@@ -1,0 +1,23 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " () =\u003E Method1() ",
+  "expression": {
+    "lambda": {
+      "type": "int",
+      "parameters": [],
+      "body": {
+        "call": {
+          "type": "int",
+          "method": {
+            "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "static": true,
+            "type": "int",
+            "name": "Method1",
+            "parameterSpecs": []
+          },
+          "arguments": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " i =\u003E i ",
+  "expression": {
+    "lambda": {
+      "type": "int",
+      "parameters": [
+        {
+          "type": "int",
+          "name": "i",
+          "id": "P1"
+        }
+      ],
+      "body": {
+        "parameter": {
+          "type": "int",
+          "name": "i",
+          "id": "P1"
+        }
+      }
+    }
+  }
+}

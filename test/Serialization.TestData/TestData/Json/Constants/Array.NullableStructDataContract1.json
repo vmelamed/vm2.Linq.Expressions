@@ -1,0 +1,51 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " value(System.Nullable\u00601[vm2.Linq.Expressions.Serialization.TestData.StructDataContract1][]) ",
+  "expression": {
+    "constant": {
+      "$comment": " System.Nullable\u00601[[vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][] ",
+      "sequence": {
+        "type": "System.Nullable\u00601[[vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "$comment": " nullable\u003Cvm2.Linq.Expressions.Serialization.TestData.StructDataContract1\u003E ",
+        "value": [
+          {
+            "nullable": {
+              "$comment": " vm2.Linq.Expressions.Serialization.TestData.StructDataContract1 ",
+              "object": {
+                "type": "vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "value": {
+                  "IntProperty": 0,
+                  "StringProperty": "vm"
+                }
+              }
+            }
+          },
+          {
+            "nullable": {
+              "type": "vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "value": null
+            }
+          },
+          {
+            "nullable": {
+              "$comment": " vm2.Linq.Expressions.Serialization.TestData.StructDataContract1 ",
+              "object": {
+                "type": "vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "value": {
+                  "IntProperty": 1,
+                  "StringProperty": "vm vm"
+                }
+              }
+            }
+          },
+          {
+            "nullable": {
+              "type": "vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "value": null
+            }
+          }
+        ]
+      }
+    }
+  }
+}
