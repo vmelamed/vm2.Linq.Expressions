@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- m => m.get_Item(1) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <lambda
+        type="int">
+        <parameters>
+            <parameter
+                type="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                id="P1"
+                name="m" />
+        </parameters>
+        <body>
+            <call
+                type="int">
+                <object>
+                    <parameter
+                        type="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                        id="P1"
+                        name="m" />
+                </object>
+                <method
+                    declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                    type="int"
+                    name="get_Item">
+                    <parameterSpecs>
+                        <parameterSpec
+                            type="int"
+                            name="i" />
+                    </parameterSpecs>
+                </method>
+                <arguments>
+                    <constant>
+                        <int>1</int>
+                    </constant>
+                </arguments>
+            </call>
+        </body>
+    </lambda>
+</expression>

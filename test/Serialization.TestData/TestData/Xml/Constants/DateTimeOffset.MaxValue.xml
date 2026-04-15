@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 12/31/9999 11:59:59 PM +00:00 -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <constant>
+        <dateTimeOffset>9999-12-31T23:59:59.9999999+00:00</dateTimeOffset>
+    </constant>
+</expression>

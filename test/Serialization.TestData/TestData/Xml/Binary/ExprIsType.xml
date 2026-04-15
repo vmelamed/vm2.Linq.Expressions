@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- a => (a Is ClassDataContract1) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <lambda
+        type="boolean">
+        <parameters>
+            <parameter
+                type="object"
+                id="P1"
+                name="a" />
+        </parameters>
+        <body>
+            <typeIs
+                type="boolean"
+                typeOperand="vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+                <parameter
+                    type="object"
+                    id="P1"
+                    name="a" />
+            </typeIs>
+        </body>
+    </lambda>
+</expression>

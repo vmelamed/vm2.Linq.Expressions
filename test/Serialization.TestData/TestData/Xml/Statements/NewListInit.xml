@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- () => new List`1() {Void Add(System.String)("aaa"), Void Add(System.String)("bbb"), Void Add(System.String)("ccc")} -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <lambda
+        type="System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+        <parameters />
+        <body>
+            <listInit>
+                <new>
+                    <constructor
+                        declaringType="System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+                        <parameterSpecs />
+                    </constructor>
+                    <arguments />
+                </new>
+                <initializers>
+                    <elementInit>
+                        <method
+                            declaringType="System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                            type="void"
+                            name="Add">
+                            <parameterSpecs>
+                                <parameterSpec
+                                    type="string"
+                                    name="item" />
+                            </parameterSpecs>
+                        </method>
+                        <arguments>
+                            <constant>
+                                <string>aaa</string>
+                            </constant>
+                        </arguments>
+                    </elementInit>
+                    <elementInit>
+                        <method
+                            declaringType="System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                            type="void"
+                            name="Add">
+                            <parameterSpecs>
+                                <parameterSpec
+                                    type="string"
+                                    name="item" />
+                            </parameterSpecs>
+                        </method>
+                        <arguments>
+                            <constant>
+                                <string>bbb</string>
+                            </constant>
+                        </arguments>
+                    </elementInit>
+                    <elementInit>
+                        <method
+                            declaringType="System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                            type="void"
+                            name="Add">
+                            <parameterSpecs>
+                                <parameterSpec
+                                    type="string"
+                                    name="item" />
+                            </parameterSpecs>
+                        </method>
+                        <arguments>
+                            <constant>
+                                <string>ccc</string>
+                            </constant>
+                        </arguments>
+                    </elementInit>
+                </initializers>
+            </listInit>
+        </body>
+    </lambda>
+</expression>

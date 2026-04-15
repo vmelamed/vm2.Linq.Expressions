@@ -315,6 +315,16 @@ partial class ToXmlDataTransform(XmlOptions options)
 
         Type kType, vType;
 
+        var dictInterface = nodeType.GetInterfaces()
+                                    .FirstOrDefault(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IDictionary<,>));
+
+        if (dictInterface is not null)
+        {
+            var kvTypes = dictInterface.GetGenericArguments();
+            kType = kvTypes[0];
+            vType = kvTypes[1];
+        }
+        else
         if (nodeType.IsGenericType)
         {
             var kvTypes   = nodeType.GetGenericArguments();

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- (a, b) => (a + (b * 42)) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <lambda
+        type="int">
+        <parameters>
+            <parameter
+                type="int"
+                id="P1"
+                name="a" />
+            <parameter
+                type="int"
+                id="P2"
+                name="b" />
+        </parameters>
+        <body>
+            <add
+                type="int">
+                <parameter
+                    type="int"
+                    id="P1"
+                    name="a" />
+                <multiply
+                    type="int">
+                    <parameter
+                        type="int"
+                        id="P2"
+                        name="b" />
+                    <constant>
+                        <int>42</int>
+                    </constant>
+                </multiply>
+            </add>
+        </body>
+    </lambda>
+</expression>

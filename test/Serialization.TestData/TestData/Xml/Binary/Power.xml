@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- () => (2 ** 3) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <lambda
+        type="double">
+        <parameters />
+        <body>
+            <power
+                type="double">
+                <constant>
+                    <double>2</double>
+                </constant>
+                <constant>
+                    <double>3</double>
+                </constant>
+                <method
+                    declaringType="System.Math, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                    static="true"
+                    type="double"
+                    name="Pow">
+                    <parameterSpecs>
+                        <parameterSpec
+                            type="double"
+                            name="x" />
+                        <parameterSpec
+                            type="double"
+                            name="y" />
+                    </parameterSpecs>
+                </method>
+            </power>
+        </body>
+    </lambda>
+</expression>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- (1, one) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <constant>
+        <!--  System.ValueTuple<int, string>  -->
+        <tuple
+            type="System.ValueTuple`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+            <item
+                name="Item1">
+                <int>1</int>
+            </item>
+            <item
+                name="Item2">
+                <string>one</string>
+            </item>
+        </tuple>
+    </constant>
+</expression>

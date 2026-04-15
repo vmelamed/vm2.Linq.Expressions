@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <RootNamespace>vm2.Linq.Expressions.Serialization.TestData</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="vm2.TestUtilities" />
+    </ItemGroup>
+
+</Project>

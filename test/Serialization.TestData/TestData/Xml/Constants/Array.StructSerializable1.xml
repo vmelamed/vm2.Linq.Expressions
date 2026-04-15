@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- value(vm2.Linq.Expressions.Serialization.TestData.StructSerializable1[]) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <constant>
+        <!--  vm2.Linq.Expressions.Serialization.TestData.StructSerializable1[]  -->
+        <sequence
+            type="vm2.Linq.Expressions.Serialization.TestData.StructSerializable1[], Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+            elementType="vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <!--  vm2.Linq.Expressions.Serialization.TestData.StructSerializable1  -->
+            <object
+                type="vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+                <StructSerializable1
+                    xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+                    xmlns="http://schemas.datacontract.org/2004/07/vm2.Linq.Expressions.Serialization.TestData">
+                    <_x003C_IntProperty_x003E_k__BackingField>0</_x003C_IntProperty_x003E_k__BackingField>
+                    <_x003C_StringProperty_x003E_k__BackingField>vm</_x003C_StringProperty_x003E_k__BackingField>
+                </StructSerializable1>
+            </object>
+            <object
+                type="vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+                <StructSerializable1
+                    xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+                    xmlns="http://schemas.datacontract.org/2004/07/vm2.Linq.Expressions.Serialization.TestData">
+                    <_x003C_IntProperty_x003E_k__BackingField>1</_x003C_IntProperty_x003E_k__BackingField>
+                    <_x003C_StringProperty_x003E_k__BackingField>vm vm</_x003C_StringProperty_x003E_k__BackingField>
+                </StructSerializable1>
+            </object>
+        </sequence>
+    </constant>
+</expression>

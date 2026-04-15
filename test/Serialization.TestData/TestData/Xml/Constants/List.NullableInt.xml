@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- value(System.Collections.Generic.List`1[System.Nullable`1[System.Int32]]) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <constant>
+        <!--  System.Collections.Generic.List<nullable<int>>  -->
+        <sequence
+            type="System.Collections.Generic.List`1[[System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+            elementType="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+            length="4">
+            <!--  nullable<int>  -->
+            <nullable>
+                <int>1</int>
+            </nullable>
+            <nullable>
+                <int>2</int>
+            </nullable>
+            <nullable
+                type="int"
+                i:nil="true" />
+            <nullable
+                type="int"
+                i:nil="true" />
+        </sequence>
+    </constant>
+</expression>
