@@ -1,105 +1,357 @@
-# vm2.Linq.Expressions
+# vm2.Linq.Expressions — LINQ Expression Tree Serialization for .NET
 
-A starter vm2 package scaffold. Customize the code, tests, benchmarks, docs, and workflows as needed.
+[![CI](https://github.com/vmelamed/vm2.Linq.Expressions/actions/workflows/CI.yaml/badge.svg?branch=main)](https://github.com/vmelamed/vm2.Linq.Expressions/actions/workflows/CI.yaml)
+[![codecov](https://codecov.io/gh/vmelamed/vm2.Linq.Expressions/branch/main/graph/badge.svg?branch=main)](https://codecov.io/gh/vmelamed/vm2.Linq.Expressions)
+[![Release](https://github.com/vmelamed/vm2.Linq.Expressions/actions/workflows/Release.yaml/badge.svg?branch=main)](https://github.com/vmelamed/vm2.Linq.Expressions/actions/workflows/Release.yaml)
 
-## Getting started
+[![NuGet Version](https://img.shields.io/nuget/v/vm2.Linq.Expressions.Serialization.Xml)](https://www.nuget.org/packages/vm2.Linq.Expressions.Serialization.Xml/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/vm2.Linq.Expressions.Serialization.Xml.svg)](https://www.nuget.org/packages/vm2.Linq.Expressions.Serialization.Xml/)
+[![GitHub License](https://img.shields.io/github/license/vmelamed/vm2.Linq.Expressions)](https://github.com/vmelamed/vm2.Linq.Expressions/blob/main/LICENSE)
 
-- Build:
+<!-- TOC tocDepth:2..4 chapterDepth:2..6 -->
+
+- [vm2.Linq.Expressions — LINQ Expression Tree Serialization for .NET](#vm2linqexpressions--linq-expression-tree-serialization-for-net)
+  - [Overview](#overview)
+  - [Packages](#packages)
+  - [Prerequisites](#prerequisites)
+  - [Install the Packages (NuGet)](#install-the-packages-nuget)
+  - [Quick Start](#quick-start)
+    - [Serialize to XML](#serialize-to-xml)
+    - [Serialize to JSON](#serialize-to-json)
+    - [Deep Comparison](#deep-comparison)
+  - [Unsupported Expression Types](#unsupported-expression-types)
+  - [Configuration Options](#configuration-options)
+    - [Common Options](#common-options)
+    - [XML-Specific Options](#xml-specific-options)
+    - [JSON-Specific Options](#json-specific-options)
+  - [Schema Validation](#schema-validation)
+  - [Security Considerations](#security-considerations)
+    - [Risks](#risks)
+    - [Mitigations](#mitigations)
+  - [Get the Code](#get-the-code)
+  - [Build from the Source Code](#build-from-the-source-code)
+  - [Tests](#tests)
+  - [Related Packages](#related-packages)
+  - [License](#license)
+  - [Version History](#version-history)
+
+<!-- /TOC -->
+
+## Overview
+
+This repository provides a set of .NET packages for serializing and deserializing
+[LINQ expression trees](https://learn.microsoft.com/dotnet/csharp/advanced-topics/expression-trees/) to and from XML and JSON
+documents. Expression trees are in-memory representations of code as data — lambda expressions, method calls, member access,
+conditionals, loops, and more. .NET compiles these into executable delegates. These packages let you persist, transmit, and
+reconstruct expression trees across process and machine boundaries.
+
+The serialization produces human-readable, schema-backed documents that preserve the full structure of the expression's
+abstract syntax tree (AST), including types, parameters, constants, and control flow. Both the XML and JSON formats can
+optionally be validated against their respective schemas.
+
+A companion package provides structural deep-equality comparison and hash code computation for expression trees, useful for
+caching, deduplication, and testing.
+
+## Packages
+
+| Package | Description |
+|---------|-------------|
+| **[vm2.Linq.Expressions.Serialization.Xml](https://www.nuget.org/packages/vm2.Linq.Expressions.Serialization.Xml/)** | Serialize and deserialize expression trees to/from XML (`XDocument`). |
+| **[vm2.Linq.Expressions.Serialization.Json](https://www.nuget.org/packages/vm2.Linq.Expressions.Serialization.Json/)** | Serialize and deserialize expression trees to/from JSON (`JsonObject`). |
+| **[vm2.Linq.Expressions.Serialization.Abstractions](https://www.nuget.org/packages/vm2.Linq.Expressions.Serialization.Abstractions/)** | Shared abstractions, conventions, vocabulary, and extension methods (dependency of Xml and Json). |
+| **[vm2.Linq.Expressions.DeepEquals](https://www.nuget.org/packages/vm2.Linq.Expressions.DeepEquals/)** | Structural deep-equality comparison and hash code computation for expression trees. |
+
+## Prerequisites
+
+- .NET 10.0 or later
+
+## Install the Packages (NuGet)
+
+Install the serialization package for the format you need. Each serialization package transitively references
+`Serialization.Abstractions`.
+
+- Using the dotnet CLI:
 
   ```bash
-  dotnet restore
-  dotnet build
+  dotnet add package vm2.Linq.Expressions.Serialization.Xml
+  dotnet add package vm2.Linq.Expressions.Serialization.Json
+  dotnet add package vm2.Linq.Expressions.DeepEquals
   ```
 
-- Test:
-  - from **CLI**, if it is not built yet (builds on MTP v2):
+- From Visual Studio **Package Manager Console**:
 
-    ```bash
-    dotnet run --project test/Linq.Expressions.Tests/Linq.Expressions.Tests.csproj`
-    ```
-
-  - from **CLI**, if it is already built in **CLI** or **VSCode** (MTP v2):
-    - any OS or shell:
-
-      ```bash
-      dotnet test test/Linq.Expressions.Tests/bin/Debug/net10.0/Linq.Expressions.Tests.dll`
-      ```
-
-    - on Windows **CLI** (already built in **CLI** or **VSCode** - on MTP v2):
-
-      ```batch
-      test/Linq.Expressions.Tests/bin/Debug/net10.0/Linq.Expressions.Tests.exe`
-      ```
-
-    - on Linux or MacOS **CLI** (already built in **CLI** or **VSCode** - on MTP v2):
-
-      ```bash
-      test/Linq.Expressions.Tests/bin/Debug/net10.0/Linq.Expressions.Tests`
-      ```
-
-  - from Visual Studio:
-    - use the Test Explorer to build and run tests (builds on MTP v1)
-    - if it is already built in **Visual Studio** (MTP v1), from the **CLI** you can run:
-
-      ```bash
-      dotnet test
-      ```
-
-- Benchmarks (if included):
-
-  ```bash
-  dotnet run --project benchmarks/Linq.Expressions.Benchmarks/Linq.Expressions.Benchmarks.csproj --configuration Release
+  ```powershell
+  Install-Package vm2.Linq.Expressions.Serialization.Xml
+  Install-Package vm2.Linq.Expressions.Serialization.Json
+  Install-Package vm2.Linq.Expressions.DeepEquals
   ```
 
-  > [!TIP] in a personal development environment, you can run benchmarks with defined `SHORT_RUN` preprocessor directive. The run will be faster, although less accurate, but still suitable for quick iterations.
+## Quick Start
 
-## Package metadata
+Each serialization package provides extension methods on `Expression` and static deserialization methods for the simplest
+possible API. For advanced scenarios (reusing a transform instance, custom options), use `ExpressionXmlTransform` or
+`ExpressionJsonTransform` directly — see the [examples](examples/) directory.
 
-- Package ID: `vm2.Linq.Expressions`
-- Version: 0.1.0
-- License: MIT
-- Repository: <https://github.com/vmelamed/vm2.Linq.Expressions>
+### Serialize to XML
 
-## Structure
+```csharp
+using System.Linq.Expressions;
+using vm2.Linq.Expressions.Serialization.Xml;
 
-- .github/workflows: CI, prerelease, release, clear-cache.
-- src/Linq.Expressions: the library source code
-- test/Linq.Expressions.Tests: xUnit + MTP tests, includes testconfig.json
-- benchmarks/Linq.Expressions.Benchmarks: BenchmarkDotNet suite (optional)
-- examples/Linq.Expressions.Example: minimal console sample (optional)
-- docs/: documentation starter (optional)
-- scripts/: bootstrap helpers
-- changelog/: git-cliff configs for prerelease/release changelog updates
+Expression<Func<int, int, int>> addExpr = (a, b) => a + b;
 
-## Next steps
+// Expression → XML string
+string xml = addExpr.ToXmlString();
 
-- create GitHub repository using the generated bootstrap script: `scripts/repo-setup.sh`
-- Update README, CHANGELOG, and package metadata.
-- Set secrets and variables for workflows:
-  - Set required secrets in the new GitHub repo:
-    - `CODECOV_TOKEN`
-    - `BENCHER_API_TOKEN`
-    - `NUGET_API_KEY` must be issued by the selected `NUGET_SERVER` (below)
-  - Set required variables:
-    - `DOTNET_VERSION`: `10.0.x`: the .NET SDK version to use
-    - `CONFIGURATION`: `Release`: the build configuration to use (e.g., Release or Debug)
-    - `NUGET_SERVER`: `github`: the NuGet server to publish to (supported values: 'github', 'nuget', or custom URI)
-    - `MINVERTAGPREFIX`: `v`: Prefix for git tags to be recognized by MinVer
-    - `MINVERDEFAULTPRERELEASEIDENTIFIERS`: `.0`: Prefix for the prerelease tag, e.g. 'preview.0', 'alpha', 'beta', 'rc', etc.
-    - `SAVE_PACKAGE_ARTIFACTS`: `false`: Whether to save package artifacts after build/publish
-    - `MIN_COVERAGE_PCT`: `80`%: Minimum code coverage percentage required
-    - `MAX_REGRESSION_PCT`: `20`%: Maximum allowed regression percentage
-    - `RESET_BENCHMARK_THRESHOLDS`: `false`: Whether to reset Bencher thresholds
-  - Set debug flags (variables):
-    - `ACTIONS_RUNNER_DEBUG`: `false`: Whether to enable GitHub Actions runner debug logging
-    - `ACTIONS_STEP_DEBUG`: `false`: Whether to enable GitHub Actions step debug logging
+// Expression → XML file
+addExpr.ToXmlFile("expression.xml");
 
-- Protect the `main` branch by enabling required checks and requiring pull requests. Suggested check names:
-  - `build` (job id from CI workflow "CI: Build, Test, Benchmark")
-  - `test` (job id from CI workflow "CI: Build, Test, Benchmark")
-  - `benchmark` (job id from CI workflow "CI: Build, Test, Benchmark")
-- In GitHub repo settings, enable Actions PR automation:
-  - `Settings` -> `Actions` -> `General` -> `Workflow permissions`
-  - enable `Allow GitHub Actions to create and approve pull requests`
-  - required for prerelease changelog PR creation.
-- Changelog: prerelease workflow appends a prerelease section; release workflow adds a stable header with "See prereleases below." (prerelease sections stay intact).
+// Expression → XDocument
+XDocument doc = addExpr.ToXmlDocument();
+
+// Round-trip back to Expression
+Expression roundTrip = doc.ToExpression();
+
+// Deserialize from file / stream / string
+Expression fromFile   = ExpressionXml.FromFile("expression.xml");
+Expression fromString = ExpressionXml.FromString(xml);
+```
+
+### Serialize to JSON
+
+```csharp
+using System.Linq.Expressions;
+using vm2.Linq.Expressions.Serialization.Json;
+
+Expression<Func<int, int, int>> addExpr = (a, b) => a + b;
+
+// Expression → JSON string
+string json = addExpr.ToJsonString();
+
+// Expression → JSON file
+addExpr.ToJsonFile("expression.json");
+
+// Expression → JsonObject
+JsonObject doc = addExpr.ToJsonDocument();
+
+// Round-trip back to Expression
+Expression roundTrip = doc.ToExpression();
+
+// Deserialize from file / stream / string
+Expression fromFile   = ExpressionJson.FromFile("expression.json");
+Expression fromString = ExpressionJson.FromString(json);
+```
+
+All methods accept an optional `XmlOptions` or `JsonOptions` parameter for customization:
+
+```csharp
+addExpr.ToXmlFile("expression.xml", new XmlOptions { Indent = true, IndentSize = 4 });
+```
+
+Stream and writer overloads are also available (sync and async):
+
+```csharp
+using var stream = new MemoryStream();
+addExpr.ToXmlStream(stream);
+
+stream.Position = 0;
+Expression fromStream = ExpressionXml.FromStream(stream);
+```
+
+### Deep Comparison
+
+```csharp
+using System.Linq.Expressions;
+using vm2.Linq.Expressions.DeepEquals;
+
+Expression<Func<int, int>> original  = x => x * 2;
+Expression<Func<int, int>> duplicate = x => x * 2;
+Expression<Func<int, int>> different = x => x + 2;
+
+Console.WriteLine(original.DeepEquals(duplicate)); // True
+Console.WriteLine(original.DeepEquals(different));  // False
+
+// With difference explanation
+if (!original.DeepEquals(different, out string difference))
+    Console.WriteLine(difference); // describes the first structural difference
+
+// Structural hash code for caching/deduplication
+int hash = original.GetDeepHashCode();
+```
+
+## Unsupported Expression Types
+
+Both the XML and JSON serializers support virtually all LINQ expression node types — arithmetic, bitwise, logical,
+comparison, assignment, increment/decrement, type operations, member access, method calls, invocations, object and collection
+creation, lambdas, parameters, blocks, conditionals, loops, switches, try/catch/finally, gotos, labels, constants of all
+primitive and complex types, and more.
+
+The following expression types are **not** supported and will throw `NotImplementedExpressionException` if encountered:
+
+| Expression Type | Reason |
+|-----------------|--------|
+| `DebugInfo` | Compiler-generated debugging metadata; not meaningful outside the debugger. |
+| `Dynamic` | DLR dynamic dispatch (C# `dynamic`); depends on runtime binders that cannot be serialized. |
+| `RuntimeVariables` | Provides runtime access to variable values; intrinsically tied to the execution context. |
+| `Extension` | Custom expression nodes from third-party providers; no universal serialization is possible. |
+
+## Configuration Options
+
+Both `XmlOptions` and `JsonOptions` extend the shared `DocumentOptions` base class:
+
+### Common Options
+
+| Property | Default | Description |
+|----------|---------|-------------|
+| `Indent` | `true` | Indent the output document for readability. |
+| `IndentSize` | `2` | Number of spaces per indentation level. |
+| `Identifiers` | `Preserve` | Naming convention for identifiers: `Preserve`, `Camel`, `Pascal`, `SnakeLower`, `SnakeUpper`. |
+| `TypeNames` | `FullName` | How types are written: `FullName`, `Name`, `AssemblyQualifiedName`. |
+| `AddComments` | `false` | Add explanatory comments to the output document. |
+| `AddLambdaTypes` | `false` | Include explicit type annotations on lambda parameters. |
+| `ValidateInputDocuments` | `IfSchemaPresent` | When to validate input documents: `Never`, `Always`, `IfSchemaPresent`. |
+
+### XML-Specific Options
+
+| Property | Default | Description |
+|----------|---------|-------------|
+| `CharacterEncoding` | `"utf-8"` | Document encoding (`ascii`, `utf-8`, `utf-16`, `utf-32`, `iso-8859-1`). |
+| `ByteOrderMark` | `false` | Include a BOM in the stream output. |
+| `BigEndian` | `false` | Use big-endian byte order for multi-byte encodings. |
+| `AddDocumentDeclaration` | `true` | Include the XML declaration. |
+| `OmitDuplicateNamespaces` | `true` | Suppress redundant namespace declarations. |
+| `AttributesOnNewLine` | `false` | Place each attribute on its own line. |
+
+### JSON-Specific Options
+
+| Property | Default | Description |
+|----------|---------|-------------|
+| `AllowTrailingCommas` | `false` | Allow trailing commas in input JSON. |
+
+Options can be passed to the transform constructor:
+
+```csharp
+var options = new XmlOptions
+{
+    Indent                 = true,
+    IndentSize             = 4,
+    Identifiers            = IdentifierConventions.Camel,
+    ValidateInputDocuments = ValidateExpressionDocuments.Never,
+};
+
+var transform = new ExpressionXmlTransform(options);
+```
+
+## Schema Validation
+
+Both the XML and JSON serialization packages ship with embedded schemas that formally describe the structure of their
+serialized documents. The XML package includes three XSD schemas
+(`Linq.Expressions.Serialization.xsd`, `DataContract.xsd`, `Microsoft.Serialization.xsd`); the JSON package includes a JSON
+Schema (`Linq.Expressions.Serialization.json`).
+
+In many scenarios validation is unnecessary. When both the producer and consumer of a serialized expression use the same
+version of these packages, the output is guaranteed to conform to the schema. **Turning validation off**
+(`ValidateInputDocuments = Never`) eliminates the parsing overhead entirely and is the recommended setting for production
+workloads where both ends are under your control. Validation becomes valuable when the serialized document acts as a
+**contract boundary** — for example, when documents are stored long-term and may outlive the producing code, when they cross
+trust boundaries between independently deployed services, or when third-party tools generate or modify the documents.
+
+The JSON schema validation uses [JsonSchema.Net](https://github.com/gregsdennis/json-everything). It handles the vast
+majority of expression patterns correctly but has known edge cases with deeply nested recursive `$ref` combined with `oneOf`
+constructs — currently 2 out of 718 tested expression patterns produce false validation failures on documents that are in
+fact valid. If your project requires complete JSON validation fidelity, you can clone the source, remove the `JSON_SCHEMA`
+preprocessor symbol from the build configuration, and build against
+[Newtonsoft.Json.Schema](https://www.newtonsoft.com/jsonschema) (NSJ) instead. NSJ is commercially licensed: the free tier
+allows 1,000 validations per hour; a paid license is required for higher throughput. The XML schema validation uses the
+built-in `System.Xml.Schema` infrastructure and has no known issues.
+
+## Security Considerations
+
+> [!WARNING]
+> Deserializing a LINQ expression tree reconstructs executable code: the resulting `Expression` can be compiled into a delegate
+> and invoked. This makes expression documents a potential vector for **remote code execution** if an attacker can supply or
+> tamper with the input.
+
+### Risks
+
+- **Arbitrary type instantiation** — the document contains assembly-qualified type names that are resolved via reflection.
+  A crafted document could reference types the consumer did not intend to load.
+- **Method invocation** — `MethodCall` and `Invocation` nodes can describe calls to any accessible method, including
+  process-level operations (`Process.Start`, file I/O, network access).
+- **Constant injection** — `Constant` nodes can carry arbitrary literal values, including connection strings, credentials,
+  or other sensitive data designed to be captured by a downstream lambda closure.
+
+### Mitigations
+
+1. **Treat serialized expressions as untrusted code.** Apply the same scrutiny you would give to a dynamically loaded
+   assembly. Never deserialize expression documents from unauthenticated or unverified sources.
+
+2. **Wrap the document in a signed envelope.** Before transmitting or persisting a serialized expression, embed it inside a
+   signed wrapper — for example, a JWS (JSON Web Signature) or XML Digital Signature envelope. The consumer verifies the
+   signature before deserializing. This ensures the document has not been tampered with in transit or at rest.
+
+3. **Attach security metadata.** Insert additional properties or elements into the document (or its envelope) that describe
+   the permitted execution context — e.g., an allow-list of assemblies and types, a maximum expression depth, or a
+   principal/role that is authorized to evaluate the expression. The consumer checks these properties before compiling or
+   invoking the result.
+
+4. **Restrict the type universe.** After deserialization, walk the resulting `Expression` tree and verify that every `Type`
+   reference and every `MethodInfo` belongs to an approved allow-list. Reject the expression if any node references an
+   unexpected type or method.
+
+5. **Run in a sandboxed context.** If you must evaluate expressions from less-trusted sources, compile and invoke them inside
+   a restricted environment — a separate process with limited permissions, a container, or an AppDomain-equivalent isolation
+   boundary — to contain the blast radius of a malicious expression.
+
+> [!IMPORTANT]
+> Schema validation does **not** provide security. A document can be schema-valid yet still contain harmful type references
+> or method calls. Security requires authentication, integrity verification, and runtime constraints as described above.
+
+## Get the Code
+
+Clone the [GitHub repository](https://github.com/vmelamed/vm2.Linq.Expressions):
+
+```bash
+git clone https://github.com/vmelamed/vm2.Linq.Expressions.git
+```
+
+## Build from the Source Code
+
+```bash
+dotnet build
+```
+
+Or build a specific project:
+
+```bash
+dotnet build src/Serialization.Xml/Serialization.Xml.csproj
+```
+
+## Tests
+
+The test projects are in the `test/` directory. They use MTP v2 with xUnit v3. Tests are buildable and runnable from the
+command line and from Visual Studio Code.
+
+```bash
+dotnet test
+```
+
+Or run a specific test project:
+
+```bash
+dotnet test test/Serialization.Xml.Tests/Serialization.Xml.Tests.csproj
+```
+
+## Related Packages
+
+- **[vm2.Glob.Api](https://www.nuget.org/packages/vm2.Glob.Api/)** — Cross-platform glob pattern matching
+- **[vm2.Ulid](https://www.nuget.org/packages/vm2.Ulid/)** — ULID generation and parsing
+- **[vm2.SemVer](https://www.nuget.org/packages/vm2.SemVer/)** — Semantic versioning
+
+## License
+
+MIT — See [LICENSE](https://github.com/vmelamed/vm2.Linq.Expressions/blob/main/LICENSE)
+
+## Version History
+
+See [CHANGELOG](https://github.com/vmelamed/vm2.Linq.Expressions/blob/main/CHANGELOG.md).
