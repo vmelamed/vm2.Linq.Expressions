@@ -3,6 +3,8 @@
 
 global using System.Collections.Frozen;
 global using System.Linq.Expressions;
+global using System.Text.Json.Nodes;
+global using System.Xml.Linq;
 
 global using BenchmarkDotNet.Attributes;
 
