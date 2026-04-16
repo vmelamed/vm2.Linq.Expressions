@@ -256,6 +256,18 @@ workloads where both ends are under your control. Validation becomes valuable wh
 **contract boundary** — for example, when documents are stored long-term and may outlive the producing code, when they cross
 trust boundaries between independently deployed services, or when third-party tools generate or modify the documents.
 
+> [!WARNING]
+> Performance impact can be substantial, especially for JSON deserialization with strict schema validation.
+> In benchmark runs, `JSON deserialize + ValidateInputDocuments = Always` is often **orders of magnitude** slower than
+> `Never`, while XML validation overhead is typically much smaller. If performance is important, prefer:
+>
+> 1. `ValidateInputDocuments = Never` for trusted/internal documents.
+> 2. XML format when strict validation is required on hot paths.
+
+Validation is demand-driven: schema evaluation only runs when `MustValidate` is true (that is, when validation is enabled
+and a schema is available). The schema libraries are still linked into the build, but per-document validation work is not
+performed unless requested.
+
 The JSON schema validation uses [JsonSchema.Net](https://github.com/gregsdennis/json-everything). It handles the vast
 majority of expression patterns correctly but has known edge cases with deeply nested recursive `$ref` combined with `oneOf`
 constructs — currently 2 out of 718 tested expression patterns produce false validation failures on documents that are in
