@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <RootNamespace>vm2.Linq.Expressions.Benchmarks</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../../src/Serialization.Xml/Serialization.Xml.csproj" />
+        <ProjectReference Include="../../src/Serialization.Json/Serialization.Json.csproj" />
+        <ProjectReference Include="../../src/DeepEquals/DeepEquals.csproj" />
+    </ItemGroup>
+
+</Project>
