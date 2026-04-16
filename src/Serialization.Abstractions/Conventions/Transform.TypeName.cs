@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace vm2.Linq.Expressions.Serialization.Conventions;
+namespace vm2.Linq.Expressions.Serialization;
 
 public static partial class Transform
 {

@@ -1,4 +1,4 @@
-namespace vm2.Linq.Expressions.Serialization.Conventions;
+namespace vm2.Linq.Expressions.Serialization;
 
 /// <summary>
 /// Specifies how to transform type names.

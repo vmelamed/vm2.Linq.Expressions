@@ -97,6 +97,6 @@ public abstract class DocumentOptions
     /// </exception>
     public bool MustValidate
         => ValidateInputDocuments == ValidateExpressionDocuments.Always
-                ? HasExpressionSchema ? true : throw new InvalidOperationException("The expressions schema was not added — use the appropriate SetSchemaLocation method.")
+                ? HasExpressionSchema ? true : throw new InvalidOperationException("The expressions schema was not added — use the appropriate SetSchemaLocation or LoadSchema method.")
                 : ValidateInputDocuments == ValidateExpressionDocuments.IfSchemaPresent && HasExpressionSchema;
 }

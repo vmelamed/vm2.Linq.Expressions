@@ -279,7 +279,7 @@ public partial class JsonOptions : DocumentOptions
     /// <param name="comment">The comment.</param>
     /// <returns>The comment object System.Nullable&lt;XComment&gt;.</returns>
     internal JElement? Comment(string comment)
-        => AddComments ? new JElement(Conventions.Vocabulary.Comment, comment) : null;
+        => AddComments ? new JElement(vm2.Linq.Expressions.Serialization.Vocabulary.Comment, comment) : null;
 
     /// <summary>
     /// Builds an JSON comment object with the text of the expression if comments are enabled.
@@ -295,7 +295,7 @@ public partial class JsonOptions : DocumentOptions
     /// <param name="parent">The parent.</param>
     /// <param name="expression">The expression.</param>
     internal void AddComment(JsonObject parent, Expression expression)
-        => parent.Add(AddComments ? new JElement(Conventions.Vocabulary.Comment, $" {expression} ") : null);
+        => parent.Add(AddComments ? new JElement(vm2.Linq.Expressions.Serialization.Vocabulary.Comment, $" {expression} ") : null);
 
     /// <summary>
     /// Adds the comment to the specified JSON container if comments are enabled.

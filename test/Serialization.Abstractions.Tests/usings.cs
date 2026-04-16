@@ -1,6 +1,5 @@
 global using FluentAssertions;
 
-global using vm2.Linq.Expressions.Serialization.Conventions;
 global using vm2.Linq.Expressions.Serialization.Exceptions;
 global using vm2.TestUtilities;
 

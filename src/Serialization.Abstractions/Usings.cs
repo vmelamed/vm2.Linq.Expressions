@@ -10,7 +10,6 @@ global using System.Reflection;
 global using System.Runtime.CompilerServices;
 global using System.Text.RegularExpressions;
 
-global using vm2.Linq.Expressions.Serialization.Conventions;
 global using vm2.Linq.Expressions.Serialization.Exceptions;
 
 global using static vm2.Linq.Expressions.Serialization.Extensions.DebugExtensions;
