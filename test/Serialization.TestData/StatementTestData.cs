@@ -30,7 +30,10 @@ public static class StatementTestData
         { TestLine(), "newHashtableInit",               "NewHashtable" },
         { TestLine(), "indexMember",                    "IndexMember" },
         { TestLine(), "indexObject1",                   "IndexObject1" },
+        { TestLine(), "genericArrayCall",               "GenericArrayCall" },
+        { TestLine(), "genericByRefCall",               "GenericByRefCall" },
         { TestLine(), "loop",                           "Loop" },
+        { TestLine(), "linqCall",                       "LinqCall" },
         { TestLine(), "newArrayBounds",                 "NewArrayBounds" },
         { TestLine(), "newArrayItems",                  "NewArrayInit" },
         { TestLine(), "newDictionaryInit",              "NewDictionaryInit" },
@@ -68,6 +71,8 @@ public static class StatementTestData
     static Expression ThrowException() => Expression.Throw(ExceptionDefaultCtor());
 
     static readonly MethodInfo _miWriteLine = typeof(Console).GetMethod("WriteLine", [ typeof(string) ])!;
+    static readonly MethodInfo _miEchoByRefInt = typeof(GenericMethodFixtures).GetMethod(nameof(GenericMethodFixtures.EchoByRef))!.MakeGenericMethod(typeof(int));
+    static readonly ParameterExpression _byRefVar = Expression.Variable(typeof(int), "byRefVar");
 
     static readonly Expression _block =
         Expression.Lambda(
@@ -291,6 +296,12 @@ public static class StatementTestData
                                                     _arrayAccessExpr,
                                                     _value));
 
+    static readonly Expression _genericByRefCall = Expression.Lambda<Func<int>>(
+        Expression.Block(
+            [_byRefVar],
+            Expression.Assign(_byRefVar, Expression.Constant(7)),
+            Expression.Call(_miEchoByRefInt, _byRefVar)));
+
     static readonly Dictionary<string, Expression> _substitutes = new()
     {
         ["() => new"]               = () => () => new StructDataContract1(42, "don't panic"),
@@ -308,7 +319,10 @@ public static class StatementTestData
         ["indexMember"]             = (TestMembersInitialized m) => m.ArrayProperty.Length > 0 ? m.ArrayProperty[m.ArrayProperty.Length - 1] : -1,
         ["array[index]"]            = _lambdaExpr,
         ["indexObject1"]            = (TestMembersInitialized1 m) => m[1],
+        ["genericArrayCall"]        = (Expression<Func<int[], int>>)(arr => GenericMethodFixtures.CountArray(arr)),
+        ["genericByRefCall"]        = _genericByRefCall,
         ["loop"]                    = _lambdaWithLoopContinueBreak,
+        ["linqCall"]                = (Expression<Func<int[], int>>)(arr => arr.Where(n => n > 0).Sum()),
         ["newArrayBounds"]          = () => new string[2, 3, 4],
         ["newArrayItems"]           = () => new string[] { "aaa", "bbb", "ccc" },
         ["newDictionaryInit"]       = () => new Dictionary<int, string> { { 1, "one" }, { 2, "two" }, { 3, "three" }, },

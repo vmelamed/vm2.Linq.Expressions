@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- arr => CountArray(arr) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <lambda
+        type="int">
+        <parameters>
+            <parameter
+                type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                id="P1"
+                name="arr" />
+        </parameters>
+        <body>
+            <call
+                type="int">
+                <method
+                    declaringType="vm2.Linq.Expressions.Serialization.TestData.GenericMethodFixtures, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                    static="true"
+                    type="int"
+                    name="CountArray">
+                    <parameterSpecs>
+                        <parameterSpec
+                            type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                            name="items" />
+                    </parameterSpecs>
+                </method>
+                <arguments>
+                    <parameter
+                        type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                        id="P1"
+                        name="arr" />
+                </arguments>
+            </call>
+        </body>
+    </lambda>
+</expression>

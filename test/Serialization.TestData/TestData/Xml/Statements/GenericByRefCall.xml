@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- () => {var byRefVar; ... } -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <lambda
+        type="int">
+        <parameters />
+        <body>
+            <block
+                type="int">
+                <variables>
+                    <parameter
+                        type="int"
+                        id="P1"
+                        name="byRefVar" />
+                </variables>
+                <assign
+                    type="int">
+                    <parameter
+                        type="int"
+                        id="P1"
+                        name="byRefVar" />
+                    <constant>
+                        <int>7</int>
+                    </constant>
+                </assign>
+                <call
+                    type="int">
+                    <method
+                        declaringType="vm2.Linq.Expressions.Serialization.TestData.GenericMethodFixtures, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                        static="true"
+                        type="int"
+                        name="EchoByRef">
+                        <parameterSpecs>
+                            <parameterSpec
+                                type="System.Int32&amp;, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                                name="value"
+                                isByRef="true" />
+                        </parameterSpecs>
+                    </method>
+                    <arguments>
+                        <parameter
+                            type="int"
+                            id="P1"
+                            name="byRefVar" />
+                    </arguments>
+                </call>
+            </block>
+        </body>
+    </lambda>
+</expression>

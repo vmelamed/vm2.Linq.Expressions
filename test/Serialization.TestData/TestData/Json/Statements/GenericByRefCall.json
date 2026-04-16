@@ -1,0 +1,70 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " () =\u003E {var byRefVar; ... } ",
+  "expression": {
+    "lambda": {
+      "type": "int",
+      "parameters": [],
+      "body": {
+        "block": {
+          "type": "int",
+          "variables": [
+            {
+              "type": "int",
+              "name": "byRefVar",
+              "id": "P1"
+            }
+          ],
+          "expressions": [
+            {
+              "assign": {
+                "type": "int",
+                "operands": [
+                  {
+                    "parameter": {
+                      "type": "int",
+                      "name": "byRefVar",
+                      "id": "P1"
+                    }
+                  },
+                  {
+                    "constant": {
+                      "int": 7
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "call": {
+                "type": "int",
+                "method": {
+                  "declaringType": "vm2.Linq.Expressions.Serialization.TestData.GenericMethodFixtures, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                  "static": true,
+                  "type": "int",
+                  "name": "EchoByRef",
+                  "parameterSpecs": [
+                    {
+                      "type": "System.Int32\u0026, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                      "name": "value",
+                      "isByRef": true
+                    }
+                  ]
+                },
+                "arguments": [
+                  {
+                    "parameter": {
+                      "type": "int",
+                      "name": "byRefVar",
+                      "id": "P1"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
