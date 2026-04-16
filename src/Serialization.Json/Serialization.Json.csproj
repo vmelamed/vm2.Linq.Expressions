@@ -9,24 +9,18 @@
     </PropertyGroup>
 
     <!--
-    Defining JSON_SCHEMA switches JSON validation to be done with Json.Schema from https://docs.json-everything.net/.
+    By default JSON validation is done with Json.Schema from https://docs.json-everything.net/.
     As of v9.2 floating-point issues are fixed, but it still fails on deeply nested oneOf + recursive $ref
     schemas (see StatementTests NewMembersInit1/2). Its SchemaRegistry.Global is also not thread-safe.
     It uses System.Text.Json like this project.
 
-    Otherwise JSON validation is done with Newtonsoft but it is
-    1. paid if you want more than 1000 validations per hour and
-    2. yet another JSON parser.
+    If NEWTONSOFT_SCHEMA is defined, JSON validation uses Newtonsoft.Json.Schema instead, but note that:
+    1. it is limited to 1000 validations per hour unless you pay
+    2. it is yet another JSON parser (we use System.Text.Json)
 
-    ATTENTION: The definition of JSON_SCHEMA switch must be equivalent in all the projects that use
+    ATTENTION: The definition of NEWTONSOFT_SCHEMA switch must be equivalent in all the projects that use
                schema validation, e.g. Serialization.Json.csproj and Serialization.Json.Tests.csproj.
     -->
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-        <DefineConstants>$(DefineConstants);JSON_SCHEMA</DefineConstants>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-        <DefineConstants>$(DefineConstants);JSON_SCHEMA</DefineConstants>
-    </PropertyGroup>
 
     <PropertyGroup Label="NuGet">
         <PackageId>vm2.Linq.Expressions.Serialization.Json</PackageId>
@@ -39,8 +33,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="JsonSchema.Net" Condition="$([System.Text.RegularExpressions.Regex]::IsMatch($(DefineConstants), '^(.*;)*JSON_SCHEMA(;.*)*$'))" />
-        <PackageReference Include="Newtonsoft.Json.Schema" Condition="!$([System.Text.RegularExpressions.Regex]::IsMatch($(DefineConstants), '^(.*;)*JSON_SCHEMA(;.*)*$'))" />
+        <PackageReference Include="JsonSchema.Net" Condition="!$([System.Text.RegularExpressions.Regex]::IsMatch($(DefineConstants), '^(.*;)*NEWTONSOFT_SCHEMA(;.*)*$'))" />
+        <PackageReference Include="Newtonsoft.Json.Schema" Condition="$([System.Text.RegularExpressions.Regex]::IsMatch($(DefineConstants), '^(.*;)*NEWTONSOFT_SCHEMA(;.*)*$'))" />
     </ItemGroup>
 
     <ItemGroup>

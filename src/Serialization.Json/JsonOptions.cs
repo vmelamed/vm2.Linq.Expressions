@@ -1,8 +1,7 @@
 ﻿namespace vm2.Linq.Expressions.Serialization.Json;
 
-#if JSON_SCHEMA
+#if !NEWTONSOFT_SCHEMA
 using global::Json.Schema;
-
 #else
 using System.Text;
 
@@ -105,7 +104,7 @@ public partial class JsonOptions : DocumentOptions
         MaxDepth = 1000
     };
 
-#if JSON_SCHEMA
+#if !NEWTONSOFT_SCHEMA
     JsonSchema? _schema;
 
     // JsonSchema.Net's SchemaRegistry.Global is not thread-safe.
@@ -202,6 +201,7 @@ public partial class JsonOptions : DocumentOptions
             foreach (var nestedResults in results.Details)
                 WriteResults(writer, nestedResults, indent + 1);
     }
+
 #else
     JSchema? _schema;
 
@@ -219,7 +219,6 @@ public partial class JsonOptions : DocumentOptions
 
         using (_syncSchema.WriterLock())
             _schema = JSchema.Parse(schemaText);
-
     }
 
     /// <summary>

@@ -244,25 +244,6 @@
           "xunit.v3.core.mtp-v2": "[3.2.2]"
         }
       },
-      "Humanizer.Core": {
-        "type": "Transitive",
-        "resolved": "3.0.10",
-        "contentHash": "yZIhtw8sYuvsONzQbZxWpR60tMWYHXoo0DL6nyOqSFiU5POjBTSEyWFpTQtJEZuy+oqiYTXKXY/Mjx7KnqIQFw=="
-      },
-      "Json.More.Net": {
-        "type": "Transitive",
-        "resolved": "3.0.1",
-        "contentHash": "fRctF2J2SILYG6wqP21drmeEODmCVkVQ/b3MndDu2fT1swfySyUgq7ePCk+aENGlDcIm05fyfjh9vcuqDEfv3w=="
-      },
-      "JsonPointer.Net": {
-        "type": "Transitive",
-        "resolved": "7.0.1",
-        "contentHash": "5C497yxfktYFsqxKG+GUQPsMvBqIjzLkqtDEdMGsnBpl3/OB8DOvTo7LEyRX7AVc1kVVj0IX5zhmLrlbvAYEnw==",
-        "dependencies": {
-          "Humanizer.Core": "3.0.10",
-          "Json.More.Net": "3.0.1"
-        }
-      },
       "Microsoft.ApplicationInsights": {
         "type": "Transitive",
         "resolved": "2.23.0",
@@ -572,7 +553,6 @@
       "vm2.Linq.Expressions.Serialization.Json": {
         "type": "Project",
         "dependencies": {
-          "JsonSchema.Net": "[9.2.0, )",
           "Microsoft.Extensions.Configuration.Binder": "[10.0.6, )",
           "Microsoft.Extensions.Configuration.CommandLine": "[10.0.6, )",
           "Microsoft.Extensions.Configuration.EnvironmentVariables": "[10.0.6, )",
@@ -585,17 +565,9 @@
           "Microsoft.Extensions.Logging.Console": "[10.0.6, )",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "[10.0.6, )",
           "Newtonsoft.Json": "[13.0.4, )",
+          "Newtonsoft.Json.Schema": "[4.0.1, )",
           "System.Configuration.ConfigurationManager": "[10.0.6, )",
           "vm2.Linq.Expressions.Serialization.Abstractions": "[1.0.0, )"
-        }
-      },
-      "JsonSchema.Net": {
-        "type": "CentralTransitive",
-        "requested": "[9.2.0, )",
-        "resolved": "9.2.0",
-        "contentHash": "pc1hr16zNQSxVsOSIYWliE3rtl5E4MwRXReflPf60l5tSvzMfl65eJV6M+iPXhZ2Ui5o078LJ2pS9O1o5ZT1zQ==",
-        "dependencies": {
-          "JsonPointer.Net": "7.0.1"
         }
       },
       "Microsoft.Testing.Extensions.Telemetry": {
@@ -630,6 +602,15 @@
         "contentHash": "CSJOcZHfKlTyPbS0CTJk6iEnU4gJC+eUA5z72UBnMDRdgVHYOmB8k9Y7jT233gZjnCOQiYFg3acQHRfu2H62nw==",
         "dependencies": {
           "Microsoft.Testing.Platform": "2.2.1"
+        }
+      },
+      "Newtonsoft.Json.Schema": {
+        "type": "CentralTransitive",
+        "requested": "[4.0.1, )",
+        "resolved": "4.0.1",
+        "contentHash": "rbHUKp5WTIbqmLEeJ21nTTDGcfR0LA7bVMzm0bYc3yx6NFKiCIHzzvYbwA4Sqgs7+wNldc5nBlkbithWj8IZig==",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
         }
       },
       "xunit.v3.extensibility.core": {
