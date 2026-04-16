@@ -43,10 +43,10 @@ env:
     [
     "test/DeepEquals.Tests/DeepEquals.Tests.csproj"
     ]
-  BENCHMARK_PROJECTS: >-
-    [
-    "benchmarks/Linq.Expressions.Benchmarks/Linq.Expressions.Benchmarks.csproj"
-    ]
+  #  BENCHMARK_PROJECTS: >-
+  #    [
+  #    "benchmarks/Linq.Expressions.Benchmarks/Linq.Expressions.Benchmarks.csproj"
+  #    ]
   PACKAGE_PROJECTS: >-
     [
     "src/DeepEquals/DeepEquals.csproj"
