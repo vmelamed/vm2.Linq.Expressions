@@ -29,6 +29,9 @@ public class RoundTripBenchmarks
             ["Block"] = BuildBlockExpression(),
         }.ToFrozenDictionary(StringComparer.Ordinal);
 
+    static readonly Lock _schemasLock = new();
+    static string? _jsonSchemaPath;
+
     ExpressionXmlTransform _xml = null!;
     ExpressionJsonTransform _json = null!;
 
@@ -47,6 +50,23 @@ public class RoundTripBenchmarks
     [GlobalSetup]
     public void Setup()
     {
+        var jsonOptions = new JsonOptions
+        {
+            Indent = false,
+            AddComments = false,
+            ValidateInputDocuments = ValidateInputDocuments,
+        };
+
+        if (ValidateInputDocuments == ValidateExpressionDocuments.Always)
+        {
+            jsonOptions = new JsonOptions(EnsureValidationSchemas())
+            {
+                Indent = false,
+                AddComments = false,
+                ValidateInputDocuments = ValidateInputDocuments,
+            };
+        }
+
         _xml = new ExpressionXmlTransform(new XmlOptions
         {
             Indent = false,
@@ -54,12 +74,7 @@ public class RoundTripBenchmarks
             ValidateInputDocuments = ValidateInputDocuments,
         });
 
-        _json = new ExpressionJsonTransform(new JsonOptions
-        {
-            Indent = false,
-            AddComments = false,
-            ValidateInputDocuments = ValidateInputDocuments,
-        });
+        _json = new ExpressionJsonTransform(jsonOptions);
 
         _expression = _cases[CaseName];
 
@@ -113,6 +128,48 @@ public class RoundTripBenchmarks
     public Expression Json_Deserialize()
     {
         return _json.Transform(_jsonDoc);
+    }
+
+    static string EnsureValidationSchemas()
+    {
+        if (_jsonSchemaPath is not null)
+            return _jsonSchemaPath;
+
+        lock (_schemasLock)
+        {
+            if (_jsonSchemaPath is not null)
+                return _jsonSchemaPath;
+
+            var repoRoot = FindRepoRoot();
+            var xmlSchemaPath = Path.Combine(repoRoot, "src", "Serialization.Xml", "Schema");
+
+            XmlOptions.SetSchemasLocations(
+                new Dictionary<string, string?>
+                {
+                    [XmlOptions.Ser] = Path.Combine(xmlSchemaPath, "Microsoft.Serialization.xsd"),
+                    [XmlOptions.Dcs] = Path.Combine(xmlSchemaPath, "DataContract.xsd"),
+                    [XmlOptions.Exs] = Path.Combine(xmlSchemaPath, "Linq.Expressions.Serialization.xsd"),
+                },
+                reset: false);
+
+            _jsonSchemaPath = Path.Combine(repoRoot, "src", "Serialization.Json", "Schema", "Linq.Expressions.Serialization.json");
+            return _jsonSchemaPath;
+        }
+    }
+
+    static string FindRepoRoot()
+    {
+        var dir = AppContext.BaseDirectory;
+
+        while (dir is not null)
+        {
+            if (File.Exists(Path.Combine(dir, "vm2.Linq.Expressions.slnx")))
+                return dir;
+
+            dir = Path.GetDirectoryName(dir);
+        }
+
+        throw new InvalidOperationException("Could not find the repository root (looked for vm2.Linq.Expressions.slnx).");
     }
 
     static Expression<Func<int, int, int>> BuildBlockExpression()

@@ -7,22 +7,17 @@
     </PropertyGroup>
 
     <!--
-    By default JSON validation is done with Newtonsoft with the following caveats:
-    1. it is limited to 1000 validations per hour, or you must pay for it
-    2. this is yet another JSON parser (we use System.Text.Json)
-
-    If JSON_SCHEMA is defined, it switches the JSON validation to Json.Schema from https://docs.json-everything.net/.
+    By default JSON validation is done with Json.Schema from https://docs.json-everything.net/.
     As of v9.2 floating-point issues are fixed, but it still fails on deeply nested oneOf + recursive $ref
     (see StatementTests NewMembersInit1/2). Its SchemaRegistry.Global is also not thread-safe.
     It uses System.Text.Json like this project.
 
-    ATTENTION: The definition of JSON_SCHEMA switch must be equivalent in all projects that use schema validation, e.g.
+    If NEWTONSOFT_SCHEMA is defined, tests also exercise the Newtonsoft.Json.Schema path.
+
+    ATTENTION: The definition of NEWTONSOFT_SCHEMA switch must be equivalent in all projects that use schema validation, e.g.
         Serialization.Json.csproj,
         Serialization.Json.Tests.csproj
     -->
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU' Or '$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-        <DefineConstants>$(DefineConstants);JSON_SCHEMA</DefineConstants>
-    </PropertyGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\..\src\DeepEquals\DeepEquals.csproj" />

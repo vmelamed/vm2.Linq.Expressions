@@ -259,8 +259,8 @@ trust boundaries between independently deployed services, or when third-party to
 The JSON schema validation uses [JsonSchema.Net](https://github.com/gregsdennis/json-everything). It handles the vast
 majority of expression patterns correctly but has known edge cases with deeply nested recursive `$ref` combined with `oneOf`
 constructs — currently 2 out of 718 tested expression patterns produce false validation failures on documents that are in
-fact valid. If your project requires complete JSON validation fidelity, you can clone the source, remove the `JSON_SCHEMA`
-preprocessor symbol from the build configuration, and build against
+fact valid. If your project requires complete JSON validation fidelity, you can clone the source, define the
+`NEWTONSOFT_SCHEMA` preprocessor symbol in the build configuration, and build against
 [Newtonsoft.Json.Schema](https://www.newtonsoft.com/jsonschema) (NSJ) instead. NSJ is commercially licensed: the free tier
 allows 1,000 validations per hour; a paid license is required for higher throughput. The XML schema validation uses the
 built-in `System.Xml.Schema` infrastructure and has no known issues.
