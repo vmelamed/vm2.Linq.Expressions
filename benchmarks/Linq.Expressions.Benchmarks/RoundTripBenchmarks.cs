@@ -29,54 +29,90 @@ public class RoundTripBenchmarks
             ["Block"] = BuildBlockExpression(),
         }.ToFrozenDictionary(StringComparer.Ordinal);
 
-    readonly ExpressionXmlTransform _xml = new(new XmlOptions
-    {
-        Indent = false,
-        AddComments = false,
-        ValidateInputDocuments = ValidateExpressionDocuments.Never,
-    });
-
-    readonly ExpressionJsonTransform _json = new(new JsonOptions
-    {
-        Indent = false,
-        AddComments = false,
-        ValidateInputDocuments = ValidateExpressionDocuments.Never,
-    });
+    ExpressionXmlTransform _xml = null!;
+    ExpressionJsonTransform _json = null!;
 
     Expression _expression = null!;
+    XDocument _xmlDoc = null!;
+    JsonObject _jsonDoc = null!;
 
     [ParamsSource(nameof(CaseNames))]
     public string CaseName { get; set; } = string.Empty;
+
+    [Params(ValidateExpressionDocuments.Never, ValidateExpressionDocuments.Always)]
+    public ValidateExpressionDocuments ValidateInputDocuments { get; set; }
 
     public static IEnumerable<string> CaseNames => _cases.Keys;
 
     [GlobalSetup]
     public void Setup()
     {
+        _xml = new ExpressionXmlTransform(new XmlOptions
+        {
+            Indent = false,
+            AddComments = false,
+            ValidateInputDocuments = ValidateInputDocuments,
+        });
+
+        _json = new ExpressionJsonTransform(new JsonOptions
+        {
+            Indent = false,
+            AddComments = false,
+            ValidateInputDocuments = ValidateInputDocuments,
+        });
+
         _expression = _cases[CaseName];
 
-        // Guardrail: fail benchmark setup if round-trip correctness regresses.
-        var xmlRoundTrip = _xml.Transform(_xml.Transform(_expression));
+        // Precompute serialized payloads so deserialize benchmarks measure only deserialize cost.
+        var xmlSerializer = new ExpressionXmlTransform(new XmlOptions
+        {
+            Indent = false,
+            AddComments = false,
+            ValidateInputDocuments = ValidateExpressionDocuments.Never,
+        });
+
+        var jsonSerializer = new ExpressionJsonTransform(new JsonOptions
+        {
+            Indent = false,
+            AddComments = false,
+            ValidateInputDocuments = ValidateExpressionDocuments.Never,
+        });
+
+        _xmlDoc = xmlSerializer.Transform(_expression);
+        _jsonDoc = jsonSerializer.Transform(_expression);
+
+        // Guardrail: fail setup if correctness regresses.
+        var xmlRoundTrip = _xml.Transform(_xmlDoc);
         if (!_expression.DeepEquals(xmlRoundTrip))
             throw new InvalidOperationException($"XML round-trip mismatch for case '{CaseName}'.");
 
-        var jsonRoundTrip = _json.Transform(_json.Transform(_expression));
+        var jsonRoundTrip = _json.Transform(_jsonDoc);
         if (!_expression.DeepEquals(jsonRoundTrip))
             throw new InvalidOperationException($"JSON round-trip mismatch for case '{CaseName}'.");
     }
 
-    [Benchmark(Description = "XML round-trip")]
-    public Expression Xml_RoundTrip()
+    [Benchmark(Description = "XML serialize")]
+    public XDocument Xml_Serialize()
     {
-        var doc = _xml.Transform(_expression);
-        return _xml.Transform(doc);
+        return _xml.Transform(_expression);
     }
 
-    [Benchmark(Description = "JSON round-trip")]
-    public Expression Json_RoundTrip()
+    [Benchmark(Description = "JSON serialize")]
+    public JsonObject Json_Serialize()
     {
-        var doc = _json.Transform(_expression);
-        return _json.Transform(doc);
+        return _json.Transform(_expression);
+    }
+
+    [Benchmark(Description = "XML deserialize")]
+    public Expression Xml_Deserialize()
+    {
+        return _xml.Transform(_xmlDoc);
+    }
+
+    [Benchmark(Description = "JSON deserialize")]
+    public Expression Json_Deserialize()
+    {
+        return _json.Transform(_jsonDoc);
     }
 
     static Expression<Func<int, int, int>> BuildBlockExpression()
