@@ -9,12 +9,14 @@
         <File Path=".github/workflows/Release.yaml" />
     </Folder>
     <Folder Name="/benchmarks/">
+        <Project Path="benchmarks/Linq.Expressions.Benchmarks/Linq.Expressions.Benchmarks.csproj" />
     </Folder>
     <Folder Name="/changelog/">
         <File Path="changelog/cliff.prerelease.toml" />
         <File Path="changelog/cliff.release-header.toml" />
     </Folder>
     <Folder Name="/examples/">
+        <File Path="toFromDoc.cs" />
         <File Path="toFromXml.cs" />
     </Folder>
     <Folder Name="/solution Items/">

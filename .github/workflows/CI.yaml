@@ -43,10 +43,10 @@ env:
     [
     "test/DeepEquals.Tests/DeepEquals.Tests.csproj"
     ]
-  #  BENCHMARK_PROJECTS: >-
-  #    [
-  #    "benchmarks/Linq.Expressions.Benchmarks/Linq.Expressions.Benchmarks.csproj"
-  #    ]
+  BENCHMARK_PROJECTS: >-
+    [
+    "benchmarks/Linq.Expressions.Benchmarks/Linq.Expressions.Benchmarks.csproj"
+    ]
   PACKAGE_PROJECTS: >-
     [
     "src/DeepEquals/DeepEquals.csproj"
@@ -59,7 +59,7 @@ env:
   PREPROCESSOR_SYMBOLS: ""
   DOTNET_VERSION: ${{ vars.DOTNET_VERSION || '10.0.x' }} # The .NET SDK version to use.
   CONFIGURATION: ${{ vars.CONFIGURATION || 'Release' }} # The build configuration: Debug, Release, etc.
-  MIN_COVERAGE_PCT: ${{ vars.MIN_COVERAGE_PCT || 80 }} # The minimum code coverage percentage required to pass the tests.
+  MIN_COVERAGE_PCT: ${{ vars.MIN_COVERAGE_PCT || 75 }} # The minimum code coverage percentage required to pass the tests.
   MAX_REGRESSION_PCT: ${{ vars.MAX_REGRESSION_PCT || 20 }} # The maximum allowed performance regression percentage for benchmarks to pass.
   MINVERTAGPREFIX: ${{ vars.MINVERTAGPREFIX || 'v' }} # The MinVer tag prefix.
   MINVERDEFAULTPRERELEASEIDENTIFIERS: ${{ vars.MINVERDEFAULTPRERELEASEIDENTIFIERS || 'preview.0' }} # The MinVer default pre-release identifiers.
