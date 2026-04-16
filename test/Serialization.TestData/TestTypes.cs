@@ -432,3 +432,25 @@ public class TestMembersInitialized1
         set => ArrayProperty![i] = value;
     }
 }
+
+public sealed class DerivedIntList : List<int>;
+
+public static class GenericMethodFixtures
+{
+    public static int CountArray<T>(T[] items) => items.Length;
+
+    public static int CountList<T>(List<T> items) => items.Count;
+
+    public static int CountStructs<T>(IEnumerable<T> items)
+        where T : struct
+    {
+        var count = 0;
+
+        foreach (var _ in items)
+            count++;
+
+        return count;
+    }
+
+    public static T EchoByRef<T>(ref T value) => value;
+}

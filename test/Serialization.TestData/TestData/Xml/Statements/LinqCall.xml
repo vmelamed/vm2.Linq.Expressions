@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- arr => arr.Where(n => (n > 0)).Sum() -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <lambda
+        type="int">
+        <parameters>
+            <parameter
+                type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                id="P1"
+                name="arr" />
+        </parameters>
+        <body>
+            <call
+                type="int">
+                <method
+                    declaringType="System.Linq.Enumerable, System.Linq, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                    static="true"
+                    type="int"
+                    name="Sum">
+                    <parameterSpecs>
+                        <parameterSpec
+                            type="System.Collections.Generic.IEnumerable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                            name="source" />
+                    </parameterSpecs>
+                </method>
+                <arguments>
+                    <call
+                        type="System.Collections.Generic.IEnumerable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+                        <method
+                            declaringType="System.Linq.Enumerable, System.Linq, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                            static="true"
+                            type="System.Collections.Generic.IEnumerable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                            name="Where">
+                            <parameterSpecs>
+                                <parameterSpec
+                                    type="System.Collections.Generic.IEnumerable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                                    name="source" />
+                                <parameterSpec
+                                    type="System.Func`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                                    name="predicate" />
+                            </parameterSpecs>
+                        </method>
+                        <arguments>
+                            <parameter
+                                type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                                id="P1"
+                                name="arr" />
+                            <lambda
+                                type="boolean">
+                                <parameters>
+                                    <parameter
+                                        type="int"
+                                        id="P2"
+                                        name="n" />
+                                </parameters>
+                                <body>
+                                    <greaterThan
+                                        type="boolean">
+                                        <parameter
+                                            type="int"
+                                            id="P2"
+                                            name="n" />
+                                        <constant>
+                                            <int>0</int>
+                                        </constant>
+                                    </greaterThan>
+                                </body>
+                            </lambda>
+                        </arguments>
+                    </call>
+                </arguments>
+            </call>
+        </body>
+    </lambda>
+</expression>
