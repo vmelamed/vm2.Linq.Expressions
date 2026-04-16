@@ -18,7 +18,6 @@ global using System.Text.RegularExpressions;
 global using System.Xml.Linq;
 
 global using vm2.Linq.Expressions.Serialization;
-global using vm2.Linq.Expressions.Serialization.Conventions;
 global using vm2.Linq.Expressions.Serialization.Exceptions;
 global using vm2.Linq.Expressions.Serialization.Extensions;
 

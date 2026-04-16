@@ -6,7 +6,6 @@ global using System.Xml.Linq;
 
 global using vm2.Linq.Expressions.DeepEquals;
 global using vm2.Linq.Expressions.Serialization;
-global using vm2.Linq.Expressions.Serialization.Conventions;
 global using vm2.Linq.Expressions.Serialization.Exceptions;
 global using vm2.Linq.Expressions.Serialization.TestData;
 global using vm2.Linq.Expressions.Serialization.Xml;

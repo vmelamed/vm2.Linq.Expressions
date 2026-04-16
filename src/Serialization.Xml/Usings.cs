@@ -15,7 +15,6 @@ global using System.Xml.Linq;
 global using System.Xml.Schema;
 
 global using vm2.Linq.Expressions.Serialization;
-global using vm2.Linq.Expressions.Serialization.Conventions;
 global using vm2.Linq.Expressions.Serialization.Exceptions;
 global using vm2.Linq.Expressions.Serialization.Extensions;
 
