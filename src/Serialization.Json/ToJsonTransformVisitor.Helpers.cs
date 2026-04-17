@@ -11,7 +11,7 @@ public partial class ToJsonTransformVisitor
     Dictionary<ParameterExpression, JElement> _parameters = [];
     Dictionary<LabelTarget, JElement> _labelTargets = [];
 
-    /// <inheritdoc/>>
+    /// <inheritdoc/>
     protected override void Reset()
     {
         base.Reset();
