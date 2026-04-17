@@ -31,7 +31,9 @@ public sealed class HashCodeVisitor : ExpressionVisitor
     /// <inheritdoc/>
     protected override Expression VisitConstant(ConstantExpression node)
     {
-        _hc.Add(node.Value is not null ? node.Value : 0);
+        _hc.Add(node.Value is null);
+        if (node.Value is not null)
+            _hc.Add(node.Value);
         return base.VisitConstant(node);
     }
 

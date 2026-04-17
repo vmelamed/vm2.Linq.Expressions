@@ -27,7 +27,7 @@ static partial class FromXmlDataTransform
         yield return new(Vocabulary.Guid, (x, ref t) => XmlConvert.ToGuid(x.Value));
         yield return new(Vocabulary.Half, (x, ref t) => (Half)XmlConvert.ToDouble(x.Value));
         yield return new(Vocabulary.String, (x, ref t) => x.IsNil() ? null : x.Value);
-        yield return new(Vocabulary.Uri, (x, ref t) => new Uri(x.Value));
+        yield return new(Vocabulary.Uri, (x, ref t) => x.IsNil() ? null : new Uri(x.Value));
 
         yield return new(Vocabulary.Anonymous, TransformAnonymous);
         yield return new(Vocabulary.ByteSequence, TransformByteSequence);

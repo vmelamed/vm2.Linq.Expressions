@@ -106,7 +106,7 @@ public partial class XmlOptions : DocumentOptions
                 "UTF-16" => "utf-16",
                 "UTF-32" => "utf-32",
                 "ISO-8859-1" or "LATIN1" => "iso-8859-1",
-                _ => throw new NotSupportedException($@"The encoding ""{CharacterEncoding}"" is not supported. " +
+                _ => throw new NotSupportedException($@"The encoding ""{value}"" is not supported. " +
                                                       @"The supported character encodings are: ""ascii"", ""utf-8"", ""utf-16"", ""utf-32"", and ""iso-8859-1"" (or ""Latin1"")."),
             };
 

@@ -30,16 +30,8 @@ public static class XNodeExtensions
     /// <returns><c>true</c> if the child was successfully obtained, <c>false</c> otherwise.</returns>
     public static bool TryGetChild(this XElement element, int childIndex, out XElement? child)
     {
-        if (childIndex < element.Elements().Count())
-        {
-            child = element.Elements().ElementAt(childIndex);
-            return true;
-        }
-        else
-        {
-            child = null;
-            return false;
-        }
+        child = element.Elements().Skip(childIndex).FirstOrDefault();
+        return child is not null;
     }
 
     /// <summary>
