@@ -22,12 +22,12 @@ WriteLine("""
     --------------------------
     """);
 
-Expression<Func<int, int, int>> expr1 = (x, y) => x * y + 2;
+Expression<Func<int, int, int>> expr1 = (x, y) => x * y + 42;
 
 var expr1Str = expr1.ToXmlString();
 WriteLine($"Serialized XML:\n{expr1Str}");
 
-var expr1_1 = ExpressionXml.FromString(expr1Str);
+var expr1_1 = (Expression<Func<int, int, int>>)ExpressionXml.FromString(expr1Str);
 WriteLine($"Deserialized expression: {expr1_1}");
 
 WriteLine($"Round-trip equality: {expr1.DeepEquals(expr1_1)}");
@@ -38,10 +38,13 @@ WriteLine("""
     --------------------------
     """);
 
+var result = expr1_1.Compile()(2, 3);
+WriteLine($"Compiled deserialized expression result: {result} (should be 2*3+42=48)");
+
 expr1Str = expr1.ToJsonString();
 WriteLine($"Serialized JSON:\n{expr1Str}");
 
-expr1_1 = ExpressionJson.FromString(expr1Str);
+expr1_1 = (Expression<Func<int, int, int>>)ExpressionJson.FromString(expr1Str);
 WriteLine($"Deserialized expression: {expr1_1}");
 WriteLine($"Round-trip equality: {expr1.DeepEquals(expr1_1)}");
 
@@ -50,6 +53,9 @@ WriteLine("""
     JSON advanced round-trip:
     --------------------------
     """);
+
+result = expr1_1.Compile()(7, 2);
+WriteLine($"Compiled deserialized expression result: {result} (should be 7*2+42=56)");
 
 var jsonOptions = new JsonOptions
 {
@@ -84,6 +90,9 @@ WriteLine($"Serialized JSON:\n{expr1Str}");
 if (validate)
     jsonOptions.Validate(document); // if it does not throw exception - it is valid
 
-expr1_1 = transform.Transform(document);
+expr1_1 = (Expression<Func<int, int, int>>)transform.Transform(document);
 WriteLine($"Deserialized expression: {expr1_1}");
 WriteLine($"Round-trip equality: {expr1.DeepEquals(expr1_1)}");
+
+result = expr1_1.Compile()(1, 0);
+WriteLine($"Compiled deserialized expression result: {result} (should be 1*0+42=42)");
