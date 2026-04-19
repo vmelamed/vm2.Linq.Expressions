@@ -11,8 +11,10 @@ namespace vm2.Linq.Expressions.Benchmarks;
 [SimpleJob(RuntimeMoniker.HostProcess)]
 #endif
 [MemoryDiagnoser]
-[Orderer(SummaryOrderPolicy.FastestToSlowest)]
-public class RoundTripBenchmarks
+[Orderer(SummaryOrderPolicy.Default)]
+[JsonExporter]
+[MarkdownExporter]
+public class SerializationBenchmarks
 {
     static readonly ParameterExpression _x = Expression.Parameter(typeof(int), "x");
     static readonly ParameterExpression _y = Expression.Parameter(typeof(int), "y");

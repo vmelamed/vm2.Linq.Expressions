@@ -10,8 +10,9 @@ namespace vm2.Linq.Expressions.Benchmarks;
 #else
 [SimpleJob(RuntimeMoniker.HostProcess)]
 #endif
-[MemoryDiagnoser]
-[Orderer(SummaryOrderPolicy.FastestToSlowest)]
+[Orderer(SummaryOrderPolicy.Default)]
+[JsonExporter]
+[MarkdownExporter]
 public class EqualityBenchmarks
 {
     static readonly ParameterExpression _x = Expression.Parameter(typeof(int), "x");
@@ -35,7 +36,7 @@ public class EqualityBenchmarks
     // construct the expressions in the benchmark method).
     // The reason we use identical structure is to test the worst-case scenario for DeepEquals, where it should return true
     // traversing the entire tree, rather than short-circuiting on a difference.
-    
+
     static readonly ParameterExpression _x2 = Expression.Parameter(typeof(int), "x");
     static readonly ParameterExpression _y2 = Expression.Parameter(typeof(int), "y");
     static readonly ParameterExpression _s2 = Expression.Parameter(typeof(string), "s");
