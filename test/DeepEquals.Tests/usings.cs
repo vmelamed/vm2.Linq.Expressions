@@ -9,3 +9,5 @@ global using System.Reflection;
 global using System.Runtime.Serialization;
 
 global using vm2.TestUtilities;
+
+global using static vm2.TestUtilities.TestUtilities;

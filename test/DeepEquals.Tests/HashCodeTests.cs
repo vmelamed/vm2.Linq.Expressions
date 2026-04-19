@@ -1,6 +1,6 @@
 namespace vm2.Linq.Expressions.DeepEquals.Tests;
 
-public class HashCodeTests
+public class HashCodeTests(ITestOutputHelper output) : TestBase(output)
 {
     [Fact]
     public void GetDeepHashCode_Visit_Null_ReturnsNull()
