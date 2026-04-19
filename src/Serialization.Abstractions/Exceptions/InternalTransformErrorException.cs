@@ -5,5 +5,6 @@ namespace vm2.Linq.Expressions.Serialization.Exceptions;
 /// </summary>
 /// <param name="message">The exception message.</param>
 /// <param name="inner">The inner exception.</param>
+[ExcludeFromCodeCoverage]
 public class InternalTransformErrorException(string? message = null, Exception? inner = null)
     : InvalidOperationException(message ?? "Unexpected transform error.", inner);

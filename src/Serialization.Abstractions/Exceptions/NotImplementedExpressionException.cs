@@ -6,6 +6,7 @@ namespace vm2.Linq.Expressions.Serialization.Exceptions;
 /// <param name="messageFormat">The message format string (expects one string argument).</param>
 /// <param name="param">The parameter substituted into the format.</param>
 /// <param name="innerException">The inner exception.</param>
+[ExcludeFromCodeCoverage]
 public class NotImplementedExpressionException(
     string messageFormat = NotImplementedExpressionException.DefaultMessageFormat,
     string? param = null,

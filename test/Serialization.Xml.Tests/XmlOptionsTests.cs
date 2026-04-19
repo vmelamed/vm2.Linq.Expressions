@@ -1,5 +1,6 @@
 namespace vm2.Linq.Expressions.Serialization.Xml.Tests;
 
+[ExcludeFromCodeCoverage]
 public class XmlOptionsTests
 {
     [Theory]

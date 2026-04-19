@@ -16,6 +16,7 @@ enum EnumFlagsTest
 }
 
 [DataContract(Namespace = "urn:vm.Test.Diagnostics", IsReference = true)]
+[ExcludeFromCodeCoverage]
 class Object1 : IEquatable<Object1>
 {
     [DataMember]
@@ -159,6 +160,7 @@ class Object1 : IEquatable<Object1>
 }
 
 [DataContract]
+[ExcludeFromCodeCoverage]
 class ClassDataContract1 : IEquatable<ClassDataContract1>
 {
     public ClassDataContract1() { }
@@ -196,6 +198,7 @@ class ClassDataContract1 : IEquatable<ClassDataContract1>
 
 #pragma warning disable IDE0021 // Use expression body for constructor
 [DataContract]
+[ExcludeFromCodeCoverage]
 class ClassDataContract2 : ClassDataContract1, IEquatable<ClassDataContract2>
 {
     public ClassDataContract2()
@@ -237,6 +240,7 @@ class ClassDataContract2 : ClassDataContract1, IEquatable<ClassDataContract2>
 #pragma warning restore IDE0021 // Use expression body for constructor
 
 [Serializable]
+[ExcludeFromCodeCoverage]
 class ClassSerializable1 : IEquatable<ClassSerializable1>
 {
     public int IntProperty { get; set; }
@@ -262,6 +266,7 @@ class ClassSerializable1 : IEquatable<ClassSerializable1>
     public static bool operator !=(ClassSerializable1 left, ClassSerializable1 right) => !(left == right);
 }
 
+[ExcludeFromCodeCoverage]
 class ClassNonSerializable(int intProperty, string strProperty)
 {
     public int IntProperty { get; set; } = intProperty;
@@ -272,6 +277,7 @@ class ClassNonSerializable(int intProperty, string strProperty)
 }
 
 [Serializable]
+[ExcludeFromCodeCoverage]
 struct StructSerializable1 : IEquatable<StructSerializable1>
 {
     public StructSerializable1() { }
@@ -296,6 +302,7 @@ struct StructSerializable1 : IEquatable<StructSerializable1>
 }
 
 [DataContract]
+[ExcludeFromCodeCoverage]
 struct StructDataContract1 : IEquatable<StructDataContract1>
 {
     public StructDataContract1() { }
@@ -329,6 +336,7 @@ struct StructDataContract1 : IEquatable<StructDataContract1>
 }
 
 [DataContract]
+[ExcludeFromCodeCoverage]
 class A
 {
     [DataMember]
@@ -340,6 +348,7 @@ class A
 }
 
 [DataContract]
+[ExcludeFromCodeCoverage]
 class B
 {
     [DataMember]
@@ -350,6 +359,7 @@ class B
 
 #pragma warning disable CS0649
 [DataContract]
+[ExcludeFromCodeCoverage]
 class C : A
 {
     [DataMember]
@@ -359,6 +369,7 @@ class C : A
 
 #pragma warning disable IDE0025 // Use expression body for property
 [DataContract]
+[ExcludeFromCodeCoverage]
 class TestMethods
 {
     [DataMember]
@@ -381,6 +392,7 @@ class TestMethods
 }
 #pragma warning restore IDE0025 // Use expression body for property
 
+[ExcludeFromCodeCoverage]
 class Inner
 {
     public int IntProperty { get; set; }
@@ -388,6 +400,7 @@ class Inner
     public string StringProperty { get; set; } = "";
 }
 
+[ExcludeFromCodeCoverage]
 class TestMembersInitialized
 {
     public int TheOuterIntProperty { get; set; }
@@ -401,6 +414,7 @@ class TestMembersInitialized
     public IEnumerable<string> EnumerableProperty { get; set; } = ["1", "2", "3"];
 }
 
+[ExcludeFromCodeCoverage]
 class TestMembersInitialized1
 {
     public int TheOuterIntProperty { get; set; }

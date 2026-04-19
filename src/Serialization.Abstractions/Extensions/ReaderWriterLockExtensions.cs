@@ -22,6 +22,7 @@ public interface IReaderWriterSync : IDisposable
 /// Extension methods for <see cref="ReaderWriterLockSlim"/> that return disposable scope objects for better management
 /// of the lifetime of the lock scope via the <c>using</c> statement.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public static class ReaderWriterLockExtensions
 {
     /// <summary>

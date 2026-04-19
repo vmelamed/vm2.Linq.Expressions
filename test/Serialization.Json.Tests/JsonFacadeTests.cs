@@ -3,6 +3,7 @@ namespace vm2.Linq.Expressions.Serialization.Json.Tests;
 using vm2.Linq.Expressions.Serialization;
 using vm2.Linq.Expressions.Serialization.Json;
 
+[ExcludeFromCodeCoverage]
 public class JsonFacadeTests
 {
     static readonly Expression<Func<int, int, int>> _expr = (x, y) => x * y + 2;
