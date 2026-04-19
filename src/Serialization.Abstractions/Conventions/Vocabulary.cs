@@ -6,6 +6,7 @@ namespace vm2.Linq.Expressions.Serialization;
 /// <summary>
 /// Contains all document token names used in LINQ expression serialization (XML local names, JSON property names, etc.).
 /// </summary>
+[ExcludeFromCodeCoverage]
 public static class Vocabulary
 {
     // Basic type names common to all text document formats.

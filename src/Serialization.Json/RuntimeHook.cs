@@ -3,6 +3,7 @@
 /// <summary>
 /// Class RuntimeHook.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public class RuntimeHook
 {
 }

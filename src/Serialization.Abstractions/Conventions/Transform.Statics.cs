@@ -1,5 +1,6 @@
 namespace vm2.Linq.Expressions.Serialization;
 
+[ExcludeFromCodeCoverage]
 public static partial class Transform
 {
     static IEnumerable<Type> EnumNonPrimitiveBasicTypes()

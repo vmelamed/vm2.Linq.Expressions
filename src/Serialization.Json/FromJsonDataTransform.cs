@@ -1,4 +1,5 @@
 ﻿namespace vm2.Linq.Expressions.Serialization.Json;
+
 static partial class FromJsonDataTransform
 {
     /// <summary>

@@ -5,6 +5,7 @@ namespace vm2.Linq.Expressions.Serialization.Extensions;
 /// <summary>
 /// Extension methods for <see cref="Type"/>.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public static partial class TypeExtensions
 {
     /// <summary>

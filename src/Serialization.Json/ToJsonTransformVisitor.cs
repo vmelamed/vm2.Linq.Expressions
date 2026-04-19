@@ -66,12 +66,14 @@ public partial class ToJsonTransformVisitor(JsonOptions options) : ExpressionTra
     }
 
     #region Lambda
+    [ExcludeFromCodeCoverage]
     IEnumerable<JsonNode?> VisitParameterDefinitionList(ReadOnlyCollection<ParameterExpression> parameterList)
-    => parameterList.Select(p => !IsDefined(p)
+        => parameterList.Select(p => !IsDefined(p)
                                     ? GetParameter(p).Node
                                     : throw new InternalTransformErrorException($"Parameter with a name `{p.Name}` is already defined."));
 
     /// <inheritdoc/>
+    [ExcludeFromCodeCoverage]
     protected override Expression VisitLambda<T>(Expression<T> node)
         => GenericVisit(
             node,
@@ -291,6 +293,7 @@ public partial class ToJsonTransformVisitor(JsonOptions options) : ExpressionTra
     }
 
     /// <inheritdoc/>
+    [ExcludeFromCodeCoverage]
     protected override MemberMemberBinding VisitMemberMemberBinding(MemberMemberBinding node)
     {
         using var _ = OutputDebugScope(nameof(MemberMemberBinding));
@@ -306,6 +309,7 @@ public partial class ToJsonTransformVisitor(JsonOptions options) : ExpressionTra
     }
 
     /// <inheritdoc/>
+    [ExcludeFromCodeCoverage]
     protected override MemberListBinding VisitMemberListBinding(MemberListBinding node)
     {
         using var _ = OutputDebugScope(nameof(MemberListBinding));

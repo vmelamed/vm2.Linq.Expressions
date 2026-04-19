@@ -3,6 +3,7 @@ namespace vm2.Linq.Expressions.Serialization.Json;
 /// <summary>
 /// Static methods for deserializing LINQ expression trees from JSON sources (streams, files, strings).
 /// </summary>
+[ExcludeFromCodeCoverage]
 public static class ExpressionJson
 {
     // ── From stream ──────────────────────────────────────────────

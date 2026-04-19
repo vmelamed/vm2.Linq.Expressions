@@ -1,5 +1,6 @@
 namespace vm2.Linq.Expressions.Serialization.Tests;
 
+[ExcludeFromCodeCoverage]
 public partial class TransformTests(ITestOutputHelper output) : TestBase(output)
 {
     [Theory]

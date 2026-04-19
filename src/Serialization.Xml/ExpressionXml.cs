@@ -3,6 +3,7 @@ namespace vm2.Linq.Expressions.Serialization.Xml;
 /// <summary>
 /// Static methods for deserializing LINQ expression trees from XML sources (streams, files, strings, readers).
 /// </summary>
+[ExcludeFromCodeCoverage]
 public static class ExpressionXml
 {
     // ── From stream ──────────────────────────────────────────────

@@ -12,6 +12,7 @@ public partial class FromJsonTransformVisitor
     /// <param name="e">The JSON element which property's JsonObject to visit.</param>
     /// <param name="propertyName">Name of the property.</param>
     /// <returns>Expression?</returns>
+    [ExcludeFromCodeCoverage]
     protected Expression? TryVisitChild(JElement e, string propertyName)
         => e.TryGetElement(out var child, propertyName)
             && child is not null
@@ -26,6 +27,7 @@ public partial class FromJsonTransformVisitor
     /// <param name="propertyName">Name of the property.</param>
     /// <returns>Expression.</returns>
     /// <exception cref="SerializationException"/>
+    [ExcludeFromCodeCoverage]
     protected Expression VisitChild(JElement e, string propertyName)
         => Visit(e.GetElement(propertyName));
 
@@ -76,6 +78,7 @@ public partial class FromJsonTransformVisitor
     /// <param name="childPropertyName">Name of the child property.</param>
     /// <param name="grandChildPropertyName">Name of the grand child property.</param>
     /// <returns>Expression?</returns>
+    [ExcludeFromCodeCoverage]
     protected Expression? TryVisitGrandchild(
         JElement e,
         string childPropertyName,
@@ -97,6 +100,7 @@ public partial class FromJsonTransformVisitor
     /// <param name="grandChildPropertyName">Name of the grand child property.</param>
     /// <returns>Expression.</returns>
     /// <exception cref="SerializationException"/>
+    [ExcludeFromCodeCoverage]
     protected Expression VisitGrandchild(
         JElement e,
         string childPropertyName,
