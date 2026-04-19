@@ -1,12 +1,13 @@
 namespace vm2.Linq.Expressions.Serialization.Json.Tests;
 
+using vm2.TestUtilities;
+
+
 [CollectionDefinition("JSON")]
 public abstract class BaseTests(
         JsonTestsFixture fixture,
-        ITestOutputHelper output) : IClassFixture<JsonTestsFixture>
+        ITestOutputHelper output) : TestBase(output), IClassFixture<JsonTestsFixture>
 {
-    public ITestOutputHelper Out { get; } = output;
-
     protected JsonTestsFixture _fixture = fixture;
 
     protected abstract string JsonTestFilesPath { get; }

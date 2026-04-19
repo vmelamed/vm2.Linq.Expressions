@@ -3,10 +3,8 @@
 [CollectionDefinition("XML")]
 public abstract class BaseTests(
         XmlTestsFixture fixture,
-        ITestOutputHelper output) : IClassFixture<XmlTestsFixture>
+        ITestOutputHelper output) : TestBase(output), IClassFixture<XmlTestsFixture>
 {
-    public ITestOutputHelper Out { get; } = output;
-
     protected XmlTestsFixture _fixture = fixture;
 
     protected abstract string XmlTestFilesPath { get; }

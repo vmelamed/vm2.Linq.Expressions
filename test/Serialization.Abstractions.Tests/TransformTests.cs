@@ -1,6 +1,6 @@
 namespace vm2.Linq.Expressions.Serialization.Tests;
 
-public partial class TransformTests
+public partial class TransformTests(ITestOutputHelper output) : TestBase(output)
 {
     [Theory]
     [MemberData(nameof(TransformIdentifiersData))]
