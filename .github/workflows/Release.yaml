@@ -12,7 +12,9 @@ on:
 env:
   PACKAGE_PROJECTS: >-
     [
-    "src/Linq.Expressions/Linq.Expressions.csproj"
+    "src/DeepEquals/DeepEquals.csproj",
+    "src/Serialization.Json/Serialization.Json.csproj",
+    "src/Serialization.Xml/Serialization.Xml.csproj"
     ]
   # Ensure the NUGET_API_KEY secret is issued by the server selected here.
   NUGET_SERVER: ${{ vars.NUGET_SERVER || 'github' }}
