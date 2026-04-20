@@ -4,14 +4,14 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <lambda
-        type="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        type="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
         <parameters />
         <body>
             <memberInit
-                type="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+                type="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
                 <new>
                     <constructor
-                        declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+                        declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
                         <parameterSpecs />
                     </constructor>
                     <arguments />
@@ -19,7 +19,7 @@
                 <bindings>
                     <assignmentBinding>
                         <property
-                            declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                            declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
                             type="int"
                             name="TheOuterIntProperty" />
                         <constant>
@@ -28,7 +28,7 @@
                     </assignmentBinding>
                     <assignmentBinding>
                         <property
-                            declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                            declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
                             type="dateTime"
                             name="Time" />
                         <new>
@@ -61,14 +61,14 @@
                     </assignmentBinding>
                     <assignmentBinding>
                         <property
-                            declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
-                            type="vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                            declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                            type="vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
                             name="InnerProperty" />
                         <memberInit
-                            type="vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+                            type="vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
                             <new>
                                 <constructor
-                                    declaringType="vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+                                    declaringType="vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
                                     <parameterSpecs />
                                 </constructor>
                                 <arguments />
@@ -76,7 +76,7 @@
                             <bindings>
                                 <assignmentBinding>
                                     <property
-                                        declaringType="vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                                        declaringType="vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
                                         type="int"
                                         name="IntProperty" />
                                     <constant>
@@ -85,7 +85,7 @@
                                 </assignmentBinding>
                                 <assignmentBinding>
                                     <property
-                                        declaringType="vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                                        declaringType="vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
                                         type="string"
                                         name="StringProperty" />
                                     <constant>
@@ -97,7 +97,7 @@
                     </assignmentBinding>
                     <assignmentBinding>
                         <property
-                            declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                            declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
                             type="System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
                             name="EnumerableProperty" />
                         <listInit>

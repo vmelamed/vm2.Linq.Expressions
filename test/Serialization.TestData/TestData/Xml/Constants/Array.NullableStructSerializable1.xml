@@ -4,15 +4,15 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <constant>
-        <!--  System.Nullable`1[[vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][]  -->
+        <!--  System.Nullable`1[[vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]][]  -->
         <sequence
-            type="System.Nullable`1[[vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
-            elementType="System.Nullable`1[[vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+            type="System.Nullable`1[[vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]][], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+            elementType="System.Nullable`1[[vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
             <!--  nullable<vm2.Linq.Expressions.Serialization.TestData.StructSerializable1>  -->
             <nullable>
                 <!--  vm2.Linq.Expressions.Serialization.TestData.StructSerializable1  -->
                 <object
-                    type="vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+                    type="vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
                     <StructSerializable1
                         xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
                         xmlns="http://schemas.datacontract.org/2004/07/vm2.Linq.Expressions.Serialization.TestData">
@@ -22,12 +22,12 @@
                 </object>
             </nullable>
             <nullable
-                type="vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                type="vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
                 i:nil="true" />
             <nullable>
                 <!--  vm2.Linq.Expressions.Serialization.TestData.StructSerializable1  -->
                 <object
-                    type="vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+                    type="vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
                     <StructSerializable1
                         xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
                         xmlns="http://schemas.datacontract.org/2004/07/vm2.Linq.Expressions.Serialization.TestData">
@@ -37,7 +37,7 @@
                 </object>
             </nullable>
             <nullable
-                type="vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                type="vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
                 i:nil="true" />
         </sequence>
     </constant>

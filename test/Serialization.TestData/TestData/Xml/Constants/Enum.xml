@@ -6,7 +6,7 @@
     <constant>
         <!--  vm2.Linq.Expressions.Serialization.TestData.EnumTest  -->
         <enum
-            type="vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+            type="vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
             baseValue="2">Three</enum>
     </constant>
 </expression>

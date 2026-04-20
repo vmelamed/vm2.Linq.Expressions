@@ -6,7 +6,7 @@
     <constant>
         <!--  nullable<vm2.Linq.Expressions.Serialization.TestData.StructSerializable1>  -->
         <nullable
-            type="vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+            type="vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
             i:nil="true" />
     </constant>
 </expression>

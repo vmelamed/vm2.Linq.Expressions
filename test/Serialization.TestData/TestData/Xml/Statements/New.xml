@@ -4,16 +4,16 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <lambda
-        type="System.Func`1[[vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+        type="System.Func`1[[vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
         <parameters />
         <body>
             <lambda
-                type="vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+                type="vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
                 <parameters />
                 <body>
                     <new>
                         <constructor
-                            declaringType="vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+                            declaringType="vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
                             <parameterSpecs>
                                 <parameterSpec
                                     type="int"

@@ -7,7 +7,7 @@
       "nullable": {
         "$comment": " vm2.Linq.Expressions.Serialization.TestData.StructDataContract1 ",
         "object": {
-          "type": "vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "type": "vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
           "value": {
             "IntProperty": 7,
             "StringProperty": "vm"

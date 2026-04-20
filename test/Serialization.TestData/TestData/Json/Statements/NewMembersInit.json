@@ -3,14 +3,14 @@
   "$comment": " () =\u003E new TestMembersInitialized() {TheOuterIntProperty = 42, Time = new DateTime(1776, 7, 4), InnerProperty = new Inner() {IntProperty = 23, StringProperty = \u0022inner string\u0022}, EnumerableProperty = new List\u00601() {Void Add(System.String)(\u0022aaa\u0022), Void Add(System.String)(\u0022bbb\u0022), Void Add(System.String)(\u0022ccc\u0022)}} ",
   "expression": {
     "lambda": {
-      "type": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "type": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
       "parameters": [],
       "body": {
         "memberInit": {
-          "type": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "type": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
           "new": {
             "constructor": {
-              "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
               "parameterSpecs": []
             },
             "arguments": []
@@ -20,7 +20,7 @@
               "assignmentBinding": {
                 "member": {
                   "property": {
-                    "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
                     "type": "int",
                     "name": "TheOuterIntProperty"
                   }
@@ -36,7 +36,7 @@
               "assignmentBinding": {
                 "member": {
                   "property": {
-                    "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
                     "type": "dateTime",
                     "name": "Time"
                   }
@@ -85,17 +85,17 @@
               "assignmentBinding": {
                 "member": {
                   "property": {
-                    "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
-                    "type": "vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "type": "vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
                     "name": "InnerProperty"
                   }
                 },
                 "value": {
                   "memberInit": {
-                    "type": "vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "type": "vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
                     "new": {
                       "constructor": {
-                        "declaringType": "vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                        "declaringType": "vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
                         "parameterSpecs": []
                       },
                       "arguments": []
@@ -105,7 +105,7 @@
                         "assignmentBinding": {
                           "member": {
                             "property": {
-                              "declaringType": "vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                              "declaringType": "vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
                               "type": "int",
                               "name": "IntProperty"
                             }
@@ -121,7 +121,7 @@
                         "assignmentBinding": {
                           "member": {
                             "property": {
-                              "declaringType": "vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                              "declaringType": "vm2.Linq.Expressions.Serialization.TestData.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
                               "type": "string",
                               "name": "StringProperty"
                             }
@@ -142,7 +142,7 @@
               "assignmentBinding": {
                 "member": {
                   "property": {
-                    "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
                     "type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
                     "name": "EnumerableProperty"
                   }

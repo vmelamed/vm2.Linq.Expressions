@@ -6,7 +6,7 @@
     <constant>
         <!--  System.ValueTuple<int, string, vm2.Linq.Expressions.Serialization.TestData.StructDataContract1>  -->
         <tuple
-            type="System.ValueTuple`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+            type="System.ValueTuple`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
             <item
                 name="Item1">
                 <int>1</int>
@@ -19,7 +19,7 @@
                 name="Item3">
                 <!--  vm2.Linq.Expressions.Serialization.TestData.StructDataContract1  -->
                 <object
-                    type="vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+                    type="vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
                     <StructDataContract1
                         xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
                         xmlns="http://schemas.datacontract.org/2004/07/vm2.Linq.Expressions.Serialization.TestData">
