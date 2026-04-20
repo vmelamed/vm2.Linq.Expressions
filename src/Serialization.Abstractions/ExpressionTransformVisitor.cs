@@ -110,6 +110,7 @@ public abstract class ExpressionTransformVisitor<TElement> : ExpressionVisitor
 
     #region Not implemented:
     /// <inheritdoc/>
+    [ExcludeFromCodeCoverage]
     protected override Expression VisitDebugInfo(DebugInfoExpression node)
         => GenericVisit(
             node,
@@ -117,6 +118,7 @@ public abstract class ExpressionTransformVisitor<TElement> : ExpressionVisitor
             (n, x) => throw new NotImplementedExpressionException(param: n.GetType().Name));
 
     /// <inheritdoc/>
+    [ExcludeFromCodeCoverage]
     protected override Expression VisitDynamic(DynamicExpression node)
         => GenericVisit(
             node,
@@ -124,6 +126,7 @@ public abstract class ExpressionTransformVisitor<TElement> : ExpressionVisitor
             (n, x) => throw new NotImplementedExpressionException(param: n.GetType().Name));
 
     /// <inheritdoc/>
+    [ExcludeFromCodeCoverage]
     protected override Expression VisitRuntimeVariables(RuntimeVariablesExpression node)
         => GenericVisit(
             node,
@@ -131,6 +134,7 @@ public abstract class ExpressionTransformVisitor<TElement> : ExpressionVisitor
             (n, x) => throw new NotImplementedExpressionException(param: n.GetType().Name));
 
     /// <inheritdoc/>
+    [ExcludeFromCodeCoverage]
     protected override Expression VisitExtension(Expression node)
         => GenericVisit(
             node,

@@ -59,6 +59,7 @@ public static class ReaderWriterLockExtensions
 /// When the object is created, it attempts to acquire the lock in reader mode. When disposed, it
 /// releases the lock if it has previously acquired.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public sealed class ReaderSync : IReaderWriterSync
 {
     /// <inheritdoc/>
@@ -104,6 +105,7 @@ public sealed class ReaderSync : IReaderWriterSync
 /// When the object is created, it attempts to acquire the lock in writer mode. When disposed, it releases the lock if
 /// it was previously acquired.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public sealed class WriterSync : IReaderWriterSync
 {
     /// <inheritdoc/>
@@ -149,6 +151,7 @@ public sealed class WriterSync : IReaderWriterSync
 /// When the object is created, it attempts to acquire the lock in upgradeable reader mode. When disposed, it
 /// releases the lock if it has previously acquired.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public sealed class UpgradeableReaderSync : IReaderWriterSync
 {
     /// <inheritdoc/>
