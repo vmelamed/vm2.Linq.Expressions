@@ -3,7 +3,6 @@ namespace vm2.Linq.Expressions.Serialization;
 /// <summary>
 /// Provides identifier and type-name transformations according to configurable conventions.
 /// </summary>
-[ExcludeFromCodeCoverage]
 public static partial class Transform
 {
     /*
