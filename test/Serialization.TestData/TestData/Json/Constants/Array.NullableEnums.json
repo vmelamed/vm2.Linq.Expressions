@@ -3,16 +3,16 @@
   "$comment": " value(System.Nullable\u00601[vm2.Linq.Expressions.Serialization.TestData.EnumTest][]) ",
   "expression": {
     "constant": {
-      "$comment": " System.Nullable\u00601[[vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][] ",
+      "$comment": " System.Nullable\u00601[[vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]][] ",
       "sequence": {
-        "type": "System.Nullable\u00601[[vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "type": "System.Nullable\u00601[[vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]][], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
         "$comment": " nullable\u003Cvm2.Linq.Expressions.Serialization.TestData.EnumTest\u003E ",
         "value": [
           {
             "nullable": {
               "$comment": " vm2.Linq.Expressions.Serialization.TestData.EnumTest ",
               "enum": {
-                "type": "vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "type": "vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "value": "One",
                 "baseValue": 0
               }
@@ -22,7 +22,7 @@
             "nullable": {
               "$comment": " vm2.Linq.Expressions.Serialization.TestData.EnumTest ",
               "enum": {
-                "type": "vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "type": "vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "value": "Two",
                 "baseValue": 1
               }
@@ -30,13 +30,13 @@
           },
           {
             "nullable": {
-              "type": "vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "type": "vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
               "value": null
             }
           },
           {
             "nullable": {
-              "type": "vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "type": "vm2.Linq.Expressions.Serialization.TestData.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
               "value": null
             }
           }

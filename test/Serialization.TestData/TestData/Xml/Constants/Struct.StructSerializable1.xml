@@ -6,7 +6,7 @@
     <constant>
         <!--  vm2.Linq.Expressions.Serialization.TestData.StructSerializable1  -->
         <object
-            type="vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+            type="vm2.Linq.Expressions.Serialization.TestData.StructSerializable1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
             <StructSerializable1
                 xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
                 xmlns="http://schemas.datacontract.org/2004/07/vm2.Linq.Expressions.Serialization.TestData">

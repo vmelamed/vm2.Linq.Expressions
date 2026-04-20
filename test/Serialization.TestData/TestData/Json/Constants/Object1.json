@@ -5,7 +5,7 @@
     "constant": {
       "$comment": " vm2.Linq.Expressions.Serialization.TestData.Object1 ",
       "object": {
-        "type": "vm2.Linq.Expressions.Serialization.TestData.Object1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "type": "vm2.Linq.Expressions.Serialization.TestData.Object1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
         "value": {
           "$id": "1",
           "ObjectProperty": null,

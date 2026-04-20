@@ -6,7 +6,7 @@
       "type": "void",
       "parameters": [
         {
-          "type": "vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "type": "vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
           "name": "a",
           "id": "P1"
         }
@@ -16,13 +16,13 @@
           "type": "void",
           "object": {
             "parameter": {
-              "type": "vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "type": "vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
               "name": "a",
               "id": "P1"
             }
           },
           "method": {
-            "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
             "type": "void",
             "name": "Method4",
             "parameterSpecs": [

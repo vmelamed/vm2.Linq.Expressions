@@ -14,7 +14,7 @@
         <body>
             <typeIs
                 type="boolean"
-                typeOperand="vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+                typeOperand="vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
                 <parameter
                     type="object"
                     id="P1"

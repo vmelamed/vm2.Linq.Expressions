@@ -6,19 +6,19 @@
       "type": "boolean",
       "operand": {
         "parameter": {
-          "type": "vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "type": "vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
           "name": "d",
           "id": "P1"
         }
       },
       "method": {
-        "declaringType": "vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "declaringType": "vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
         "static": true,
         "type": "boolean",
         "name": "op_True",
         "parameterSpecs": [
           {
-            "type": "vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "type": "vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
             "name": "x"
           }
         ]

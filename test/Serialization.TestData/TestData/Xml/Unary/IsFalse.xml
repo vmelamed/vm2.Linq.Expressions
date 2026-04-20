@@ -6,17 +6,17 @@
     <isFalse
         type="boolean">
         <parameter
-            type="vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+            type="vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
             id="P1"
             name="d" />
         <method
-            declaringType="vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+            declaringType="vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
             static="true"
             type="boolean"
             name="op_False">
             <parameterSpecs>
                 <parameterSpec
-                    type="vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                    type="vm2.Linq.Expressions.Serialization.TestData.D, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
                     name="x" />
             </parameterSpecs>
         </method>

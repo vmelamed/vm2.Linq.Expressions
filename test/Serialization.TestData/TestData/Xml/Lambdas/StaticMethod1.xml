@@ -10,7 +10,7 @@
             <call
                 type="int">
                 <method
-                    declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                    declaringType="vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
                     static="true"
                     type="int"
                     name="Method1">

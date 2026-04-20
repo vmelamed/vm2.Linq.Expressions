@@ -10,7 +10,7 @@
           "type": "int",
           "member": {
             "field": {
-              "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "declaringType": "vm2.Linq.Expressions.Serialization.TestData.TestMethods, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
               "static": true,
               "readOnly": true,
               "type": "int",
