@@ -16,6 +16,7 @@ global using System.Text.Json.Nodes;
 global using System.Text.Json.Serialization;
 global using System.Text.RegularExpressions;
 global using System.Xml.Linq;
+global using System.Diagnostics.CodeAnalysis;
 
 global using vm2.Linq.Expressions.Serialization;
 global using vm2.Linq.Expressions.Serialization.Exceptions;

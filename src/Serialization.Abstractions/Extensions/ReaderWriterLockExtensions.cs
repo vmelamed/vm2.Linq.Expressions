@@ -22,6 +22,7 @@ public interface IReaderWriterSync : IDisposable
 /// Extension methods for <see cref="ReaderWriterLockSlim"/> that return disposable scope objects for better management
 /// of the lifetime of the lock scope via the <c>using</c> statement.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public static class ReaderWriterLockExtensions
 {
     /// <summary>
@@ -58,6 +59,7 @@ public static class ReaderWriterLockExtensions
 /// When the object is created, it attempts to acquire the lock in reader mode. When disposed, it
 /// releases the lock if it has previously acquired.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public sealed class ReaderSync : IReaderWriterSync
 {
     /// <inheritdoc/>
@@ -103,6 +105,7 @@ public sealed class ReaderSync : IReaderWriterSync
 /// When the object is created, it attempts to acquire the lock in writer mode. When disposed, it releases the lock if
 /// it was previously acquired.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public sealed class WriterSync : IReaderWriterSync
 {
     /// <inheritdoc/>
@@ -148,6 +151,7 @@ public sealed class WriterSync : IReaderWriterSync
 /// When the object is created, it attempts to acquire the lock in upgradeable reader mode. When disposed, it
 /// releases the lock if it has previously acquired.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public sealed class UpgradeableReaderSync : IReaderWriterSync
 {
     /// <inheritdoc/>

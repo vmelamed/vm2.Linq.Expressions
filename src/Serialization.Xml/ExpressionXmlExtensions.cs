@@ -3,6 +3,7 @@ namespace vm2.Linq.Expressions.Serialization.Xml;
 /// <summary>
 /// Extension methods that provide a simplified API for serializing and deserializing LINQ expression trees to and from XML.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public static class ExpressionXmlExtensions
 {
     // ── Expression → document ────────────────────────────────────

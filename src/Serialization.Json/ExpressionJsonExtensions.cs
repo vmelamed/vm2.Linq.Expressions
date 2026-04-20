@@ -3,6 +3,7 @@ namespace vm2.Linq.Expressions.Serialization.Json;
 /// <summary>
 /// Extension methods that provide a simplified API for serializing and deserializing LINQ expression trees to and from JSON.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public static class ExpressionJsonExtensions
 {
     // ── Expression → document ────────────────────────────────────

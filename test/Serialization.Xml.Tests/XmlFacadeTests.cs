@@ -1,5 +1,6 @@
 namespace vm2.Linq.Expressions.Serialization.Xml.Tests;
 
+[ExcludeFromCodeCoverage]
 public class XmlFacadeTests
 {
     static readonly Expression<Func<int, int, int>> _expr = (x, y) => x * y + 2;

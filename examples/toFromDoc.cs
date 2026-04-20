@@ -23,14 +23,16 @@ WriteLine("""
     """);
 
 Expression<Func<int, int, int>> expr1 = (x, y) => x * y + 42;
+WriteLine($"Original expression: {expr1}");
 
+// serialize to XML
 var expr1Str = expr1.ToXmlString();
 WriteLine($"Serialized XML:\n{expr1Str}");
-
+// deserialize from XML
 var expr1_1 = (Expression<Func<int, int, int>>)ExpressionXml.FromString(expr1Str);
 WriteLine($"Deserialized expression: {expr1_1}");
 
-WriteLine($"Round-trip equality: {expr1.DeepEquals(expr1_1)}");
+WriteComparisonResults("XML round-trip", expr1, expr1_1);
 
 WriteLine("""
     --------------------------
@@ -38,24 +40,20 @@ WriteLine("""
     --------------------------
     """);
 
-var result = expr1_1.Compile()(2, 3);
-WriteLine($"Compiled deserialized expression result: {result} (should be 2*3+42=48)");
-
+// serialize to JSON
 expr1Str = expr1.ToJsonString();
 WriteLine($"Serialized JSON:\n{expr1Str}");
-
+// deserialize from JSON
 expr1_1 = (Expression<Func<int, int, int>>)ExpressionJson.FromString(expr1Str);
-WriteLine($"Deserialized expression: {expr1_1}");
-WriteLine($"Round-trip equality: {expr1.DeepEquals(expr1_1)}");
 
+WriteComparisonResults("JSON round-trip", expr1, expr1_1);
+
+// advanced usage with transform, options and schema validation
 WriteLine("""
     --------------------------
-    JSON advanced round-trip:
+    JSON round-trip (advanced):
     --------------------------
     """);
-
-result = expr1_1.Compile()(7, 2);
-WriteLine($"Compiled deserialized expression result: {result} (should be 7*2+42=56)");
 
 var jsonOptions = new JsonOptions
 {
@@ -73,7 +71,7 @@ try
         Environment.ExpandEnvironmentVariables(
             "%VM2_REPOS%/vm2.Linq.Expressions/src/Serialization.Json/Schema/Linq.Expressions.Serialization.json"));
 }
-catch (System.IO.IOException x)
+catch (IOException x)
 {
     WriteLine(x.Message);
     WriteLine("Will not validate the JSON document against the schema. Fix the path directly in toFromDoc.cs or set the environment variable VM2_REPOS to the path of the vm2 repositories.");
@@ -90,9 +88,25 @@ WriteLine($"Serialized JSON:\n{expr1Str}");
 if (validate)
     jsonOptions.Validate(document); // if it does not throw exception - it is valid
 
-expr1_1 = (Expression<Func<int, int, int>>)transform.Transform(document);
-WriteLine($"Deserialized expression: {expr1_1}");
-WriteLine($"Round-trip equality: {expr1.DeepEquals(expr1_1)}");
+WriteComparisonResults("JSON (adv) round-trip", expr1, expr1_1);
 
-result = expr1_1.Compile()(1, 0);
-WriteLine($"Compiled deserialized expression result: {result} (should be 1*0+42=42)");
+void WriteComparisonResults(
+    string label,
+    Expression<Func<int, int, int>> serialized,
+    Expression<Func<int, int, int>> deserialized)
+{
+    WriteLine($"{label} equality: {serialized.DeepEquals(deserialized)}");
+
+    var hc1 = serialized.GetDeepHashCode();
+    var hc2 = deserialized.GetDeepHashCode();
+
+    WriteLine($"{label} hash-code equality: {hc1 == hc2} (hash codes: {hc1} and {hc2})");
+
+    var x = Random.Shared.Next(1, 10);
+    var y = Random.Shared.Next(1, 10);
+
+    var result1 = serialized.Compile()(x, y);
+    var result1_1 = deserialized.Compile()(x, y);
+
+    WriteLine($"Compiled deserialized expression result: {result1_1} (should be {x}*{y}+42={result1})");
+}

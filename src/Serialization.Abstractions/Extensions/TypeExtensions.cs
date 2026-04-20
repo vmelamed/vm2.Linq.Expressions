@@ -5,6 +5,7 @@ namespace vm2.Linq.Expressions.Serialization.Extensions;
 /// <summary>
 /// Extension methods for <see cref="Type"/>.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public static partial class TypeExtensions
 {
     /// <summary>
@@ -123,6 +124,22 @@ public static partial class TypeExtensions
         {
             ParameterInfo[] pis = mi.GetParameters();
             return pis.Length == 1 && pis[0].ParameterType.Name == typeof(IEnumerable<>).Name;
+        }
+        else
+            return false;
+    }
+
+    /// <summary>
+    /// Determines whether the method has the specified name and a single parameter of type <c>IEnumerable&lt;&gt;</c>.
+    /// </summary>
+    public static bool MethodHas1EnumerableParameterAndComparer(this MethodInfo mi, string name)
+    {
+        if (mi.Name == name)
+        {
+            ParameterInfo[] pis = mi.GetParameters();
+            return pis.Length == 2 &&
+                   pis[0].ParameterType.Name == typeof(IEnumerable<>).Name &&
+                   pis[1].ParameterType.Name == typeof(IEqualityComparer<>).Name;
         }
         else
             return false;

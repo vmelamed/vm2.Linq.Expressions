@@ -3,6 +3,7 @@ namespace vm2.Linq.Expressions.Serialization;
 /// <summary>
 /// Options for serializing/deserializing documents.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public abstract class DocumentOptions
 {
     /// <summary>

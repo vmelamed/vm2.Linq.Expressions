@@ -45,6 +45,7 @@ public partial class FromJsonTransformVisitor
                 : null;
 
 #pragma warning disable IDE0079, IDE0051 // Remove unnecessary suppression. Remove unused private members
+    [ExcludeFromCodeCoverage]
     static MemberInfo GetMemberInfo(JElement e, string memberInfoName)
         => VisitMemberInfo(e.GetElement(memberInfoName));
 #pragma warning restore IDE0051, IDE0079

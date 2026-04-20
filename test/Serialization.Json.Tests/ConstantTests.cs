@@ -7,13 +7,17 @@ public partial class ConstantTests(JsonTestsFixture fixture, ITestOutputHelper o
 
     [Theory]
     [MemberData(nameof(ConstantTestData.Data), MemberType = typeof(ConstantTestData))]
+#if !NEWTONSOFT_JSON
     [MemberData(nameof(ConstantTestDataNs.Data), MemberType = typeof(ConstantTestDataNs))]
+#endif
     public async Task ConstantToJsonTestAsync(string testFileLine, string expressionString, string fileName)
         => await base.ToJsonTestAsync(testFileLine, expressionString, fileName);
 
     [Theory]
     [MemberData(nameof(ConstantTestData.Data), MemberType = typeof(ConstantTestData))]
+#if !NEWTONSOFT_JSON
     [MemberData(nameof(ConstantTestDataNs.Data), MemberType = typeof(ConstantTestDataNs))]
+#endif
     public async Task ConstantFromJsonTestAsync(string testFileLine, string expressionString, string fileName)
         => await base.FromJsonTestAsync(testFileLine, expressionString, fileName);
 

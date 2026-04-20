@@ -9,6 +9,7 @@ global using System.Linq.Expressions;
 global using System.Reflection;
 global using System.Runtime.CompilerServices;
 global using System.Text.RegularExpressions;
+global using System.Diagnostics.CodeAnalysis;
 
 global using vm2.Linq.Expressions.Serialization.Exceptions;
 

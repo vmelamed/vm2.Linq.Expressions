@@ -1,3 +1,5 @@
+global using System.Diagnostics.CodeAnalysis;
+
 global using FluentAssertions;
 
 global using vm2.Linq.Expressions.Serialization.Exceptions;

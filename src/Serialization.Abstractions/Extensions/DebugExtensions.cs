@@ -3,6 +3,7 @@ namespace vm2.Linq.Expressions.Serialization.Extensions;
 /// <summary>
 /// Debug output helper extensions.
 /// </summary>
+[ExcludeFromCodeCoverage]
 public static class DebugExtensions
 {
     /// <summary>

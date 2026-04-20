@@ -41,7 +41,10 @@ env:
     ]
   TEST_PROJECTS: >-
     [
-    "test/DeepEquals.Tests/DeepEquals.Tests.csproj"
+    "test/DeepEquals.Tests/DeepEquals.Tests.csproj",
+    "test/Serialization.Abstractions.Tests/Serialization.Abstractions.Tests.csproj",
+    "test/Serialization.Json.Tests/Serialization.Json.Tests.csproj",
+    "test/Serialization.Xml.Tests/Serialization.Xml.Tests.csproj"
     ]
   BENCHMARK_PROJECTS: >-
     [
@@ -49,7 +52,9 @@ env:
     ]
   PACKAGE_PROJECTS: >-
     [
-    "src/DeepEquals/DeepEquals.csproj"
+    "src/DeepEquals/DeepEquals.csproj",
+    "src/Serialization.Json/Serialization.Json.csproj",
+    "src/Serialization.Xml/Serialization.Xml.csproj"
     ]
   RUNNERS_OS: >-
     [

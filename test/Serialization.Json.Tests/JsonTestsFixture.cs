@@ -8,6 +8,8 @@ public class JsonTestsFixture : IDisposable, IAsyncDisposable
 
     public string SchemasPath { get; init; }
 
+    public bool OutputFiles { get; set; } = false;
+
     public FileStreamOptions FileStreamOptions { get; } = new() {
         Mode = FileMode.Open,
         Access = FileAccess.Read,
@@ -75,7 +77,8 @@ public class JsonTestsFixture : IDisposable, IAsyncDisposable
             read.Should().Be(length, "should be able to read the whole file");
             var expectedStr = Encoding.UTF8.GetString(buf.Span);
 
-            output?.WriteLine($"{expectedOrInput}:\n{expectedStr}\n");
+            if (OutputFiles)
+                output?.WriteLine($"{expectedOrInput}:\n{expectedStr}\n");
 
             streamExpected.Seek(0, SeekOrigin.Begin);
 
@@ -165,7 +168,8 @@ public class JsonTestsFixture : IDisposable, IAsyncDisposable
         ITestOutputHelper? output,
         bool validate)
     {
-        output?.WriteLine($"ACTUAL ({(async ? "async" : "sync")}):\n{actualStr}\n");
+        if (OutputFiles)
+            output?.WriteLine($"ACTUAL ({(async ? "async" : "sync")}):\n{actualStr}\n");
 
         if (validate)
         {

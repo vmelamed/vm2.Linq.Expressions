@@ -8,6 +8,8 @@ public class XmlTestsFixture : IDisposable, IAsyncDisposable
 
     public string SchemasPath { get; init; }
 
+    public bool OutputFiles { get; set; } = false;
+
     internal FileStreamOptions FileStreamOptions { get; } = new() {
         Mode = FileMode.Open,
         Access = FileAccess.Read,
@@ -79,7 +81,8 @@ public class XmlTestsFixture : IDisposable, IAsyncDisposable
             read.Should().Be(length, "should be able to read the whole file");
             var expectedStr = Encoding.UTF8.GetString(buf.Span);
 
-            output?.WriteLine($"{expectedOrInput}:\n{0}\n", expectedStr);
+            if (OutputFiles)
+                output?.WriteLine($"{expectedOrInput}:\n{0}\n", expectedStr);
 
             streamExpected.Seek(0, SeekOrigin.Begin);
 
@@ -160,7 +163,8 @@ public class XmlTestsFixture : IDisposable, IAsyncDisposable
         bool async,
         ITestOutputHelper? output = null)
     {
-        output?.WriteLine($"ACTUAL {(async ? "async" : "sync")}:\n{actualStr}\n");
+        if (OutputFiles)
+            output?.WriteLine($"ACTUAL {(async ? "async" : "sync")}:\n{actualStr}\n");
 
         var validate = () => Validate(actualDoc);
 

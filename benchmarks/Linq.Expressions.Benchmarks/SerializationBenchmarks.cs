@@ -11,8 +11,10 @@ namespace vm2.Linq.Expressions.Benchmarks;
 [SimpleJob(RuntimeMoniker.HostProcess)]
 #endif
 [MemoryDiagnoser]
-[Orderer(SummaryOrderPolicy.FastestToSlowest)]
-public class RoundTripBenchmarks
+[Orderer(SummaryOrderPolicy.Default)]
+[JsonExporter]
+[MarkdownExporter]
+public class SerializationBenchmarks
 {
     static readonly ParameterExpression _x = Expression.Parameter(typeof(int), "x");
     static readonly ParameterExpression _y = Expression.Parameter(typeof(int), "y");
@@ -29,11 +31,23 @@ public class RoundTripBenchmarks
             ["Block"] = BuildBlockExpression(),
         }.ToFrozenDictionary(StringComparer.Ordinal);
 
+    static Expression<Func<int, int, int>> BuildBlockExpression()
+    {
+        var local = Expression.Variable(typeof(int), "tmp");
+
+        var block = Expression.Block(
+            new[] { local },
+            Expression.Assign(local, Expression.Add(_x, Expression.Constant(1))),
+            Expression.Multiply(local, _y));
+
+        return Expression.Lambda<Func<int, int, int>>(block, _x, _y);
+    }
+
     static readonly Lock _schemasLock = new();
     static string? _jsonSchemaPath;
 
-    ExpressionXmlTransform _xml = null!;
-    ExpressionJsonTransform _json = null!;
+    ExpressionXmlTransform _xmlTransform = null!;
+    ExpressionJsonTransform _jsonTransform = null!;
 
     Expression _expression = null!;
     XDocument _xmlDoc = null!;
@@ -50,31 +64,19 @@ public class RoundTripBenchmarks
     [GlobalSetup]
     public void Setup()
     {
-        var jsonOptions = new JsonOptions
-        {
-            Indent = false,
-            AddComments = false,
-            ValidateInputDocuments = ValidateInputDocuments,
-        };
-
-        if (ValidateInputDocuments == ValidateExpressionDocuments.Always)
-        {
-            jsonOptions = new JsonOptions(EnsureValidationSchemas())
-            {
-                Indent = false,
-                AddComments = false,
-                ValidateInputDocuments = ValidateInputDocuments,
-            };
-        }
-
-        _xml = new ExpressionXmlTransform(new XmlOptions
+        _xmlTransform = new ExpressionXmlTransform(new XmlOptions
         {
             Indent = false,
             AddComments = false,
             ValidateInputDocuments = ValidateInputDocuments,
         });
 
-        _json = new ExpressionJsonTransform(jsonOptions);
+        _jsonTransform = new ExpressionJsonTransform(new JsonOptions(EnsureValidationSchemas())
+        {
+            Indent = false,
+            AddComments = false,
+            ValidateInputDocuments = ValidateInputDocuments,
+        });
 
         _expression = _cases[CaseName];
 
@@ -97,37 +99,13 @@ public class RoundTripBenchmarks
         _jsonDoc = jsonSerializer.Transform(_expression);
 
         // Guardrail: fail setup if correctness regresses.
-        var xmlRoundTrip = _xml.Transform(_xmlDoc);
+        var xmlRoundTrip = _xmlTransform.Transform(_xmlDoc);
         if (!_expression.DeepEquals(xmlRoundTrip))
             throw new InvalidOperationException($"XML round-trip mismatch for case '{CaseName}'.");
 
-        var jsonRoundTrip = _json.Transform(_jsonDoc);
+        var jsonRoundTrip = _jsonTransform.Transform(_jsonDoc);
         if (!_expression.DeepEquals(jsonRoundTrip))
             throw new InvalidOperationException($"JSON round-trip mismatch for case '{CaseName}'.");
-    }
-
-    [Benchmark(Description = "XML serialize")]
-    public XDocument Xml_Serialize()
-    {
-        return _xml.Transform(_expression);
-    }
-
-    [Benchmark(Description = "JSON serialize")]
-    public JsonObject Json_Serialize()
-    {
-        return _json.Transform(_expression);
-    }
-
-    [Benchmark(Description = "XML deserialize")]
-    public Expression Xml_Deserialize()
-    {
-        return _xml.Transform(_xmlDoc);
-    }
-
-    [Benchmark(Description = "JSON deserialize")]
-    public Expression Json_Deserialize()
-    {
-        return _json.Transform(_jsonDoc);
     }
 
     static string EnsureValidationSchemas()
@@ -172,15 +150,27 @@ public class RoundTripBenchmarks
         throw new InvalidOperationException("Could not find the repository root (looked for vm2.Linq.Expressions.slnx).");
     }
 
-    static Expression<Func<int, int, int>> BuildBlockExpression()
+    [Benchmark(Description = "XML serialize")]
+    public XDocument Xml_Serialize()
     {
-        var local = Expression.Variable(typeof(int), "tmp");
+        return _xmlTransform.Transform(_expression);
+    }
 
-        var block = Expression.Block(
-            new[] { local },
-            Expression.Assign(local, Expression.Add(_x, Expression.Constant(1))),
-            Expression.Multiply(local, _y));
+    [Benchmark(Description = "JSON serialize")]
+    public JsonObject Json_Serialize()
+    {
+        return _jsonTransform.Transform(_expression);
+    }
 
-        return Expression.Lambda<Func<int, int, int>>(block, _x, _y);
+    [Benchmark(Description = "XML deserialize")]
+    public Expression Xml_Deserialize()
+    {
+        return _xmlTransform.Transform(_xmlDoc);
+    }
+
+    [Benchmark(Description = "JSON deserialize")]
+    public Expression Json_Deserialize()
+    {
+        return _jsonTransform.Transform(_jsonDoc);
     }
 }

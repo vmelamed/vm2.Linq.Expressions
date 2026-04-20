@@ -74,7 +74,7 @@ public partial class ToXmlTransformVisitor(XmlOptions options) : ExpressionTrans
 
     #region Lambda
     IEnumerable<XElement> VisitParameterDefinitionList(ReadOnlyCollection<ParameterExpression> parameterList)
-=> parameterList.Select(p => !IsDefined(p)
+        => parameterList.Select(p => !IsDefined(p)
                                 ? GetParameter(p)
                                 : throw new InternalTransformErrorException($"Parameter with a name `{p.Name}` is already defined."));
 

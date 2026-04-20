@@ -1,7 +1,7 @@
 namespace vm2.Linq.Expressions.DeepEquals.Tests;
 
 #pragma warning disable IL2026 // RequiresUnreferencedCode — test code only
-public class ExpressionExtensionsDeepEqualsTests
+public class ExpressionExtensionsDeepEqualsTests(ITestOutputHelper output) : TestBase(output)
 {
     [Fact]
     public void DeepEquals_ReferenceEqualsSameInstance_ReturnsTrueAndEmptyDifference()
