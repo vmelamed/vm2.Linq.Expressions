@@ -91,7 +91,7 @@ public class ExpressionXmlTransform(XmlOptions? options = null) : IExpressionTra
         Stream stream)
     {
         var doc = Transform(expression);
-        using var writer = new StreamWriter(stream, _options.Encoding);
+        using var writer = new StreamWriter(stream, _options.Encoding, leaveOpen: true);
         using var xmlWriter = XmlWriter.Create(writer, new() {
             Encoding = _options.Encoding,
             Indent = _options.Indent,
@@ -151,7 +151,7 @@ public class ExpressionXmlTransform(XmlOptions? options = null) : IExpressionTra
     public Expression Deserialize(
         Stream stream)
     {
-        using var reader = new StreamReader(stream, _options.Encoding);
+        using var reader = new StreamReader(stream, _options.Encoding, leaveOpen: true);
         var readerSettings = new XmlReaderSettings()
         {
             IgnoreComments = true,

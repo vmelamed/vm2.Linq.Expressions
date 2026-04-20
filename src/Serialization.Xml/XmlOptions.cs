@@ -65,7 +65,7 @@ public partial class XmlOptions : DocumentOptions
         if (Schemas.Contains(schemaUri))
             return;
 
-        using var reader = XmlReader.Create(url ?? schemaUri);
+        using var reader = XmlReader.Create(url ?? schemaUri, new XmlReaderSettings() { DtdProcessing = DtdProcessing.Prohibit, XmlResolver = null });
         Schemas.Add(schemaUri, reader);
     }
 
@@ -86,7 +86,7 @@ public partial class XmlOptions : DocumentOptions
             if (Schemas.Contains(schemaUri))
                 continue;
 
-            using var reader = new XmlTextReader(url ?? schemaUri);
+            using var reader = XmlReader.Create(url ?? schemaUri, new XmlReaderSettings() { DtdProcessing = DtdProcessing.Prohibit, XmlResolver = null });
             Schemas.Add(schemaUri, reader);
         }
     }

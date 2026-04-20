@@ -130,6 +130,22 @@ public static partial class TypeExtensions
     }
 
     /// <summary>
+    /// Determines whether the method has the specified name and a single parameter of type <c>IEnumerable&lt;&gt;</c>.
+    /// </summary>
+    public static bool MethodHas1EnumerableParameterAndComparer(this MethodInfo mi, string name)
+    {
+        if (mi.Name == name)
+        {
+            ParameterInfo[] pis = mi.GetParameters();
+            return pis.Length == 2 &&
+                   pis[0].ParameterType.Name == typeof(IEnumerable<>).Name &&
+                   pis[1].ParameterType.Name == typeof(IEqualityComparer<>).Name;
+        }
+        else
+            return false;
+    }
+
+    /// <summary>
     /// Determines whether the constructor has a single array parameter.
     /// </summary>
     public static bool ConstructorHas1ArrayParameter(this ConstructorInfo ci)

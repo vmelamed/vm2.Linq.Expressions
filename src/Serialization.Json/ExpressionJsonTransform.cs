@@ -117,7 +117,7 @@ public class ExpressionJsonTransform(JsonOptions? options = null) : IExpressionT
                         },
                         new JsonDocumentOptions()
                         {
-                            AllowTrailingCommas = true,
+                            AllowTrailingCommas = _options.AllowTrailingCommas,
                             CommentHandling     = JsonCommentHandling.Skip,
                             MaxDepth            = 1000
                         })

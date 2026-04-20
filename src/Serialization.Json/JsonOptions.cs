@@ -120,7 +120,6 @@ public partial class JsonOptions : DocumentOptions
     /// Loads the schema from the specified URL.
     /// </summary>
     /// <param name="schemaFilePath">The location of the schema file.</param>
-    /// <returns>A Task representing the asynchronous operation.</returns>Load
     public void LoadSchema(string schemaFilePath)
     {
         using var _ = _syncSchema.WriterLock();
@@ -135,7 +134,7 @@ public partial class JsonOptions : DocumentOptions
             // Schema already registered in the global registry (e.g. multiple fixture instances in tests).
             // Retrieve it by its $id URI from the registry.
             var schemaText = File.ReadAllText(schemaFilePath);
-            var doc = JsonDocument.Parse(schemaText);
+            using var doc = JsonDocument.Parse(schemaText);
             if (doc.RootElement.TryGetProperty("$id", out var idElement))
             {
                 var uri = new Uri(idElement.GetString()!);

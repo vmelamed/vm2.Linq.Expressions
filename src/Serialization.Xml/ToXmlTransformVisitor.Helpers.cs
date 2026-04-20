@@ -142,7 +142,7 @@ public partial class ToXmlTransformVisitor
                                     ElementNames.Property,
                                         declaringType,
                                         visibility,
-                                        AttributeType(pi.PropertyType ?? throw new InternalTransformErrorException("PropertyInfo's DeclaringType is null."), true),
+                                        AttributeType(pi.PropertyType ?? throw new InternalTransformErrorException("PropertyInfo.PropertyType is null."), true),
                                         nameAttribute,
                                         pi.GetIndexParameters().Length != 0
                                             ? new XElement(
@@ -171,7 +171,7 @@ public partial class ToXmlTransformVisitor
                                         fi.IsStatic ? new XAttribute(AttributeNames.Static, true) : null,
                                         visibility,
                                         fi.IsInitOnly ? new XAttribute(AttributeNames.ReadOnly, true) : null,
-                                        AttributeType(fi.FieldType ?? throw new InternalTransformErrorException("GetMethodInfo's DeclaringType is null."), true),
+                                        AttributeType(fi.FieldType ?? throw new InternalTransformErrorException("FieldInfo.FieldType is null."), true),
                                         nameAttribute),
 
             _ => throw new InternalTransformErrorException("Unknown MemberInfo.")
