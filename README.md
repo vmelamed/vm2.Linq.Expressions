@@ -18,7 +18,8 @@
   - [Quick Start](#quick-start)
     - [Serialize to XML](#serialize-to-xml)
     - [Serialize to JSON](#serialize-to-json)
-    - [Deep Comparison](#deep-comparison)
+    - [Using Transforms to convert to/from XML/JSON Documents](#using-transforms-to-convert-tofrom-xmljson-documents)
+    - [Deep Comparison and Deep Hash Code](#deep-comparison-and-deep-hash-code)
   - [Unsupported Expression Types](#unsupported-expression-types)
   - [Configuration Options](#configuration-options)
     - [Common Options](#common-options)
@@ -58,7 +59,6 @@ caching, deduplication, and testing.
 |---------|-------------|
 | **[vm2.Linq.Expressions.Serialization.Xml](https://www.nuget.org/packages/vm2.Linq.Expressions.Serialization.Xml/)** | Serialize and deserialize expression trees to/from XML (`XDocument`). |
 | **[vm2.Linq.Expressions.Serialization.Json](https://www.nuget.org/packages/vm2.Linq.Expressions.Serialization.Json/)** | Serialize and deserialize expression trees to/from JSON (`JsonObject`). |
-| **[vm2.Linq.Expressions.Serialization.Abstractions](https://www.nuget.org/packages/vm2.Linq.Expressions.Serialization.Abstractions/)** | Shared abstractions, conventions, vocabulary, and extension methods (dependency of Xml and Json). |
 | **[vm2.Linq.Expressions.DeepEquals](https://www.nuget.org/packages/vm2.Linq.Expressions.DeepEquals/)** | Structural deep-equality comparison and hash code computation for expression trees. |
 
 ## Prerequisites
@@ -158,7 +158,28 @@ stream.Position = 0;
 Expression fromStream = ExpressionXml.FromStream(stream);
 ```
 
-### Deep Comparison
+### Using Transforms to convert to/from XML/JSON Documents
+
+If you need to work with the XML or JSON documents directly (e.g., to embed them in a larger document, to manipulate them before deserialization, or to integrate with other libraries), you can use the `ExpressionXmlTransform` and `ExpressionJsonTransform` classes:
+
+```csharp
+using System.Linq.Expressions;
+
+using vm2.Linq.Expressions.Serialization;
+using vm2.Linq.Expressions.Serialization.Xml;
+using vm2.Linq.Expressions.Serialization.Json;
+using vm2.Linq.Expressions.DeepEquals;
+
+   Expression<Func<int, int, int>> addExpr = (a, b) => a + b;
+    ...
+    var xmlTransform = new ExpressionXmlTransform(options ??= new());
+    var doc = xmlTransform.Transform(addExpr);
+
+    var jsonTransform = new ExpressionJsonTransform(options ??= new());
+    var jsonDoc = jsonTransform.Transform(addExpr);
+```
+
+### Deep Comparison and Deep Hash Code
 
 ```csharp
 using System.Linq.Expressions;
@@ -178,6 +199,8 @@ if (!original.DeepEquals(different, out string difference))
 // Structural hash code for caching/deduplication
 int hash = original.GetDeepHashCode();
 ```
+
+See also the [toFromDoc.cs](https://github.com/vmelamed/vm2.Linq.Expressions/blob/main/examples/toFromDoc.cs) program in the `examples/` directory for more usage patterns and edge cases.
 
 ## Unsupported Expression Types
 

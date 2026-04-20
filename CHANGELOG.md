@@ -1,27 +1,15 @@
 # Changelog
 
-
-
-
-
-
-
 ## v1.0.0 - 2026-04-20
 
 See prereleases below.
 
-
-
-
-
 ## v1.0.0-preview.1 - 2026-04-20
-
 
 ### Added
 
 - LINQ expressions XML serializer and schema
 - added facade static classes for ease of use. Changed the README.md
-
 
 ### Fixed
 
@@ -29,7 +17,6 @@ See prereleases below.
 - Update package references and compile and run example expressions after round trip in toFromDoc.cs
 - Addressed GH Copilot review comments, e.g. Improve null handling in HashCodeVisitor and update Uri transformation in FromXmlDataTransform.Maps
 - the packaged projects [skip ci]
-
 
 ### Internal
 
@@ -53,24 +40,16 @@ See prereleases below.
 - fix/copilot comments (#2)
 - update changelog for v1.0.0-preview.1 [skip ci]
 
-
 ### Performance
 
 - Update benchmarks to precompute serialized payloads and improve setup validation
 
-
-
-
-
-
 ## v1.0.0-preview.1 - 2026-04-20
-
 
 ### Added
 
 - LINQ expressions XML serializer and schema
 - added facade static classes for ease of use. Changed the README.md
-
 
 ### Fixed
 
@@ -78,7 +57,6 @@ See prereleases below.
 - Update package references and compile and run example expressions after round trip in toFromDoc.cs
 - Addressed GH Copilot review comments, e.g. Improve null handling in HashCodeVisitor and update Uri transformation in FromXmlDataTransform.Maps
 - the packaged projects [skip ci]
-
 
 ### Internal
 
@@ -100,7 +78,6 @@ See prereleases below.
 - Add performance warning for JSON deserialization with strict schema validation
 - Add pull request template to GitHub folder
 - fix/copilot comments (#2)
-
 
 ### Performance
 
