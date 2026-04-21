@@ -1,5 +1,22 @@
 # Changelog
 
+
+
+
+
+
+## v1.0.2-preview.1 - 2026-04-21
+
+
+### Fixed
+
+- restore changelog content and resolve merge artifacts
+
+
+### Internal
+
+- clean up changelog by removing duplicate section.
+
 ## v1.0.1 - 2026-04-20
 
 See prereleases below.
