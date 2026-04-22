@@ -44,16 +44,6 @@
 
 See prereleases below.
 
-## v1.0.0-preview.2 - 2026-04-20
-
-### Internal
-
-- promote to stable v1.0.0 [skip ci]
-- update changelog for v1.0.0 [skip ci]
-- update changelog and README for clarity and new features
-- update test data to reflect the new version of the types
-- un-delete the Delete-TestFiles.ps1
-
 ## v1.0.0 - 2026-04-20
 
 See prereleases below.
@@ -96,12 +86,6 @@ See prereleases below.
 ### Performance
 
 - Update benchmarks to precompute serialized payloads and improve setup validation
-
-All notable changes to this project will be documented in this file.
-
-## [0.1.0] - YYYY-MM-DD
-
-- Initial scaffold created from vm2pkg template.
 
 ## Usage Notes
 
