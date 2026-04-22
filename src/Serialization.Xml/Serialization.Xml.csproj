@@ -19,10 +19,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="System.ServiceModel.Primitives" />
-    </ItemGroup>
-
-    <ItemGroup>
         <ProjectReference Include="../Serialization.Abstractions/Serialization.Abstractions.csproj" />
     </ItemGroup>
 
