@@ -5,6 +5,19 @@
 
 
 
+## v1.0.2-preview.3 - 2026-04-22
+
+
+### Internal
+
+- add shared conventions document for vm2 packages for claude [skip ci]
+- diff-shared
+
+
+
+
+
+
 ## v1.0.2-preview.2 - 2026-04-22
 
 
