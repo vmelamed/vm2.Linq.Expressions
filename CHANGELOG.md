@@ -5,6 +5,7 @@
 ### Internal
 
 - clean up changelog formatting for passing lint
+
 ## v1.0.2-preview.4 - 2026-04-22
 
 ### Fixed
