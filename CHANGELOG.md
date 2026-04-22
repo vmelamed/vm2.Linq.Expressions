@@ -1,37 +1,19 @@
 # Changelog
 
-
-
-
-
-
 ## v1.0.2-preview.4 - 2026-04-22
-
 
 ### Fixed
 
 - correct invalid prerelease version headers in CHANGELOG
 
-
-
-
-
-
 ## v1.0.2-preview.3 - 2026-04-22
-
 
 ### Internal
 
 - add shared conventions document for vm2 packages for claude [skip ci]
 - diff-shared
 
-
-
-
-
-
 ## v1.0.2-preview.2 - 2026-04-22
-
 
 ### Internal
 
