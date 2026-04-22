@@ -1,5 +1,22 @@
 # Changelog
 
+
+
+
+
+
+## v1.0.2-preview.2 - 2026-04-22
+
+
+### Internal
+
+- clean up changelog formatting and improve readability
+- upgrade dependencies
+- remove packages.lock.json file
+- update SDK version to 10.0.203 in global.json and in the lock files
+- remove deprecated package references and clean up lock files
+- update dependency and the git-cliff *.toml files
+
 ## v1.0.2-preview.1 - 2026-04-21
 
 ### Fixed
