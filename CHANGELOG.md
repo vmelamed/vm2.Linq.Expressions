@@ -11,6 +11,7 @@
 - add newline for better changelog formatting [skip ci]
 - update README code examples for completeness and clarity
 - add CLAUDE.md for guidance on repository usage and structure [skip ci]
+
 ## v1.0.2-preview.5 - 2026-04-22
 
 ### Internal

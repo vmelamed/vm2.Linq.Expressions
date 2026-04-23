@@ -27,9 +27,10 @@ body = """{%- if tag is defined -%}
 ### Internal
 
 DevOps changes only.
-{% endif %}
+{%- endif %}
+
 """
-trim = true
+trim = false
 footer = ""
 
 [git]
