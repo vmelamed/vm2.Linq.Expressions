@@ -112,6 +112,9 @@ Copies are kept in sync by diff-shared.sh. Edit the canonical copy first.
 - XML tags on their own lines unless the content fits on one line.
 - Always proofread for spelling, grammar, and technical accuracy.
 - Cite specifications (POSIX, RFC, SemVer, ULID spec, etc.) with title and URL.
+- README code examples must be self-contained and runnable: include all required `using` directives,
+  declare all variables, and avoid unexplained placeholders (`...`, `// ...`). A reader must be able
+  to paste the example into a project and have it compile without guessing missing context.
 - Standard references block format:
 
       ## References

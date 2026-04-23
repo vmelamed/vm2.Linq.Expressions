@@ -96,6 +96,7 @@ possible API. For advanced scenarios (reusing a transform instance, custom optio
 
 ```csharp
 using System.Linq.Expressions;
+using System.Xml.Linq;
 using vm2.Linq.Expressions.Serialization.Xml;
 
 Expression<Func<int, int, int>> addExpr = (a, b) => a + b;
@@ -121,6 +122,7 @@ Expression fromString = ExpressionXml.FromString(xml);
 
 ```csharp
 using System.Linq.Expressions;
+using System.Text.Json.Nodes;
 using vm2.Linq.Expressions.Serialization.Json;
 
 Expression<Func<int, int, int>> addExpr = (a, b) => a + b;
@@ -164,19 +166,22 @@ If you need to work with the XML or JSON documents directly (e.g., to embed them
 
 ```csharp
 using System.Linq.Expressions;
-
-using vm2.Linq.Expressions.Serialization;
+using System.Text.Json.Nodes;
+using System.Xml.Linq;
 using vm2.Linq.Expressions.Serialization.Xml;
 using vm2.Linq.Expressions.Serialization.Json;
-using vm2.Linq.Expressions.DeepEquals;
 
-   Expression<Func<int, int, int>> addExpr = (a, b) => a + b;
-    ...
-    var xmlTransform = new ExpressionXmlTransform(options ??= new());
-    var doc = xmlTransform.Transform(addExpr);
+Expression<Func<int, int, int>> addExpr = (a, b) => a + b;
+var xmlOptions = new XmlOptions { Indent = true };
 
-    var jsonTransform = new ExpressionJsonTransform(options ??= new());
-    var jsonDoc = jsonTransform.Transform(addExpr);
+// Reuse the transform instance for multiple serializations (avoids re-allocating visitors)
+var xmlTransform = new ExpressionXmlTransform(xmlOptions);
+XDocument xmlDoc  = xmlTransform.Transform(addExpr); // Expression → XDocument
+Expression fromXml = xmlTransform.Transform(xmlDoc); // XDocument  → Expression
+
+var jsonTransform  = new ExpressionJsonTransform();
+JsonObject jsonDoc  = jsonTransform.Transform(addExpr);  // Expression → JsonObject
+Expression fromJson = jsonTransform.Transform(jsonDoc);  // JsonObject → Expression
 ```
 
 ### Deep Comparison and Deep Hash Code
@@ -364,17 +369,13 @@ dotnet build src/Serialization.Xml/Serialization.Xml.csproj
 
 ## Tests
 
-The test projects are in the `test/` directory. They use MTP v2 with xUnit v3. Tests are buildable and runnable from the
-command line and from Visual Studio Code.
+The test projects are in the `test/` directory. They use MTP v2 with xUnit v3. Run each project individually:
 
 ```bash
-dotnet test
-```
-
-Or run a specific test project:
-
-```bash
-dotnet test test/Serialization.Xml.Tests/Serialization.Xml.Tests.csproj
+dotnet test --project test/DeepEquals.Tests/DeepEquals.Tests.csproj
+dotnet test --project test/Serialization.Abstractions.Tests/Serialization.Abstractions.Tests.csproj
+dotnet test --project test/Serialization.Json.Tests/Serialization.Json.Tests.csproj
+dotnet test --project test/Serialization.Xml.Tests/Serialization.Xml.Tests.csproj
 ```
 
 ## Related Packages
