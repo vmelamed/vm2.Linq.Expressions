@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.0.2-preview.6 - 2026-04-23
+
+### Fixed
+
+- update regex patterns for source exclusions in coverage settings for Windows and Linux compatibility
+
+### Internal
+
+- add newline for better changelog formatting [skip ci]
+- update README code examples for completeness and clarity
+- add CLAUDE.md for guidance on repository usage and structure [skip ci]
 ## v1.0.2-preview.5 - 2026-04-22
 
 ### Internal
