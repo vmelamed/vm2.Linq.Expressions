@@ -1,12 +1,10 @@
 # Changelog
 
-
 ## v1.0.2-preview.7 - 2026-04-23
 
 ### Internal
 
 - adjust changelog formatting and update trim settings for consistency [skip ci]
-
 
 ## v1.0.2-preview.6 - 2026-04-23
 

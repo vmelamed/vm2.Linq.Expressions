@@ -15,7 +15,6 @@ body = """{%- if tag is defined -%}
 ## {{ current_tag }} - {{ current_date }}
 
 See prereleases below.
-
 """
 trim = false
 footer = ""

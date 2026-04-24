@@ -1,5 +1,5 @@
 [changelog]
-header = """# Changelog\n\n"""
+header = """# Changelog\n"""
 body = """{%- if tag is defined -%}
 {%- set current_tag = tag -%}
 {%- elif version is defined -%}
@@ -28,7 +28,6 @@ body = """{%- if tag is defined -%}
 
 DevOps changes only.
 {%- endif %}
-
 """
 trim = false
 footer = ""
