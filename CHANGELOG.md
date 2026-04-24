@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.0.2-preview.8 - 2026-04-24
+
+### Internal
+
+- clean up changelog formatting by removing extra newlines [skip ci]
+
+
 ## v1.0.2-preview.7 - 2026-04-23
 
 ### Internal
