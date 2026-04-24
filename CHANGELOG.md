@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.2-preview.10 - 2026-04-24
+
+### Internal
+
+- remove extra newline in changelog for consistency [skip ci]
+
 ## v1.0.2-preview.9 - 2026-04-24
 
 ### Internal
