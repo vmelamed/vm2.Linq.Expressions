@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.2-preview.11 - 2026-04-24
+
+### Internal
+
+- clean up changelog formatting and improve consistency [skip ci]
+
 ## v1.0.2-preview.6 - 2026-04-23
 
 ### Fixed
