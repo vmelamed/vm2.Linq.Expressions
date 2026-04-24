@@ -1,5 +1,5 @@
 [changelog]
-header = """# Changelog\n\n"""
+header = """# Changelog\n"""
 body = """{%- if tag is defined -%}
 {%- set current_tag = tag -%}
 {%- elif version is defined -%}
@@ -16,7 +16,7 @@ body = """{%- if tag is defined -%}
 
 See prereleases below.
 """
-trim = false
+trim = true
 footer = ""
 
 [git]

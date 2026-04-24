@@ -1,29 +1,5 @@
 # Changelog
 
-## v1.0.2-preview.10 - 2026-04-24
-
-### Internal
-
-- remove extra newline in changelog for consistency [skip ci]
-
-## v1.0.2-preview.9 - 2026-04-24
-
-### Internal
-
-- remove extra newline in changelog for consistency [skip ci]
-
-## v1.0.2-preview.8 - 2026-04-24
-
-### Internal
-
-- clean up changelog formatting by removing extra newlines [skip ci]
-
-## v1.0.2-preview.7 - 2026-04-23
-
-### Internal
-
-- adjust changelog formatting and update trim settings for consistency [skip ci]
-
 ## v1.0.2-preview.6 - 2026-04-23
 
 ### Fixed
@@ -32,15 +8,7 @@
 
 ### Internal
 
-- add newline for better changelog formatting [skip ci]
 - update README code examples for completeness and clarity
-- add CLAUDE.md for guidance on repository usage and structure [skip ci]
-
-## v1.0.2-preview.5 - 2026-04-22
-
-### Internal
-
-- clean up changelog formatting for passing lint
 
 ## v1.0.2-preview.4 - 2026-04-22
 
