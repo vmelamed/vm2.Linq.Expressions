@@ -27,7 +27,7 @@ body = """{%- if tag is defined -%}
 ### Internal
 
 DevOps changes only.
-{%- endif %}
+{%- endif -%}
 """
 trim = false
 footer = ""

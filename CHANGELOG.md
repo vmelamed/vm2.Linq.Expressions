@@ -6,7 +6,6 @@
 
 - remove extra newline in changelog for consistency [skip ci]
 
-
 ## v1.0.2-preview.8 - 2026-04-24
 
 ### Internal
