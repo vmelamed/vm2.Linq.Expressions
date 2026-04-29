@@ -1,12 +1,14 @@
 # Changelog
+
 ## v1.0.2 - 2026-04-24
 
 See prereleases below.
+
 ## v1.0.2-preview.11 - 2026-04-24
 
 ### Internal
 
-- clean up changelog formatting and improve consistency [skip ci]
+- clean up changelog formatting and improve consistency
 
 ## v1.0.2-preview.6 - 2026-04-23
 
@@ -28,7 +30,7 @@ See prereleases below.
 
 ### Internal
 
-- add shared conventions document for vm2 packages for claude [skip ci]
+- add shared conventions document for vm2 packages for claude
 - diff-shared
 
 ## v1.0.2-preview.2 - 2026-04-22
