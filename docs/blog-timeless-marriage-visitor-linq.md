@@ -18,6 +18,9 @@
     - [Still Rock-Solid — AI Can't Touch These](#still-rock-solid--ai-cant-touch-these)
     - [The New Category — and This Is the One That Should Make You Think](#the-new-category--and-this-is-the-one-that-should-make-you-think)
   - [References](#references)
+    - [Books and documentation](#books-and-documentation)
+    - [The Library is available on GitHub under the MIT License](#the-library-is-available-on-github-under-the-mit-license)
+    - [Related packages on NuGet](#related-packages-on-nuget)
 
 <!-- /TOC -->
 
@@ -237,14 +240,14 @@ This isn't new advice. But it bears repeating every time someone builds a new se
 
 Both formats perform similarly for serialization and un-validated deserialization — in the low-microsecond range:
 
-| Operation | Format | Validation | Typical (simple expr) |
-|---|---|---|---|
-| Serialize | XML | N/A | ~2.3 μs |
-| Serialize | JSON | N/A | ~4.5 μs |
-| Deserialize | XML | Never | ~1.7 μs |
-| Deserialize | JSON | Never | ~1.8 μs |
-| Deserialize | XML | Always | ~6.2 μs |
-| **Deserialize** | **JSON** | **Always** | **~2,500 μs** |
+| Operation       | Format   | Validation | Typical (simple expr) |
+|-----------------|----------|------------|-----------------------|
+| Serialize       | XML      | N/A        | ~2.3 μs               |
+| Serialize       | JSON     | N/A        | ~4.5 μs               |
+| Deserialize     | XML      | Never      | ~1.7 μs               |
+| Deserialize     | JSON     | Never      | ~1.8 μs               |
+| Deserialize     | XML      | Always     | ~6.2 μs               |
+| **Deserialize** | **JSON** | **Always** | **~2,500 μs**         |
 
 Just look at the last row. JSON deserialization with schema validation is roughly **1,000x slower** than without, and about **400x slower** than XML validation. XML validation (using the built-in `System.Xml.Schema`) adds a moderate 3-4x overhead. JSON Schema validation (using `JsonSchema.Net`) adds **orders of magnitude**.
 
@@ -307,10 +310,22 @@ The patterns, the AST, and the Visitor will outlive the current AI hype cycle �
 
 ## References
 
+### Books and documentation
+
 - Gamma, E., Helm, R., Johnson, R., & Vlissides, J. (1994). *Design Patterns: Elements of Reusable Object-Oriented Software*. Addison-Wesley.
 - Microsoft. [Expression Trees (C#)](https://learn.microsoft.com/dotnet/csharp/advanced-topics/expression-trees/). Microsoft Learn.
 - Microsoft. [System.Linq.Expressions.ExpressionVisitor](https://learn.microsoft.com/dotnet/api/system.linq.expressions.expressionvisitor). .NET API Reference.
 - Microsoft. [LINQ Providers](https://learn.microsoft.com/dotnet/csharp/linq/). Microsoft Learn.
 - Denning, G. [JsonSchema.Net](https://github.com/gregsdennis/json-everything). GitHub.
 - Newton-King, J. [Newtonsoft.Json.Schema](https://www.newtonsoft.com/jsonschema). Newtonsoft.
-- [vm2.Linq.Expressions](https://github.com/vmelamed/vm2.Linq.Expressions). GitHub.
+
+### The Library is available on GitHub under the MIT License
+
+- [vm2.Linq.Expressions](https://github.com/vmelamed/vm2.Linq.Expressions).
+- [Short example of using vm2.Linq.Expressions](https://github.com/vmelamed/vm2.Linq.Expressions/blob/main/examples/toFromDoc.cs).
+
+### Related packages on NuGet
+
+- [vm2.Linq.Expressions Deep Equals and HashCode](https://www.nuget.org/packages/vm2.Linq.Expressions.DeepEquals).
+- [vm2.Linq.Expressions XML serialization on NuGet](https://www.nuget.org/packages/vm2.Linq.Expressions.Serialization.Xml).
+- [vm2.Linq.Expressions JSON serialization on NuGet](https://www.nuget.org/packages/vm2.Linq.Expressions.Serialization.Json).
