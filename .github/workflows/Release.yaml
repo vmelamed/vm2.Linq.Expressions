@@ -105,7 +105,7 @@ jobs:
     uses: vmelamed/vm2.DevOps/.github/workflows/_release.yaml@main
     secrets:
       RELEASE_PAT: ${{ secrets.RELEASE_PAT }} # Required PAT for pushing changelog and tags past branch protection.
-      # *TODO* Make sure to set the API key issued by the selected NuGet server.
+      # Make sure to set the API key issued by the selected NuGet server.
       NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
     permissions:
       contents: write # Required to checkout the code, push changelog, and create tags
