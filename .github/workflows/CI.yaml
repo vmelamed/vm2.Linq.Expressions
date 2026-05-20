@@ -30,17 +30,17 @@ on:
         default: false
 
       skip-benchmarks:
-        description: If selected, the workflow will skip running benchmark tests, but THE CI WORKFLOW WILL BE MARKED AS FAILED. Use only for faster testing of building and other non-benchmark test CI jobs.
+        description: If selected, the workflow will skip running benchmark tests and THE CI WORKFLOW WILL BE MARKED AS FAILED. Use only for faster testing of building and other non-benchmark test CI jobs.
         type: boolean
         default: false
 
       skip-tests:
-        description: If selected, the workflow will skip running test, but THE CI WORKFLOW WILL BE MARKED AS FAILED. Use only for faster testing of building and other non-test CI jobs.
+        description: If selected, the workflow will skip running tests and THE CI WORKFLOW WILL BE MARKED AS FAILED. Use only for faster testing of building and other non-test CI jobs.
         type: boolean
         default: false
 
       skip-packages:
-        description: If selected, the workflow will skip building packages, but THE CI WORKFLOW WILL BE MARKED AS FAILED. Use only for faster testing of building and other non-package CI jobs.
+        description: If selected, the workflow will skip building packages and THE CI WORKFLOW WILL BE MARKED AS FAILED. Use only for faster testing of building and other non-package CI jobs.
         type: boolean
         default: false
 
@@ -213,7 +213,7 @@ jobs:
                   exit_code=1
               fi
               if [[ "${{ needs.prerun-ci.outputs.skip-packages }}" == "true" ]]; then
-                  echo "⚠️  WARNING: Packages were skipped. The CI workflow is marked as failed, but it was intentional to save time. Use this option only for testing non-package CI jobs faster."
+                  echo "⚠️  WARNING: Building packages were skipped. The CI workflow is marked as failed, but it was intentional to save time. Use this option only for testing non-package CI jobs faster."
                   exit_code=1
               fi
 
