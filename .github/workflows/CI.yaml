@@ -40,7 +40,7 @@ on:
         default: false
 
       skip-packages:
-        description: If selected, the workflow will skip running benchmark tests, but THE CI WORKFLOW WILL BE MARKED AS FAILED. Use only for faster testing of building and other non-packaging CI jobs.
+        description: If selected, the workflow will skip building packages, but THE CI WORKFLOW WILL BE MARKED AS FAILED. Use only for faster testing of building and other non-package CI jobs.
         type: boolean
         default: false
 
