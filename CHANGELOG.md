@@ -1,5 +1,40 @@
 # Changelog
 
+## v1.1.0-preview.1 - 2026-05-21
+
+### Added
+
+- add telemetry opt-out and first-time experience skip for .NET CLI [skip ci]
+- add NSubstitute package references to test projects
+- add skip flags
+
+### Fixed
+
+- commit prefix
+- change the dependabot's commit message prefix
+- description of skip-packages [skip ci]
+- correct wording in conventions for merge or copy action
+- improve wording in CI warning message and conventions documentation
+
+### Internal
+
+- promote to stable v1.0.2 [skip ci]
+- update changelog for v1.0.2 [skip ci]
+- improve changelog formatting for clarity and consistency
+- address copilot comments
+- copy CONVENTIONS.md; cosmetic changes in the yaml
+- Bump the minor-and-patch group with 15 updates
+- Update package references to version 10.0.8 for Microsoft.Extensions libraries and bump vm2.TestUtilities to 1.5.0 in Serialization tests
+- Add Copilot instructions and project guidance documentation
+- regenerate *.lock.json
+- sync with diff-shared.sh
+- update vm2.TestUtilities to version 1.5.1
+- Update vm2.TestUtilities to version 1.5.1 and remove unused dependencies in package.lock files across Serialization.Abstractions.Tests, Serialization.Json.Tests, Serialization.TestData, and Serialization.Xml.Tests.
+
+### deps
+
+- Bump the minor-and-patch group with 1 update
+
 ## v1.0.2 - 2026-04-24
 
 See prereleases below.
