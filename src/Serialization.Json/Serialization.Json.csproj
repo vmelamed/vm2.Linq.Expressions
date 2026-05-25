@@ -3,8 +3,8 @@
     <PropertyGroup>
         <OutputType>Library</OutputType>
         <RootNamespace>vm2.Linq.Expressions.Serialization.Json</RootNamespace>
-        <!-- Expression tree serialization inherently uses reflection (Type.GetType, MakeGenericType, etc.).
-             Suppress trim analysis warnings at the project level. -->
+           <!-- Expression tree serialization inherently uses reflection (Type.GetType, MakeGenericType, etc.).
+               Suppress trim analysis warnings at the project level. -->
         <EnableTrimAnalyzer>false</EnableTrimAnalyzer>
         <IsTrimmable>false</IsTrimmable>
     </PropertyGroup>
@@ -35,6 +35,7 @@
 
     <ItemGroup>
         <PackageReference Include="JsonSchema.Net" Condition="!$([System.Text.RegularExpressions.Regex]::IsMatch($(DefineConstants), '^(.*;)*NEWTONSOFT_SCHEMA(;.*)*$'))" />
+        <PackageReference Include="Newtonsoft.Json" Condition="$([System.Text.RegularExpressions.Regex]::IsMatch($(DefineConstants), '^(.*;)*NEWTONSOFT_SCHEMA(;.*)*$'))" />
         <PackageReference Include="Newtonsoft.Json.Schema" Condition="$([System.Text.RegularExpressions.Regex]::IsMatch($(DefineConstants), '^(.*;)*NEWTONSOFT_SCHEMA(;.*)*$'))" />
     </ItemGroup>
 
