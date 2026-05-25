@@ -53,6 +53,11 @@ optionally be validated against their respective schemas.
 A companion package provides structural deep-equality comparison and hash code computation for expression trees, useful for
 caching, deduplication, and testing.
 
+> [!NOTE]
+> These packages are not currently Native AOT-ready. Compatibility policy is driven by the primary supported surface: the
+> flagship XML and JSON serializers are not AOT-ready, so a partial AOT posture at the repository level would create more
+noise than value.
+
 ## Packages
 
 | Package | Description |

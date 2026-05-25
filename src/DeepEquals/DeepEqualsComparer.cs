@@ -5,11 +5,9 @@ namespace vm2.Linq.Expressions.DeepEquals;
 /// A single-pass design that replaces the previous two-class enqueue/dequeue approach,
 /// eliminating the risk of traversal de-synchronization.
 /// </summary>
-#pragma warning disable IL2070, IL2075, IL2060 // Reflection on well-known BCL types (Nullable<>, Memory<>, ArraySegment<>)
 class DeepEqualsComparer
 {
     // Reflection caches — one entry per closed generic type, shared across all comparer instances.
-    static readonly ConcurrentDictionary<Type, (PropertyInfo HasValue, PropertyInfo Value)> s_nullableCache = new();
     static readonly ConcurrentDictionary<Type, MethodInfo> s_toArrayCache = new();
     static readonly ConcurrentDictionary<Type, PropertyInfo> s_arrayPropertyCache = new();
 
@@ -150,26 +148,8 @@ class DeepEqualsComparer
         IEnumerable? enumL = null;
         IEnumerable? enumR = null;
 
-        // Unwrap Nullable<T>
-        if (lType.IsGenericType && lType.GetGenericTypeDefinition() == typeof(Nullable<>))
-        {
-            var (piHasValue, piValue) = s_nullableCache.GetOrAdd(lType, static t => (
-                t.GetProperty("HasValue") ?? throw new InvalidOperationException("Could not get the property Nullable<>.HasValue."),
-                t.GetProperty("Value")    ?? throw new InvalidOperationException("Could not get the property Nullable<>.Value.")
-            ));
-
-            var hasValueL = (bool)piHasValue.GetValue(lValue, null)!;
-            var hasValueR = (bool)(piHasValue.GetValue(rValue, null) ?? throw new InvalidOperationException("Could not get the value of the property Nullable<>.HasValue."));
-
-            if (hasValueL != hasValueR)
-                return Fail(left, right);
-            if (!hasValueL)
-                return true;
-
-            lType = lValue.GetType();
-            lValue = piValue.GetValue(lValue) ?? throw new InvalidOperationException("Could not get the value of the property Nullable<>.Value.");
-            rValue = piValue.GetValue(rValue) ?? throw new InvalidOperationException("Could not get the value of the property Nullable<>.Value.");
-        }
+        // Boxed Nullable<T> values are already boxed as their underlying T.
+        lType = Nullable.GetUnderlyingType(lType) ?? lType;
 
         // Memory<T> / ReadOnlyMemory<T> — convert to arrays for element comparison
         if (lValue is not IEnumerable)
@@ -182,11 +162,7 @@ class DeepEqualsComparer
 
                 if (genType == typeof(Memory<>) || genType == typeof(ReadOnlyMemory<>))
                 {
-                    var mi = s_toArrayCache.GetOrAdd(lType, static t =>
-                    {
-                        var m = t.GetMethod("ToArray") ?? throw new InvalidOperationException("Could not get the method Memory<T>.ToArray.");
-                        return m.IsGenericMethod ? m.MakeGenericMethod(t.GetGenericArguments()[0]) : m;
-                    });
+                    var mi = s_toArrayCache.GetOrAdd(lType, GetMemoryToArrayMethod);
 
                     enumL = mi.Invoke(lValue, []) as IEnumerable;
                     enumR = mi.Invoke(rValue, []) as IEnumerable;
@@ -198,8 +174,7 @@ class DeepEqualsComparer
             // ArraySegment<T> — check backing array null-ness
             if (lType.IsGenericType && lType.GetGenericTypeDefinition() == typeof(ArraySegment<>))
             {
-                var piArray = s_arrayPropertyCache.GetOrAdd(lType, static t =>
-                    t.GetProperty("Array") ?? throw new InvalidOperationException("Could not get the property ArraySegment<T>.Array."));
+                var piArray = s_arrayPropertyCache.GetOrAdd(lType, GetArraySegmentArrayProperty);
                 var lArray = piArray.GetValue(lValue);
                 var rArray = piArray.GetValue(rValue);
 
@@ -239,6 +214,20 @@ class DeepEqualsComparer
 
         return true;
     }
+
+    [UnconditionalSuppressMessage(
+        "Trimming",
+        "IL2070",
+        Justification = "CompareConstant only passes closed Memory<T> or ReadOnlyMemory<T> types and accesses the stable public ToArray() instance method.")]
+    static MethodInfo GetMemoryToArrayMethod(Type type)
+        => type.GetMethod("ToArray") ?? throw new InvalidOperationException("Could not get the method Memory<T>.ToArray.");
+
+    [UnconditionalSuppressMessage(
+        "Trimming",
+        "IL2070",
+        Justification = "CompareConstant only passes closed ArraySegment<T> types and accesses the stable public Array property.")]
+    static PropertyInfo GetArraySegmentArrayProperty(Type type)
+        => type.GetProperty("Array") ?? throw new InvalidOperationException("Could not get the property ArraySegment<T>.Array.");
 
     bool CompareGoto(GotoExpression left, GotoExpression right)
     {
@@ -476,4 +465,3 @@ class DeepEqualsComparer
         return CompareMemberBindings(left.Bindings, right.Bindings);
     }
 }
-#pragma warning restore IL2070, IL2075, IL2060
