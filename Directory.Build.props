@@ -76,6 +76,17 @@
         <DOTNET_SKIP_FIRST_TIME_EXPERIENCE>true</DOTNET_SKIP_FIRST_TIME_EXPERIENCE>
     </PropertyGroup>
 
+    <!-- The following group builds the product project(s) as AOT compatible and enforces verification of the dependencies AOT compatibility
+         unless the user or the project explicitly defines it as incompatible, e.g. with <IsAotCompatible>false</IsAotCompatible> -->
+    <PropertyGroup Label="AoT" Condition="
+        '$(IsProductProject)' == 'true' AND
+        '$(IsAotCompatible)' != 'false'">
+        <!-- Native AOT is intentionally disabled for this repo. Compatibility policy follows the primary supported surface: the
+             flagship XML and JSON serializers are not AOT-ready, so a partial AOT posture would create more noise than value. -->
+        <IsAotCompatible>false</IsAotCompatible>
+        <VerifyReferenceAotCompatibility>false</VerifyReferenceAotCompatibility>
+    </PropertyGroup>
+
     <!-- ================ Package properties for all vm2 packages ================ -->
     <PropertyGroup Label="NuGetCommon" Condition="'$(IsProductProject)' == 'true'">
         <IsPackable>true</IsPackable>

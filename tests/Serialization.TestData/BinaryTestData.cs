@@ -4,6 +4,10 @@ using System.Diagnostics.CodeAnalysis;
 
 [RequiresDynamicCode("Tests are not AOT build")]
 
+using System.Diagnostics.CodeAnalysis;
+
+[RequiresDynamicCode("Tests are not AOT build")]
+
 public static class BinaryTestData
 {
     /// <summary>
