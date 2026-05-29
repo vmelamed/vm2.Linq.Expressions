@@ -1,0 +1,9 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " 32767 ",
+  "expression": {
+    "constant": {
+      "short": 32767
+    }
+  }
+}

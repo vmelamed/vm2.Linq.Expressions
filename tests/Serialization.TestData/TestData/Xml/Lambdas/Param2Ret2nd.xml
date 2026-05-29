@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- (i, j) => j -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <lambda
+        type="double">
+        <parameters>
+            <parameter
+                type="int"
+                id="P2"
+                name="i" />
+            <parameter
+                type="double"
+                id="P1"
+                name="j" />
+        </parameters>
+        <body>
+            <parameter
+                type="double"
+                id="P1"
+                name="j" />
+        </body>
+    </lambda>
+</expression>

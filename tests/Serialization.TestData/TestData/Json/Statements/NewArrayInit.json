@@ -1,0 +1,32 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " () =\u003E new [] {\u0022aaa\u0022, \u0022bbb\u0022, \u0022ccc\u0022} ",
+  "expression": {
+    "lambda": {
+      "type": "System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+      "parameters": [],
+      "body": {
+        "newArrayInit": {
+          "type": "string",
+          "elements": [
+            {
+              "constant": {
+                "string": "aaa"
+              }
+            },
+            {
+              "constant": {
+                "string": "bbb"
+              }
+            },
+            {
+              "constant": {
+                "string": "ccc"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

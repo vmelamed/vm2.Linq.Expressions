@@ -1,0 +1,67 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " (Array[Index] = (Array[Index] \u002B _value)) ",
+  "expression": {
+    "assign": {
+      "type": "int",
+      "operands": [
+        {
+          "index": {
+            "type": "int",
+            "object": {
+              "parameter": {
+                "type": "System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                "name": "Array",
+                "id": "P1"
+              }
+            },
+            "indexes": [
+              {
+                "parameter": {
+                  "type": "int",
+                  "name": "Index",
+                  "id": "P2"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "add": {
+            "type": "int",
+            "operands": [
+              {
+                "index": {
+                  "type": "int",
+                  "object": {
+                    "parameter": {
+                      "type": "System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                      "name": "Array",
+                      "id": "P1"
+                    }
+                  },
+                  "indexes": [
+                    {
+                      "parameter": {
+                        "type": "int",
+                        "name": "Index",
+                        "id": "P2"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "parameter": {
+                  "type": "int",
+                  "name": "_value",
+                  "id": "P3"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

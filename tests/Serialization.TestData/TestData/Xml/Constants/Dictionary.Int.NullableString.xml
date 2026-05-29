@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- value(System.Collections.Generic.Dictionary`2[System.Int32,System.String]) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <constant>
+        <!--  System.Collections.Generic.Dictionary<int, string>  -->
+        <dictionary
+            type="System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+            length="4">
+            <key-value>
+                <int>1</int>
+                <string>one</string>
+            </key-value>
+            <key-value>
+                <int>2</int>
+                <string>two</string>
+            </key-value>
+            <key-value>
+                <int>3</int>
+                <string
+                    i:nil="true" />
+            </key-value>
+            <key-value>
+                <int>4</int>
+                <string
+                    i:nil="true" />
+            </key-value>
+        </dictionary>
+    </constant>
+</expression>

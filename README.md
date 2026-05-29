@@ -374,13 +374,13 @@ dotnet build src/Serialization.Xml/Serialization.Xml.csproj
 
 ## Tests
 
-The test projects are in the `test/` directory. They use MTP v2 with xUnit v3. Run each project individually:
+The test projects are in the `tests/` directory. They use MTP v2 with xUnit v3. Run each project individually:
 
 ```bash
-dotnet test --project test/DeepEquals.Tests/DeepEquals.Tests.csproj
-dotnet test --project test/Serialization.Abstractions.Tests/Serialization.Abstractions.Tests.csproj
-dotnet test --project test/Serialization.Json.Tests/Serialization.Json.Tests.csproj
-dotnet test --project test/Serialization.Xml.Tests/Serialization.Xml.Tests.csproj
+dotnet test --project tests/DeepEquals.Tests/DeepEquals.Tests.csproj
+dotnet test --project tests/Serialization.Abstractions.Tests/Serialization.Abstractions.Tests.csproj
+dotnet test --project tests/Serialization.Json.Tests/Serialization.Json.Tests.csproj
+dotnet test --project tests/Serialization.Xml.Tests/Serialization.Xml.Tests.csproj
 ```
 
 ## Related Packages

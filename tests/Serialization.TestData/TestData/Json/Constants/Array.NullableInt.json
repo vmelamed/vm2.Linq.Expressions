@@ -1,0 +1,37 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " value(System.Nullable\u00601[System.Int32][]) ",
+  "expression": {
+    "constant": {
+      "$comment": " System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][] ",
+      "sequence": {
+        "type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "$comment": " nullable\u003Cint\u003E ",
+        "value": [
+          {
+            "nullable": {
+              "int": 1
+            }
+          },
+          {
+            "nullable": {
+              "int": 2
+            }
+          },
+          {
+            "nullable": {
+              "type": "int",
+              "value": null
+            }
+          },
+          {
+            "nullable": {
+              "type": "int",
+              "value": null
+            }
+          }
+        ]
+      }
+    }
+  }
+}

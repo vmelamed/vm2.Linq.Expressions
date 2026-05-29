@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- value(System.Collections.Hashtable) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <constant>
+        <!--  System.Collections.Hashtable  -->
+        <dictionary
+            type="System.Collections.Hashtable, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+            length="2">
+            <key-value>
+                <int>2</int>
+                <string>two</string>
+            </key-value>
+            <key-value>
+                <int>1</int>
+                <string>one</string>
+            </key-value>
+        </dictionary>
+    </constant>
+</expression>

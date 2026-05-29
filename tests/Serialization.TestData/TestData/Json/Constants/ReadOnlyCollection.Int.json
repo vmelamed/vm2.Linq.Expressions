@@ -1,0 +1,27 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " value(System.Collections.ObjectModel.ReadOnlyCollection\u00601[System.Int32]) ",
+  "expression": {
+    "constant": {
+      "$comment": " System.Collections.ObjectModel.ReadOnlyCollection\u003Cint\u003E ",
+      "sequence": {
+        "type": "System.Collections.ObjectModel.ReadOnlyCollection\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "value": [
+          {
+            "int": 1
+          },
+          {
+            "int": 2
+          },
+          {
+            "int": 3
+          },
+          {
+            "int": 4
+          }
+        ],
+        "length": 4
+      }
+    }
+  }
+}

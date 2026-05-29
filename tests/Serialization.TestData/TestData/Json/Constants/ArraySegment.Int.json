@@ -1,0 +1,21 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " value(System.ArraySegment\u00601[System.Int32]) ",
+  "expression": {
+    "constant": {
+      "$comment": " System.ArraySegment\u003Cint\u003E ",
+      "sequence": {
+        "type": "System.ArraySegment\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "value": [
+          {
+            "int": 2
+          },
+          {
+            "int": 3
+          }
+        ],
+        "length": 2
+      }
+    }
+  }
+}

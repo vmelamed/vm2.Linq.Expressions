@@ -1,0 +1,14 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " value(System.ArraySegment\u00601[System.Byte]) ",
+  "expression": {
+    "constant": {
+      "$comment": " System.ArraySegment\u003Cbyte\u003E ",
+      "byteSequence": {
+        "type": "System.ArraySegment\u00601[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "value": "",
+        "length": 0
+      }
+    }
+  }
+}

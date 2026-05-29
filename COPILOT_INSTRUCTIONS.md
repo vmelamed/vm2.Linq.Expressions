@@ -36,7 +36,7 @@ Keep this file focused on *intent* and *preferences* so Copilot infers patterns.
   - `.github/` for GitHub workflows and issue templates (optional)
   - `.github/workflows/` for GitHub Actions workflows (optional)
   - `src/` for source code
-  - `test/` for test projects (very rarely optional - only for test and other tiny utilities)
+  - `tests/` for test projects (very rarely optional - only for test and other tiny utilities)
   - `benchmarks/` for performance benchmarks (desirable)
   - `examples/` for sample code and usage examples (desirable)
   - `docs/` for documentation (optional)
@@ -189,11 +189,11 @@ When you add a new test project or packable project, you **must** add its path t
 | Array               | Purpose                      | Example entry                                    |
 |---------------------|------------------------------|--------------------------------------------------|
 | `BUILD_PROJECTS`    | Solutions/projects to build  | `"vm2.Linq.Expressions.slnx"`                   |
-| `TEST_PROJECTS`     | Test projects to run         | `"test/DeepEquals.Tests/DeepEquals.Tests.csproj"` |
+| `TEST_PROJECTS`     | Test projects to run         | `"tests/DeepEquals.Tests/DeepEquals.Tests.csproj"` |
 | `BENCHMARK_PROJECTS`| Benchmark projects to run    | `"benchmarks/DeepEquals.Benchmarks/DeepEquals.Benchmarks.csproj"` |
 | `PACKAGE_PROJECTS`  | Projects to pack as NuGet    | `"vm2.Linq.Expressions.slnx"` (packs all `IsPackable=true` projects) |
 
-Also add the new project to `vm2.Linq.Expressions.slnx` under the appropriate solution folder (`/src/`, `/test/`, `/benchmarks/`).
+Also add the new project to `vm2.Linq.Expressions.slnx` under the appropriate solution folder (`/src/`, `/tests/`, `/benchmarks/`).
 
 ---
 
@@ -219,37 +219,37 @@ Throughout chat and internal notes, **LE** means `Linq.Expressions`. Use the ful
 
 ### Dependency Graph
 
-```text
-Serialization.Xml ──┐
-                    ├──▶ Serialization.Abstractions
-Serialization.Json ─┘
+    ```text
+    Serialization.Xml ──┐
+                        ├──▶ Serialization.Abstractions
+    Serialization.Json ─┘
 
-DeepEquals (standalone, no dependency on serialization)
-```
+    DeepEquals (standalone, no dependency on serialization)
+    ```
 
-### Repository Layout
+    ### Repository Layout
 
-```text
-vm2.Linq.Expressions/
-├── src/
-│   ├── DeepEquals/                        → vm2.Linq.Expressions.DeepEquals
-│   ├── Serialization.Abstractions/        → vm2.Linq.Expressions.Serialization.Abstractions
-│   ├── Serialization.Xml/                 → vm2.Linq.Expressions.Serialization.Xml
-│   └── Serialization.Json/                → vm2.Linq.Expressions.Serialization.Json
-├── test/
-│   ├── DeepEquals.Tests/
-│   ├── Serialization.Xml.Tests/
-│   └── Serialization.Json.Tests/
-├── benchmarks/
-│   └── (as needed per package)
-├── examples/
-├── docs/
-├── changelog/
-├── vm2.Linq.Expressions.slnx
-├── Directory.Build.props
-├── Directory.Packages.props
-└── ...
-```
+    ```text
+    vm2.Linq.Expressions/
+    ├── src/
+    │   ├── DeepEquals/                        → vm2.Linq.Expressions.DeepEquals
+    │   ├── Serialization.Abstractions/        → vm2.Linq.Expressions.Serialization.Abstractions
+    │   ├── Serialization.Xml/                 → vm2.Linq.Expressions.Serialization.Xml
+    │   └── Serialization.Json/                → vm2.Linq.Expressions.Serialization.Json
+    ├── tests/
+    │   ├── DeepEquals.Tests/
+    │   ├── Serialization.Xml.Tests/
+    │   └── Serialization.Json.Tests/
+    ├── benchmarks/
+    │   └── (as needed per package)
+    ├── examples/
+    ├── docs/
+    ├── changelog/
+    ├── vm2.Linq.Expressions.slnx
+    ├── Directory.Build.props
+    ├── Directory.Packages.props
+    └── ...
+    ```
 
 ### Design Decisions
 

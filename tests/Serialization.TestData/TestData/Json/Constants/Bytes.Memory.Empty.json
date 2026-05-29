@@ -1,0 +1,14 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " System.Memory\u003CByte\u003E[0] ",
+  "expression": {
+    "constant": {
+      "$comment": " System.Memory\u003Cbyte\u003E ",
+      "byteSequence": {
+        "type": "System.Memory\u00601[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "value": "",
+        "length": 0
+      }
+    }
+  }
+}

@@ -44,7 +44,7 @@ vm2.Linq.Expressions/
 │   ├── Serialization.Abstractions/     → vm2.Linq.Expressions.Serialization.Abstractions
 │   ├── Serialization.Xml/              → vm2.Linq.Expressions.Serialization.Xml
 │   └── Serialization.Json/             → vm2.Linq.Expressions.Serialization.Json
-├── test/
+├── tests/
 │   ├── DeepEquals.Tests/
 │   ├── Serialization.Abstractions.Tests/
 │   ├── Serialization.Json.Tests/
@@ -75,13 +75,13 @@ DeepEquals (standalone)
 dotnet build vm2.Linq.Expressions.slnx
 
 # Run all tests (MTP v2 — each project is a compiled executable)
-dotnet test --project test/DeepEquals.Tests/DeepEquals.Tests.csproj
-dotnet test --project test/Serialization.Xml.Tests/Serialization.Xml.Tests.csproj
-dotnet test --project test/Serialization.Json.Tests/Serialization.Json.Tests.csproj
-dotnet test --project test/Serialization.Abstractions.Tests/Serialization.Abstractions.Tests.csproj
+dotnet test --project tests/DeepEquals.Tests/DeepEquals.Tests.csproj
+dotnet test --project tests/Serialization.Xml.Tests/Serialization.Xml.Tests.csproj
+dotnet test --project tests/Serialization.Json.Tests/Serialization.Json.Tests.csproj
+dotnet test --project tests/Serialization.Abstractions.Tests/Serialization.Abstractions.Tests.csproj
 
 # Run a single test by name (MTP v2 filter syntax)
-dotnet test --project test/DeepEquals.Tests/DeepEquals.Tests.csproj --filter "MethodName_WhenCondition_ShouldOutcome"
+dotnet test --project tests/DeepEquals.Tests/DeepEquals.Tests.csproj --filter "MethodName_WhenCondition_ShouldOutcome"
 
 # Pack all four NuGet packages
 dotnet pack vm2.Linq.Expressions.slnx --configuration Release

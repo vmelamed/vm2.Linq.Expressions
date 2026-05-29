@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- i => i -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <lambda
+        type="int">
+        <parameters>
+            <parameter
+                type="int"
+                id="P1"
+                name="i" />
+        </parameters>
+        <body>
+            <parameter
+                type="int"
+                id="P1"
+                name="i" />
+        </body>
+    </lambda>
+</expression>
