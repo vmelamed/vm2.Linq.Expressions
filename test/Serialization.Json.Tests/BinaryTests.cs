@@ -1,4 +1,4 @@
-namespace vm2.Linq.Expressions.Serialization.Json.Tests;
+namespace vm2.Tests.Linq.Expressions.Serialization.Json;
 
 [CollectionDefinition("JSON")]
 public partial class BinaryTests(JsonTestsFixture fixture, ITestOutputHelper output) : BaseTests(fixture, output)

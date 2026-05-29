@@ -8,7 +8,7 @@ global using System.Diagnostics.CodeAnalysis;
 global using vm2.Linq.Expressions.DeepEquals;
 global using vm2.Linq.Expressions.Serialization;
 global using vm2.Linq.Expressions.Serialization.Exceptions;
-global using vm2.Linq.Expressions.Serialization.TestData;
+global using vm2.Tests.Linq.Expressions.Serialization.Data;
 global using vm2.Linq.Expressions.Serialization.Xml;
 
 global using vm2.TestUtilities;

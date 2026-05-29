@@ -24,6 +24,7 @@
   - [Performance](#performance)
   - [Security](#security)
   - [Naming](#naming)
+  - [AOT and Trimming](#aot-and-trimming)
   - [Git and PR Hygiene](#git-and-pr-hygiene)
     - [Files with shared content](#files-with-shared-content-5)
   - [Documentation](#documentation)
@@ -132,7 +133,7 @@ The project owner is a non-native English speaker.
 - Global usings: defined in **`usings.cs` per project**
 - Standard folder layout:
   - `src/` — source code
-  - `test/` — test projects. The stack is: **xUnit, FluentAssertions, NSubstitute, MTP v2, coverage**
+  - `tests/` — test projects. The stack is: **xUnit, FluentAssertions, NSubstitute, MTP v2, coverage**
   - `benchmarks/` — **BenchmarkDotNet** projects (desirable)
   - `examples/` — usage examples (desirable). Prefer single-file programs for simplicity, but multi-file projects are acceptable if the example is complex enough to warrant it.
   - `docs/` — documentation (optional, in addition to README.md, e.g. blogs, design docs, etc.)
@@ -257,6 +258,65 @@ The project owner is a non-native English speaker.
 - Events: past tense — `OrderPlacedEvent`.
 - Commands: imperative — `PlaceOrderCommand`.
 - Handlers: `...Handler` suffix.
+- **Always set `<OutputType>` explicitly** in every `*.csproj` to make it clear to the CI scripts what type of file to run for tests and benchmarks, and to avoid drift when project file names change.
+- Prefer **domain-first public API type names** without suffixes unless required to avoid language-level symbol conflicts.
+- Prefer **package-first artifact identity** for NuGet packages and assemblies:
+  - Package ID: `vm2.<Package>` or `vm2.<Package>.<Feature>`
+  - Assembly name: `vm2.<Package>` or `vm2.<Package>.<Feature>`
+- Always set `<RootNamespace>` explicitly in every `*.csproj`.
+- Root namespace policy:
+  - For core libraries, prioritize API clarity and discoverability.
+  - For feature libraries, use a stable hierarchy that mirrors the feature domain.
+- Test naming policy (tests-first):
+  - Project and assembly: `<Package>.Tests` or `<Package>.<Feature>.Tests` to group tests by package and feature, e.g. `Ulid.Tests` for `vm2.Ulid` package, `UlidTool.Tests` for `vm2.UlidTool` package, etc. This also makes it clear that the assembly contains tests for the specific package or feature. **Prefer the default name for the assembly** - the name of the project file without the extension, e.g. `Ulid.Tests` for `Ulid.Tests.csproj`.
+  - Namespace: `vm2.Tests.<Package>[.<Feature>]` to avoid conflicts where `<Package>` is also a name of a type, e.g. `Ulid`. It also makes it clear that the namespace contains tests for the specific package, class, or feature, e.g. `vm2.Tests.Ulid` for `vm2.Ulid` package/type, `vm2.Tests.UlidTool` for `vm2.UlidTool` package/feature (tool), etc.
+  - **Always specify `<OutputType>Exe</OutputType>` explicitly** in test project files to make it clear to the CI scripts what type of file to run.
+- Benchmark naming policy (benchmarks-first):
+  - Project and assembly: `<Package>.Benchmarks` or `<Package>.<Feature>.Benchmarks` to group benchmarks by package and feature, e.g. `Ulid.Benchmarks` for `vm2.Ulid` package. This also makes it clear that the assembly contains benchmarks for the specific package or feature. **The assembly name MUST be the default** - the name of the project file without the extension, e.g. `Ulid.Benchmarks` for `Ulid.Benchmarks.csproj`. This is BenchmarkDotNet's required convention.
+  - Namespace: `vm2.Benchmarks.<Package>[.Feature]` to avoid conflicts where `<Package>` is also a name of a type, e.g. `Ulid`. It also makes it clear that the namespace contains tests for the specific package, class, or feature, e.g. `vm2.Tests.Ulid` for `vm2.Ulid` package/type.
+  - **Always specify `<OutputType>Exe</OutputType>`** in benchmark project files to make it clear to the CI scripts what type of file to run for benchmarks.
+- Inside a single repository, do not mix naming strategies. Choose one namespace strategy and apply it consistently to `src/`, `tests/`, and `benchmarks/`.
+
+## AOT and Trimming
+
+- Scope by project type (usually set in **`Directory.Build.props`** with folder-based conditions):
+  - **test** and **benchmark** projects: no trimming and no AOT checks by default; optimize for correctness/perf feedback, not deployment-shape validation:
+    - `IsAotCompatible=false`
+    - `VerifyReferenceAotCompatibility=false`
+    - `EnableTrimAnalyzer=false`
+    - `IsTrimmable=false`
+  - **product** projects: trimming and AOT checks enabled by default  (usually set in **`Directory.Build.props`**):
+    - `IsAotCompatible=true`
+    - `VerifyReferenceAotCompatibility=true` when strict dependency metadata validation is desired.
+    - `EnableTrimAnalyzer=true`
+    - `IsTrimmable=true`
+- Build and classify diagnostics (handled in CI and local `dotnet build`/`dotnet publish`):
+  - IL2026-family: trimming compatibility issue.
+  - IL3050-family: AOT dynamic-code issue.
+  - IL3058: referenced assembly is not marked AOT-compatible.
+- If IL2026 appears (code-level fix):
+  - first try `DynamicallyAccessedMembersAttribute` to make reflection requirements explicit.
+  - if an API is fundamentally trim-unsafe, annotate the API boundary with `RequiresUnreferencedCodeAttribute`.
+  - avoid suppression-first fixes.
+- If IL3050 appears (code-level fix):
+  - first try removing/replacing dynamic code patterns.
+  - if an API is fundamentally AOT-unsafe, annotate the API boundary with `RequiresDynamicCodeAttribute`.
+  - if unsupported surface is substantial, split into AOT-safe core and non-AOT companion code/package.
+- If strict AOT/trimming is not worth it for a specific product project (project-level opt-out in **`*.csproj`**):
+  - `IsAotCompatible=false`
+  - `VerifyReferenceAotCompatibility=false`
+  If needed, also set:
+  - `EnableTrimAnalyzer=false`
+  - `IsTrimmable=false`
+  - use this only as an explicit, documented design decision with rationale in README/changelog/PR.
+- Re-run checks and verify warning flow (CI and local build/publish):
+  - warnings should be either fixed or intentionally bubbled at public API boundaries.
+  - unsupported features must be documented clearly for consumers.
+- IL warning suppression policy (code-level and project-level):
+  - **do not suppress IL warnings** (`IL2xxx`, `IL3xxx`) by default.
+  - only suppress when the safety argument is explicit, tested, and documented.
+  - if you think suppression is the easiest fix, stop and re-evaluate API design first.
+  - unless you really, really know what you are doing, Val.
 
 ## Git and PR Hygiene
 

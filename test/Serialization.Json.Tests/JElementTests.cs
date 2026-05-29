@@ -1,4 +1,4 @@
-namespace vm2.Linq.Expressions.Serialization.Json.Tests;
+namespace vm2.Tests.Linq.Expressions.Serialization.Json;
 
 public class JElementTests
 {

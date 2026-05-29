@@ -1,4 +1,4 @@
-﻿namespace vm2.Linq.Expressions.DeepEquals.Tests;
+﻿namespace vm2.Tests.Linq.Expressions.DeepEquals;
 
 using vm2.TestUtilities;
 

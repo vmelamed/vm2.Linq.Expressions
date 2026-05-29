@@ -3,9 +3,9 @@
   "$comment": " One, Three ",
   "expression": {
     "constant": {
-      "$comment": " vm2.Linq.Expressions.Serialization.TestData.EnumFlagsTest ",
+      "$comment": " vm2.Tests.Linq.Expressions.Serialization.Data.EnumFlagsTest ",
       "enum": {
-        "type": "vm2.Linq.Expressions.Serialization.TestData.EnumFlagsTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "type": "vm2.Tests.Linq.Expressions.Serialization.Data.EnumFlagsTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
         "value": [
           "One",
           "Three"

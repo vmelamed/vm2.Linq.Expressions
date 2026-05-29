@@ -1,15 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <RootNamespace>vm2.Linq.Expressions.Serialization.Json.Tests</RootNamespace>
+        <RootNamespace>vm2.Tests.Linq.Expressions.Serialization.Json</RootNamespace>
         <!-- Suppress xunit analyzer crash (AD0001) on cross-assembly MemberData references -->
         <NoWarn>$(NoWarn);AD0001</NoWarn>
     </PropertyGroup>
 
     <!--
     By default JSON validation is done with Json.Schema from https://docs.json-everything.net/.
-    As of v9.2 floating-point issues are fixed, but it still fails on deeply nested oneOf + recursive $ref
+    As of v9.2 floating-point issues seam to be fixed, but it still fails on deeply nested oneOf + recursive $ref
     (see StatementTests NewMembersInit1/2). Its SchemaRegistry.Global is also not thread-safe.
     It uses System.Text.Json like this project.
 

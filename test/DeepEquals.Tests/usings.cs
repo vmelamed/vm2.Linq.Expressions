@@ -10,5 +10,6 @@ global using System.Runtime.Serialization;
 global using System.Diagnostics.CodeAnalysis;
 
 global using vm2.TestUtilities;
+global using vm2.Linq.Expressions.DeepEquals;
 
 global using static vm2.TestUtilities.TestUtilities;

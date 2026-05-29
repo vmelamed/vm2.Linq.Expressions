@@ -3,6 +3,13 @@
     <PropertyGroup>
         <OutputType>Library</OutputType>
         <RootNamespace>vm2.Linq.Expressions.Serialization</RootNamespace>
+
+        <!-- Expression tree serialization inherently uses reflection (Type.GetType, MakeGenericType,
+             DataContractSerializer, etc.). Suppress trim analysis and AOT at the project level. -->
+        <EnableTrimAnalyzer>false</EnableTrimAnalyzer>
+        <IsTrimmable>false</IsTrimmable>
+        <IsAotCompatible>false</IsAotCompatible>
+        <VerifyReferenceAotCompatibility>false</VerifyReferenceAotCompatibility>
     </PropertyGroup>
 
     <PropertyGroup Label="NuGet">

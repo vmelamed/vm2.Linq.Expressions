@@ -4,12 +4,12 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <constant>
-        <!--  vm2.Linq.Expressions.Serialization.TestData.StructDataContract1  -->
+        <!--  vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1  -->
         <object
-            type="vm2.Linq.Expressions.Serialization.TestData.StructDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+            type="vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
             <StructDataContract1
                 xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
-                xmlns="http://schemas.datacontract.org/2004/07/vm2.Linq.Expressions.Serialization.TestData">
+                xmlns="http://schemas.datacontract.org/2004/07/vm2.Tests.Linq.Expressions.Serialization.Data">
                 <IntProperty>0</IntProperty>
                 <StringProperty></StringProperty>
             </StructDataContract1>

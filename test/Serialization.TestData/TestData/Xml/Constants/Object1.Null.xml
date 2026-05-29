@@ -4,9 +4,9 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <constant>
-        <!--  vm2.Linq.Expressions.Serialization.TestData.Object1  -->
+        <!--  vm2.Tests.Linq.Expressions.Serialization.Data.Object1  -->
         <object
             i:nil="true"
-            type="vm2.Linq.Expressions.Serialization.TestData.Object1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+            type="vm2.Tests.Linq.Expressions.Serialization.Data.Object1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     </constant>
 </expression>
