@@ -3,7 +3,12 @@
   "$comment": " 9223372036854775807 ",
   "expression": {
     "constant": {
+<<<<<<< HEAD
       "$comment": " System.Nullable\u00601[[System.Int64]] ",
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+      "$comment": " nullable\u003Clong\u003E ",
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)
       "nullable": {
         "long": "9223372036854775807"
       }

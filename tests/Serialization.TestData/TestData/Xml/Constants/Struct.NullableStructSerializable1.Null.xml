@@ -4,9 +4,19 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <constant>
+<<<<<<< HEAD
         <!--  System.Nullable`1[[vm2.Tests.Linq.Expressions.Serialization.Data.StructSerializable1]]  -->
         <nullable
             type="vm2.Tests.Linq.Expressions.Serialization.Data.StructSerializable1"
             i:nil="true" />
     </constant>
 </expression>
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+        <!--  nullable<vm2.Tests.Linq.Expressions.Serialization.Data.StructSerializable1>  -->
+        <nullable
+            type="vm2.Tests.Linq.Expressions.Serialization.Data.StructSerializable1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+            i:nil="true" />
+    </constant>
+</expression>
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)

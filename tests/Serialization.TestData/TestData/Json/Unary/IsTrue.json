@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
     "$comment": " IsTrue(d) ",
     "expression": {
@@ -26,3 +27,33 @@
         }
     }
 }
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " IsTrue(d) ",
+  "expression": {
+    "isTrue": {
+      "type": "boolean",
+      "operand": {
+        "parameter": {
+          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.D, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "name": "d",
+          "id": "P1"
+        }
+      },
+      "method": {
+        "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.D, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "static": true,
+        "type": "boolean",
+        "name": "op_True",
+        "parameterSpecs": [
+          {
+            "type": "vm2.Tests.Linq.Expressions.Serialization.Data.D, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "name": "x"
+          }
+        ]
+      }
+    }
+  }
+}
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)

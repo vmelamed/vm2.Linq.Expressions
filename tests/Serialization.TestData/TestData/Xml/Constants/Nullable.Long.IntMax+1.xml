@@ -4,7 +4,12 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <constant>
+<<<<<<< HEAD
         <!--  System.Nullable`1[[System.Int64]]  -->
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+        <!--  nullable<long>  -->
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)
         <nullable>
             <long>9007199254740993</long>
         </nullable>

@@ -6,7 +6,12 @@
     <call
         type="void">
         <method
+<<<<<<< HEAD
             declaringType="System.Console"
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+            declaringType="System.Console, System.Console, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)
             static="true"
             type="void"
             name="WriteLine">

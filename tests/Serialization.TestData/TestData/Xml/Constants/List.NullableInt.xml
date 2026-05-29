@@ -4,12 +4,22 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <constant>
+<<<<<<< HEAD
         <!--  System.Collections.Generic.List`1[[System.Nullable`1[[System.Int32]]]]  -->
         <sequence
             type="System.Collections.Generic.List`1[[System.Nullable`1[[System.Int32]]]]"
             elementType="System.Nullable`1[[System.Int32]]"
             length="4">
             <!--  System.Nullable`1[[System.Int32]]  -->
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+        <!--  System.Collections.Generic.List<nullable<int>>  -->
+        <sequence
+            type="System.Collections.Generic.List`1[[System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+            elementType="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+            length="4">
+            <!--  nullable<int>  -->
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)
             <nullable>
                 <int>1</int>
             </nullable>

@@ -3,7 +3,12 @@
   "$comment": " () =\u003E new [] {\u0022aaa\u0022, \u0022bbb\u0022, \u0022ccc\u0022} ",
   "expression": {
     "lambda": {
+<<<<<<< HEAD
       "type": "System.String[]",
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+      "type": "System.String[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)
       "parameters": [],
       "body": {
         "newArrayInit": {

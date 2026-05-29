@@ -14,6 +14,7 @@
         <body>
             <typeIs
                 type="boolean"
+<<<<<<< HEAD
                 typeOperand="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1">
                 <parameter
                     type="object"
@@ -23,3 +24,15 @@
         </body>
     </lambda>
 </expression>
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+                typeOperand="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+                <parameter
+                    type="object"
+                    id="P1"
+                    name="a" />
+            </typeIs>
+        </body>
+    </lambda>
+</expression>
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)

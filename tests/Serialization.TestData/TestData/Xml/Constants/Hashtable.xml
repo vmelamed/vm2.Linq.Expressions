@@ -6,7 +6,12 @@
     <constant>
         <!--  System.Collections.Hashtable  -->
         <dictionary
+<<<<<<< HEAD
             type="System.Collections.Hashtable"
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+            type="System.Collections.Hashtable, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)
             length="2">
             <key-value>
                 <int>2</int>

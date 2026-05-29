@@ -3,6 +3,7 @@
   "$comment": " a =\u003E -a ",
   "expression": {
     "lambda": {
+<<<<<<< HEAD
       "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A",
       "parameters": [
         {
@@ -29,6 +30,35 @@
             "parameterSpecs": [
               {
                 "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A",
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+      "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "parameters": [
+        {
+          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "name": "a",
+          "id": "P1"
+        }
+      ],
+      "body": {
+        "negate": {
+          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "operand": {
+            "parameter": {
+              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "name": "a",
+              "id": "P1"
+            }
+          },
+          "method": {
+            "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.A, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "static": true,
+            "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "name": "op_UnaryNegation",
+            "parameterSpecs": [
+              {
+                "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)
                 "name": "x"
               }
             ]

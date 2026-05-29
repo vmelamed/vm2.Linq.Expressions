@@ -7,6 +7,7 @@
         type="int">
         <parameters>
             <parameter
+<<<<<<< HEAD
                 type="System.Int32[]"
                 id="P1"
                 name="a" />
@@ -16,6 +17,18 @@
                 type="int">
                 <parameter
                     type="System.Int32[]"
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+                type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                id="P1"
+                name="a" />
+        </parameters>
+        <body>
+            <arrayLength
+                type="int">
+                <parameter
+                    type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)
                     id="P1"
                     name="a" />
             </arrayLength>

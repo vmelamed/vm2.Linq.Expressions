@@ -3,9 +3,16 @@
   "$comment": " System.Memory\u003CByte\u003E[0] ",
   "expression": {
     "constant": {
+<<<<<<< HEAD
       "$comment": " System.Memory\u00601[[System.Byte]] ",
       "byteSequence": {
         "type": "System.Memory\u00601[[System.Byte]]",
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+      "$comment": " System.Memory\u003Cbyte\u003E ",
+      "byteSequence": {
+        "type": "System.Memory\u00601[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)
         "value": "",
         "length": 0
       }

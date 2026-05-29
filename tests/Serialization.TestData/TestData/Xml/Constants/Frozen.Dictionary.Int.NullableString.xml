@@ -4,9 +4,16 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <constant>
+<<<<<<< HEAD
         <!--  System.Collections.Frozen.DenseIntegralFrozenDictionary+WithOptionalValues`3[[System.Int32],[System.Int32],[System.String]]  -->
         <dictionary
             type="System.Collections.Frozen.DenseIntegralFrozenDictionary+WithOptionalValues`3[[System.Int32],[System.Int32],[System.String]]"
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+        <!--  System.Collections.Frozen.DenseIntegralFrozenDictionary+WithOptionalValues<int, int, string>  -->
+        <dictionary
+            type="System.Collections.Frozen.DenseIntegralFrozenDictionary+WithOptionalValues`3[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Collections.Immutable, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)
             length="4">
             <key-value>
                 <int>1</int>

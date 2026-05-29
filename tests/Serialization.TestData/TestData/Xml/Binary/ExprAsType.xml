@@ -4,6 +4,7 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <lambda
+<<<<<<< HEAD
         type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1">
         <parameters>
             <parameter
@@ -16,6 +17,21 @@
                 type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1">
                 <parameter
                     type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract2"
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+        type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <parameters>
+            <parameter
+                type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract2, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                id="P1"
+                name="a" />
+        </parameters>
+        <body>
+            <typeAs
+                type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+                <parameter
+                    type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract2, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)
                     id="P1"
                     name="a" />
             </typeAs>

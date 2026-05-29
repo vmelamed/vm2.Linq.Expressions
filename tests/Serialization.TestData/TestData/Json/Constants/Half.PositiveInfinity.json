@@ -1,6 +1,11 @@
 {
   "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+<<<<<<< HEAD
   "$comment": " Infinity ",
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+  "$comment": " \u221E ",
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)
   "expression": {
     "constant": {
       "half": "INF"
