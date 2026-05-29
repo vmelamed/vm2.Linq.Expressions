@@ -1,0 +1,21 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " i =\u003E True ",
+  "expression": {
+    "lambda": {
+      "type": "boolean",
+      "parameters": [
+        {
+          "type": "int",
+          "name": "i",
+          "id": "P1"
+        }
+      ],
+      "body": {
+        "constant": {
+          "boolean": true
+        }
+      }
+    }
+  }
+}

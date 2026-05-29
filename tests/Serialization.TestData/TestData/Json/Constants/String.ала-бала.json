@@ -1,0 +1,9 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " \u0022\u0430\u043B\u0430-\u0431\u0430\u043B\u0430\u0022 ",
+  "expression": {
+    "constant": {
+      "string": "\u0430\u043B\u0430-\u0431\u0430\u043B\u0430"
+    }
+  }
+}

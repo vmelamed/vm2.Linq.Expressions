@@ -1,0 +1,27 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " value(System.Collections.Concurrent.ConcurrentBag\u00601[System.Int32]) ",
+  "expression": {
+    "constant": {
+      "$comment": " System.Collections.Concurrent.ConcurrentBag\u003Cint\u003E ",
+      "sequence": {
+        "type": "System.Collections.Concurrent.ConcurrentBag\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Collections.Concurrent, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+        "value": [
+          {
+            "int": 4
+          },
+          {
+            "int": 3
+          },
+          {
+            "int": 2
+          },
+          {
+            "int": 1
+          }
+        ],
+        "length": 4
+      }
+    }
+  }
+}

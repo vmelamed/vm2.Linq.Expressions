@@ -1,0 +1,9 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " 5 ",
+  "expression": {
+    "constant": {
+      "unsignedLong": 5
+    }
+  }
+}

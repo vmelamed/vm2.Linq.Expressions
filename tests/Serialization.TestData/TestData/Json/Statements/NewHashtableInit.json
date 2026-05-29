@@ -1,0 +1,125 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " () =\u003E new Hashtable() {Void Add(System.Object, System.Object)(Convert(1, Object), \u0022one\u0022), Void Add(System.Object, System.Object)(Convert(2, Object), \u0022two\u0022), Void Add(System.Object, System.Object)(Convert(3, Object), \u0022three\u0022)} ",
+  "expression": {
+    "lambda": {
+      "type": "System.Collections.Hashtable, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+      "parameters": [],
+      "body": {
+        "listInit": {
+          "new": {
+            "constructor": {
+              "declaringType": "System.Collections.Hashtable, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+              "parameterSpecs": []
+            },
+            "arguments": []
+          },
+          "initializers": [
+            {
+              "method": {
+                "declaringType": "System.Collections.Hashtable, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                "type": "void",
+                "name": "Add",
+                "parameterSpecs": [
+                  {
+                    "type": "object",
+                    "name": "key"
+                  },
+                  {
+                    "type": "object",
+                    "name": "value"
+                  }
+                ]
+              },
+              "arguments": [
+                {
+                  "convert": {
+                    "type": "object",
+                    "operand": {
+                      "constant": {
+                        "int": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "constant": {
+                    "string": "one"
+                  }
+                }
+              ]
+            },
+            {
+              "method": {
+                "declaringType": "System.Collections.Hashtable, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                "type": "void",
+                "name": "Add",
+                "parameterSpecs": [
+                  {
+                    "type": "object",
+                    "name": "key"
+                  },
+                  {
+                    "type": "object",
+                    "name": "value"
+                  }
+                ]
+              },
+              "arguments": [
+                {
+                  "convert": {
+                    "type": "object",
+                    "operand": {
+                      "constant": {
+                        "int": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "constant": {
+                    "string": "two"
+                  }
+                }
+              ]
+            },
+            {
+              "method": {
+                "declaringType": "System.Collections.Hashtable, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                "type": "void",
+                "name": "Add",
+                "parameterSpecs": [
+                  {
+                    "type": "object",
+                    "name": "key"
+                  },
+                  {
+                    "type": "object",
+                    "name": "value"
+                  }
+                ]
+              },
+              "arguments": [
+                {
+                  "convert": {
+                    "type": "object",
+                    "operand": {
+                      "constant": {
+                        "int": 3
+                      }
+                    }
+                  }
+                },
+                {
+                  "constant": {
+                    "string": "three"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

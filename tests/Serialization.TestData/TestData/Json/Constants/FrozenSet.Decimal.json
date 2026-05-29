@@ -1,0 +1,27 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " value(System.Collections.Frozen.SmallValueTypeComparableFrozenSet\u00601[System.Decimal]) ",
+  "expression": {
+    "constant": {
+      "$comment": " System.Collections.Frozen.SmallValueTypeComparableFrozenSet\u003Cdecimal\u003E ",
+      "sequence": {
+        "type": "System.Collections.Frozen.SmallValueTypeComparableFrozenSet\u00601[[System.Decimal, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Collections.Immutable, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+        "value": [
+          {
+            "decimal": "1"
+          },
+          {
+            "decimal": "2"
+          },
+          {
+            "decimal": "3"
+          },
+          {
+            "decimal": "4"
+          }
+        ],
+        "length": 4
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " System.Memory\u003CInt32\u003E[4] ",
+  "expression": {
+    "constant": {
+      "$comment": " nullable\u003CSystem.Memory\u003Cint\u003E\u003E ",
+      "nullable": {
+        "$comment": " System.Memory\u003Cint\u003E ",
+        "sequence": {
+          "type": "System.Memory\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+          "value": [
+            {
+              "int": 1
+            },
+            {
+              "int": 2
+            },
+            {
+              "int": 3
+            },
+            {
+              "int": 4
+            }
+          ]
+        }
+      }
+    }
+  }
+}

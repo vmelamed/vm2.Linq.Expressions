@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- value(System.Collections.Immutable.ImmutableSortedSet`1[System.Int32]) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <constant>
+        <!--  System.Collections.Immutable.ImmutableSortedSet<int>  -->
+        <sequence
+            type="System.Collections.Immutable.ImmutableSortedSet`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Collections.Immutable, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+            elementType="int"
+            length="4">
+            <int>1</int>
+            <int>2</int>
+            <int>3</int>
+            <int>4</int>
+        </sequence>
+    </constant>
+</expression>

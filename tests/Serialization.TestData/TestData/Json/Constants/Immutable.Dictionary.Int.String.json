@@ -1,0 +1,31 @@
+{
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " value(System.Collections.Immutable.ImmutableDictionary\u00602[System.Int32,System.String]) ",
+  "expression": {
+    "constant": {
+      "$comment": " System.Collections.Immutable.ImmutableDictionary\u003Cint, string\u003E ",
+      "dictionary": {
+        "type": "System.Collections.Immutable.ImmutableDictionary\u00602[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Collections.Immutable, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+        "value": [
+          {
+            "key": {
+              "int": 1
+            },
+            "value": {
+              "string": "one"
+            }
+          },
+          {
+            "key": {
+              "int": 2
+            },
+            "value": {
+              "string": "two"
+            }
+          }
+        ],
+        "length": 2
+      }
+    }
+  }
+}

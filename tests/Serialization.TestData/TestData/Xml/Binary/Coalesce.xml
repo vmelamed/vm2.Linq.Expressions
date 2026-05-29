@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- (a, b) => (a ?? b) -->
+<expression
+    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <lambda
+        type="int">
+        <parameters>
+            <parameter
+                type="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                id="P1"
+                name="a" />
+            <parameter
+                type="int"
+                id="P2"
+                name="b" />
+        </parameters>
+        <body>
+            <coalesce
+                type="int">
+                <parameter
+                    type="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                    id="P1"
+                    name="a" />
+                <parameter
+                    type="int"
+                    id="P2"
+                    name="b" />
+            </coalesce>
+        </body>
+    </lambda>
+</expression>
