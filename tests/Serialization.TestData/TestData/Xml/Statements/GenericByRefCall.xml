@@ -28,6 +28,7 @@
                 <call
                     type="int">
                     <method
+<<<<<<< HEAD
                         declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.GenericMethodFixtures"
                         static="true"
                         type="int"
@@ -50,3 +51,28 @@
         </body>
     </lambda>
 </expression>
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+                        declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.GenericMethodFixtures, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                        static="true"
+                        type="int"
+                        name="EchoByRef">
+                        <parameterSpecs>
+                            <parameterSpec
+                                type="System.Int32&amp;, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                                name="value"
+                                isByRef="true" />
+                        </parameterSpecs>
+                    </method>
+                    <arguments>
+                        <parameter
+                            type="int"
+                            id="P1"
+                            name="byRefVar" />
+                    </arguments>
+                </call>
+            </block>
+        </body>
+    </lambda>
+</expression>
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)

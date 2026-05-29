@@ -6,6 +6,7 @@
     <constant>
         <!--  vm2.Tests.Linq.Expressions.Serialization.Data.ClassSerializable1  -->
         <object
+<<<<<<< HEAD
             type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassSerializable1">
             <ClassSerializable1
                 xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
@@ -16,3 +17,16 @@
         </object>
     </constant>
 </expression>
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+            type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassSerializable1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <ClassSerializable1
+                xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns="http://schemas.datacontract.org/2004/07/vm2.Tests.Linq.Expressions.Serialization.Data">
+                <_x003C_IntProperty_x003E_k__BackingField>0</_x003C_IntProperty_x003E_k__BackingField>
+                <_x003C_StringProperty_x003E_k__BackingField></_x003C_StringProperty_x003E_k__BackingField>
+            </ClassSerializable1>
+        </object>
+    </constant>
+</expression>
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)

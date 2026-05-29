@@ -3,9 +3,16 @@
   "$comment": " null ",
   "expression": {
     "constant": {
+<<<<<<< HEAD
       "$comment": " System.Nullable\u00601[[vm2.Tests.Linq.Expressions.Serialization.Data.StructSerializable1]] ",
       "nullable": {
         "type": "vm2.Tests.Linq.Expressions.Serialization.Data.StructSerializable1",
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+      "$comment": " nullable\u003Cvm2.Tests.Linq.Expressions.Serialization.Data.StructSerializable1\u003E ",
+      "nullable": {
+        "type": "vm2.Tests.Linq.Expressions.Serialization.Data.StructSerializable1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)
         "value": null
       }
     }

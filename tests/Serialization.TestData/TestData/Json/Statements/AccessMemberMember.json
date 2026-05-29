@@ -6,6 +6,7 @@
       "type": "int",
       "parameters": [
         {
+<<<<<<< HEAD
           "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
           "name": "m",
           "id": "P1"
@@ -36,6 +37,39 @@
           "member": {
             "property": {
               "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner",
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "name": "m",
+          "id": "P1"
+        }
+      ],
+      "body": {
+        "memberAccess": {
+          "type": "int",
+          "object": {
+            "memberAccess": {
+              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "object": {
+                "parameter": {
+                  "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                  "name": "m",
+                  "id": "P1"
+                }
+              },
+              "member": {
+                "property": {
+                  "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                  "type": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                  "name": "InnerProperty"
+                }
+              }
+            }
+          },
+          "member": {
+            "property": {
+              "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)
               "type": "int",
               "name": "IntProperty"
             }

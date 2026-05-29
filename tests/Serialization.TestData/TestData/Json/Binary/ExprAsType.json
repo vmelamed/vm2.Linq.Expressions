@@ -3,6 +3,7 @@
   "$comment": " a =\u003E (a As ClassDataContract1) ",
   "expression": {
     "lambda": {
+<<<<<<< HEAD
       "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1",
       "parameters": [
         {
@@ -17,6 +18,23 @@
           "operand": {
             "parameter": {
               "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract2",
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+      "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "parameters": [
+        {
+          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract2, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "name": "a",
+          "id": "P1"
+        }
+      ],
+      "body": {
+        "typeAs": {
+          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "operand": {
+            "parameter": {
+              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract2, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)
               "name": "a",
               "id": "P1"
             }

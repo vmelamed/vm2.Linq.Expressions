@@ -1,6 +1,11 @@
 {
   "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+<<<<<<< HEAD
   "$comment": " 01/01/0001 00:00:00 ",
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+  "$comment": " 1/1/0001 12:00:00\u202FAM ",
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)
   "expression": {
     "constant": {
       "dateTime": "0001-01-01T00:00:00.0000000"

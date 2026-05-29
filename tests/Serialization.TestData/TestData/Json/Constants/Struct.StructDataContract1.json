@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
     "$comment": " StructDataContract1 ",
     "expression": {
@@ -14,3 +15,21 @@
         }
     }
 }
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " StructDataContract1 ",
+  "expression": {
+    "constant": {
+      "$comment": " vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1 ",
+      "object": {
+        "type": "vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "value": {
+          "IntProperty": 0,
+          "StringProperty": ""
+        }
+      }
+    }
+  }
+}
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)

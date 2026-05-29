@@ -10,6 +10,7 @@
             <memberAccess
                 type="int">
                 <field
+<<<<<<< HEAD
                     declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMethods"
                     static="true"
                     readOnly="true"
@@ -19,3 +20,15 @@
         </body>
     </lambda>
 </expression>
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+                    declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMethods, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                    static="true"
+                    readOnly="true"
+                    type="int"
+                    name="S" />
+            </memberAccess>
+        </body>
+    </lambda>
+</expression>
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)

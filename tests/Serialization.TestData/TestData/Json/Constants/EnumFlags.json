@@ -5,6 +5,7 @@
     "constant": {
       "$comment": " vm2.Tests.Linq.Expressions.Serialization.Data.EnumFlagsTest ",
       "enum": {
+<<<<<<< HEAD
         "type": "vm2.Tests.Linq.Expressions.Serialization.Data.EnumFlagsTest",
         "value": [
           "One",
@@ -15,3 +16,16 @@
     }
   }
 }
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+        "type": "vm2.Tests.Linq.Expressions.Serialization.Data.EnumFlagsTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "value": [
+          "One",
+          "Three"
+        ],
+        "baseValue": 5
+      }
+    }
+  }
+}
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)

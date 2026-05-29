@@ -7,6 +7,7 @@
         type="int">
         <variables>
             <parameter
+<<<<<<< HEAD
                 type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized"
                 id="P1"
                 name="m" />
@@ -80,3 +81,79 @@
         </label>
     </block>
 </expression>
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+                type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                id="P1"
+                name="m" />
+        </variables>
+        <assign
+            type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <parameter
+                type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                id="P1"
+                name="m" />
+            <new>
+                <constructor
+                    declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+                    <parameterSpecs />
+                </constructor>
+                <arguments />
+            </new>
+        </assign>
+        <goto
+            type="int"
+            kind="return">
+            <target
+                id="L1"
+                type="int" />
+            <add
+                type="int">
+                <memberAccess
+                    type="int">
+                    <object>
+                        <parameter
+                            type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                            id="P1"
+                            name="m" />
+                    </object>
+                    <property
+                        declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                        type="int"
+                        name="TheOuterIntProperty" />
+                </memberAccess>
+                <memberAccess
+                    type="int">
+                    <object>
+                        <memberAccess
+                            type="vm2.Tests.Linq.Expressions.Serialization.Data.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+                            <object>
+                                <parameter
+                                    type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                                    id="P1"
+                                    name="m" />
+                            </object>
+                            <property
+                                declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                                type="vm2.Tests.Linq.Expressions.Serialization.Data.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                                name="InnerProperty" />
+                        </memberAccess>
+                    </object>
+                    <property
+                        declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                        type="int"
+                        name="IntProperty" />
+                </memberAccess>
+            </add>
+        </goto>
+        <label>
+            <target
+                id="L1"
+                type="int" />
+            <constant>
+                <int>0</int>
+            </constant>
+        </label>
+    </block>
+</expression>
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)

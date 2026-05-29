@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
     "$comment": " m =\u003E IIF((ArrayLength(m.ArrayProperty) \u003E 0), m.ArrayProperty[(ArrayLength(m.ArrayProperty) - 1)], -1) ",
     "expression": {
@@ -122,3 +123,129 @@
         }
     }
 }
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " m =\u003E IIF((ArrayLength(m.ArrayProperty) \u003E 0), m.ArrayProperty[(ArrayLength(m.ArrayProperty) - 1)], -1) ",
+  "expression": {
+    "lambda": {
+      "type": "int",
+      "parameters": [
+        {
+          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "name": "m",
+          "id": "P1"
+        }
+      ],
+      "body": {
+        "conditional": {
+          "type": "int",
+          "if": {
+            "greaterThan": {
+              "type": "boolean",
+              "operands": [
+                {
+                  "arrayLength": {
+                    "type": "int",
+                    "operand": {
+                      "memberAccess": {
+                        "type": "System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                        "object": {
+                          "parameter": {
+                            "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                            "name": "m",
+                            "id": "P1"
+                          }
+                        },
+                        "member": {
+                          "property": {
+                            "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                            "type": "System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                            "name": "ArrayProperty"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "constant": {
+                    "int": 0
+                  }
+                }
+              ]
+            }
+          },
+          "then": {
+            "arrayIndex": {
+              "type": "int",
+              "operands": [
+                {
+                  "memberAccess": {
+                    "type": "System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                    "object": {
+                      "parameter": {
+                        "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                        "name": "m",
+                        "id": "P1"
+                      }
+                    },
+                    "member": {
+                      "property": {
+                        "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                        "type": "System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                        "name": "ArrayProperty"
+                      }
+                    }
+                  }
+                },
+                {
+                  "subtract": {
+                    "type": "int",
+                    "operands": [
+                      {
+                        "arrayLength": {
+                          "type": "int",
+                          "operand": {
+                            "memberAccess": {
+                              "type": "System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                              "object": {
+                                "parameter": {
+                                  "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                                  "name": "m",
+                                  "id": "P1"
+                                }
+                              },
+                              "member": {
+                                "property": {
+                                  "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                                  "type": "System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                                  "name": "ArrayProperty"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "constant": {
+                          "int": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "else": {
+            "constant": {
+              "int": -1
+            }
+          }
+        }
+      }
+    }
+  }
+}
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)

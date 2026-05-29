@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
     "$comment": " ClassSerializable1 ",
     "expression": {
@@ -15,3 +16,22 @@
         }
     }
 }
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+  "$comment": " ClassSerializable1 ",
+  "expression": {
+    "constant": {
+      "$comment": " vm2.Tests.Linq.Expressions.Serialization.Data.ClassSerializable1 ",
+      "object": {
+        "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassSerializable1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "value": {
+          "$id": "1",
+          "IntProperty": 0,
+          "StringProperty": ""
+        }
+      }
+    }
+  }
+}
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)

@@ -1,6 +1,11 @@
 {
   "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+<<<<<<< HEAD
   "$comment": " 12/31/9999 23:59:59 \u002B00:00 ",
+||||||| parent of 335f1e0 (refactor: rename test/ to tests)
+=======
+  "$comment": " 12/31/9999 11:59:59\u202FPM \u002B00:00 ",
+>>>>>>> 335f1e0 (refactor: rename test/ to tests)
   "expression": {
     "constant": {
       "dateTimeOffset": "9999-12-31T23:59:59.9999999\u002B00:00"
