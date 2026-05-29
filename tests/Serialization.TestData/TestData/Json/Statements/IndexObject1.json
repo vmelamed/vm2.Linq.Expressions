@@ -1,46 +1,46 @@
 {
-  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
-  "$comment": " m =\u003E m.get_Item(1) ",
-  "expression": {
-    "lambda": {
-      "type": "int",
-      "parameters": [
-        {
-          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized1",
-          "name": "m",
-          "id": "P1"
-        }
-      ],
-      "body": {
-        "call": {
-          "type": "int",
-          "object": {
-            "parameter": {
-              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized1",
-              "name": "m",
-              "id": "P1"
-            }
-          },
-          "method": {
-            "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized1",
+    "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+    "$comment": " m =\u003E m.get_Item(1) ",
+    "expression": {
+        "lambda": {
             "type": "int",
-            "name": "get_Item",
-            "parameterSpecs": [
-              {
-                "type": "int",
-                "name": "i"
-              }
-            ]
-          },
-          "arguments": [
-            {
-              "constant": {
-                "int": 1
-              }
+            "parameters": [
+                {
+                    "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized1",
+                    "name": "m",
+                    "id": "P1"
+                }
+            ],
+            "body": {
+                "call": {
+                    "type": "int",
+                    "object": {
+                        "parameter": {
+                            "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized1",
+                            "name": "m",
+                            "id": "P1"
+                        }
+                    },
+                    "method": {
+                        "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized1",
+                        "type": "int",
+                        "name": "get_Item",
+                        "parameterSpecs": [
+                            {
+                                "type": "int",
+                                "name": "i"
+                            }
+                        ]
+                    },
+                    "arguments": [
+                        {
+                            "constant": {
+                                "int": 1
+                            }
+                        }
+                    ]
+                }
             }
-          ]
         }
-      }
     }
-  }
 }

@@ -1,230 +1,230 @@
 {
-  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
-  "$comment": " () =\u003E new TestMembersInitialized() {TheOuterIntProperty = 42, Time = new DateTime(1776, 7, 4), InnerProperty = new Inner() {IntProperty = 23, StringProperty = \u0022inner string\u0022}, EnumerableProperty = new List\u00601() {Void Add(System.String)(\u0022aaa\u0022), Void Add(System.String)(\u0022bbb\u0022), Void Add(System.String)(\u0022ccc\u0022)}} ",
-  "expression": {
-    "lambda": {
-      "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
-      "parameters": [],
-      "body": {
-        "memberInit": {
-          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
-          "new": {
-            "constructor": {
-              "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
-              "parameterSpecs": []
-            },
-            "arguments": []
-          },
-          "bindings": [
-            {
-              "assignmentBinding": {
-                "member": {
-                  "property": {
-                    "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
-                    "type": "int",
-                    "name": "TheOuterIntProperty"
-                  }
-                },
-                "value": {
-                  "constant": {
-                    "int": 42
-                  }
-                }
-              }
-            },
-            {
-              "assignmentBinding": {
-                "member": {
-                  "property": {
-                    "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
-                    "type": "dateTime",
-                    "name": "Time"
-                  }
-                },
-                "value": {
-                  "new": {
-                    "constructor": {
-                      "declaringType": "dateTime",
-                      "parameterSpecs": [
-                        {
-                          "type": "int",
-                          "name": "year"
-                        },
-                        {
-                          "type": "int",
-                          "name": "month"
-                        },
-                        {
-                          "type": "int",
-                          "name": "day"
-                        }
-                      ]
-                    },
-                    "arguments": [
-                      {
-                        "constant": {
-                          "int": 1776
-                        }
-                      },
-                      {
-                        "constant": {
-                          "int": 7
-                        }
-                      },
-                      {
-                        "constant": {
-                          "int": 4
-                        }
-                      }
-                    ]
-                  }
-                }
-              }
-            },
-            {
-              "assignmentBinding": {
-                "member": {
-                  "property": {
-                    "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
-                    "type": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner",
-                    "name": "InnerProperty"
-                  }
-                },
-                "value": {
-                  "memberInit": {
-                    "type": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner",
+    "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+    "$comment": " () =\u003E new TestMembersInitialized() {TheOuterIntProperty = 42, Time = new DateTime(1776, 7, 4), InnerProperty = new Inner() {IntProperty = 23, StringProperty = \u0022inner string\u0022}, EnumerableProperty = new List\u00601() {Void Add(System.String)(\u0022aaa\u0022), Void Add(System.String)(\u0022bbb\u0022), Void Add(System.String)(\u0022ccc\u0022)}} ",
+    "expression": {
+        "lambda": {
+            "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
+            "parameters": [],
+            "body": {
+                "memberInit": {
+                    "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
                     "new": {
-                      "constructor": {
-                        "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner",
-                        "parameterSpecs": []
-                      },
-                      "arguments": []
+                        "constructor": {
+                            "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
+                            "parameterSpecs": []
+                        },
+                        "arguments": []
                     },
                     "bindings": [
-                      {
-                        "assignmentBinding": {
-                          "member": {
-                            "property": {
-                              "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner",
-                              "type": "int",
-                              "name": "IntProperty"
+                        {
+                            "assignmentBinding": {
+                                "member": {
+                                    "property": {
+                                        "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
+                                        "type": "int",
+                                        "name": "TheOuterIntProperty"
+                                    }
+                                },
+                                "value": {
+                                    "constant": {
+                                        "int": 42
+                                    }
+                                }
                             }
-                          },
-                          "value": {
-                            "constant": {
-                              "int": 23
+                        },
+                        {
+                            "assignmentBinding": {
+                                "member": {
+                                    "property": {
+                                        "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
+                                        "type": "dateTime",
+                                        "name": "Time"
+                                    }
+                                },
+                                "value": {
+                                    "new": {
+                                        "constructor": {
+                                            "declaringType": "dateTime",
+                                            "parameterSpecs": [
+                                                {
+                                                    "type": "int",
+                                                    "name": "year"
+                                                },
+                                                {
+                                                    "type": "int",
+                                                    "name": "month"
+                                                },
+                                                {
+                                                    "type": "int",
+                                                    "name": "day"
+                                                }
+                                            ]
+                                        },
+                                        "arguments": [
+                                            {
+                                                "constant": {
+                                                    "int": 1776
+                                                }
+                                            },
+                                            {
+                                                "constant": {
+                                                    "int": 7
+                                                }
+                                            },
+                                            {
+                                                "constant": {
+                                                    "int": 4
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
                             }
-                          }
+                        },
+                        {
+                            "assignmentBinding": {
+                                "member": {
+                                    "property": {
+                                        "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
+                                        "type": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner",
+                                        "name": "InnerProperty"
+                                    }
+                                },
+                                "value": {
+                                    "memberInit": {
+                                        "type": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner",
+                                        "new": {
+                                            "constructor": {
+                                                "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner",
+                                                "parameterSpecs": []
+                                            },
+                                            "arguments": []
+                                        },
+                                        "bindings": [
+                                            {
+                                                "assignmentBinding": {
+                                                    "member": {
+                                                        "property": {
+                                                            "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner",
+                                                            "type": "int",
+                                                            "name": "IntProperty"
+                                                        }
+                                                    },
+                                                    "value": {
+                                                        "constant": {
+                                                            "int": 23
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "assignmentBinding": {
+                                                    "member": {
+                                                        "property": {
+                                                            "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner",
+                                                            "type": "string",
+                                                            "name": "StringProperty"
+                                                        }
+                                                    },
+                                                    "value": {
+                                                        "constant": {
+                                                            "string": "inner string"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "assignmentBinding": {
+                                "member": {
+                                    "property": {
+                                        "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
+                                        "type": "System.Collections.Generic.IEnumerable\u00601[[System.String]]",
+                                        "name": "EnumerableProperty"
+                                    }
+                                },
+                                "value": {
+                                    "listInit": {
+                                        "new": {
+                                            "constructor": {
+                                                "declaringType": "System.Collections.Generic.List\u00601[[System.String]]",
+                                                "parameterSpecs": []
+                                            },
+                                            "arguments": []
+                                        },
+                                        "initializers": [
+                                            {
+                                                "method": {
+                                                    "declaringType": "System.Collections.Generic.List\u00601[[System.String]]",
+                                                    "type": "void",
+                                                    "name": "Add",
+                                                    "parameterSpecs": [
+                                                        {
+                                                            "type": "string",
+                                                            "name": "item"
+                                                        }
+                                                    ]
+                                                },
+                                                "arguments": [
+                                                    {
+                                                        "constant": {
+                                                            "string": "aaa"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "method": {
+                                                    "declaringType": "System.Collections.Generic.List\u00601[[System.String]]",
+                                                    "type": "void",
+                                                    "name": "Add",
+                                                    "parameterSpecs": [
+                                                        {
+                                                            "type": "string",
+                                                            "name": "item"
+                                                        }
+                                                    ]
+                                                },
+                                                "arguments": [
+                                                    {
+                                                        "constant": {
+                                                            "string": "bbb"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "method": {
+                                                    "declaringType": "System.Collections.Generic.List\u00601[[System.String]]",
+                                                    "type": "void",
+                                                    "name": "Add",
+                                                    "parameterSpecs": [
+                                                        {
+                                                            "type": "string",
+                                                            "name": "item"
+                                                        }
+                                                    ]
+                                                },
+                                                "arguments": [
+                                                    {
+                                                        "constant": {
+                                                            "string": "ccc"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
                         }
-                      },
-                      {
-                        "assignmentBinding": {
-                          "member": {
-                            "property": {
-                              "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner",
-                              "type": "string",
-                              "name": "StringProperty"
-                            }
-                          },
-                          "value": {
-                            "constant": {
-                              "string": "inner string"
-                            }
-                          }
-                        }
-                      }
                     ]
-                  }
                 }
-              }
-            },
-            {
-              "assignmentBinding": {
-                "member": {
-                  "property": {
-                    "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
-                    "type": "System.Collections.Generic.IEnumerable\u00601[[System.String]]",
-                    "name": "EnumerableProperty"
-                  }
-                },
-                "value": {
-                  "listInit": {
-                    "new": {
-                      "constructor": {
-                        "declaringType": "System.Collections.Generic.List\u00601[[System.String]]",
-                        "parameterSpecs": []
-                      },
-                      "arguments": []
-                    },
-                    "initializers": [
-                      {
-                        "method": {
-                          "declaringType": "System.Collections.Generic.List\u00601[[System.String]]",
-                          "type": "void",
-                          "name": "Add",
-                          "parameterSpecs": [
-                            {
-                              "type": "string",
-                              "name": "item"
-                            }
-                          ]
-                        },
-                        "arguments": [
-                          {
-                            "constant": {
-                              "string": "aaa"
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "method": {
-                          "declaringType": "System.Collections.Generic.List\u00601[[System.String]]",
-                          "type": "void",
-                          "name": "Add",
-                          "parameterSpecs": [
-                            {
-                              "type": "string",
-                              "name": "item"
-                            }
-                          ]
-                        },
-                        "arguments": [
-                          {
-                            "constant": {
-                              "string": "bbb"
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "method": {
-                          "declaringType": "System.Collections.Generic.List\u00601[[System.String]]",
-                          "type": "void",
-                          "name": "Add",
-                          "parameterSpecs": [
-                            {
-                              "type": "string",
-                              "name": "item"
-                            }
-                          ]
-                        },
-                        "arguments": [
-                          {
-                            "constant": {
-                              "string": "ccc"
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                }
-              }
             }
-          ]
         }
-      }
     }
-  }
 }
