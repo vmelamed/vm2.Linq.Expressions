@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <RootNamespace>vm2.Linq.Expressions.DeepEquals.Tests</RootNamespace>
+        <RootNamespace>vm2.Tests.Linq.Expressions.DeepEquals</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

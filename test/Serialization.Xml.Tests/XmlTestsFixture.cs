@@ -1,4 +1,4 @@
-namespace vm2.Linq.Expressions.Serialization.Xml.Tests;
+namespace vm2.Tests.Linq.Expressions.Serialization.Xml;
 
 public class XmlTestsFixture : IDisposable, IAsyncDisposable
 {

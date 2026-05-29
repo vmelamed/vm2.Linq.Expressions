@@ -1,29 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- value(vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1[]) -->
+<!-- value(vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1[]) -->
 <expression
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <constant>
-        <!--  vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1[]  -->
+        <!--  vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1[]  -->
         <sequence
-            type="vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1[], Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
-            elementType="vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-            <!--  vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1  -->
+            type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1[], Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+            elementType="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <!--  vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1  -->
             <object
-                type="vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+                type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
                 <ClassDataContract1
                     xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
-                    xmlns="http://schemas.datacontract.org/2004/07/vm2.Linq.Expressions.Serialization.TestData">
+                    xmlns="http://schemas.datacontract.org/2004/07/vm2.Tests.Linq.Expressions.Serialization.Data">
                     <IntProperty>7</IntProperty>
                     <StringProperty>vm</StringProperty>
                 </ClassDataContract1>
             </object>
             <object
-                type="vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
-                concreteType="vm2.Linq.Expressions.Serialization.TestData.ClassDataContract2, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+                type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                concreteType="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract2, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
                 <ClassDataContract2
                     xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
-                    xmlns="http://schemas.datacontract.org/2004/07/vm2.Linq.Expressions.Serialization.TestData">
+                    xmlns="http://schemas.datacontract.org/2004/07/vm2.Tests.Linq.Expressions.Serialization.Data">
                     <IntProperty>7</IntProperty>
                     <StringProperty>vm</StringProperty>
                     <DecimalProperty>17</DecimalProperty>
@@ -31,7 +31,7 @@
             </object>
             <object
                 i:nil="true"
-                type="vm2.Linq.Expressions.Serialization.TestData.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+                type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
         </sequence>
     </constant>
 </expression>

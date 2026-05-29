@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <RootNamespace>vm2.Linq.Expressions.Benchmarks</RootNamespace>
+        <RootNamespace>vm2.Benchmarks.Linq.Expressions</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

@@ -1,4 +1,4 @@
-namespace vm2.Linq.Expressions.Serialization.Tests;
+namespace vm2.Tests.Linq.Expressions.Serialization.Abstractions;
 
 public partial class TransformTests
 {

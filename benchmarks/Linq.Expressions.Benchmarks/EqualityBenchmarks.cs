@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright (c) 2025-2026 Val Melamed
 
-namespace vm2.Linq.Expressions.Benchmarks;
+namespace vm2.Benchmarks.Linq.Expressions;
 
 #pragma warning disable CA1822 // Mark members as static
 

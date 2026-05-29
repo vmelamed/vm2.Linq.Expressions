@@ -1,4 +1,4 @@
-﻿namespace vm2.Linq.Expressions.Serialization.Xml.Tests;
+﻿namespace vm2.Tests.Linq.Expressions.Serialization.Xml;
 
 [CollectionDefinition("XML")]
 public partial class LambdaTests(XmlTestsFixture fixture, ITestOutputHelper output) : BaseTests(fixture, output)

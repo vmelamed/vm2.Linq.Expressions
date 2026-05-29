@@ -1,4 +1,4 @@
-﻿namespace vm2.Linq.Expressions.Serialization.TestData;
+﻿namespace vm2.Tests.Linq.Expressions.Serialization.Data;
 
 public static class AssignmentTestData
 {

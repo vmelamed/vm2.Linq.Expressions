@@ -1,4 +1,4 @@
-﻿namespace vm2.Linq.Expressions.DeepEquals.Tests;
+﻿namespace vm2.Tests.Linq.Expressions.DeepEquals;
 
 #pragma warning disable IDE0300 // Simplify collection initialization
 #pragma warning disable IDE0056 // Use index operator
