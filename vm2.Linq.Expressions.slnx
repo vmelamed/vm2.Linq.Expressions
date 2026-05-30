@@ -1,20 +1,6 @@
 <Solution>
-    <Folder Name="/.github/">
-        <File Path=".github/dependabot.yml" />
-        <File Path=".github/PULL_REQUEST_TEMPLATE.md" />
-    </Folder>
-    <Folder Name="/.github/workflows/">
-        <File Path=".github/workflows/CI.yaml" />
-        <File Path=".github/workflows/ClearCache.yaml" />
-        <File Path=".github/workflows/Prerelease.yaml" />
-        <File Path=".github/workflows/Release.yaml" />
-    </Folder>
     <Folder Name="/benchmarks/">
         <Project Path="benchmarks/Linq.Expressions.Benchmarks/Linq.Expressions.Benchmarks.csproj" />
-    </Folder>
-    <Folder Name="/changelog/">
-        <File Path="changelog/cliff.prerelease.toml" />
-        <File Path="changelog/cliff.release-header.toml" />
     </Folder>
     <Folder Name="/examples/">
         <File Path="examples/toFromDoc.cs" />
@@ -23,6 +9,7 @@
         <File Path=".editorconfig" />
         <File Path=".gitattributes" />
         <File Path=".gitignore" />
+        <File Path=".gitmessage" />
         <File Path="codecov.yml" />
         <File Path="Directory.Build.props" />
         <File Path="Directory.Packages.props" />
@@ -30,6 +17,22 @@
         <File Path="NuGet.config" />
         <File Path="README.md" />
         <File Path="test.runsettings" />
+    </Folder>
+    <Folder Name="/solution Items/.github/">
+        <File Path=".github/CONVENTIONS.md" />
+        <File Path=".github/copilot-instructions.md" />
+        <File Path=".github/dependabot.yml" />
+        <File Path=".github/PULL_REQUEST_TEMPLATE.md" />
+    </Folder>
+    <Folder Name="/solution Items/.github/workflows/">
+        <File Path=".github/workflows/CI.yaml" />
+        <File Path=".github/workflows/ClearCache.yaml" />
+        <File Path=".github/workflows/Prerelease.yaml" />
+        <File Path=".github/workflows/Release.yaml" />
+    </Folder>
+    <Folder Name="/solution Items/changelog/">
+        <File Path="changelog/cliff.prerelease.toml" />
+        <File Path="changelog/cliff.release-header.toml" />
     </Folder>
     <Folder Name="/src/">
         <Project Path="src/DeepEquals/DeepEquals.csproj" />
