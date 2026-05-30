@@ -1,4 +1,4 @@
-# Copilot Instructions for vm2.MyPackage
+# Copilot Instructions for vm2.Linq.Expressions
 
 ## Shared Conventions
 

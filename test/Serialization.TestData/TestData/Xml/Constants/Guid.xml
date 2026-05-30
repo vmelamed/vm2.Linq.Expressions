@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- 00112233-4455-6677-8899-aabbccddeeff -->
-<expression
-    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
-    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-    <constant>
-        <guid>00112233-4455-6677-8899-aabbccddeeff</guid>
-    </constant>
-</expression>

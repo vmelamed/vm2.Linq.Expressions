@@ -1,9 +1,0 @@
-{
-  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
-  "$comment": " default(Int64) ",
-  "expression": {
-    "default": {
-      "type": "long"
-    }
-  }
-}

@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- default(String) -->
-<expression
-    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
-    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-    <default
-        type="string" />
-</expression>
