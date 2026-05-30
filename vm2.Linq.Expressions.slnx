@@ -10,13 +10,18 @@
         <File Path=".gitattributes" />
         <File Path=".gitignore" />
         <File Path=".gitmessage" />
-        <File Path="codecov.yml" />
         <File Path="Directory.Build.props" />
         <File Path="Directory.Packages.props" />
         <File Path="global.json" />
+        <File Path="test.runsettings" />
+        <File Path="codecov.yml" />
+        <File Path="coverage.settings.xml" />
         <File Path="NuGet.config" />
         <File Path="README.md" />
-        <File Path="test.runsettings" />
+        <File Path="CHANGELOG.md" />
+        <File Path="CLAUDE.md" />
+        <File Path="COPILOT_INSTRUCTIONS.md" />
+        <File Path="LICENSE.md" />
     </Folder>
     <Folder Name="/solution Items/.github/">
         <File Path=".github/CONVENTIONS.md" />
@@ -26,13 +31,22 @@
     </Folder>
     <Folder Name="/solution Items/.github/workflows/">
         <File Path=".github/workflows/CI.yaml" />
-        <File Path=".github/workflows/ClearCache.yaml" />
         <File Path=".github/workflows/Prerelease.yaml" />
         <File Path=".github/workflows/Release.yaml" />
+        <File Path=".github/workflows/ClearCache.yaml" />
+        <File Path=".github/workflows/AutoMerge.yaml" />
+        <File Path=".github/workflows/RefreshLockfiles.yaml" />
     </Folder>
     <Folder Name="/solution Items/changelog/">
         <File Path="changelog/cliff.prerelease.toml" />
         <File Path="changelog/cliff.release-header.toml" />
+    </Folder>
+    <Folder Name="/docs/">
+        <File Path="blog-timeless-marriage-visitor-linq.md" />
+        <File Path="README.md" />
+    </Folder>
+    <Folder Name="/docs/images/">
+        <File Path="expression-tree-ast-2.svg" />
     </Folder>
     <Folder Name="/src/">
         <Project Path="src/DeepEquals/DeepEquals.csproj" />
