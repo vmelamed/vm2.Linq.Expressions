@@ -160,8 +160,13 @@
         <PackageReference Include="NSubstitute" />
         <PackageReference Include="vm2.TestUtilities" />
     </ItemGroup>
+    <ItemGroup Condition="$(IsTestProject) == 'true' AND '$(BuildingInsideVisualStudio)' == 'true'">
+        <PackageReference Include="Microsoft.Testing.Platform.MSBuild" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" />
+        <PackageReference Include="xunit.runner.visualstudio" />
+    </ItemGroup>
 
-    <!-- Common usings for the test projects: -->
+  <!-- Common usings for the test projects: -->
     <ItemGroup Condition="$(IsTestProject) == 'true'">
         <Using Include="Xunit" />
         <Using Include="FluentAssertions" />
