@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- 6E-08 -->
-<expression
-    xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
-    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-    <constant>
-        <half>5.960464477539063E-08</half>
-    </constant>
-</expression>

@@ -1,9 +1,0 @@
-{
-  "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
-  "$comment": " 0 ",
-  "expression": {
-    "constant": {
-      "half": 0
-    }
-  }
-}
