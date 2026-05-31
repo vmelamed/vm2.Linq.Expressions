@@ -23,7 +23,6 @@ indent_style = space
 tab_width = 4
 
 # New line preferences
-end_of_line = crlf
 insert_final_newline = false
 
 # Spell checker
@@ -390,7 +389,6 @@ dotnet_style_qualification_for_event = false:silent
 dotnet_style_operator_placement_when_wrapping = beginning_of_line
 tab_width = 4
 indent_size = 4
-end_of_line = crlf
 dotnet_style_coalesce_expression = true:suggestion
 dotnet_style_null_propagation = true:suggestion
 dotnet_style_prefer_is_null_check_over_reference_equality_method = true:suggestion
@@ -419,5 +417,4 @@ dotnet_diagnostic.CA1510.severity = suggestion # Prefer ThrowIfNull
 [*.{xml,csproj,json}]
 tab_width = 4
 indent_size = 4
-end_of_line = crlf
 indent_style = space
