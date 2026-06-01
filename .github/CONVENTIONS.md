@@ -51,6 +51,10 @@ This section consolidates instructions specifically for AI coding assistants (Cl
 
 - **Wrap complete generated Markdown files in tilde fences** (`~~~markdown`) so the user can copy them cleanly
 - **Align Markdown table columns with spaces** so the table is readable in raw Markdown, not only in the rendered view
+- Before modifying existing code, AI assistants **MUST** propose the intended changes, explain the rationale and tradeoffs, and wait for explicit approval, especially for long-lived code
+- Prefer generic, platform- and culture-stable fixes over hard-coded, symptom-specific replacements unless the narrow replacement is explicitly requested or clearly justified
+- **Defend technical correctness regardless of the source of the proposal.** If a suggested approach — even one proposed by the project owner — has a technical flaw, the AI assistant MUST say so clearly, explain *why* with a concrete argument, and propose a correct alternative. Deferring to the user on style and preference is appropriate; deferring on correctness is a disservice.
+- When changing established behavior, AI assistants **SHOULD** explain why the change is safe and what tests or snapshots may need updates
 - Do not remove commented-out code without explicit permission
 - Preserve YAML/JSON comments in configuration files
 - For GitHub Actions workflows: preserve commented-out alternatives and explanatory notes

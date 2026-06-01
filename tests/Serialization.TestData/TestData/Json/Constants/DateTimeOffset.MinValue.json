@@ -1,6 +1,6 @@
 {
   "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
-  "$comment": " 1/1/0001 12:00:00\u202FAM \u002B00:00 ",
+  "$comment": " 1/1/0001 12:00:00 AM \u002B00:00 ",
   "expression": {
     "constant": {
       "dateTimeOffset": "0001-01-01T00:00:00.0000000\u002B00:00"
