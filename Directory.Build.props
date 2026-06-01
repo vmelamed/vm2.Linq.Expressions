@@ -166,7 +166,7 @@
         <PackageReference Include="xunit.runner.visualstudio" />
     </ItemGroup>
 
-  <!-- Common usings for the test projects: -->
+    <!-- Common usings for the test projects: -->
     <ItemGroup Condition="$(IsTestProject) == 'true'">
         <Using Include="Xunit" />
         <Using Include="FluentAssertions" />
@@ -266,9 +266,5 @@
     <PropertyGroup Condition="$(IsInExamplesFolder) == 'true'">
         <!-- Example projects settings -->
     </PropertyGroup>
-
-    <ItemGroup>
-        <!-- Add repo-specific package references here -->
-    </ItemGroup>
 
 </Project>

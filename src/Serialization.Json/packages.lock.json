@@ -66,7 +66,10 @@
         "contentHash": "+dJsbPJ3FyUbTZNplFj0RCKePFizmv6ewDV46JE9q/IVH4c3xTCftHfHelLsAKf0jryIPqgMb5GpS0x7TAY3mg=="
       },
       "vm2.Linq.Expressions.Serialization.Abstractions": {
-        "type": "Project"
+        "type": "Project",
+        "dependencies": {
+          "JsonSchema.Net": "[9.2.1, )"
+        }
       }
     }
   }
