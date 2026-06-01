@@ -1,6 +1,6 @@
 {
   "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
-  "$comment": " { ObjectProperty = , NullIntProperty = , NullLongProperty = 1, BoolProperty = True, CharProperty = A, ByteProperty = 1, SByteProperty = 1, ShortProperty = 1, IntProperty = 1, LongProperty = 1, UShortProperty = 1, UIntProperty = 1, ULongProperty = 1, DoubleProperty = 1, FloatProperty = 1, DecimalProperty = 1, GuidProperty = 00000000-0000-0000-0000-000000000000, UriProperty = http://localhost/, DateTimeProperty = 1/13/2013 12:00:00\u202FAM, DateTimeOffsetProperty = 1/13/2013 12:00:00\u202FAM -05:00, TimeSpanProperty = 1.02:03:04 } ",
+  "$comment": " { ObjectProperty = , NullIntProperty = , NullLongProperty = 1, BoolProperty = True, CharProperty = A, ByteProperty = 1, SByteProperty = 1, ShortProperty = 1, IntProperty = 1, LongProperty = 1, UShortProperty = 1, UIntProperty = 1, ULongProperty = 1, DoubleProperty = 1, FloatProperty = 1, DecimalProperty = 1, GuidProperty = 00000000-0000-0000-0000-000000000000, UriProperty = http://localhost/, DateTimeProperty = 1/13/2013 12:00:00 AM, DateTimeOffsetProperty = 1/13/2013 12:00:00 AM -05:00, TimeSpanProperty = 1.02:03:04 } ",
   "expression": {
     "constant": {
       "$comment": " \u003C\u003Ef__AnonymousType0\u003Cobject, nullable\u003Cint\u003E, nullable\u003Clong\u003E, boolean, char, byte, signedByte, short, int, long, unsignedShort, unsignedInt, unsignedLong, double, float, decimal, guid, uri, dateTime, dateTimeOffset, duration\u003E ",
