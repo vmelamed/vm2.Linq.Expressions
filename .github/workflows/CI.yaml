@@ -56,18 +56,8 @@ env:
     ]
   TEST_PROJECTS: >-
     [
-<<<<<<< HEAD
     "tests/Serialization.Abstractions.Tests/Serialization.Abstractions.Tests.csproj",
     "tests/DeepEquals.Tests/DeepEquals.Tests.csproj",
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-    "test/DeepEquals.Tests/DeepEquals.Tests.csproj",
-    "test/Serialization.Abstractions.Tests/Serialization.Abstractions.Tests.csproj",
-    "test/Serialization.Json.Tests/Serialization.Json.Tests.csproj",
-    "test/Serialization.Xml.Tests/Serialization.Xml.Tests.csproj"
-=======
-    "tests/DeepEquals.Tests/DeepEquals.Tests.csproj",
-    "tests/Serialization.Abstractions.Tests/Serialization.Abstractions.Tests.csproj",
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
     "tests/Serialization.Json.Tests/Serialization.Json.Tests.csproj",
     "tests/Serialization.Xml.Tests/Serialization.Xml.Tests.csproj"
     ]

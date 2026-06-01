@@ -12,6 +12,20 @@
         <VerifyReferenceAotCompatibility>false</VerifyReferenceAotCompatibility>
     </PropertyGroup>
 
+    <!--
+    By default JSON validation is done with Json.Schema from https://docs.json-everything.net/.
+    As of v9.2 floating-point issues are fixed, but it still fails on deeply nested oneOf + recursive $ref
+    schemas (see StatementTests NewMembersInit1/2). Its SchemaRegistry.Global is also not thread-safe.
+    It uses System.Text.Json like this project.
+
+    If NEWTONSOFT_SCHEMA is defined, JSON validation uses Newtonsoft.Json.Schema instead, but note that:
+    1. it is limited to 1000 validations per hour unless you pay
+    2. it is yet another JSON parser (we use System.Text.Json)
+
+    ATTENTION: The definition of NEWTONSOFT_SCHEMA switch must be equivalent in all the projects that use
+               schema validation, e.g. Serialization.Json.csproj and Serialization.Json.Tests.csproj.
+    -->
+
     <PropertyGroup Label="NuGet">
         <PackageId>vm2.Linq.Expressions.Serialization.Json</PackageId>
         <Title>vm2 Linq Expressions Serialization JSON</Title>
@@ -21,6 +35,7 @@
         <RepositoryUrl>https://github.com/vmelamed/vm2.Linq.Expressions</RepositoryUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
+
     <ItemGroup>
         <ProjectReference Include="../Serialization.Abstractions/Serialization.Abstractions.csproj" />
     </ItemGroup>
