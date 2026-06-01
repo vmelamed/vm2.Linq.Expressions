@@ -7,7 +7,7 @@
         type="int">
         <parameters>
             <parameter
-                type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                type="System.Int32[]"
                 id="P1"
                 name="arr" />
         </parameters>
@@ -15,36 +15,36 @@
             <call
                 type="int">
                 <method
-                    declaringType="System.Linq.Enumerable, System.Linq, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                    declaringType="System.Linq.Enumerable"
                     static="true"
                     type="int"
                     name="Sum">
                     <parameterSpecs>
                         <parameterSpec
-                            type="System.Collections.Generic.IEnumerable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                            type="System.Collections.Generic.IEnumerable`1[[System.Int32]]"
                             name="source" />
                     </parameterSpecs>
                 </method>
                 <arguments>
                     <call
-                        type="System.Collections.Generic.IEnumerable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+                        type="System.Collections.Generic.IEnumerable`1[[System.Int32]]">
                         <method
-                            declaringType="System.Linq.Enumerable, System.Linq, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                            declaringType="System.Linq.Enumerable"
                             static="true"
-                            type="System.Collections.Generic.IEnumerable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                            type="System.Collections.Generic.IEnumerable`1[[System.Int32]]"
                             name="Where">
                             <parameterSpecs>
                                 <parameterSpec
-                                    type="System.Collections.Generic.IEnumerable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                                    type="System.Collections.Generic.IEnumerable`1[[System.Int32]]"
                                     name="source" />
                                 <parameterSpec
-                                    type="System.Func`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                                    type="System.Func`2[[System.Int32],[System.Boolean]]"
                                     name="predicate" />
                             </parameterSpecs>
                         </method>
                         <arguments>
                             <parameter
-                                type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                                type="System.Int32[]"
                                 id="P1"
                                 name="arr" />
                             <lambda

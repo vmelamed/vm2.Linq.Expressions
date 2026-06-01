@@ -48,10 +48,21 @@ public class ExpressionXmlTransform(XmlOptions? options = null) : IExpressionTra
     /// <param name="expression">The expression to be transformed.</param>
     /// <returns>The resultant top level document model node `XNode`.</returns>
     public XDocument Transform(Expression expression)
-        => new(
-            _options.DocumentDeclaration(),
-            _options.Comment(expression),
-            ((IExpressionTransform<XElement>)this).Transform(expression));
+    {
+        var culture = CultureInfo.CurrentCulture;
+        try
+        {
+            CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
+            return new(
+                _options.DocumentDeclaration(),
+                _options.Comment(expression),
+                ((IExpressionTransform<XElement>)this).Transform(expression));
+        }
+        finally
+        {
+            CultureInfo.CurrentCulture = culture;
+        }
+    }
 
     /// <summary>
     /// Transformer the specified document model node of type `TDocument` to a LINQ expression.

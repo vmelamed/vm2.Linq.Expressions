@@ -5,7 +5,7 @@
     "constant": {
       "$comment": " vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest ",
       "enum": {
-        "type": "vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "type": "vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest",
         "value": "Three",
         "baseValue": 2
       }

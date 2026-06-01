@@ -67,4 +67,14 @@ public partial class TransformTests(ITestOutputHelper output) : TestBase(output)
 
         call().Should().Be(expected);
     }
+
+    [Theory]
+    [MemberData(nameof(TransformTypeNameRoundTripData))]
+    public void TransformTypeNameRoundTripTest(string _, Type type, TypeNameConventions convention)
+    {
+        var name = Transform.TypeName(type, convention);
+        var resolved = Transform.GetType(name);
+
+        resolved.Should().Be(type, $"Transform.GetType should round-trip the type serialized with {convention}");
+    }
 }

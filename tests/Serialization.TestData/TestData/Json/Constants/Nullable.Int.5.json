@@ -3,7 +3,7 @@
   "$comment": " 5 ",
   "expression": {
     "constant": {
-      "$comment": " nullable\u003Cint\u003E ",
+      "$comment": " System.Nullable\u00601[[System.Int32]] ",
       "nullable": {
         "int": 5
       }

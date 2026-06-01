@@ -26,6 +26,8 @@ public partial class ToJsonTransformVisitor
 
     string NewLabelId => $"L{++_lastLabelIdNumber}";
 
+    string TypeName(Type type) => Transform.TypeName(type, options.TypeNames);
+
     bool IsDefined(ParameterExpression parameterExpression)
         => _parameters.ContainsKey(parameterExpression);
 
@@ -108,7 +110,7 @@ public partial class ToJsonTransformVisitor
     /// </summary>
     /// <param name="node">The node.</param>
     /// <returns>System.Nullable&lt;JElement&gt;.</returns>
-    static JElement? PropertyType(Expression? node)
+    JElement? PropertyType(Expression? node)
         => node is not null
                 ? PropertyType(node.Type)
                 : null;
@@ -119,14 +121,14 @@ public partial class ToJsonTransformVisitor
     /// <param name="type">The node.</param>
     /// <param name="force">May the force be with you.</param>
     /// <returns>System.Nullable&lt;JElement&gt;.</returns>
-    static JElement? PropertyType(Type? type, bool force = false)
+    JElement? PropertyType(Type? type, bool force = false)
         => type is not null && (type != typeof(void) || force)
-                ? new(Vocabulary.Type, Transform.TypeName(type))
+                ? new(Vocabulary.Type, TypeName(type))
                 : null;
 
     JElement? PropertyDelegateType(Type? type)
         => options.AddLambdaTypes && type is not null
-                ? new(Vocabulary.DelegateType, Transform.TypeName(type))
+                ? new(Vocabulary.DelegateType, TypeName(type))
                 : null;
 
     // reflection metadata:
@@ -136,7 +138,7 @@ public partial class ToJsonTransformVisitor
     /// </summary>
     /// <param name="node">The node.</param>
     /// <returns>System.Nullable&lt;JElement&gt;.</returns>
-    static JElement? VisitMethodInfo(BinaryExpression node)
+    JElement? VisitMethodInfo(BinaryExpression node)
         => node.Method is MemberInfo mi
                 ? VisitMemberInfo(mi)
                 : null;
@@ -146,7 +148,7 @@ public partial class ToJsonTransformVisitor
     /// </summary>
     /// <param name="node">The node.</param>
     /// <returns>System.Nullable&lt;JElement&gt;.</returns>
-    static JElement? VisitMethodInfo(UnaryExpression node)
+    JElement? VisitMethodInfo(UnaryExpression node)
         => node.Method is MemberInfo mi
                 ? VisitMemberInfo(mi)
                 : null;
@@ -156,12 +158,12 @@ public partial class ToJsonTransformVisitor
     /// </summary>
     /// <param name="member">The member.</param>
     /// <returns>System.Nullable&lt;JElement&gt;.</returns>
-    static JElement? VisitMemberInfo(MemberInfo? member)
+    JElement? VisitMemberInfo(MemberInfo? member)
     {
         if (member is null)
             return null;
 
-        JElement? declaringTypeProperty = member.DeclaringType is Type dt ? new JElement(Vocabulary.DeclaringType, Transform.TypeName(dt)) : null;
+        JElement? declaringTypeProperty = member.DeclaringType is Type dt ? new JElement(Vocabulary.DeclaringType, TypeName(dt)) : null;
         JElement? nameProperty = member is not ConstructorInfo && member.Name is not null ? new JElement(Vocabulary.Name, member.Name) : null;
         JElement? visibilityProperty = member switch
             {
@@ -253,7 +255,7 @@ public partial class ToJsonTransformVisitor
     /// </summary>
     /// <param name="parameters">The parameters.</param>
     /// <returns>A sequence of elements.</returns>
-    static IEnumerable<JsonObject> VisitParameters(IEnumerable<ParameterInfo> parameters)
+    IEnumerable<JsonObject> VisitParameters(IEnumerable<ParameterInfo> parameters)
         => parameters.Select(
                 param => new JsonObject()
                                 .Add(

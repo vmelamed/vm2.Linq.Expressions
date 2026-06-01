@@ -3,20 +3,20 @@
   "$comment": " a =\u003E (a As ClassDataContract1) ",
   "expression": {
     "lambda": {
-      "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1",
       "parameters": [
         {
-          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract2, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract2",
           "name": "a",
           "id": "P1"
         }
       ],
       "body": {
         "typeAs": {
-          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1",
           "operand": {
             "parameter": {
-              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract2, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract2",
               "name": "a",
               "id": "P1"
             }

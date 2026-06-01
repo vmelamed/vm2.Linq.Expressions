@@ -61,7 +61,7 @@ public partial class FromJsonTransformVisitor
         var declTypeName = e.GetPropertyValue<string>(Vocabulary.DeclaringType);
 
         if (!Vocabulary.NamesToTypes.TryGetValue(declTypeName, out var declType))
-            declType = Type.GetType(declTypeName)
+            declType = Transform.GetType(declTypeName)
                                 ?? e.ThrowSerializationException<Type?>($"Could not get the required declaring type of the member for a member info");
 
         Debug.Assert(declType is not null);

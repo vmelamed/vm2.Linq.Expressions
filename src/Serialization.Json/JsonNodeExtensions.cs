@@ -376,7 +376,7 @@ public static class JsonNodeExtensions
                 && typeNode is not null
                 && typeNode.GetValueKind() is JsonValueKind.String
                 && (Vocabulary.NamesToTypes.TryGetValue(typeNode.GetValue<string>(), out type)
-                    || (type = Type.GetType(typeNode.GetValue<string>())) is not null);
+                    || (type = Transform.GetType(typeNode.GetValue<string>())) is not null);
     }
 
     /// <summary>

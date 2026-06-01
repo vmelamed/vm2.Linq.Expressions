@@ -20,15 +20,24 @@ public class ExpressionJsonTransform(JsonOptions? options = null) : IExpressionT
     /// <returns>The resultant top level document model document <see cref="JsonNode"/>.</returns>
     public JsonObject Transform(Expression expression)
     {
-        _expressionVisitor ??= new ToJsonTransformVisitor(_options);
-        _expressionVisitor.Visit(expression);
-
-        return new JsonObject(_nodeOptions)
+        var culture = CultureInfo.CurrentCulture;
+        try
         {
-            { Vocabulary.Schema, JsonOptions.Exs },
-            _options.Comment(expression),
-            { Vocabulary.Expression, new JsonObject(_nodeOptions) { _expressionVisitor.Result} }
-        };
+            CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
+            _expressionVisitor ??= new ToJsonTransformVisitor(_options);
+            _expressionVisitor.Visit(expression);
+
+            return new JsonObject(_nodeOptions)
+            {
+                { Vocabulary.Schema, JsonOptions.Exs },
+                _options.Comment(expression),
+                { Vocabulary.Expression, new JsonObject(_nodeOptions) { _expressionVisitor.Result} }
+            };
+        }
+        finally
+        {
+            CultureInfo.CurrentCulture = culture;
+        }
     }
 
     /// <summary>

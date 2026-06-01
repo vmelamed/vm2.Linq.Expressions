@@ -3,7 +3,7 @@
   "$comment": " -9223372036854775808 ",
   "expression": {
     "constant": {
-      "$comment": " nullable\u003Clong\u003E ",
+      "$comment": " System.Nullable\u00601[[System.Int64]] ",
       "nullable": {
         "long": "-9223372036854775808"
       }

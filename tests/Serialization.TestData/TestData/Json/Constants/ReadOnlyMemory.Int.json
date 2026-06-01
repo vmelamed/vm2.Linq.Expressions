@@ -3,9 +3,9 @@
   "$comment": " System.ReadOnlyMemory\u003CInt32\u003E[4] ",
   "expression": {
     "constant": {
-      "$comment": " System.ReadOnlyMemory\u003Cint\u003E ",
+      "$comment": " System.ReadOnlyMemory\u00601[[System.Int32]] ",
       "sequence": {
-        "type": "System.ReadOnlyMemory\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "type": "System.ReadOnlyMemory\u00601[[System.Int32]]",
         "value": [
           {
             "int": 1

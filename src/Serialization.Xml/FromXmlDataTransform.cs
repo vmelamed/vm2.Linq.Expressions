@@ -52,7 +52,7 @@ static partial class FromXmlDataTransform
 
             if (!Vocabulary.NamesToTypes.TryGetValue(valTypeName!, out var valType) && valType != typeof(Enum))
                 valType = valTypeName is not null
-                                    ? (Type.GetType(valTypeName) ?? throw new SerializationException($"Could not resolve the type name `{valTypeName}` specified in element `{element.Name}`."))
+                                    ? (Transform.GetType(valTypeName) ?? throw new SerializationException($"Could not resolve the type name `{valTypeName}` specified in element `{element.Name}`."))
                                     : throw new SerializationException($"If a nullable type value is null, the attribute 'type' of the nullable element is mandatory.");
 
             if (type == typeof(void))

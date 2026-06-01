@@ -6,7 +6,7 @@
     <constant>
         <!--  System.Byte[]  -->
         <byteSequence
-            type="System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+            type="System.Byte[]"
             i:nil="true" />
     </constant>
 </expression>

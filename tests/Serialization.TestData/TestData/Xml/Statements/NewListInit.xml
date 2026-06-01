@@ -4,13 +4,13 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <lambda
-        type="System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+        type="System.Collections.Generic.List`1[[System.String]]">
         <parameters />
         <body>
             <listInit>
                 <new>
                     <constructor
-                        declaringType="System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+                        declaringType="System.Collections.Generic.List`1[[System.String]]">
                         <parameterSpecs />
                     </constructor>
                     <arguments />
@@ -18,7 +18,7 @@
                 <initializers>
                     <elementInit>
                         <method
-                            declaringType="System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                            declaringType="System.Collections.Generic.List`1[[System.String]]"
                             type="void"
                             name="Add">
                             <parameterSpecs>
@@ -35,7 +35,7 @@
                     </elementInit>
                     <elementInit>
                         <method
-                            declaringType="System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                            declaringType="System.Collections.Generic.List`1[[System.String]]"
                             type="void"
                             name="Add">
                             <parameterSpecs>
@@ -52,7 +52,7 @@
                     </elementInit>
                     <elementInit>
                         <method
-                            declaringType="System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                            declaringType="System.Collections.Generic.List`1[[System.String]]"
                             type="void"
                             name="Add">
                             <parameterSpecs>

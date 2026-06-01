@@ -28,13 +28,13 @@
                 <call
                     type="int">
                     <method
-                        declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.GenericMethodFixtures, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                        declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.GenericMethodFixtures"
                         static="true"
                         type="int"
                         name="EchoByRef">
                         <parameterSpecs>
                             <parameterSpec
-                                type="System.Int32&amp;, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                                type="System.Int32&amp;"
                                 name="value"
                                 isByRef="true" />
                         </parameterSpecs>

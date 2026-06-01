@@ -3,13 +3,13 @@
   "$comment": " () =\u003E new Hashtable() {Void Add(System.Object, System.Object)(Convert(1, Object), \u0022one\u0022), Void Add(System.Object, System.Object)(Convert(2, Object), \u0022two\u0022), Void Add(System.Object, System.Object)(Convert(3, Object), \u0022three\u0022)} ",
   "expression": {
     "lambda": {
-      "type": "System.Collections.Hashtable, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+      "type": "System.Collections.Hashtable",
       "parameters": [],
       "body": {
         "listInit": {
           "new": {
             "constructor": {
-              "declaringType": "System.Collections.Hashtable, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+              "declaringType": "System.Collections.Hashtable",
               "parameterSpecs": []
             },
             "arguments": []
@@ -17,7 +17,7 @@
           "initializers": [
             {
               "method": {
-                "declaringType": "System.Collections.Hashtable, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                "declaringType": "System.Collections.Hashtable",
                 "type": "void",
                 "name": "Add",
                 "parameterSpecs": [
@@ -51,7 +51,7 @@
             },
             {
               "method": {
-                "declaringType": "System.Collections.Hashtable, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                "declaringType": "System.Collections.Hashtable",
                 "type": "void",
                 "name": "Add",
                 "parameterSpecs": [
@@ -85,7 +85,7 @@
             },
             {
               "method": {
-                "declaringType": "System.Collections.Hashtable, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                "declaringType": "System.Collections.Hashtable",
                 "type": "void",
                 "name": "Add",
                 "parameterSpecs": [

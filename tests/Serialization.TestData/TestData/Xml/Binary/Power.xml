@@ -16,7 +16,7 @@
                     <double>3</double>
                 </constant>
                 <method
-                    declaringType="System.Math, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                    declaringType="System.Math"
                     static="true"
                     type="double"
                     name="Pow">

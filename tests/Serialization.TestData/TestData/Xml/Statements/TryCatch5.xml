@@ -8,7 +8,7 @@
             <call
                 type="void">
                 <method
-                    declaringType="System.Console, System.Console, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                    declaringType="System.Console"
                     static="true"
                     type="void"
                     name="WriteLine">
@@ -27,7 +27,7 @@
             <throw>
                 <new>
                     <constructor
-                        declaringType="System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+                        declaringType="System.Exception">
                         <parameterSpecs />
                     </constructor>
                     <arguments />
@@ -35,16 +35,16 @@
             </throw>
         </block>
         <catch
-            type="System.ArgumentException, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+            type="System.ArgumentException">
             <exception
-                type="System.ArgumentException, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                type="System.ArgumentException"
                 id="P1"
                 name="x" />
             <body>
                 <call
                     type="void">
                     <method
-                        declaringType="System.Console, System.Console, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                        declaringType="System.Console"
                         static="true"
                         type="void"
                         name="WriteLine">
@@ -59,12 +59,12 @@
                             type="string">
                             <object>
                                 <parameter
-                                    type="System.ArgumentException, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                                    type="System.ArgumentException"
                                     id="P1"
                                     name="x" />
                             </object>
                             <property
-                                declaringType="System.ArgumentException, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                                declaringType="System.ArgumentException"
                                 type="string"
                                 name="Message" />
                         </memberAccess>

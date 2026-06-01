@@ -166,4 +166,27 @@ public partial class TransformTests
             };
         }
     }
+
+    public static TheoryData<string, Type, TypeNameConventions> TransformTypeNameRoundTripData => new() {
+        // simple type — all three conventions
+        { TestLine(), typeof(int),                              TypeNameConventions.AssemblyQualifiedName },
+        { TestLine(), typeof(int),                              TypeNameConventions.FullName              },
+        { TestLine(), typeof(int),                              TypeNameConventions.Name                  },
+
+        // class from another assembly — all three conventions
+        { TestLine(), typeof(TestTypeNameConvention),           TypeNameConventions.AssemblyQualifiedName },
+        { TestLine(), typeof(TestTypeNameConvention),           TypeNameConventions.FullName              },
+
+        // generic type — AssemblyQualifiedName and FullName are resolvable; Name is not (by design)
+        { TestLine(), typeof(Dictionary<int, string>),          TypeNameConventions.AssemblyQualifiedName },
+        { TestLine(), typeof(Dictionary<int, string>),          TypeNameConventions.FullName              },
+
+        // generic type with nested generic types — AssemblyQualifiedName and FullName are resolvable; Name is not (by design)
+        { TestLine(), typeof(Dictionary<string, Dictionary<int, string>>), TypeNameConventions.AssemblyQualifiedName },
+        { TestLine(), typeof(Dictionary<string, Dictionary<int, string>>), TypeNameConventions.FullName              },
+
+        // array type
+        { TestLine(), typeof(int[]),                            TypeNameConventions.AssemblyQualifiedName },
+        { TestLine(), typeof(int[]),                            TypeNameConventions.FullName              },
+    };
 }

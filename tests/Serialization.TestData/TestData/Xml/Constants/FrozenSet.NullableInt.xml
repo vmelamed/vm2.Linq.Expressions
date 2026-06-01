@@ -4,12 +4,12 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <constant>
-        <!--  System.Collections.Frozen.SmallValueTypeDefaultComparerFrozenSet<nullable<int>>  -->
+        <!--  System.Collections.Frozen.SmallValueTypeDefaultComparerFrozenSet`1[[System.Nullable`1[[System.Int32]]]]  -->
         <sequence
-            type="System.Collections.Frozen.SmallValueTypeDefaultComparerFrozenSet`1[[System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Collections.Immutable, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-            elementType="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+            type="System.Collections.Frozen.SmallValueTypeDefaultComparerFrozenSet`1[[System.Nullable`1[[System.Int32]]]]"
+            elementType="System.Nullable`1[[System.Int32]]"
             length="3">
-            <!--  nullable<int>  -->
+            <!--  System.Nullable`1[[System.Int32]]  -->
             <nullable>
                 <int>1</int>
             </nullable>

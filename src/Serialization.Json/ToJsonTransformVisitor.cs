@@ -23,9 +23,9 @@ public partial class ToJsonTransformVisitor(JsonOptions options) : ExpressionTra
                     NewArrayExpression => null,
                     LabelExpression => null,
                     // do not omit the void return type for these nodes:
-                    LambdaExpression n => new(Vocabulary.Type, Transform.TypeName(n.ReturnType)),
-                    MethodCallExpression n => new(Vocabulary.Type, Transform.TypeName(n.Method.ReturnType)),
-                    InvocationExpression n => new(Vocabulary.Type, Transform.TypeName(n.Expression.Type)),
+                    LambdaExpression n => new(Vocabulary.Type, Transform.TypeName(n.ReturnType, options.TypeNames)),
+                    MethodCallExpression n => new(Vocabulary.Type, Transform.TypeName(n.Method.ReturnType, options.TypeNames)),
+                    InvocationExpression n => new(Vocabulary.Type, Transform.TypeName(n.Expression.Type, options.TypeNames)),
                     // for the rest: add attribute type if it is not void:
                     _ => PropertyType(node),
                 });
@@ -123,7 +123,7 @@ public partial class ToJsonTransformVisitor(JsonOptions options) : ExpressionTra
             node,
             base.VisitTypeBinary,
             (n, x) => x.Add(
-                        new JElement(Vocabulary.TypeOperand, Transform.TypeName(n.TypeOperand)),
+                        new JElement(Vocabulary.TypeOperand, Transform.TypeName(n.TypeOperand, options.TypeNames)),
                         new JElement(Vocabulary.Operands, new JsonArray(PopWrappedElement()))));
 
     /// <inheritdoc/>

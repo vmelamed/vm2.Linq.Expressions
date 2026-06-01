@@ -3,9 +3,9 @@
   "$comment": " null ",
   "expression": {
     "constant": {
-      "$comment": " nullable\u003CSystem.Memory\u003Cint\u003E\u003E ",
+      "$comment": " System.Nullable\u00601[[System.Memory\u00601[[System.Int32]]]] ",
       "nullable": {
-        "type": "System.Memory\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "type": "System.Memory\u00601[[System.Int32]]",
         "value": null
       }
     }

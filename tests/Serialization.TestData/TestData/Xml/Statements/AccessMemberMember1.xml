@@ -7,19 +7,19 @@
         type="int">
         <variables>
             <parameter
-                type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized"
                 id="P1"
                 name="m" />
         </variables>
         <assign
-            type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+            type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized">
             <parameter
-                type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized"
                 id="P1"
                 name="m" />
             <new>
                 <constructor
-                    declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+                    declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized">
                     <parameterSpecs />
                 </constructor>
                 <arguments />
@@ -37,12 +37,12 @@
                     type="int">
                     <object>
                         <parameter
-                            type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                            type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized"
                             id="P1"
                             name="m" />
                     </object>
                     <property
-                        declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                        declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized"
                         type="int"
                         name="TheOuterIntProperty" />
                 </memberAccess>
@@ -50,21 +50,21 @@
                     type="int">
                     <object>
                         <memberAccess
-                            type="vm2.Tests.Linq.Expressions.Serialization.Data.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+                            type="vm2.Tests.Linq.Expressions.Serialization.Data.Inner">
                             <object>
                                 <parameter
-                                    type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                                    type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized"
                                     id="P1"
                                     name="m" />
                             </object>
                             <property
-                                declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
-                                type="vm2.Tests.Linq.Expressions.Serialization.Data.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                                declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized"
+                                type="vm2.Tests.Linq.Expressions.Serialization.Data.Inner"
                                 name="InnerProperty" />
                         </memberAccess>
                     </object>
                     <property
-                        declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                        declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.Inner"
                         type="int"
                         name="IntProperty" />
                 </memberAccess>

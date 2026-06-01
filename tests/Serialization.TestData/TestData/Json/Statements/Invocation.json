@@ -6,7 +6,7 @@
       "type": "int",
       "parameters": [
         {
-          "type": "System.Func\u00602[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+          "type": "System.Func\u00602[[System.Int32],[System.Int32]]",
           "name": "f",
           "id": "P1"
         },
@@ -18,10 +18,10 @@
       ],
       "body": {
         "invoke": {
-          "type": "System.Func\u00602[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+          "type": "System.Func\u00602[[System.Int32],[System.Int32]]",
           "delegate": {
             "parameter": {
-              "type": "System.Func\u00602[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+              "type": "System.Func\u00602[[System.Int32],[System.Int32]]",
               "name": "f",
               "id": "P1"
             }

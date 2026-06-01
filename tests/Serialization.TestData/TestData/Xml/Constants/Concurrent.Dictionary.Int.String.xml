@@ -4,9 +4,9 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <constant>
-        <!--  System.Collections.Concurrent.ConcurrentDictionary<int, string>  -->
+        <!--  System.Collections.Concurrent.ConcurrentDictionary`2[[System.Int32],[System.String]]  -->
         <dictionary
-            type="System.Collections.Concurrent.ConcurrentDictionary`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Collections.Concurrent, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+            type="System.Collections.Concurrent.ConcurrentDictionary`2[[System.Int32],[System.String]]"
             length="2">
             <key-value>
                 <int>1</int>
