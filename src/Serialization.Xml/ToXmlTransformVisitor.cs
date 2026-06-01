@@ -25,9 +25,9 @@ public partial class ToXmlTransformVisitor(XmlOptions options) : ExpressionTrans
                 NewArrayExpression => null,
                 LabelExpression => null,
                 // do not omit the void return type for these nodes:
-                LambdaExpression n => new(AttributeNames.Type, Transform.TypeName(n.ReturnType)),
-                MethodCallExpression n => new(AttributeNames.Type, Transform.TypeName(n.Method.ReturnType)),
-                InvocationExpression n => new(AttributeNames.Type, Transform.TypeName(n.Expression.Type)),
+                LambdaExpression n => new(AttributeNames.Type, Transform.TypeName(n.ReturnType, options.TypeNames)),
+                MethodCallExpression n => new(AttributeNames.Type, Transform.TypeName(n.Method.ReturnType, options.TypeNames)),
+                InvocationExpression n => new(AttributeNames.Type, Transform.TypeName(n.Expression.Type, options.TypeNames)),
                 // for the rest: add attribute type if it is not void:
                 _ => AttributeType(node),
             });
@@ -129,7 +129,7 @@ public partial class ToXmlTransformVisitor(XmlOptions options) : ExpressionTrans
         => GenericVisit(
             node,
             base.VisitTypeBinary,
-            (n, x) => x.Add(new XAttribute(AttributeNames.TypeOperand, Transform.TypeName(n.TypeOperand)), Pop()));  // pop the value operand
+            (n, x) => x.Add(new XAttribute(AttributeNames.TypeOperand, Transform.TypeName(n.TypeOperand, options.TypeNames)), Pop()));  // pop the value operand
 
     /// <inheritdoc/>
     protected override Expression VisitIndex(IndexExpression node)
@@ -249,7 +249,7 @@ public partial class ToXmlTransformVisitor(XmlOptions options) : ExpressionTrans
                 var expressions = Pop(n.Expressions.Count);
 
                 x.Add(
-                    new XAttribute(AttributeNames.Type, Transform.TypeName(elemType)),
+                    new XAttribute(AttributeNames.Type, Transform.TypeName(elemType, options.TypeNames)),
                     new XElement(
                             n.NodeType == ExpressionType.NewArrayInit
                                 ? ElementNames.ArrayElements

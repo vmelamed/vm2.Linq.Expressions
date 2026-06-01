@@ -4,9 +4,9 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <constant>
-        <!--  System.Tuple<int, string>  -->
+        <!--  System.Tuple`2[[System.Int32],[System.String]]  -->
         <tuple
-            type="System.Tuple`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+            type="System.Tuple`2[[System.Int32],[System.String]]"
             i:nil="true" />
     </constant>
 </expression>

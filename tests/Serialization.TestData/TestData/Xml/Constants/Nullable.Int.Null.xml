@@ -4,7 +4,7 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <constant>
-        <!--  nullable<int>  -->
+        <!--  System.Nullable`1[[System.Int32]]  -->
         <nullable
             type="int"
             i:nil="true" />

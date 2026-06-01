@@ -6,7 +6,7 @@
       "type": "int",
       "parameters": [
         {
-          "type": "System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+          "type": "System.Int32[]",
           "name": "arr",
           "id": "P1"
         }
@@ -15,13 +15,13 @@
         "call": {
           "type": "int",
           "method": {
-            "declaringType": "System.Linq.Enumerable, System.Linq, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+            "declaringType": "System.Linq.Enumerable",
             "static": true,
             "type": "int",
             "name": "Sum",
             "parameterSpecs": [
               {
-                "type": "System.Collections.Generic.IEnumerable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                "type": "System.Collections.Generic.IEnumerable\u00601[[System.Int32]]",
                 "name": "source"
               }
             ]
@@ -29,19 +29,19 @@
           "arguments": [
             {
               "call": {
-                "type": "System.Collections.Generic.IEnumerable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                "type": "System.Collections.Generic.IEnumerable\u00601[[System.Int32]]",
                 "method": {
-                  "declaringType": "System.Linq.Enumerable, System.Linq, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+                  "declaringType": "System.Linq.Enumerable",
                   "static": true,
-                  "type": "System.Collections.Generic.IEnumerable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                  "type": "System.Collections.Generic.IEnumerable\u00601[[System.Int32]]",
                   "name": "Where",
                   "parameterSpecs": [
                     {
-                      "type": "System.Collections.Generic.IEnumerable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                      "type": "System.Collections.Generic.IEnumerable\u00601[[System.Int32]]",
                       "name": "source"
                     },
                     {
-                      "type": "System.Func\u00602[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                      "type": "System.Func\u00602[[System.Int32],[System.Boolean]]",
                       "name": "predicate"
                     }
                   ]
@@ -49,7 +49,7 @@
                 "arguments": [
                   {
                     "parameter": {
-                      "type": "System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                      "type": "System.Int32[]",
                       "name": "arr",
                       "id": "P1"
                     }

@@ -3,32 +3,32 @@
   "$comment": " a =\u003E -a ",
   "expression": {
     "lambda": {
-      "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A",
       "parameters": [
         {
-          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A",
           "name": "a",
           "id": "P1"
         }
       ],
       "body": {
         "negate": {
-          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A",
           "operand": {
             "parameter": {
-              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A",
               "name": "a",
               "id": "P1"
             }
           },
           "method": {
-            "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.A, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.A",
             "static": true,
-            "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A",
             "name": "op_UnaryNegation",
             "parameterSpecs": [
               {
-                "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "type": "vm2.Tests.Linq.Expressions.Serialization.Data.A",
                 "name": "x"
               }
             ]

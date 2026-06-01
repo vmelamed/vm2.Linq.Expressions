@@ -5,7 +5,7 @@
     "constant": {
       "$comment": " System.Collections.Hashtable ",
       "dictionary": {
-        "type": "System.Collections.Hashtable, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "type": "System.Collections.Hashtable",
         "value": [
           {
             "key": {

@@ -10,7 +10,7 @@
             <memberAccess
                 type="int">
                 <field
-                    declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMethods, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                    declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMethods"
                     static="true"
                     readOnly="true"
                     type="int"

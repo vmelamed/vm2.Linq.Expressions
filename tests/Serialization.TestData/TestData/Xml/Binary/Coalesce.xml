@@ -7,7 +7,7 @@
         type="int">
         <parameters>
             <parameter
-                type="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                type="System.Nullable`1[[System.Int32]]"
                 id="P1"
                 name="a" />
             <parameter
@@ -19,7 +19,7 @@
             <coalesce
                 type="int">
                 <parameter
-                    type="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                    type="System.Nullable`1[[System.Int32]]"
                     id="P1"
                     name="a" />
                 <parameter

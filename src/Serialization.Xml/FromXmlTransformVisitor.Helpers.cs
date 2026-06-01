@@ -57,7 +57,7 @@ public partial class FromXmlTransformVisitor
                 ?? throw new SerializationException($"Could not get the declaring type of the member info of the element '{e.Name}'.");
 
         if (!Vocabulary.NamesToTypes.TryGetValue(declTypeName, out var declType))
-            declType = Type.GetType(declTypeName);
+            declType = Transform.GetType(declTypeName);
 
         if (declType is null)
             throw new SerializationException($"Could not get the required declaring type of the member info of the element '{e.Name}'.");

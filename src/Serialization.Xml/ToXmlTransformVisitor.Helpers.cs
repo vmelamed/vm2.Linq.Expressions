@@ -24,6 +24,8 @@ public partial class ToXmlTransformVisitor
 
     string NewLabelId => $"L{++_lastLabelIdNumber}";
 
+    string TypeName(Type type) => Transform.TypeName(type, options.TypeNames);
+
     bool IsDefined(ParameterExpression parameterExpression)
         => _parameters.ContainsKey(parameterExpression);
 
@@ -56,39 +58,39 @@ public partial class ToXmlTransformVisitor
                 ? new XAttribute(AttributeNames.Name, Transform.Identifier(identifier, options.Identifiers))
                 : null;
 
-    static XAttribute? AttributeType(Expression? node)
+    XAttribute? AttributeType(Expression? node)
         => node is not null
                 ? AttributeType(node.Type)
                 : null;
 
-    static XAttribute? AttributeType(Type? type, bool force = false)
+    XAttribute? AttributeType(Type? type, bool force = false)
         => type is not null && (type != typeof(void) || force)
-                ? new(AttributeNames.Type, Transform.TypeName(type))
+                ? new(AttributeNames.Type, TypeName(type))
                 : null;
 
     XAttribute? AttributeDelegateType(Type? type)
         => options.AddLambdaTypes && type is not null
-                ? new(AttributeNames.DelegateType, Transform.TypeName(type))
+                ? new(AttributeNames.DelegateType, TypeName(type))
                 : null;
 
     // Reflection stuff
 
-    static XElement? VisitMethodInfo(BinaryExpression node)
+    XElement? VisitMethodInfo(BinaryExpression node)
         => node.Method is MemberInfo mi
                 ? VisitMemberInfo(mi)
                 : null;
 
-    static XElement? VisitMethodInfo(UnaryExpression node)
+    XElement? VisitMethodInfo(UnaryExpression node)
         => node.Method is MemberInfo mi
                 ? VisitMemberInfo(mi)
                 : null;
 
-    static XElement? VisitMemberInfo(MemberInfo? member)
+    XElement? VisitMemberInfo(MemberInfo? member)
     {
         if (member is null)
             return null;
 
-        XAttribute? declaringType = member.DeclaringType is Type dt ? new XAttribute(AttributeNames.DeclaringType, Transform.TypeName(dt)) : null;
+        XAttribute? declaringType = member.DeclaringType is Type dt ? new XAttribute(AttributeNames.DeclaringType, TypeName(dt)) : null;
         XAttribute? nameAttribute = member is not ConstructorInfo && member.Name is not null ? new XAttribute(AttributeNames.Name, member.Name) : null;
         XAttribute? visibility = member switch
             {
@@ -183,7 +185,7 @@ public partial class ToXmlTransformVisitor
     /// </summary>
     /// <param name="parameters">The parameters.</param>
     /// <returns>A sequence of elements.</returns>
-    static IEnumerable<XElement> VisitParameters(IEnumerable<ParameterInfo> parameters)
+    IEnumerable<XElement> VisitParameters(IEnumerable<ParameterInfo> parameters)
         => parameters.Select(param => new XElement(
                                             ElementNames.ParameterSpec,
                                                 AttributeType(param.ParameterType),

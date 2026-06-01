@@ -20,6 +20,7 @@
   - [Services (if applicable)](#services-if-applicable)
   - [Error Handling](#error-handling)
   - [Testing](#testing)
+    - [Snapshot Test Data](#snapshot-test-data)
     - [Files with shared content](#files-with-shared-content-4)
   - [Performance](#performance)
   - [Security](#security)
@@ -67,11 +68,11 @@ This section consolidates instructions specifically for AI coding assistants (Cl
 
 The project owner is a non-native English speaker.
 
-- Always check spelling, grammar, and technical English in all documentation and comments
+- **Always correct spelling, grammar, and phrasing** — in documentation, comments, *and* the user's own chat messages — with no exceptions, except for obvious chat abbreviations (e.g. "btw", "lol") and clear fat-fingered typos
 - Recommend better wording for unclear, passive, or awkward sentences
 - Prefer active voice
 - Explain why a suggested change improves the text
-- When suggesting a correction, add one short sentence that states exactly what changed and why, especially for small edits such as punctuation, articles, or word order.
+- When suggesting a correction, add one short sentence that states exactly what changed and why, especially for small edits such as punctuation, articles, or word order
 - Examples:
   - ❌ "The pattern is being matched by the enumerator"
   - ✅ "The enumerator matches the pattern"
@@ -162,7 +163,7 @@ The project owner is a non-native English speaker.
 
 - **See .editorconfig** first
 - File-scoped namespaces
-- Implicit usings for common namespaces (defined in `usings.cs`)
+- **Global usings** for all namespaces used by more than one file in a project — declared in `usings.cs` (one per project). **Avoid adding a per-file `using` directive for a namespace that belongs in `usings.cs`**; add it to `usings.cs` instead.
 - `record` for immutable data models and DTOs
 - `readonly record struct` for small immutable value objects (e.g. `Ulid`, `Result<T>`, etc.)
 - `internal` by default; **`public` only for intentional API surface**
@@ -235,6 +236,33 @@ The project owner is a non-native English speaker.
 - Only mock external collaborators (I/O, time, random, repository, bus)
 - Do not mock value objects
 
+### Snapshot Test Data
+
+Some serialization tests use **snapshot files** (`.json`, `.xml`) stored under `tests/Serialization.TestData/TestData/`.
+
+- Snapshot files are **generated automatically** on the first test run when they are missing.
+- The `LoadTestData/` sub-folders contain **hand-authored fixtures** — never delete them.
+- All other `.json` and `.xml` files under `TestData/` are **generated artifacts** and may be deleted safely.
+- When type-name conventions, culture settings, or serialization output change, the snapshots become stale and **must be regenerated**:
+  1. Delete all generated snapshots (keep `LoadTestData/`):
+
+     PowerShell:
+     ```powershell
+     Get-ChildItem "tests\Serialization.TestData\TestData" -Recurse -Include "*.json","*.xml" |
+         Where-Object { $_.FullName -notlike "*\LoadTestData\*" } |
+         Remove-Item -Force
+     ```
+
+     Bash:
+     ```bash
+     find tests/Serialization.TestData/TestData \( -name "*.json" -o -name "*.xml" \) \
+         ! -path "*/LoadTestData/*" -delete
+     ```
+  1. Run the tests **once** — this regenerates the snapshot files (tests may fail on the first run).
+  1. Run the tests **again** — all tests should now pass as the round-trip reads succeed.
+- **Serialization MUST be culturally invariant.** All serialization entry points wrap their output in `CultureInfo.InvariantCulture` so that dates, numbers, and other locale-sensitive values are stable across OSes and .NET versions.
+- **Type names in documents MUST be round-trippable.** The `FullName` convention emits CLR bracket-notation for generics (e.g. `System.Collections.Generic.Dictionary\`2[[System.Int32],[System.String]]`) so that `Transform.GetType()` can reconstruct the type without assembly-version tokens.
+
 ### Files with shared content
 
 - `Directory.Build.props` **\*\*** — shared build configuration for tests and test libraries, including referencing and configuring the test stack: MTP v2, xUnit, FluentAssertions, NSubstitute, code coverage
@@ -247,8 +275,12 @@ The project owner is a non-native English speaker.
 
 - `AsNoTracking()` for read-only EF queries.
 - No unnecessary `ToList()` inside query pipelines.
-- `ReadOnlySpan<char>` for parsing hot paths.
+- `ReadOnlySpan<char>` / `Span<char>` for parsing hot paths; use `AsSpan().Trim()` instead of `string.Trim()` to avoid allocating an intermediate `string`.
 - `stackalloc` for small buffers with heap fallback for large inputs.
+- **Prefer `StringBuilder` with a recursive `Append`-based helper over `string.Join` + `Select` for multi-part or recursive string construction** — the latter creates one intermediate `string` per element; the former allocates a single `StringBuilder` and one final `ToString()` regardless of depth.
+- **Pre-count before allocating collections**: when building an array of known size (e.g. splitting a delimited string), scan once to count, allocate the exact-size array, then fill in a second pass — avoids the `List<T>` + `[.. list]` double-allocation pattern.
+- **Avoid `Split` just to index into the result**: use `IndexOf` + `AsSpan` slicing to extract a prefix or suffix without allocating a `string[]`.
+- `string.Join` and LINQ `Select` are convenient but each allocates an enumerator and one string per element — replace with a `StringBuilder` loop on hot paths.
 
 ## Security
 

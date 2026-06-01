@@ -3,11 +3,11 @@
   "$comment": " StructDataContract1 ",
   "expression": {
     "constant": {
-      "$comment": " nullable\u003Cvm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1\u003E ",
+      "$comment": " System.Nullable\u00601[[vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1]] ",
       "nullable": {
         "$comment": " vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1 ",
         "object": {
-          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1",
           "value": {
             "IntProperty": 7,
             "StringProperty": "vm"

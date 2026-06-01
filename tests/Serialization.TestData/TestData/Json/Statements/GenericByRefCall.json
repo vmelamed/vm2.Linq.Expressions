@@ -39,13 +39,13 @@
               "call": {
                 "type": "int",
                 "method": {
-                  "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.GenericMethodFixtures, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                  "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.GenericMethodFixtures",
                   "static": true,
                   "type": "int",
                   "name": "EchoByRef",
                   "parameterSpecs": [
                     {
-                      "type": "System.Int32\u0026, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                      "type": "System.Int32\u0026",
                       "name": "value",
                       "isByRef": true
                     }

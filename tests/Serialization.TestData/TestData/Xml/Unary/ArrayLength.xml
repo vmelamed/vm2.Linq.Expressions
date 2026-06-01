@@ -7,7 +7,7 @@
         type="int">
         <parameters>
             <parameter
-                type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                type="System.Int32[]"
                 id="P1"
                 name="a" />
         </parameters>
@@ -15,7 +15,7 @@
             <arrayLength
                 type="int">
                 <parameter
-                    type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                    type="System.Int32[]"
                     id="P1"
                     name="a" />
             </arrayLength>

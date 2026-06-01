@@ -4,14 +4,14 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <lambda
-        type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized">
         <parameters />
         <body>
             <memberInit
-                type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+                type="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized">
                 <new>
                     <constructor
-                        declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+                        declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized">
                         <parameterSpecs />
                     </constructor>
                     <arguments />
@@ -19,7 +19,7 @@
                 <bindings>
                     <assignmentBinding>
                         <property
-                            declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                            declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized"
                             type="int"
                             name="TheOuterIntProperty" />
                         <constant>
@@ -28,7 +28,7 @@
                     </assignmentBinding>
                     <assignmentBinding>
                         <property
-                            declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                            declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized"
                             type="dateTime"
                             name="Time" />
                         <new>
@@ -61,14 +61,14 @@
                     </assignmentBinding>
                     <assignmentBinding>
                         <property
-                            declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
-                            type="vm2.Tests.Linq.Expressions.Serialization.Data.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                            declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized"
+                            type="vm2.Tests.Linq.Expressions.Serialization.Data.Inner"
                             name="InnerProperty" />
                         <memberInit
-                            type="vm2.Tests.Linq.Expressions.Serialization.Data.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+                            type="vm2.Tests.Linq.Expressions.Serialization.Data.Inner">
                             <new>
                                 <constructor
-                                    declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+                                    declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.Inner">
                                     <parameterSpecs />
                                 </constructor>
                                 <arguments />
@@ -76,7 +76,7 @@
                             <bindings>
                                 <assignmentBinding>
                                     <property
-                                        declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                                        declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.Inner"
                                         type="int"
                                         name="IntProperty" />
                                     <constant>
@@ -85,7 +85,7 @@
                                 </assignmentBinding>
                                 <assignmentBinding>
                                     <property
-                                        declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+                                        declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.Inner"
                                         type="string"
                                         name="StringProperty" />
                                     <constant>
@@ -97,13 +97,13 @@
                     </assignmentBinding>
                     <assignmentBinding>
                         <property
-                            declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
-                            type="System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                            declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized"
+                            type="System.Collections.Generic.IEnumerable`1[[System.String]]"
                             name="EnumerableProperty" />
                         <listInit>
                             <new>
                                 <constructor
-                                    declaringType="System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+                                    declaringType="System.Collections.Generic.List`1[[System.String]]">
                                     <parameterSpecs />
                                 </constructor>
                                 <arguments />
@@ -111,7 +111,7 @@
                             <initializers>
                                 <elementInit>
                                     <method
-                                        declaringType="System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                                        declaringType="System.Collections.Generic.List`1[[System.String]]"
                                         type="void"
                                         name="Add">
                                         <parameterSpecs>
@@ -128,7 +128,7 @@
                                 </elementInit>
                                 <elementInit>
                                     <method
-                                        declaringType="System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                                        declaringType="System.Collections.Generic.List`1[[System.String]]"
                                         type="void"
                                         name="Add">
                                         <parameterSpecs>
@@ -145,7 +145,7 @@
                                 </elementInit>
                                 <elementInit>
                                     <method
-                                        declaringType="System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
+                                        declaringType="System.Collections.Generic.List`1[[System.String]]"
                                         type="void"
                                         name="Add">
                                         <parameterSpecs>

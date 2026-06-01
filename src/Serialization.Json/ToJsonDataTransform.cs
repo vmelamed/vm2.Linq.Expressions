@@ -12,6 +12,8 @@ partial class ToJsonDataTransform(JsonOptions options)
     /// <returns>JElement.</returns>
     public JElement TransformNode(ConstantExpression node) => GetTransform(node.Type)(node.Value, node.Type);
 
+    string TypeName(Type type) => Transform.TypeName(type, options.TypeNames);
+
     /// <summary>
     /// Gets the best matching transform function for the type encapsulated in the  for the specified <paramref name="type"/>.
     /// </summary>
@@ -67,7 +69,7 @@ partial class ToJsonDataTransform(JsonOptions options)
         Debug.Assert(nodeValue is not null);
 
         var strValue = nodeValue.ToString();
-        var valueType = new JElement(Vocabulary.Type, Transform.TypeName(nodeType));
+        var valueType = new JElement(Vocabulary.Type, TypeName(nodeType));
         var valueElement = new JElement(Vocabulary.Value);
 
         if (strValue is not null && nodeType.IsDefined(typeof(FlagsAttribute)))
@@ -85,7 +87,7 @@ partial class ToJsonDataTransform(JsonOptions options)
                         Vocabulary.Enum,
                             valueType,
                             valueElement,
-                            underlyingType != typeof(int) ? new JElement(Vocabulary.BaseType, Transform.TypeName(underlyingType)) : null,
+                            underlyingType != typeof(int) ? new JElement(Vocabulary.BaseType, TypeName(underlyingType)) : null,
                             new JElement(Vocabulary.BaseValue, (int)nodeValue)
                     );
     }
@@ -104,7 +106,7 @@ partial class ToJsonDataTransform(JsonOptions options)
         if (nodeValue is null || nodeType.GetProperty("HasValue")?.GetValue(nodeValue) is false)
             return new JElement(
                             Vocabulary.Nullable,
-                                new JElement(Vocabulary.Type, Transform.TypeName(underlyingType)),
+                                new JElement(Vocabulary.Type, TypeName(underlyingType)),
                                 new JElement(Vocabulary.Value));    // null value
 
         var value = nodeType.GetProperty(nameof(Nullable<>.Value))?.GetValue(nodeValue)
@@ -128,7 +130,7 @@ partial class ToJsonDataTransform(JsonOptions options)
     {
         var sequenceElement = new JElement(
                                     Vocabulary.ByteSequence,
-                                        new JElement(Vocabulary.Type, Transform.TypeName(nodeType)),
+                                        new JElement(Vocabulary.Type, TypeName(nodeType)),
                                         nodeValue is null ? new JElement(Vocabulary.Value) : null
                                 );
         ReadOnlySpan<byte> bytes;
@@ -179,7 +181,7 @@ partial class ToJsonDataTransform(JsonOptions options)
             Vocabulary.Anonymous,
                 new JElement(
                         Vocabulary.Type,
-                        Transform.TypeName(nodeType)),
+                        TypeName(nodeType)),
                 new JElement(
                         Vocabulary.Value,
                         nodeType
@@ -200,7 +202,7 @@ partial class ToJsonDataTransform(JsonOptions options)
         var value = nodeValue is not null ? new JsonObject() : null;
         var tupleElement = new JElement(
                                     Vocabulary.Tuple,
-                                        new JElement(Vocabulary.Type, Transform.TypeName(nodeType)),
+                                        new JElement(Vocabulary.Type, TypeName(nodeType)),
                                         new JElement(Vocabulary.Value, value));
 
         if (nodeValue is null)
@@ -242,7 +244,7 @@ partial class ToJsonDataTransform(JsonOptions options)
         if (nodeValue is null)
             return new JElement(
                             Vocabulary.Sequence,
-                                new JElement(Vocabulary.Type, Transform.TypeName(nodeType)),
+                                new JElement(Vocabulary.Type, TypeName(nodeType)),
                                 options.TypeComment(elementType),
                                 new JElement(Vocabulary.Value)
                         );
@@ -263,7 +265,7 @@ partial class ToJsonDataTransform(JsonOptions options)
 
         return new JElement(
                         Vocabulary.Sequence,
-                            new JElement(Vocabulary.Type, Transform.TypeName(nodeType)),
+                            new JElement(Vocabulary.Type, TypeName(nodeType)),
                             options.TypeComment(elementType),
                             new JElement(
                                     Vocabulary.Value,
@@ -287,8 +289,8 @@ partial class ToJsonDataTransform(JsonOptions options)
         if (nodeValue is null)
             return new JElement(
                             Vocabulary.Dictionary,
-                                new JElement(Vocabulary.Type, Transform.TypeName(nodeType)),
-                                new JElement(Vocabulary.Value));
+                                new JElement(Vocabulary.Type, TypeName(nodeType)),
+                                                new JElement(Vocabulary.Value));
 
         if (nodeValue is not IDictionary dict)
             throw new InternalTransformErrorException("The v of type 'Dictionary' doesn't implement IDictionary.");
@@ -324,7 +326,7 @@ partial class ToJsonDataTransform(JsonOptions options)
         var dictElements = new JsonArray();
         var dictionary = new JElement(
                                 Vocabulary.Dictionary,
-                                    new JElement(Vocabulary.Type, Transform.TypeName(nodeType)),
+                                    new JElement(Vocabulary.Type, TypeName(nodeType)),
                                     new JElement(Vocabulary.Value, (JsonNode)dictElements));
 
         foreach (DictionaryEntry kv in dict)
@@ -354,9 +356,9 @@ partial class ToJsonDataTransform(JsonOptions options)
         var concreteType = nodeValue?.GetType();
         var obj = new JElement(
                         Vocabulary.Object,
-                            new JElement(Vocabulary.Type, Transform.TypeName(nodeType)),
+                            new JElement(Vocabulary.Type, TypeName(nodeType)),
                             concreteType is not null && concreteType != nodeType
-                                ? new JElement(Vocabulary.ConcreteType, Transform.TypeName(concreteType))
+                                ? new JElement(Vocabulary.ConcreteType, TypeName(concreteType))
                                 : null);
 
         if (nodeValue is null)

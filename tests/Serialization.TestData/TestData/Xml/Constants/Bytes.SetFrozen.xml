@@ -4,9 +4,9 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <constant>
-        <!--  System.Collections.Frozen.SmallValueTypeComparableFrozenSet<byte>  -->
+        <!--  System.Collections.Frozen.SmallValueTypeComparableFrozenSet`1[[System.Byte]]  -->
         <sequence
-            type="System.Collections.Frozen.SmallValueTypeComparableFrozenSet`1[[System.Byte, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Collections.Immutable, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+            type="System.Collections.Frozen.SmallValueTypeComparableFrozenSet`1[[System.Byte]]"
             elementType="byte"
             length="4">
             <byte>1</byte>

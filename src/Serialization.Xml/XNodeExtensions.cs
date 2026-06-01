@@ -141,7 +141,7 @@ public static class XNodeExtensions
             return false;
 
         return Vocabulary.NamesToTypes.TryGetValue(typeName, out type) ||
-               (type = Type.GetType(typeName)) is not null;
+               (type = Transform.GetType(typeName)) is not null;
     }
 
     /// <summary>

@@ -5,14 +5,14 @@
     "constant": {
       "$comment": " System.Nullable\u00601[[vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]][] ",
       "sequence": {
-        "type": "System.Nullable\u00601[[vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]][], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-        "$comment": " nullable\u003Cvm2.Tests.Linq.Expressions.Serialization.Data.EnumTest\u003E ",
+        "type": "System.Nullable\u00601[[vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]][]",
+        "$comment": " System.Nullable\u00601[[vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest]] ",
         "value": [
           {
             "nullable": {
               "$comment": " vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest ",
               "enum": {
-                "type": "vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "type": "vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest",
                 "value": "One",
                 "baseValue": 0
               }
@@ -22,7 +22,7 @@
             "nullable": {
               "$comment": " vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest ",
               "enum": {
-                "type": "vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "type": "vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest",
                 "value": "Two",
                 "baseValue": 1
               }
@@ -30,13 +30,13 @@
           },
           {
             "nullable": {
-              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest",
               "value": null
             }
           },
           {
             "nullable": {
-              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest",
               "value": null
             }
           }

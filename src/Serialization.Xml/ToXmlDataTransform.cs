@@ -9,6 +9,8 @@ partial class ToXmlDataTransform(XmlOptions options)
 {
     public XNode TransformNode(ConstantExpression node) => GetTransform(node.Type)(node.Value, node.Type);
 
+    string TypeName(Type type) => Transform.TypeName(type, options.TypeNames);
+
     /// <summary>
     /// Gets the best matching transform function for the type encapsulated in the  for the specified <paramref name="type"/>.
     /// </summary>
@@ -66,8 +68,8 @@ partial class ToXmlDataTransform(XmlOptions options)
 
         return new XElement(
                         ElementNames.Enum,
-                        new XAttribute(AttributeNames.Type, Transform.TypeName(nodeType)),
-                        baseType != typeof(int) ? new XAttribute(AttributeNames.BaseType, Transform.TypeName(baseType)) : null,
+                        new XAttribute(AttributeNames.Type, TypeName(nodeType)),
+                        baseType != typeof(int) ? new XAttribute(AttributeNames.BaseType, TypeName(baseType)) : null,
                         new XAttribute(AttributeNames.BaseValue, value!.ToString()!),
                         nodeValue!.ToString()
                     );
@@ -88,7 +90,7 @@ partial class ToXmlDataTransform(XmlOptions options)
 
         var nullableElement = new XElement(
                                     ElementNames.Nullable,
-                                    isNull ? new XAttribute(AttributeNames.Type, Transform.TypeName(underlyingType)) : null,
+                                    isNull ? new XAttribute(AttributeNames.Type, TypeName(underlyingType)) : null,
                                     isNull ? new XAttribute(AttributeNames.Nil, isNull) : null);
 
         if (isNull)
@@ -115,7 +117,7 @@ partial class ToXmlDataTransform(XmlOptions options)
     {
         var anonymousElement = new XElement(
                                     ElementNames.Anonymous,
-                                    new XAttribute(AttributeNames.Type, Transform.TypeName(nodeType)));
+                                    new XAttribute(AttributeNames.Type, TypeName(nodeType)));
 
         anonymousElement.Add(
             nodeType
@@ -142,7 +144,7 @@ partial class ToXmlDataTransform(XmlOptions options)
     {
         var sequenceElement = new XElement(
                                     ElementNames.ByteSequence,
-                                    new XAttribute(AttributeNames.Type, Transform.TypeName(nodeType)),
+                                    new XAttribute(AttributeNames.Type, TypeName(nodeType)),
                                     nodeValue is null ? new XAttribute(AttributeNames.Nil, true) : null
                                 );
         ReadOnlySpan<byte> bytes;
@@ -199,9 +201,9 @@ partial class ToXmlDataTransform(XmlOptions options)
             if (nodeValue is null)
                 return new XElement(
                                 ElementNames.Collection,
-                                new XAttribute(AttributeNames.Type, Transform.TypeName(nodeType)),
+                                new XAttribute(AttributeNames.Type, TypeName(nodeType)),
                                 options.TypeComment(elementType),
-                                new XAttribute(AttributeNames.ElementType, Transform.TypeName(elementType)),
+                                new XAttribute(AttributeNames.ElementType, TypeName(elementType)),
                                 new XAttribute(AttributeNames.Nil, true)
                             );
 
@@ -209,8 +211,8 @@ partial class ToXmlDataTransform(XmlOptions options)
             var length = (int?)piCount?.GetValue(nodeValue);
             var collectionElement = new XElement(
                                         ElementNames.Collection,
-                                        new XAttribute(AttributeNames.Type, Transform.TypeName(nodeType)),
-                                        new XAttribute(AttributeNames.ElementType, Transform.TypeName(elementType)),
+                                        new XAttribute(AttributeNames.Type, TypeName(nodeType)),
+                                        new XAttribute(AttributeNames.ElementType, TypeName(elementType)),
                                         length is not null ? new XAttribute(AttributeNames.Length, length.Value) : null,
                                         options.TypeComment(elementType)
                                     );
@@ -259,7 +261,7 @@ partial class ToXmlDataTransform(XmlOptions options)
 
         var tupleElement = new XElement(
                                     ElementNames.Tuple,
-                                    new XAttribute(AttributeNames.Type, Transform.TypeName(nodeType)),
+                                    new XAttribute(AttributeNames.Type, TypeName(nodeType)),
                                     nodeValue is null ? new XAttribute(AttributeNames.Nil, true) : null);
 
         if (nodeValue is null)
@@ -300,7 +302,7 @@ partial class ToXmlDataTransform(XmlOptions options)
         if (nodeValue is null)
             return new XElement(
                                 ElementNames.Dictionary,
-                                new XAttribute(AttributeNames.Type, Transform.TypeName(nodeType)),
+                                new XAttribute(AttributeNames.Type, TypeName(nodeType)),
                                 nodeValue is null ? new XAttribute(AttributeNames.Nil, true) : null);
 
         if (nodeValue is not IDictionary dict)
@@ -309,7 +311,7 @@ partial class ToXmlDataTransform(XmlOptions options)
         var length = dict.Count;
         var dictElement = new XElement(
                                 ElementNames.Dictionary,
-                                new XAttribute(AttributeNames.Type, Transform.TypeName(nodeType)),
+                                new XAttribute(AttributeNames.Type, TypeName(nodeType)),
                                 new XAttribute(AttributeNames.Length, length),
                                 nodeValue is null ? new XAttribute(AttributeNames.Nil, true) : null);
 
@@ -367,7 +369,7 @@ partial class ToXmlDataTransform(XmlOptions options)
         {
             element.Add(new XAttribute(AttributeNames.Nil, true));
             if (nodeType != typeof(object))
-                element.Add(new XAttribute(AttributeNames.Type, Transform.TypeName(nodeType)));
+                element.Add(new XAttribute(AttributeNames.Type, TypeName(nodeType)));
             return element;
         }
 
@@ -382,8 +384,8 @@ partial class ToXmlDataTransform(XmlOptions options)
             return actualTransform(nodeValue, actualType);
 
         element.Add(
-            new XAttribute(AttributeNames.Type, Transform.TypeName(nodeType)),
-            nodeType != actualType ? new XAttribute(AttributeNames.ConcreteType, Transform.TypeName(actualType)) : null
+            new XAttribute(AttributeNames.Type, TypeName(nodeType)),
+            nodeType != actualType ? new XAttribute(AttributeNames.ConcreteType, TypeName(actualType)) : null
         );
 
         var dcSerializer = new DataContractSerializer(actualType);
