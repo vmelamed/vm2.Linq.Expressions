@@ -1,8 +1,5 @@
 namespace vm2.Tests.Linq.Expressions.Serialization.Json;
 
-using vm2.Linq.Expressions.Serialization;
-using vm2.Linq.Expressions.Serialization.Json;
-
 [ExcludeFromCodeCoverage]
 public class JsonFacadeTests
 {

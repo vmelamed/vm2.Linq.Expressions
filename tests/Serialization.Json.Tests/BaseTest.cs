@@ -1,8 +1,5 @@
 namespace vm2.Tests.Linq.Expressions.Serialization.Json;
 
-using vm2.TestUtilities;
-
-
 [CollectionDefinition("JSON")]
 public abstract class BaseTests(
         JsonTestsFixture fixture,

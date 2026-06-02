@@ -1,6 +1,5 @@
 ﻿namespace vm2.Tests.Linq.Expressions.Serialization.Data;
 
-[RequiresDynamicCode("Tests are not AOT build")]
 public static class LambdaTestData
 {
     /// <summary>
