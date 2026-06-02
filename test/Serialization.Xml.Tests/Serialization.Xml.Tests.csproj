@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>vm2.Tests.Linq.Expressions.Serialization.Xml</RootNamespace>
+        <!-- Suppress xunit analyzer crash (AD0001) on cross-assembly MemberData references -->
+        <NoWarn>$(NoWarn);AD0001</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\DeepEquals\DeepEquals.csproj" />
+        <ProjectReference Include="..\..\src\Serialization.Abstractions\Serialization.Abstractions.csproj" />
+        <ProjectReference Include="..\..\src\Serialization.Xml\Serialization.Xml.csproj" />
+        <ProjectReference Include="..\Serialization.TestData\Serialization.TestData.csproj" />
+    </ItemGroup>
+
+</Project>

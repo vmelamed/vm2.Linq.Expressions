@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>vm2.Tests.Linq.Expressions.Serialization.Json</RootNamespace>
+        <!-- Suppress xunit analyzer crash (AD0001) on cross-assembly MemberData references -->
+        <NoWarn>$(NoWarn);AD0001</NoWarn>
+    </PropertyGroup>
+
+    <!--
+    By default JSON validation is done with Json.Schema from https://docs.json-everything.net/.
+    As of v9.2 floating-point issues seam to be fixed, but it still fails on deeply nested oneOf + recursive $ref
+    (see StatementTests NewMembersInit1/2). Its SchemaRegistry.Global is also not thread-safe.
+    It uses System.Text.Json like this project.
+
+    If NEWTONSOFT_SCHEMA is defined, tests also exercise the Newtonsoft.Json.Schema path.
+
+    ATTENTION: The definition of NEWTONSOFT_SCHEMA switch must be equivalent in all projects that use schema validation, e.g.
+        Serialization.Json.csproj,
+        Serialization.Json.Tests.csproj
+    -->
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\DeepEquals\DeepEquals.csproj" />
+        <ProjectReference Include="..\..\src\Serialization.Abstractions\Serialization.Abstractions.csproj" />
+        <ProjectReference Include="..\..\src\Serialization.Json\Serialization.Json.csproj" />
+        <ProjectReference Include="..\Serialization.TestData\Serialization.TestData.csproj" />
+    </ItemGroup>
+
+</Project>
