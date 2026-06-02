@@ -6,7 +6,6 @@
     <constant>
         <!--  vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1[]  -->
         <sequence
-<<<<<<< HEAD
             type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1[]"
             elementType="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1">
             <!--  vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1  -->
@@ -21,23 +20,6 @@
             </object>
             <object
                 type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1">
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-            type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1[], Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
-            elementType="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-            <!--  vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1  -->
-            <object
-                type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-                <ClassDataContract1
-                    xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
-                    xmlns="http://schemas.datacontract.org/2004/07/vm2.Tests.Linq.Expressions.Serialization.Data">
-                    <IntProperty>0</IntProperty>
-                    <StringProperty>vm</StringProperty>
-                </ClassDataContract1>
-            </object>
-            <object
-                type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
                 <ClassDataContract1
                     xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
                     xmlns="http://schemas.datacontract.org/2004/07/vm2.Tests.Linq.Expressions.Serialization.Data">

@@ -7,7 +7,6 @@
         type="int">
         <parameters>
             <parameter
-<<<<<<< HEAD
                 type="System.Func`2[[System.Int32],[System.Int32]]"
                 id="P1"
                 name="f" />
@@ -21,22 +20,6 @@
                 type="System.Func`2[[System.Int32],[System.Int32]]">
                 <parameter
                     type="System.Func`2[[System.Int32],[System.Int32]]"
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-                type="System.Func`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
-                id="P1"
-                name="f" />
-            <parameter
-                type="int"
-                id="P2"
-                name="a" />
-        </parameters>
-        <body>
-            <invoke
-                type="System.Func`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-                <parameter
-                    type="System.Func`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
                     id="P1"
                     name="f" />
                 <arguments>

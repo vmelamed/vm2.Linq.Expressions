@@ -3,16 +3,9 @@
   "$comment": " value(System.Collections.ObjectModel.ReadOnlyDictionary\u00602[System.Int32,System.String]) ",
   "expression": {
     "constant": {
-<<<<<<< HEAD
       "$comment": " System.Collections.ObjectModel.ReadOnlyDictionary\u00602[[System.Int32],[System.String]] ",
       "dictionary": {
         "type": "System.Collections.ObjectModel.ReadOnlyDictionary\u00602[[System.Int32],[System.String]]",
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-      "$comment": " System.Collections.ObjectModel.ReadOnlyDictionary\u003Cint, string\u003E ",
-      "dictionary": {
-        "type": "System.Collections.ObjectModel.ReadOnlyDictionary\u00602[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
         "value": [
           {
             "key": {

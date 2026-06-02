@@ -8,7 +8,6 @@
             <call
                 type="void">
                 <method
-<<<<<<< HEAD
                     declaringType="System.Console"
                     static="true"
                     type="void"
@@ -101,101 +100,6 @@
                             </object>
                             <property
                                 declaringType="System.ArgumentException"
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-                    declaringType="System.Console, System.Console, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-                    static="true"
-                    type="void"
-                    name="WriteLine">
-                    <parameterSpecs>
-                        <parameterSpec
-                            type="string"
-                            name="value" />
-                    </parameterSpecs>
-                </method>
-                <arguments>
-                    <constant>
-                        <string>TryBody</string>
-                    </constant>
-                </arguments>
-            </call>
-            <throw>
-                <new>
-                    <constructor
-                        declaringType="System.Exception, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-                        <parameterSpecs />
-                    </constructor>
-                    <arguments />
-                </new>
-            </throw>
-        </block>
-        <catch
-            type="System.ArgumentException, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-            <exception
-                type="System.ArgumentException, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
-                id="P1"
-                name="x" />
-            <filter>
-                <equal
-                    type="boolean">
-                    <memberAccess
-                        type="string">
-                        <object>
-                            <parameter
-                                type="System.ArgumentException, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
-                                id="P1"
-                                name="x" />
-                        </object>
-                        <property
-                            declaringType="System.ArgumentException, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
-                            type="string"
-                            name="ParamName" />
-                    </memberAccess>
-                    <constant>
-                        <string>x</string>
-                    </constant>
-                    <method
-                        declaringType="string"
-                        static="true"
-                        type="boolean"
-                        name="op_Equality">
-                        <parameterSpecs>
-                            <parameterSpec
-                                type="string"
-                                name="a" />
-                            <parameterSpec
-                                type="string"
-                                name="b" />
-                        </parameterSpecs>
-                    </method>
-                </equal>
-            </filter>
-            <body>
-                <call
-                    type="void">
-                    <method
-                        declaringType="System.Console, System.Console, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-                        static="true"
-                        type="void"
-                        name="WriteLine">
-                        <parameterSpecs>
-                            <parameterSpec
-                                type="string"
-                                name="value" />
-                        </parameterSpecs>
-                    </method>
-                    <arguments>
-                        <memberAccess
-                            type="string">
-                            <object>
-                                <parameter
-                                    type="System.ArgumentException, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
-                                    id="P1"
-                                    name="x" />
-                            </object>
-                            <property
-                                declaringType="System.ArgumentException, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
                                 type="string"
                                 name="ParamName" />
                         </memberAccess>

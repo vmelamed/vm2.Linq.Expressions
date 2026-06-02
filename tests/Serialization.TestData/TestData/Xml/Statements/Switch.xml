@@ -18,7 +18,6 @@
                 <call
                     type="void">
                     <method
-<<<<<<< HEAD
                         declaringType="System.Console"
                         static="true"
                         type="void"
@@ -76,66 +75,6 @@
                 type="void">
                 <method
                     declaringType="System.Console"
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-                        declaringType="System.Console, System.Console, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-                        static="true"
-                        type="void"
-                        name="WriteLine">
-                        <parameterSpecs>
-                            <parameterSpec
-                                type="string"
-                                name="value" />
-                        </parameterSpecs>
-                    </method>
-                    <arguments>
-                        <constant>
-                            <string>FirstChild</string>
-                        </constant>
-                    </arguments>
-                </call>
-            </body>
-        </case>
-        <case>
-            <caseValues>
-                <constant>
-                    <int>2</int>
-                </constant>
-                <constant>
-                    <int>3</int>
-                </constant>
-                <constant>
-                    <int>4</int>
-                </constant>
-            </caseValues>
-            <body>
-                <call
-                    type="void">
-                    <method
-                        declaringType="System.Console, System.Console, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-                        static="true"
-                        type="void"
-                        name="WriteLine">
-                        <parameterSpecs>
-                            <parameterSpec
-                                type="string"
-                                name="value" />
-                        </parameterSpecs>
-                    </method>
-                    <arguments>
-                        <constant>
-                            <string>Second</string>
-                        </constant>
-                    </arguments>
-                </call>
-            </body>
-        </case>
-        <defaultCase>
-            <call
-                type="void">
-                <method
-                    declaringType="System.Console, System.Console, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
                     static="true"
                     type="void"
                     name="WriteLine">

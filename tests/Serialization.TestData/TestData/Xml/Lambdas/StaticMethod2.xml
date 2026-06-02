@@ -15,7 +15,6 @@
             <call
                 type="int">
                 <method
-<<<<<<< HEAD
                     declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMethods"
                     static="true"
                     type="int"
@@ -42,32 +41,3 @@
         </body>
     </lambda>
 </expression>
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-                    declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.TestMethods, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
-                    static="true"
-                    type="int"
-                    name="Method2">
-                    <parameterSpecs>
-                        <parameterSpec
-                            type="int"
-                            name="i" />
-                        <parameterSpec
-                            type="string"
-                            name="_" />
-                    </parameterSpecs>
-                </method>
-                <arguments>
-                    <parameter
-                        type="int"
-                        id="P1"
-                        name="i" />
-                    <constant>
-                        <string></string>
-                    </constant>
-                </arguments>
-            </call>
-        </body>
-    </lambda>
-</expression>
->>>>>>> 335f1e0 (refactor: rename test/ to tests)

@@ -6,7 +6,6 @@
     <constant>
         <!--  vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1  -->
         <object
-<<<<<<< HEAD
             type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1"
             concreteType="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract2">
             <ClassDataContract2
@@ -19,18 +18,3 @@
         </object>
     </constant>
 </expression>
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-            type="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
-            concreteType="vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract2, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-            <ClassDataContract2
-                xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
-                xmlns="http://schemas.datacontract.org/2004/07/vm2.Tests.Linq.Expressions.Serialization.Data">
-                <IntProperty>1</IntProperty>
-                <StringProperty>two</StringProperty>
-                <DecimalProperty>3</DecimalProperty>
-            </ClassDataContract2>
-        </object>
-    </constant>
-</expression>
->>>>>>> 335f1e0 (refactor: rename test/ to tests)

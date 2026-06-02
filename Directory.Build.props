@@ -143,8 +143,9 @@
              TestingPlatformServer/TestContainer capabilities, causing an infinite project
              reload loop (Solution Explorer flickering).  Disabling the server capability
              stops the loop.  Tests still run from CLI and VS Build+Run (Ctrl+R,A). -->
-        <DisableTestingPlatformServerCapability Condition="'$(BuildingInsideVisualStudio)' == 'true'
-            ">true</DisableTestingPlatformServerCapability>
+        <DisableTestingPlatformServerCapability>true</DisableTestingPlatformServerCapability>
+        <!-- <DisableTestingPlatformServerCapability Condition="'$(BuildingInsideVisualStudio)' == 'true'
+            ">true</DisableTestingPlatformServerCapability> -->
 
         <!-- MTP v2: Configure coverage with coverage.settings.xml (only outside VS — VS has its own coverage tools) -->
         <TestingPlatformCommandLineArguments Condition="'$(BuildingInsideVisualStudio)' != 'true'

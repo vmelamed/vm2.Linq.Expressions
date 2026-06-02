@@ -6,7 +6,6 @@
       "type": "int",
       "parameters": [
         {
-<<<<<<< HEAD
           "type": "System.Nullable\u00601[[System.Int32]]",
           "name": "a",
           "id": "P1"
@@ -24,26 +23,6 @@
             {
               "parameter": {
                 "type": "System.Nullable\u00601[[System.Int32]]",
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-          "type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-          "name": "a",
-          "id": "P1"
-        },
-        {
-          "type": "int",
-          "name": "b",
-          "id": "P2"
-        }
-      ],
-      "body": {
-        "coalesce": {
-          "type": "int",
-          "operands": [
-            {
-              "parameter": {
-                "type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
                 "name": "a",
                 "id": "P1"
               }

@@ -5,7 +5,6 @@
     "constant": {
       "$comment": " vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1[] ",
       "sequence": {
-<<<<<<< HEAD
         "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1[]",
         "$comment": " vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1 ",
         "value": [
@@ -34,37 +33,6 @@
           {
             "object": {
               "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1",
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-        "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1[], Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-        "$comment": " vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1 ",
-        "value": [
-          {
-            "object": {
-              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-              "value": {
-                "$id": "1",
-                "IntProperty": 7,
-                "StringProperty": "vm"
-              }
-            }
-          },
-          {
-            "object": {
-              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-              "concreteType": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract2, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-              "value": {
-                "$id": "1",
-                "DecimalProperty": 17,
-                "IntProperty": 7,
-                "StringProperty": "vm"
-              }
-            }
-          },
-          {
-            "object": {
-              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.ClassDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
               "value": null
             }
           }

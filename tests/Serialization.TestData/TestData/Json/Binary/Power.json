@@ -21,12 +21,7 @@
             }
           ],
           "method": {
-<<<<<<< HEAD
             "declaringType": "System.Math",
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-            "declaringType": "System.Math, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
             "static": true,
             "type": "double",
             "name": "Pow",

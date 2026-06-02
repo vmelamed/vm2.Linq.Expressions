@@ -10,7 +10,6 @@
           "type": "int",
           "member": {
             "field": {
-<<<<<<< HEAD
               "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMethods",
               "static": true,
               "readOnly": true,
@@ -23,18 +22,3 @@
     }
   }
 }
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-              "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMethods, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-              "static": true,
-              "readOnly": true,
-              "type": "int",
-              "name": "S"
-            }
-          }
-        }
-      }
-    }
-  }
-}
->>>>>>> 335f1e0 (refactor: rename test/ to tests)

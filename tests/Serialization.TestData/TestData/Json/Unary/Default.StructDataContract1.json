@@ -3,12 +3,7 @@
   "$comment": " default(StructDataContract1) ",
   "expression": {
     "default": {
-<<<<<<< HEAD
       "type": "vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1",
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-      "type": "vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
       "$comment": " vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1 "
     }
   }
