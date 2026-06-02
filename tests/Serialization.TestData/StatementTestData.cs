@@ -1,14 +1,6 @@
 ﻿namespace vm2.Tests.Linq.Expressions.Serialization.Data;
 
-using System.Diagnostics.CodeAnalysis;
-
-using System.Diagnostics.CodeAnalysis;
-
-#pragma warning disable IDE0300 // Simplify collection initialization
-#pragma warning disable IDE0056 // Use index operator
-
 [RequiresDynamicCode("Tests are not AOT build")]
-
 public static class StatementTestData
 {
     /// <summary>

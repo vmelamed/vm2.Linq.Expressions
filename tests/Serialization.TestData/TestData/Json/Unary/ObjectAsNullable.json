@@ -3,7 +3,6 @@
   "$comment": " c =\u003E (c As Nullable\u00601) ",
   "expression": {
     "lambda": {
-<<<<<<< HEAD
       "type": "System.Nullable\u00601[[System.Int32]]",
       "parameters": [
         {
@@ -15,20 +14,6 @@
       "body": {
         "typeAs": {
           "type": "System.Nullable\u00601[[System.Int32]]",
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-      "type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-      "parameters": [
-        {
-          "type": "object",
-          "name": "c",
-          "id": "P1"
-        }
-      ],
-      "body": {
-        "typeAs": {
-          "type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
           "operand": {
             "parameter": {
               "type": "object",

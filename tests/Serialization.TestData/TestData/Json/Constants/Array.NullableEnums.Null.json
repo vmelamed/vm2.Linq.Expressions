@@ -5,14 +5,8 @@
     "constant": {
       "$comment": " System.Nullable\u00601[[vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]][] ",
       "sequence": {
-<<<<<<< HEAD
         "type": "System.Nullable\u00601[[vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]][]",
         "$comment": " System.Nullable\u00601[[vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest]] ",
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-        "type": "System.Nullable\u00601[[vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]][], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-        "$comment": " nullable\u003Cvm2.Tests.Linq.Expressions.Serialization.Data.EnumTest\u003E ",
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
         "value": null
       }
     }

@@ -6,16 +6,9 @@
     <constant>
         <!--  System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]  -->
         <sequence
-<<<<<<< HEAD
             type="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]"
             elementType="System.Nullable`1[[System.Int32]]">
             <!--  System.Nullable`1[[System.Int32]]  -->
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-            type="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
-            elementType="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-            <!--  nullable<int>  -->
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
             <nullable>
                 <int>1</int>
             </nullable>

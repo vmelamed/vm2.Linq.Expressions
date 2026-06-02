@@ -3,12 +3,7 @@
   "$comment": " 5 ",
   "expression": {
     "constant": {
-<<<<<<< HEAD
       "$comment": " System.Nullable\u00601[[System.Int32]] ",
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-      "$comment": " nullable\u003Cint\u003E ",
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
       "nullable": {
         "int": 5
       }

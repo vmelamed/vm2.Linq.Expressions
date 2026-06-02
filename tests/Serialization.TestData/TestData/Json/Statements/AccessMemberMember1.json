@@ -1,127 +1,4 @@
 {
-<<<<<<< HEAD
-    "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
-    "$comment": " {var m; ... } ",
-    "expression": {
-        "block": {
-            "type": "int",
-            "variables": [
-                {
-                    "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
-                    "name": "m",
-                    "id": "P1"
-                }
-            ],
-            "expressions": [
-                {
-                    "assign": {
-                        "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
-                        "operands": [
-                            {
-                                "parameter": {
-                                    "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
-                                    "name": "m",
-                                    "id": "P1"
-                                }
-                            },
-                            {
-                                "new": {
-                                    "constructor": {
-                                        "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
-                                        "parameterSpecs": []
-                                    },
-                                    "arguments": []
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "goto": {
-                        "type": "int",
-                        "target": {
-                            "type": "int",
-                            "id": "L1"
-                        },
-                        "value": {
-                            "add": {
-                                "type": "int",
-                                "operands": [
-                                    {
-                                        "memberAccess": {
-                                            "type": "int",
-                                            "object": {
-                                                "parameter": {
-                                                    "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
-                                                    "name": "m",
-                                                    "id": "P1"
-                                                }
-                                            },
-                                            "member": {
-                                                "property": {
-                                                    "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
-                                                    "type": "int",
-                                                    "name": "TheOuterIntProperty"
-                                                }
-                                            }
-                                        }
-                                    },
-                                    {
-                                        "memberAccess": {
-                                            "type": "int",
-                                            "object": {
-                                                "memberAccess": {
-                                                    "type": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner",
-                                                    "object": {
-                                                        "parameter": {
-                                                            "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
-                                                            "name": "m",
-                                                            "id": "P1"
-                                                        }
-                                                    },
-                                                    "member": {
-                                                        "property": {
-                                                            "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
-                                                            "type": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner",
-                                                            "name": "InnerProperty"
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "member": {
-                                                "property": {
-                                                    "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner",
-                                                    "type": "int",
-                                                    "name": "IntProperty"
-                                                }
-                                            }
-                                        }
-                                    }
-                                ]
-                            }
-                        },
-                        "kind": "return"
-                    }
-                },
-                {
-                    "label": {
-                        "target": {
-                            "type": "int",
-                            "id": "L1"
-                        },
-                        "default": {
-                            "constant": {
-                                "int": 0
-                            }
-                        }
-                    }
-                }
-            ]
-        }
-    }
-}
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
   "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
   "$comment": " {var m; ... } ",
   "expression": {
@@ -129,7 +6,7 @@
       "type": "int",
       "variables": [
         {
-          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
           "name": "m",
           "id": "P1"
         }
@@ -137,11 +14,11 @@
       "expressions": [
         {
           "assign": {
-            "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+            "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
             "operands": [
               {
                 "parameter": {
-                  "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                  "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
                   "name": "m",
                   "id": "P1"
                 }
@@ -149,7 +26,7 @@
               {
                 "new": {
                   "constructor": {
-                    "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
                     "parameterSpecs": []
                   },
                   "arguments": []
@@ -174,14 +51,14 @@
                       "type": "int",
                       "object": {
                         "parameter": {
-                          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
                           "name": "m",
                           "id": "P1"
                         }
                       },
                       "member": {
                         "property": {
-                          "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                          "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
                           "type": "int",
                           "name": "TheOuterIntProperty"
                         }
@@ -193,18 +70,18 @@
                       "type": "int",
                       "object": {
                         "memberAccess": {
-                          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                          "type": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner",
                           "object": {
                             "parameter": {
-                              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
                               "name": "m",
                               "id": "P1"
                             }
                           },
                           "member": {
                             "property": {
-                              "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-                              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                              "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.TestMembersInitialized",
+                              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner",
                               "name": "InnerProperty"
                             }
                           }
@@ -212,7 +89,7 @@
                       },
                       "member": {
                         "property": {
-                          "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                          "declaringType": "vm2.Tests.Linq.Expressions.Serialization.Data.Inner",
                           "type": "int",
                           "name": "IntProperty"
                         }
@@ -242,4 +119,3 @@
     }
   }
 }
->>>>>>> 335f1e0 (refactor: rename test/ to tests)

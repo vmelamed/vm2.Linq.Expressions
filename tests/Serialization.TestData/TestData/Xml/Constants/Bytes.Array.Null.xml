@@ -6,12 +6,7 @@
     <constant>
         <!--  System.Byte[]  -->
         <byteSequence
-<<<<<<< HEAD
             type="System.Byte[]"
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-            type="System.Byte[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
             i:nil="true" />
     </constant>
 </expression>

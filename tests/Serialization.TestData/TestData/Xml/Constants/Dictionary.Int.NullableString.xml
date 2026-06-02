@@ -4,16 +4,9 @@
     xmlns="urn:schemas-vm-com:Linq.Expressions.Serialization.Xml"
     xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
     <constant>
-<<<<<<< HEAD
         <!--  System.Collections.Generic.Dictionary`2[[System.Int32],[System.String]]  -->
         <dictionary
             type="System.Collections.Generic.Dictionary`2[[System.Int32],[System.String]]"
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-        <!--  System.Collections.Generic.Dictionary<int, string>  -->
-        <dictionary
-            type="System.Collections.Generic.Dictionary`2[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
             length="4">
             <key-value>
                 <int>1</int>

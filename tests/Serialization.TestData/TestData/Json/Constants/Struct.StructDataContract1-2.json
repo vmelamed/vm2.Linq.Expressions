@@ -5,7 +5,6 @@
     "constant": {
       "$comment": " vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1 ",
       "object": {
-<<<<<<< HEAD
         "type": "vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1",
         "value": {
           "IntProperty": 7,
@@ -15,15 +14,3 @@
     }
   }
 }
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-        "type": "vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-        "value": {
-          "IntProperty": 7,
-          "StringProperty": "vm"
-        }
-      }
-    }
-  }
-}
->>>>>>> 335f1e0 (refactor: rename test/ to tests)

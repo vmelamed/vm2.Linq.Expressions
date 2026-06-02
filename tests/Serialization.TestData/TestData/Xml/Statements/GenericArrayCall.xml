@@ -7,7 +7,6 @@
         type="int">
         <parameters>
             <parameter
-<<<<<<< HEAD
                 type="System.Int32[]"
                 id="P1"
                 name="arr" />
@@ -36,34 +35,3 @@
         </body>
     </lambda>
 </expression>
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-                type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
-                id="P1"
-                name="arr" />
-        </parameters>
-        <body>
-            <call
-                type="int">
-                <method
-                    declaringType="vm2.Tests.Linq.Expressions.Serialization.Data.GenericMethodFixtures, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
-                    static="true"
-                    type="int"
-                    name="CountArray">
-                    <parameterSpecs>
-                        <parameterSpec
-                            type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
-                            name="items" />
-                    </parameterSpecs>
-                </method>
-                <arguments>
-                    <parameter
-                        type="System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
-                        id="P1"
-                        name="arr" />
-                </arguments>
-            </call>
-        </body>
-    </lambda>
-</expression>
->>>>>>> 335f1e0 (refactor: rename test/ to tests)

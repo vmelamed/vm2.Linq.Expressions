@@ -3,16 +3,9 @@
   "$comment": " null ",
   "expression": {
     "constant": {
-<<<<<<< HEAD
       "$comment": " System.Nullable\u00601[[System.Memory\u00601[[System.Int32]]]] ",
       "nullable": {
         "type": "System.Memory\u00601[[System.Int32]]",
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-      "$comment": " nullable\u003CSystem.Memory\u003Cint\u003E\u003E ",
-      "nullable": {
-        "type": "System.Memory\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
         "value": null
       }
     }

@@ -6,18 +6,10 @@
     <constant>
         <!--  System.Nullable`1[[vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]][]  -->
         <sequence
-<<<<<<< HEAD
             type="System.Nullable`1[[vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]][]"
             elementType="System.Nullable`1[[vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest]]"
             i:nil="true">
             <!--  System.Nullable`1[[vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest]]  -->
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-            type="System.Nullable`1[[vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]][], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
-            elementType="System.Nullable`1[[vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"
-            i:nil="true">
-            <!--  nullable<vm2.Tests.Linq.Expressions.Serialization.Data.EnumTest>  -->
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
         </sequence>
     </constant>
 </expression>

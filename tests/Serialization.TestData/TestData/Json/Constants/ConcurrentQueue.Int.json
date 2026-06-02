@@ -3,16 +3,9 @@
   "$comment": " value(System.Collections.Concurrent.ConcurrentQueue\u00601[System.Int32]) ",
   "expression": {
     "constant": {
-<<<<<<< HEAD
       "$comment": " System.Collections.Concurrent.ConcurrentQueue\u00601[[System.Int32]] ",
       "sequence": {
         "type": "System.Collections.Concurrent.ConcurrentQueue\u00601[[System.Int32]]",
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-      "$comment": " System.Collections.Concurrent.ConcurrentQueue\u003Cint\u003E ",
-      "sequence": {
-        "type": "System.Collections.Concurrent.ConcurrentQueue\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
         "value": [
           {
             "int": 1

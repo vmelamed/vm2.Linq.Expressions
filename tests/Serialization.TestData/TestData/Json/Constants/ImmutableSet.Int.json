@@ -3,16 +3,9 @@
   "$comment": " value(System.Collections.Immutable.ImmutableArray\u00601[System.Int32]) ",
   "expression": {
     "constant": {
-<<<<<<< HEAD
       "$comment": " System.Collections.Immutable.ImmutableArray\u00601[[System.Int32]] ",
       "sequence": {
         "type": "System.Collections.Immutable.ImmutableArray\u00601[[System.Int32]]",
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-      "$comment": " System.Collections.Immutable.ImmutableArray\u003Cint\u003E ",
-      "sequence": {
-        "type": "System.Collections.Immutable.ImmutableArray\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Collections.Immutable, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
         "value": [
           {
             "int": 1

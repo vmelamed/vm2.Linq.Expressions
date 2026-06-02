@@ -3,7 +3,6 @@
   "$comment": " (1, one, StructDataContract1) ",
   "expression": {
     "constant": {
-<<<<<<< HEAD
       "$comment": " System.Tuple\u00603[[System.Int32],[System.String],[vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1]] ",
       "tuple": {
         "type": "System.Tuple\u00603[[System.Int32],[System.String],[vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1]]",
@@ -17,22 +16,6 @@
           "Item3": {
             "object": {
               "type": "vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1",
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-      "$comment": " System.Tuple\u003Cint, string, vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1\u003E ",
-      "tuple": {
-        "type": "System.Tuple\u00603[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-        "value": {
-          "Item1": {
-            "int": 1
-          },
-          "Item2": {
-            "string": "one"
-          },
-          "Item3": {
-            "object": {
-              "type": "vm2.Tests.Linq.Expressions.Serialization.Data.StructDataContract1, Serialization.TestData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
               "value": {
                 "IntProperty": 2,
                 "StringProperty": "two"

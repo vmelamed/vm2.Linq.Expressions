@@ -5,14 +5,8 @@
     "constant": {
       "$comment": " System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][] ",
       "sequence": {
-<<<<<<< HEAD
         "type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]",
         "$comment": " System.Nullable\u00601[[System.Int32]] ",
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-        "type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-        "$comment": " nullable\u003Cint\u003E ",
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
         "value": []
       }
     }

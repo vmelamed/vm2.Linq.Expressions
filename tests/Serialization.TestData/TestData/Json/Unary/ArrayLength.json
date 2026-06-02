@@ -6,7 +6,6 @@
       "type": "int",
       "parameters": [
         {
-<<<<<<< HEAD
           "type": "System.Int32[]",
           "name": "a",
           "id": "P1"
@@ -18,20 +17,6 @@
           "operand": {
             "parameter": {
               "type": "System.Int32[]",
-||||||| parent of 335f1e0 (refactor: rename test/ to tests)
-=======
-          "type": "System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-          "name": "a",
-          "id": "P1"
-        }
-      ],
-      "body": {
-        "arrayLength": {
-          "type": "int",
-          "operand": {
-            "parameter": {
-              "type": "System.Int32[], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
->>>>>>> 335f1e0 (refactor: rename test/ to tests)
               "name": "a",
               "id": "P1"
             }
