@@ -192,9 +192,9 @@
       },
       "vm2.TestUtilities": {
         "type": "Direct",
-        "requested": "[1.5.1, )",
-        "resolved": "1.5.1",
-        "contentHash": "ItST5G6Uiu9OIRE3v7azAcBI4Gtst+9WD4NP2kNQL2X1PPwD7a4etGVsQU+ZC9gxvdN3rXb0SlAMSsip5dI40w==",
+        "requested": "[1.5.2, )",
+        "resolved": "1.5.2",
+        "contentHash": "fWDZmLd0AgAFagsqKt1A4L1r5vcKXFXpMSh9CNjji4tzG289+AnQfcP8UPUdTg3ivIDweF5jScjPcIBzr1pOoQ==",
         "dependencies": {
           "FluentAssertions": "8.10.0",
           "Microsoft.Extensions.Configuration.Binder": "10.0.8",
@@ -420,7 +420,7 @@
           "NSubstitute": "[5.3.0, )",
           "Newtonsoft.Json": "[13.0.4, )",
           "System.Configuration.ConfigurationManager": "[10.0.8, )",
-          "vm2.TestUtilities": "[1.5.1, )",
+          "vm2.TestUtilities": "[1.5.2, )",
           "xunit.v3.extensibility.core": "[3.2.2, )"
         }
       },
