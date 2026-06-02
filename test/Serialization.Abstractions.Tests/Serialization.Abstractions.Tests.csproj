@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <OutputType>Exe</OutputType>
         <RootNamespace>vm2.Linq.Expressions.Serialization.Tests</RootNamespace>
     </PropertyGroup>
 

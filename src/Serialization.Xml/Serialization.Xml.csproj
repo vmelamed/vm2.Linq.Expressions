@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <OutputType>Library</OutputType>
         <RootNamespace>vm2.Linq.Expressions.Serialization.Xml</RootNamespace>
         <!-- Expression tree serialization inherently uses reflection (Type.GetType, MakeGenericType,
              DataContractSerializer, etc.). Suppress trim analysis warnings at the project level. -->
