@@ -1,7 +1,5 @@
 ﻿namespace vm2.Tests.Linq.Expressions.DeepEquals;
 
-using vm2.TestUtilities;
-
 public partial class DeepEqualsTests(
     ITestOutputHelper output) : TestBase(output)
 {

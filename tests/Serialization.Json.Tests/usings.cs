@@ -6,6 +6,7 @@ global using System.Text.Json;
 global using System.Text.Json.Nodes;
 global using System.Diagnostics.CodeAnalysis;
 
+global using vm2.TestUtilities;
 global using vm2.Linq.Expressions.DeepEquals;
 global using vm2.Linq.Expressions.Serialization;
 global using vm2.Linq.Expressions.Serialization.Json;
