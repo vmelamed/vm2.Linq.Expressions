@@ -4,16 +4,13 @@
 
 ### Fixed
 
-- Explicitly specify the OutputType [skip ci]
-- disable AoT, refactor Directory.Build.props
-- update vm2.TestUtilities package version to 2.0.2 and clarify .gitattributes comments
+- Explicitly specify the OutputType
 - update vm2.TestUtilities package version to 2.0.2 in multiple test projects
-- change test settings to accomodate Visual Studio 2026
-- add missing files and directories to the solution; merge changes to the lockfiles
+- change test settings to accommodate Visual Studio 2026
 - Change the end-of-lines settings to get the native conventions: on Win - CRLF, and on Unix-like: just LF
 - **BREAKING:** make the transform culture invariant
 - Remove unnecessary dependencies from package lock files
-- Explicitly specify the OutputType [skip ci]
+- Explicitly specify the OutputType
 - disable AoT, refactor Directory.Build.props
 - add missing files and directories to the solution; merge changes to the lockfiles
 - resolve conflicts with main
@@ -22,13 +19,12 @@
 
 ### Internal
 
-- promote to stable v1.1.0 [skip ci]
-- update changelog for v1.1.0 [skip ci]
+- promote to stable v1.1.0
+- update changelog for v1.1.0
 - Bump the minor-and-patch group with 1 update
-- **BREAKING:** following conventions
 - rename test/ to tests
 - finished renaming test/ to tests/, sync by diff-shared
-- Fix!: Simplify .NET type names in serialization and snapshots
+- Simplify .NET type names in serialization and snapshots
 - Update package management and project references
 - **BREAKING:** following conventions
 - rename test/ to tests
