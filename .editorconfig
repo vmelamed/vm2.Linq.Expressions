@@ -22,9 +22,6 @@ indent_size = 4
 indent_style = space
 tab_width = 4
 
-# New line preferences
-insert_final_newline = false
-
 # Spell checker
 spelling_languages = en-us
 spelling_checkable_types = strings,identifiers,comments
@@ -35,7 +32,6 @@ spelling_error_severity = information
 # Organize usings
 dotnet_separate_import_directive_groups = true
 dotnet_sort_system_directives_first = true
-file_header_template = unset
 
 # this. and Me. preferences
 dotnet_style_qualification_for_event = false
