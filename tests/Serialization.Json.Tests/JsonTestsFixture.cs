@@ -3,8 +3,11 @@
 
 namespace vm2.Tests.Linq.Expressions.Serialization.Json;
 
-public class JsonTestsFixture : IDisposable, IAsyncDisposable
+public partial class JsonTestsFixture : IDisposable, IAsyncDisposable
 {
+    [GeneratedRegex(@"Version=\d+\.\d+\.\d+\.\d+", RegexOptions.CultureInvariant)]
+    private static partial Regex AssemblyVersionRegex();
+
     public string TestFilesPath { get; init; }
 
     public string TestLoadPath { get; init; }
@@ -197,10 +200,16 @@ public class JsonTestsFixture : IDisposable, IAsyncDisposable
 
         expectedDoc.GetValueKind().Should().Be(JsonValueKind.Object, "The expected JSON document (JsonNode?) is not JsonObject.");
 
-        actualStr.Should().Be(expectedStr, "the expected and the actual JSON texts should be the same");
+        var expectedComparableText = NormalizeForComparison(expectedStr);
+        var actualComparableText = NormalizeForComparison(actualStr);
+
+        actualComparableText.Should().Be(expectedComparableText, "the expected and the actual JSON texts should be the same after normalizing assembly version tokens");
+
+        var expectedComparableDoc = JsonNode.Parse(expectedComparableText);
+        var actualComparableDoc = JsonNode.Parse(actualComparableText);
 
         JsonNode
-            .DeepEquals(actualDoc, expectedDoc)
+            .DeepEquals(actualComparableDoc, expectedComparableDoc)
             .Should()
             .BeTrue($"the expected and the actual top-level JsonObject objects (documents) from {testFileLine} should be deep-equal.");
     }
@@ -227,6 +236,15 @@ public class JsonTestsFixture : IDisposable, IAsyncDisposable
     }
 
     public virtual void Dispose() => GC.SuppressFinalize(this);
+
+    static string NormalizeForComparison(string json)
+    {
+        var normalized = AssemblyVersionRegex().Replace(json, "Version=0.0.0.0");
+
+        return normalized.StartsWith('\uFEFF')
+                ? normalized[1..]
+                : normalized;
+    }
 
     public virtual ValueTask DisposeAsync()
     {
