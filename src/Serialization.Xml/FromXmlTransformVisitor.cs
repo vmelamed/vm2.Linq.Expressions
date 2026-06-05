@@ -1,4 +1,7 @@
-﻿namespace vm2.Linq.Expressions.Serialization.Xml;
+﻿// SPDX-License-Identifier: MIT
+// Copyright (c) 2025-2026 Val Melamed
+
+namespace vm2.Linq.Expressions.Serialization.Xml;
 
 /// <summary>
 /// Class that visits the nodes of an XML element to produce a LINQ expression tree.

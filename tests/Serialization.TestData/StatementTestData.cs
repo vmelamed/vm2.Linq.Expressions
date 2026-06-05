@@ -1,4 +1,7 @@
-﻿namespace vm2.Tests.Linq.Expressions.Serialization.Data;
+﻿// SPDX-License-Identifier: MIT
+// Copyright (c) 2025-2026 Val Melamed
+
+namespace vm2.Tests.Linq.Expressions.Serialization.Data;
 
 public static class StatementTestData
 {

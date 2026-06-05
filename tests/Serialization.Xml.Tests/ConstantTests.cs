@@ -1,4 +1,7 @@
-﻿namespace vm2.Tests.Linq.Expressions.Serialization.Xml;
+﻿// SPDX-License-Identifier: MIT
+// Copyright (c) 2025-2026 Val Melamed
+
+namespace vm2.Tests.Linq.Expressions.Serialization.Xml;
 
 [CollectionDefinition("XML")]
 public partial class ConstantTests(XmlTestsFixture fixture, ITestOutputHelper output) : BaseTests(fixture, output)

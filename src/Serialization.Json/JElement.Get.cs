@@ -1,4 +1,7 @@
-﻿namespace vm2.Linq.Expressions.Serialization.Json;
+﻿// SPDX-License-Identifier: MIT
+// Copyright (c) 2025-2026 Val Melamed
+
+namespace vm2.Linq.Expressions.Serialization.Json;
 
 public partial struct JElement
 {
