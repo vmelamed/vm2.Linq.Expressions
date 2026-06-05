@@ -11,7 +11,7 @@ public class ConversionMapEdgeTests
         { TestLine(), "long", "true", "long" },
         { TestLine(), "unsignedLong", "[]", "unsigned long" },
         { TestLine(), "intPtr", "\"   \"", "IntPtr" },
-        { TestLine(), "unsignedIntPtr", "\"   \"", "IntPtr" },
+        { TestLine(), "unsignedIntPtr", "\"   \"", "UIntPtr" },
         { TestLine(), "dateTime", "42", "DateTime" },
         { TestLine(), "decimal", "\" \"", "Decimal" },
         { TestLine(), "guid", "42", "Guid" },
