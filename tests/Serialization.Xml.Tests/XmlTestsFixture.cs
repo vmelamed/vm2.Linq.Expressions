@@ -3,8 +3,11 @@
 
 namespace vm2.Tests.Linq.Expressions.Serialization.Xml;
 
-public class XmlTestsFixture : IDisposable, IAsyncDisposable
+public partial class XmlTestsFixture : IDisposable, IAsyncDisposable
 {
+    [GeneratedRegex(@"Version=\d+\.\d+\.\d+\.\d+", RegexOptions.CultureInvariant)]
+    private static partial Regex AssemblyVersionRegex();
+
     public string TestFilesPath { get; init; }
 
     public string TestLoadPath { get; init; }
@@ -188,16 +191,22 @@ public class XmlTestsFixture : IDisposable, IAsyncDisposable
             Assert.Fail($"The expected XML does not appear to exist. Saved the actual XML in the file `{fileName}`.");
         }
 
-        actualStr.Should().Be(expectedStr, "the expected and the actual XML texts should be the same");
+        var expectedComparableText = NormalizeAssemblyVersion(expectedStr);
+        var actualComparableText = NormalizeAssemblyVersion(actualStr);
+
+        actualComparableText.Should().Be(expectedComparableText, "the expected and the actual XML texts should be the same after normalizing assembly version tokens");
+
+        var expectedComparableDoc = XDocument.Parse(expectedComparableText, XmlLoadOptions);
+        var actualComparableDoc = XDocument.Parse(actualComparableText, XmlLoadOptions);
 
         var ignoreComments = false;
         var comparer = new XNodeDeepEquals(ignoreComments);
-        var myEquals = comparer.AreEqual(actualDoc, expectedDoc);
+        var myEquals = comparer.AreEqual(actualComparableDoc, expectedComparableDoc);
 
         if (!myEquals || ignoreComments && comparer.LastResult != "")
             output?.WriteLine(comparer.LastResult);
 
-        var deepEquals = XNode.DeepEquals(actualDoc, expectedDoc);
+        var deepEquals = XNode.DeepEquals(actualComparableDoc, expectedComparableDoc);
 
         if (!deepEquals)
             output?.WriteLine("XNode.DeepEquals returned false!");
@@ -206,6 +215,15 @@ public class XmlTestsFixture : IDisposable, IAsyncDisposable
     }
 
     public virtual void Dispose() => GC.SuppressFinalize(this);
+
+    static string NormalizeAssemblyVersion(string xml)
+    {
+        var normalized = AssemblyVersionRegex().Replace(xml, "Version=0.0.0.0");
+
+        return normalized.StartsWith('\uFEFF')
+                ? normalized[1..]
+                : normalized;
+    }
 
     public virtual ValueTask DisposeAsync()
     {
