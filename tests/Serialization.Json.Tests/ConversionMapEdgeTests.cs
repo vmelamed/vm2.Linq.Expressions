@@ -38,15 +38,14 @@ public class ConversionMapEdgeTests
     }
 
     static string BuildConstantJson(string typeName, string rawValue)
-        =>
-            $$"""
-            {
-              "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
-              "expression": {
-                "constant": {
-                  "{{typeName}}": {{rawValue}}
-                }
-              }
-            }
-            """;
+        => $$"""
+           {
+             "$schema": "urn:schemas-vm-com:Linq-Expressions-Serialization-Json",
+             "expression": {
+               "constant": {
+                 "{{typeName}}": {{rawValue}}
+               }
+             }
+           }
+           """;
 }
