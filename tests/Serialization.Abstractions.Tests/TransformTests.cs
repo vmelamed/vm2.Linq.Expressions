@@ -3,7 +3,6 @@
 
 namespace vm2.Tests.Linq.Expressions.Serialization.Abstractions;
 
-[ExcludeFromCodeCoverage]
 public partial class TransformTests(ITestOutputHelper output) : TestBase(output)
 {
     [Theory]
