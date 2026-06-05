@@ -219,8 +219,6 @@ public static class ConstantTestData
         { TestLine(), "Ints.(Memory<int>?)null",                                                "Memory.Int0.Null" },
         { TestLine(), "Ints.(Memory<int>?)()",                                                  "Memory.Int0.Empty" },
         { TestLine(), "Ints.(Memory<int>?)([ 1, 2, 3, 4 ])",                                    "Memory.Int0" },
-        { TestLine(), "EnumTest?[]{ EnumTest.One, EnumTest.Two, null, null }",                  "Array.NullableEnums" },
-        { TestLine(), "EnumTest?[].null",                                                       "Array.NullableEnums.Null" },
         { TestLine(), "ArraySegment<int>([ 1, 2, 3, 4 ], 1, 2)",                                "ArraySegment.Int" },
         { TestLine(), "List<int>([1, 2, 3, 4])",                                                "List.Int" },
         { TestLine(), "List<int?>{ 1, 2, null, null }",                                         "List.NullableInt" },
@@ -275,6 +273,9 @@ public static class ConstantTestData
         { TestLine(), "StructDataContract1?[]",                                                 "Array.NullableStructDataContract1" },
         { TestLine(), "StructSerializable1[]",                                                  "Array.StructSerializable1" },
         { TestLine(), "StructSerializable1?[]",                                                 "Array.NullableStructSerializable1" },
+
+        { TestLine(), "EnumTest?[]{ EnumTest.One, EnumTest.Two, null, null }",                  "Array.NullableEnums" },
+        { TestLine(), "EnumTest?[].null",                                                       "Array.NullableEnums.Null" },
     };
 
     static readonly Dictionary<string, ConstantExpression> _substitutes = new()

@@ -130,7 +130,7 @@ static partial class FromJsonDataTransform
             var ptrStr = x.GetValue<string>();
 
             if (string.IsNullOrWhiteSpace(ptrStr))
-                throw new SerializationException($"Could not convert the valueElement of property `{x.Name}` to `IntPtr` - the string is `null`, or empty, or consists of whitespaces only.");
+                throw new SerializationException($"Could not convert the valueElement of property `{x.Name}` to `UIntPtr` - the string is `null`, or empty, or consists of whitespaces only.");
 
             return checked(
                 Environment.Is64BitProcess
