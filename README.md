@@ -53,11 +53,6 @@ optionally be validated against their respective schemas.
 A companion package provides structural deep-equality comparison and hash code computation for expression trees, useful for
 caching, deduplication, and testing.
 
-> [!NOTE]
-> These packages are not currently Native AOT-ready. Compatibility policy is driven by the primary supported surface: the
-> flagship XML and JSON serializers are not AOT-ready, so a partial AOT posture at the repository level would create more
-noise than value.
-
 ## Packages
 
 | Package | Description |
@@ -65,6 +60,9 @@ noise than value.
 | **[vm2.Linq.Expressions.Serialization.Xml](https://www.nuget.org/packages/vm2.Linq.Expressions.Serialization.Xml/)** | Serialize and deserialize expression trees to/from XML (`XDocument`). |
 | **[vm2.Linq.Expressions.Serialization.Json](https://www.nuget.org/packages/vm2.Linq.Expressions.Serialization.Json/)** | Serialize and deserialize expression trees to/from JSON (`JsonObject`). |
 | **[vm2.Linq.Expressions.DeepEquals](https://www.nuget.org/packages/vm2.Linq.Expressions.DeepEquals/)** | Structural deep-equality comparison and hash code computation for expression trees. |
+
+> [!NOTE]
+> Only the `vm2.Linq.Expressions.DeepEquals` is currently AOT-ready.
 
 ## Prerequisites
 
@@ -94,7 +92,7 @@ Install the serialization package for the format you need. Each serialization pa
 ## Quick Start
 
 Each serialization package provides extension methods on `Expression` and static deserialization methods for the simplest
-possible API. For advanced scenarios (reusing a transform instance, custom options), use `ExpressionXmlTransform` or
+possible API. For advanced scenarios (reusing a transform instance, custom options, etc.), use `ExpressionXmlTransform` or
 `ExpressionJsonTransform` directly — see the [examples](examples/) directory.
 
 ### Serialize to XML
@@ -117,6 +115,8 @@ XDocument doc = addExpr.ToXmlDocument();
 
 // Round-trip back to Expression
 Expression roundTrip = doc.ToExpression();
+
+roundTrip.DeepEquals(addExpr); // True
 
 // Deserialize from file / stream / string
 Expression fromFile   = ExpressionXml.FromFile("expression.xml");
@@ -143,6 +143,8 @@ JsonObject doc = addExpr.ToJsonDocument();
 
 // Round-trip back to Expression
 Expression roundTrip = doc.ToExpression();
+
+roundTrip.DeepEquals(addExpr); // True
 
 // Deserialize from file / stream / string
 Expression fromFile   = ExpressionJson.FromFile("expression.json");

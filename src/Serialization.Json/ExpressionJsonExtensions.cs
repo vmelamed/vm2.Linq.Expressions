@@ -6,48 +6,104 @@ namespace vm2.Linq.Expressions.Serialization.Json;
 /// <summary>
 /// Extension methods that provide a simplified API for serializing and deserializing LINQ expression trees to and from JSON.
 /// </summary>
-[ExcludeFromCodeCoverage]
 public static class ExpressionJsonExtensions
 {
-    // ── Expression → document ────────────────────────────────────
+    // ── Expression → JSON document ────────────────────────────────────
 
     /// <summary>
-    /// Transforms the expression to a <see cref="JsonObject"/>.
+    /// Transforms the expression to a JSON document model of type <see cref="JsonObject"/>.
     /// </summary>
-    public static JsonObject ToJsonDocument(this Expression expression, JsonOptions? options = null)
-        => new ExpressionJsonTransform(options).Transform(expression);
+    /// <param name="expression">The expression to be transformed.</param>
+    /// <param name="options">The options to control the transformation process.</param>
+    /// <returns>The resultant top level document model document <see cref="JsonObject"/>.</returns>
+    public static JsonObject ToJsonDocument(
+        [NotNull] this Expression expression,
+        JsonOptions? options = null)
+    {
+        ArgumentNullException.ThrowIfNull(expression);
+
+        return new ExpressionJsonTransform(options).Transform(expression);
+    }
+
+    // ── Expression → string ────────────────────────────────────
 
     /// <summary>
     /// Transforms the expression to a JSON string.
     /// </summary>
-    public static string ToJsonString(this Expression expression, JsonOptions? options = null)
+    /// <param name="expression">The expression to be transformed.</param>
+    /// <param name="options">The options to control the transformation process.</param>
+    /// <returns>The resultant JSON string.</returns>
+    public static string ToJsonString(
+        [NotNull] this Expression expression,
+        JsonOptions? options = null)
     {
+        ArgumentNullException.ThrowIfNull(expression);
+
         options ??= new();
+
         var document = new ExpressionJsonTransform(options).Transform(expression);
+
         return document.ToJsonString(options.JsonSerializerOptions);
     }
 
-    // ── Expression → stream / writer / file ──────────────────────
+    // ── Expression → stream ──────────────────────
 
     /// <summary>
     /// Serializes the expression to JSON and writes it to the specified <paramref name="stream"/>.
     /// </summary>
-    public static void ToJsonStream(this Expression expression, Stream stream, JsonOptions? options = null)
-        => new ExpressionJsonTransform(options).Serialize(expression, stream);
+    /// <param name="expression">The expression to be serialized.</param>
+    /// <param name="stream">The stream to which the JSON will be written.</param>
+    /// <param name="options">The options to control the transformation process.</param>
+    public static void ToJsonStream(
+        [NotNull] this Expression expression,
+        [NotNull] Stream stream,
+        JsonOptions? options = null)
+    {
+        ArgumentNullException.ThrowIfNull(expression);
+        ArgumentNullException.ThrowIfNull(stream);
+
+        new ExpressionJsonTransform(options).Serialize(expression, stream);
+    }
 
     /// <summary>
     /// Serializes the expression to JSON and writes it to the specified <paramref name="stream"/>.
     /// </summary>
-    public static Task ToJsonStreamAsync(this Expression expression, Stream stream, JsonOptions? options = null, CancellationToken cancellationToken = default)
-        => new ExpressionJsonTransform(options).SerializeAsync(expression, stream, cancellationToken);
+    /// <param name="expression">The expression to be serialized.</param>
+    /// <param name="stream">The stream to which the JSON will be written.</param>
+    /// <param name="options">The options to control the transformation process.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    public static Task ToJsonStreamAsync(
+        [NotNull] this Expression expression,
+        [NotNull] Stream stream,
+        JsonOptions? options = null,
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(expression);
+        ArgumentNullException.ThrowIfNull(stream);
+
+        return new ExpressionJsonTransform(options).SerializeAsync(expression, stream, cancellationToken);
+    }
+
+    // ── Expression → writer ──────────────────────
 
     /// <summary>
     /// Serializes the expression to JSON and writes it to the specified <see cref="Utf8JsonWriter"/>.
     /// </summary>
-    public static void ToJsonWriter(this Expression expression, Utf8JsonWriter writer, JsonOptions? options = null)
+    /// <param name="expression">The expression to be serialized.</param>
+    /// <param name="writer">The <see cref="Utf8JsonWriter"/> to which the JSON will be written.</param>
+    /// <param name="options">The options to control the transformation process.</param>
+    public static void ToJsonWriter(
+        [NotNull] this Expression expression,
+        [NotNull] Utf8JsonWriter writer,
+        JsonOptions? options = null)
     {
+        ArgumentNullException.ThrowIfNull(expression);
+        ArgumentNullException.ThrowIfNull(writer);
+
         options ??= new();
+
         var document = new ExpressionJsonTransform(options).Transform(expression);
+
         document.WriteTo(writer, options.JsonSerializerOptions);
         writer.Flush();
     }
@@ -55,37 +111,67 @@ public static class ExpressionJsonExtensions
     /// <summary>
     /// Serializes the expression to JSON and writes it to the specified <see cref="Utf8JsonWriter"/>.
     /// </summary>
-    public static async Task ToJsonWriterAsync(this Expression expression, Utf8JsonWriter writer, JsonOptions? options = null, CancellationToken cancellationToken = default)
+    /// <param name="expression">The expression to be serialized.</param>
+    /// <param name="writer">The <see cref="Utf8JsonWriter"/> to which the JSON will be written.</param>
+    /// <param name="options">The options to control the transformation process.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>A task that represents the asynchronous write operation.</returns>
+    public static async Task ToJsonWriterAsync(
+        [NotNull] this Expression expression,
+        [NotNull] Utf8JsonWriter writer,
+        JsonOptions? options = null,
+        CancellationToken cancellationToken = default)
     {
+        ArgumentNullException.ThrowIfNull(expression);
+        ArgumentNullException.ThrowIfNull(writer);
+
         options ??= new();
+
         var document = new ExpressionJsonTransform(options).Transform(expression);
+
         document.WriteTo(writer, options.JsonSerializerOptions);
         await writer.FlushAsync(cancellationToken);
     }
 
+    // ── Expression → file ──────────────────────
+
     /// <summary>
     /// Serializes the expression to JSON and writes it to the specified file.
     /// </summary>
-    public static void ToJsonFile(this Expression expression, string filePath, JsonOptions? options = null)
+    /// <param name="expression">The expression to be serialized.</param>
+    /// <param name="filePath">The path of the file to which the JSON will be written.</param>
+    /// <param name="options">The options to control the transformation process.</param>
+    public static void ToJsonFile(
+        [NotNull] this Expression expression,
+        [NotNull] string filePath,
+        JsonOptions? options = null)
     {
+        ArgumentNullException.ThrowIfNull(expression);
+        ArgumentException.ThrowIfNullOrWhiteSpace(filePath);
+
         using var stream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None);
+
         new ExpressionJsonTransform(options).Serialize(expression, stream);
     }
 
     /// <summary>
     /// Serializes the expression to JSON and writes it to the specified file.
     /// </summary>
-    public static async Task ToJsonFileAsync(this Expression expression, string filePath, JsonOptions? options = null, CancellationToken cancellationToken = default)
+    /// <param name="expression">The expression to be serialized.</param>
+    /// <param name="filePath">The path of the file to which the JSON will be written.</param>
+    /// <param name="options">The options to control the transformation process.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    public static async Task ToJsonFileAsync(
+        this Expression expression,
+        string filePath,
+        JsonOptions? options = null,
+        CancellationToken cancellationToken = default)
     {
+        ArgumentNullException.ThrowIfNull(expression);
+        ArgumentException.ThrowIfNullOrWhiteSpace(filePath);
+
         using var stream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None, 4096, useAsync: true);
+
         await new ExpressionJsonTransform(options).SerializeAsync(expression, stream, cancellationToken);
     }
-
-    // ── Document → Expression ────────────────────────────────────
-
-    /// <summary>
-    /// Transforms the <see cref="JsonObject"/> to a LINQ <see cref="Expression"/>.
-    /// </summary>
-    public static Expression ToExpression(this JsonObject document, JsonOptions? options = null)
-        => new ExpressionJsonTransform(options).Transform(document);
 }
