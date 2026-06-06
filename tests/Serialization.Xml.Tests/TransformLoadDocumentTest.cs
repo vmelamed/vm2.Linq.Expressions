@@ -49,19 +49,24 @@ public class TransformLoadDocumentTest(XmlTestsFixture fixture, ITestOutputHelpe
         using var stream = new FileStream(Path.Combine(_fixture.TestLoadPath, fileName+".xml"), FileMode.Open, FileAccess.Read);
         var deserialize = () => transform.Deserialize(stream);
 
-        if (exceptionType is null)
-            deserialize.Should().NotThrow().Which.Should().NotBeNull();
-        else
-        if (exceptionType == typeof(SchemaValidationErrorsException))
-            deserialize.Should().Throw<SchemaValidationErrorsException>();
-        else
-        if (exceptionType == typeof(AggregateException))
-            deserialize.Should().Throw<AggregateException>();
-        else
-        if (exceptionType == typeof(InvalidOperationException))
-            deserialize.Should().Throw<InvalidOperationException>();
-        else
-            Assert.Fail("Unexpected exception.");
+        switch (exceptionType)
+        {
+             case null:
+                deserialize.Should().NotThrow().Which.Should().NotBeNull();
+                break;
+             case Type t when t == typeof(SchemaValidationErrorsException):
+                deserialize.Should().Throw<SchemaValidationErrorsException>();
+                break;
+            case Type t when t == typeof(AggregateException):
+                deserialize.Should().Throw<AggregateException>();
+                break;
+            case Type t when t == typeof(InvalidOperationException):
+                deserialize.Should().Throw<InvalidOperationException>();
+                break;
+            default:
+                Assert.Fail("Unexpected exception.");
+                break;
+        }
     }
 
     [Theory]
@@ -76,18 +81,23 @@ public class TransformLoadDocumentTest(XmlTestsFixture fixture, ITestOutputHelpe
         using var stream = new FileStream(Path.Combine(_fixture.TestLoadPath, fileName+".xml"), FileMode.Open, FileAccess.Read);
         var deserialize = async () => await transform.DeserializeAsync(stream);
 
-        if (exceptionType is null)
-            (await deserialize.Should().NotThrowAsync()).Which.Should().NotBeNull();
-        else
-        if (exceptionType == typeof(SchemaValidationErrorsException))
-            await deserialize.Should().ThrowAsync<SchemaValidationErrorsException>();
-        else
-        if (exceptionType == typeof(AggregateException))
-            await deserialize.Should().ThrowAsync<AggregateException>();
-        else
-        if (exceptionType == typeof(InvalidOperationException))
-            await deserialize.Should().ThrowAsync<InvalidOperationException>();
-        else
-            Assert.Fail("Unexpected exception.");
+        switch (exceptionType)
+        {
+             case null:
+                (await deserialize.Should().NotThrowAsync()).Which.Should().NotBeNull();
+                break;
+             case Type t when t == typeof(SchemaValidationErrorsException):
+                await deserialize.Should().ThrowAsync<SchemaValidationErrorsException>();
+                break;
+            case Type t when t == typeof(AggregateException):
+                await deserialize.Should().ThrowAsync<AggregateException>();
+                break;
+            case Type t when t == typeof(InvalidOperationException):
+                await deserialize.Should().ThrowAsync<InvalidOperationException>();
+                break;
+            default:
+                Assert.Fail("Unexpected exception.");
+                break;
+        }
     }
 }
