@@ -21,9 +21,11 @@ public class ExpressionJsonTransform(JsonOptions? options = null) : IExpressionT
     /// </summary>
     /// <param name="expression">The expression to be transformed.</param>
     /// <returns>The resultant top level document model document <see cref="JsonNode"/>.</returns>
-    public JsonObject Transform(Expression expression)
+    public JsonObject Transform([NotNull] Expression expression)
     {
-        var culture = CultureInfo.CurrentCulture;
+        ArgumentNullException.ThrowIfNull(expression);
+
+        var currentCulture = CultureInfo.CurrentCulture;
         try
         {
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
@@ -34,12 +36,12 @@ public class ExpressionJsonTransform(JsonOptions? options = null) : IExpressionT
             {
                 { Vocabulary.Schema, JsonOptions.Exs },
                 _options.Comment(expression),
-                { Vocabulary.Expression, new JsonObject(_nodeOptions) { _expressionVisitor.Result} }
+                { Vocabulary.Expression, new JsonObject(_nodeOptions) { _expressionVisitor.Result } }
             };
         }
         finally
         {
-            CultureInfo.CurrentCulture = culture;
+            CultureInfo.CurrentCulture = currentCulture;
         }
     }
 

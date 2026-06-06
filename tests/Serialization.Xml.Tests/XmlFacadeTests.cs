@@ -65,7 +65,7 @@ public class XmlFacadeTests
     {
         var doc = _expr.ToXmlDocument();
 
-        var roundTrip = doc.ToExpression();
+        var roundTrip = ExpressionXml.FromXDocument(doc);
 
         _expr.DeepEquals(roundTrip).Should().BeTrue();
     }
@@ -181,7 +181,7 @@ public class XmlFacadeTests
     {
         var doc = _linqExpr.ToXmlDocument();
 
-        var roundTrip = doc.ToExpression();
+        var roundTrip = ExpressionXml.FromXDocument(doc);
 
         _linqExpr.DeepEquals(roundTrip).Should().BeTrue();
     }
@@ -191,7 +191,7 @@ public class XmlFacadeTests
     {
         var doc = _genericArrayExpr.ToXmlDocument();
 
-        var roundTrip = doc.ToExpression();
+        var roundTrip = ExpressionXml.FromXDocument(doc);
 
         _genericArrayExpr.DeepEquals(roundTrip).Should().BeTrue();
     }
@@ -201,7 +201,7 @@ public class XmlFacadeTests
     {
         var doc = _genericListExpr.ToXmlDocument();
 
-        var roundTrip = doc.ToExpression();
+        var roundTrip = ExpressionXml.FromXDocument(doc);
 
         _genericListExpr.DeepEquals(roundTrip).Should().BeTrue();
     }
@@ -211,7 +211,7 @@ public class XmlFacadeTests
     {
         var doc = _genericByRefExpr.ToXmlDocument();
 
-        var roundTrip = doc.ToExpression();
+        var roundTrip = ExpressionXml.FromXDocument(doc);
 
         _genericByRefExpr.DeepEquals(roundTrip).Should().BeTrue();
     }
@@ -292,7 +292,7 @@ public class XmlFacadeTests
 
         method.SetAttributeValue("name", "Where_NoSuchOverload");
 
-        var act = () => doc.ToExpression();
+        var act = () => ExpressionXml.FromXDocument(doc);
 
         act.Should().Throw<SerializationException>();
     }
@@ -312,7 +312,7 @@ public class XmlFacadeTests
 
         itemsSpec.SetAttributeValue("type", typeof(IEnumerable<string>).AssemblyQualifiedName);
 
-        var act = () => doc.ToExpression();
+        var act = () => ExpressionXml.FromXDocument(doc);
 
         act.Should().Throw<SerializationException>();
     }

@@ -56,7 +56,7 @@ public class JsonFacadeTests
     {
         var doc = _expr.ToJsonDocument();
 
-        var roundTrip = doc.ToExpression();
+        var roundTrip = ExpressionJson.FromJsonObject(doc);
 
         _expr.DeepEquals(roundTrip).Should().BeTrue();
     }
@@ -168,7 +168,7 @@ public class JsonFacadeTests
     {
         var doc = _linqExpr.ToJsonDocument();
 
-        var roundTrip = doc.ToExpression();
+        var roundTrip = ExpressionJson.FromJsonObject(doc);
 
         _linqExpr.DeepEquals(roundTrip).Should().BeTrue();
     }
@@ -178,7 +178,7 @@ public class JsonFacadeTests
     {
         var doc = _genericArrayExpr.ToJsonDocument();
 
-        var roundTrip = doc.ToExpression();
+        var roundTrip = ExpressionJson.FromJsonObject(doc);
 
         _genericArrayExpr.DeepEquals(roundTrip).Should().BeTrue();
     }
@@ -188,7 +188,7 @@ public class JsonFacadeTests
     {
         var doc = _genericListExpr.ToJsonDocument();
 
-        var roundTrip = doc.ToExpression();
+        var roundTrip = ExpressionJson.FromJsonObject(doc);
 
         _genericListExpr.DeepEquals(roundTrip).Should().BeTrue();
     }
@@ -198,7 +198,7 @@ public class JsonFacadeTests
     {
         var doc = _genericByRefExpr.ToJsonDocument();
 
-        var roundTrip = doc.ToExpression();
+        var roundTrip = ExpressionJson.FromJsonObject(doc);
 
         _genericByRefExpr.DeepEquals(roundTrip).Should().BeTrue();
     }
@@ -277,7 +277,7 @@ public class JsonFacadeTests
 
         method["name"] = "Where_NoSuchOverload";
 
-        var act = () => doc.ToExpression();
+        var act = () => ExpressionJson.FromJsonObject(doc);
 
         act.Should().Throw<SerializationException>();
     }
@@ -290,7 +290,7 @@ public class JsonFacadeTests
 
         itemsSpec["type"] = typeof(IEnumerable<string>).AssemblyQualifiedName;
 
-        var act = () => doc.ToExpression();
+        var act = () => ExpressionJson.FromJsonObject(doc);
 
         act.Should().Throw<SerializationException>();
     }
