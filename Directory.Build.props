@@ -264,4 +264,8 @@
         <!-- Example projects settings -->
     </PropertyGroup>
 
+    <ItemGroup>
+        <!-- ADD REPO-SPECIFIC PACKAGE REFERENCES HERE -->
+    </ItemGroup>
+
 </Project>
