@@ -225,7 +225,6 @@ public partial class JsonOptions : DocumentOptions
     /// Loads the schema from the specified URL.
     /// </summary>
     /// <param name="schemaFilePath">The location of the schema file.</param>
-    /// <returns>A Task representing the asynchronous operation.</returns>Load
     public void LoadSchema([NotNull] string schemaFilePath)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(schemaFilePath);

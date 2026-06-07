@@ -3,7 +3,7 @@
 
 namespace vm2.Linq.Expressions.Serialization;
 
-static partial class Transform
+public static partial class Transform
 {
     static IEnumerable<Type> EnumNonPrimitiveBasicTypes()
     {

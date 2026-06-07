@@ -15,9 +15,13 @@ public partial class FromXmlTransformVisitor
     /// <returns>The created expression.</returns>
     public virtual Expression Visit(
         [NotNull] XElement element)
-        => _transforms.TryGetValue(element.Name.LocalName, out var visit)
+    {
+        ArgumentNullException.ThrowIfNull(element);
+
+        return _transforms.TryGetValue(element.Name.LocalName, out var visit)
                 ? visit(this, element)
                 : throw new SerializationException($"Don't know how to deserialize the element '{element.Name}'.");
+    }
 
     #region Concrete XML element visitors
     /// <summary>
