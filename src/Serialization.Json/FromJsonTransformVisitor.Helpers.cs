@@ -3,7 +3,7 @@
 
 namespace vm2.Linq.Expressions.Serialization.Json;
 
-public partial class FromJsonTransformVisitor
+partial class FromJsonTransformVisitor
 {
     readonly Dictionary<string, ParameterExpression> _parameters = [];
     readonly Dictionary<string, LabelTarget> _labelTargets = [];

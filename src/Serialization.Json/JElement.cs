@@ -13,7 +13,7 @@ namespace vm2.Linq.Expressions.Serialization.Json;
 /// <see cref="KeyValuePair{TKey, TValue}"/> is required.
 /// </remarks>
 [DebuggerDisplay("{Name}: {Node}")]
-public partial struct JElement(string key = "", JsonNode? value = null)
+partial struct JElement(string key = "", JsonNode? value = null)
 {
     #region Constructors
     /// <summary>

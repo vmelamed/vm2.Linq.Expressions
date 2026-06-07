@@ -3,7 +3,7 @@
 
 namespace vm2.Linq.Expressions.Serialization.Json;
 
-public partial struct JElement
+partial struct JElement
 {
     /// <summary>
     /// Adds the <paramref key="key" /> and the <paramref name="value" /> to the current <see cref="Node" /> if its type is
