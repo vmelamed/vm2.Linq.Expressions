@@ -6,7 +6,7 @@ namespace vm2.Linq.Expressions.Serialization.Json;
 /// <summary>
 /// Class that visits the nodes of a JSON node to produce a LINQ expression tree.
 /// </summary>
-public partial class FromJsonTransformVisitor
+partial class FromJsonTransformVisitor
 {
     #region Visiting children and grandchildren helpers
     /// <summary>

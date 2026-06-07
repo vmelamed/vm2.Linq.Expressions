@@ -3,7 +3,7 @@
 
 namespace vm2.Linq.Expressions.Serialization.Json;
 
-public partial class FromJsonTransformVisitor
+partial class FromJsonTransformVisitor
 {
     delegate Expression VisitJElement(FromJsonTransformVisitor visitor, JElement e);
 

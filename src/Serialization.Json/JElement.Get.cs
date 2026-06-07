@@ -3,7 +3,7 @@
 
 namespace vm2.Linq.Expressions.Serialization.Json;
 
-public partial struct JElement
+partial struct JElement
 {
     /// <summary>
     /// Gets the JSON kind of the name in <see cref="Node"/>.

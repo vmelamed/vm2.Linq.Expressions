@@ -6,7 +6,7 @@ namespace vm2.Linq.Expressions.Serialization.Json;
 /// <summary>
 /// Class JsonObject extensions.
 /// </summary>
-public static class JsonNodeExtensions
+static class JsonNodeExtensions
 {
     #region Add methods
     /// <summary>
