@@ -8,37 +8,6 @@ namespace vm2.Linq.Expressions.Serialization;
 /// </summary>
 public static partial class Transform
 {
-    /*
-    static readonly UnicodeCategory[] _beginIdentifierArr_ =
-    [
-        UnicodeCategory.UppercaseLetter,
-        UnicodeCategory.LowercaseLetter,
-        UnicodeCategory.ModifierLetter,
-        UnicodeCategory.TitlecaseLetter,
-        UnicodeCategory.OtherLetter,
-        UnicodeCategory.LetterNumber,
-        UnicodeCategory.ConnectorPunctuation,
-        UnicodeCategory.SpacingCombiningMark,
-        UnicodeCategory.Format
-    ];
-    static readonly FrozenSet<UnicodeCategory> _beginIdentifier = _beginIdentifierArr_.ToFrozenSet();
-
-    static readonly UnicodeCategory[] _beginWordIdentifierArr_ =
-    [
-        UnicodeCategory.UppercaseLetter,
-        UnicodeCategory.LowercaseLetter,
-        UnicodeCategory.ModifierLetter,
-        UnicodeCategory.TitlecaseLetter,
-        UnicodeCategory.OtherLetter,
-        UnicodeCategory.LetterNumber,
-        UnicodeCategory.ConnectorPunctuation,
-        UnicodeCategory.SpacingCombiningMark,
-        UnicodeCategory.Format,
-        UnicodeCategory.DecimalDigitNumber,
-    ];
-    static readonly FrozenSet<UnicodeCategory> _beginWordIdentifier = _beginWordIdentifierArr_.ToFrozenSet();
-    */
-
     static readonly UnicodeCategory[] _restWordIdentifierArr_ =
     [
         UnicodeCategory.LowercaseLetter,

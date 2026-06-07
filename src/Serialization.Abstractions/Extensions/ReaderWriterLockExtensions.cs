@@ -35,8 +35,12 @@ public static class ReaderWriterLockExtensions
     /// <param name="readerWriterLock">The reader writer lock.</param>
     /// <param name="waitMs">How long to wait for the lock to be acquired in ms. If 0 - wait indefinitely.</param>
     /// <returns><see cref="UpgradeableReaderSync" /> object.</returns>
-    public static UpgradeableReaderSync UpgradeableReaderLock(this ReaderWriterLockSlim readerWriterLock, int waitMs = 0)
-        => new(readerWriterLock, waitMs);
+    public static UpgradeableReaderSync UpgradeableReaderLock([NotNull] this ReaderWriterLockSlim readerWriterLock, int waitMs = 0)
+    {
+        ArgumentNullException.ThrowIfNull(readerWriterLock);
+
+        return new(readerWriterLock, waitMs);
+    }
 
     /// <summary>
     /// Gets a reader sync. Mere call to <c>new ReaderSync(readerWriterLock)</c> but shows nicely in intellisense.
@@ -44,8 +48,12 @@ public static class ReaderWriterLockExtensions
     /// <param name="readerWriterLock">The reader writer lock.</param>
     /// <param name="waitMs">How long to wait for the lock to be acquired in ms. If 0 - wait indefinitely.</param>
     /// <returns><see cref="ReaderSync" /> object.</returns>
-    public static ReaderSync ReaderLock(this ReaderWriterLockSlim readerWriterLock, int waitMs = 0)
-        => new(readerWriterLock, waitMs);
+    public static ReaderSync ReaderLock([NotNull] this ReaderWriterLockSlim readerWriterLock, int waitMs = 0)
+    {
+        ArgumentNullException.ThrowIfNull(readerWriterLock);
+
+        return new(readerWriterLock, waitMs);
+    }
 
     /// <summary>
     /// Gets a writer sync. Mere call to <c>new WriterSync(readerWriterLock)</c> but shows nicely in intellisense.
@@ -53,8 +61,12 @@ public static class ReaderWriterLockExtensions
     /// <param name="readerWriterLock">The reader writer lock.</param>
     /// <param name="waitMs">How long to wait for the lock to be acquired in ms. If 0 - wait indefinitely.</param>
     /// <returns><see cref="WriterSync" /> object.</returns>
-    public static WriterSync WriterLock(this ReaderWriterLockSlim readerWriterLock, int waitMs = 0)
-        => new(readerWriterLock, waitMs);
+    public static WriterSync WriterLock([NotNull] this ReaderWriterLockSlim readerWriterLock, int waitMs = 0)
+    {
+        ArgumentNullException.ThrowIfNull(readerWriterLock);
+
+        return new(readerWriterLock, waitMs);
+    }
 }
 
 /// <summary>
@@ -78,9 +90,11 @@ public sealed class ReaderSync : IReaderWriterSync
     /// <param name="readerWriterLock">The reader writer lock.</param>
     /// <param name="waitMs">How long to wait for the lock to be acquired in ms. If 0 - wait indefinitely.</param>
     public ReaderSync(
-        ReaderWriterLockSlim readerWriterLock,
+        [NotNull] ReaderWriterLockSlim readerWriterLock,
         int waitMs = 0)
     {
+        ArgumentNullException.ThrowIfNull(readerWriterLock);
+
         Lock = readerWriterLock;
         if (waitMs is 0)
         {
@@ -124,9 +138,11 @@ public sealed class WriterSync : IReaderWriterSync
     /// <param name="readerWriterLock">The reader-writer lock.</param>
     /// <param name="waitMs">How long to wait for the lock to be acquired in ms. If 0 - wait indefinitely.</param>
     public WriterSync(
-        ReaderWriterLockSlim readerWriterLock,
+        [NotNull] ReaderWriterLockSlim readerWriterLock,
         int waitMs = 0)
     {
+        ArgumentNullException.ThrowIfNull(readerWriterLock);
+
         Lock = readerWriterLock;
         if (waitMs is 0)
         {
@@ -171,9 +187,11 @@ public sealed class UpgradeableReaderSync : IReaderWriterSync
     /// <param name="readerWriterLock">The reader writer lock.</param>
     /// <param name="waitMs">How long to wait for the lock to be acquired in ms. If 0 - wait indefinitely.</param>
     public UpgradeableReaderSync(
-        ReaderWriterLockSlim readerWriterLock,
+        [NotNull] ReaderWriterLockSlim readerWriterLock,
         int waitMs = 0)
     {
+        ArgumentNullException.ThrowIfNull(readerWriterLock);
+
         Lock = readerWriterLock;
         if (waitMs is 0)
         {

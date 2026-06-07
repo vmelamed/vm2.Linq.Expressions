@@ -82,16 +82,25 @@ public abstract class DocumentOptions
     /// </summary>
     /// <param name="type">The type to be transformed to a readable string.</param>
     /// <returns>The human readable transformation of the parameter <paramref name="type"/>.</returns>
-    public string TransformTypeName(Type type)
-        => Transform.TypeName(type, TypeNames);
+    public string TransformTypeName([NotNull] Type type)
+    {
+        ArgumentNullException.ThrowIfNull(type);
+
+        return Transform.TypeName(type, TypeNames);
+    }
+
 
     /// <summary>
     /// Transforms the <paramref name="identifier"/> according to the <see cref="Identifiers"/> conventions.
     /// </summary>
     /// <param name="identifier">The identifier to be transformed.</param>
     /// <returns>The transformed <paramref name="identifier"/>.</returns>
-    public string TransformIdentifier(string identifier)
-        => Transform.Identifier(identifier, Identifiers);
+    public string TransformIdentifier([NotNull] string identifier)
+    {
+        ArgumentNullException.ThrowIfNull(identifier);
+
+         return Transform.Identifier(identifier, Identifiers);
+    }
 
     /// <summary>
     /// Determines whether to validate input documents against the expressions schema.
