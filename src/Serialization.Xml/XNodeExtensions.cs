@@ -6,7 +6,7 @@ namespace vm2.Linq.Expressions.Serialization.Xml;
 /// <summary>
 /// Class XNodeExtensions defines extension methods to XElement-s.
 /// </summary>
-public static class XNodeExtensions
+static class XNodeExtensions
 {
     /// <summary>
     /// Determines whether the specified element is <c>null</c> from the attribute `i:nil="true"`.

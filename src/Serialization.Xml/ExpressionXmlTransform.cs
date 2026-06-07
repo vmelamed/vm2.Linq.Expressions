@@ -20,8 +20,11 @@ public class ExpressionXmlTransform(XmlOptions? options = null) : IExpressionTra
     /// </summary>
     /// <param name="expression">The expression to be transformed.</param>
     /// <returns>The resultant top level document model node `XNode`.</returns>
-    XElement IExpressionTransform<XElement>.Transform(Expression expression)
+    XElement IExpressionTransform<XElement>.Transform(
+        [NotNull] Expression expression)
     {
+        ArgumentNullException.ThrowIfNull(expression);
+
         _expressionVisitor ??= new ToXmlTransformVisitor(_options);
         _expressionVisitor.Visit(expression);
 
@@ -37,8 +40,11 @@ public class ExpressionXmlTransform(XmlOptions? options = null) : IExpressionTra
     /// </summary>
     /// <param name="element">The document node to be transformed.</param>
     /// <returns>The resultant expression.</returns>
-    Expression IExpressionTransform<XElement>.Transform(XElement element)
+    Expression IExpressionTransform<XElement>.Transform(
+        [NotNull] XElement element)
     {
+        ArgumentNullException.ThrowIfNull(element);
+
         _options.Validate(element);
         return DoTransform(element);
     }
@@ -50,8 +56,11 @@ public class ExpressionXmlTransform(XmlOptions? options = null) : IExpressionTra
     /// </summary>
     /// <param name="expression">The expression to be transformed.</param>
     /// <returns>The resultant top level document model node `XNode`.</returns>
-    public XDocument Transform(Expression expression)
+    public XDocument Transform(
+        [NotNull] Expression expression)
     {
+        ArgumentNullException.ThrowIfNull(expression);
+
         var culture = CultureInfo.CurrentCulture;
         try
         {
@@ -72,8 +81,11 @@ public class ExpressionXmlTransform(XmlOptions? options = null) : IExpressionTra
     /// </summary>
     /// <param name="document">The document node to be transformed.</param>
     /// <returns>The resultant expression.</returns>
-    public Expression Transform(XDocument document)
+    public Expression Transform(
+        [NotNull] XDocument document)
     {
+        ArgumentNullException.ThrowIfNull(document);
+
         _options.Validate(document);
         var me = ((IExpressionTransform<XElement>)this);
         var root = document.Root ?? new XElement(ElementNames.Expression, ElementNames.Object, new XAttribute(AttributeNames.Nil, true));
@@ -85,8 +97,11 @@ public class ExpressionXmlTransform(XmlOptions? options = null) : IExpressionTra
     }
     #endregion
 
-    Expression DoTransform(XElement element)
+    Expression DoTransform(
+        [NotNull] XElement element)
     {
+        ArgumentNullException.ThrowIfNull(element);
+
         if (_xmlVisitor is null)
             _xmlVisitor = new FromXmlTransformVisitor();
         else
@@ -101,9 +116,12 @@ public class ExpressionXmlTransform(XmlOptions? options = null) : IExpressionTra
     /// <param name="stream">The stream to put the XML document to.</param>
     /// <returns>Stream.</returns>
     public void Serialize(
-        Expression expression,
-        Stream stream)
+        [NotNull] Expression expression,
+        [NotNull] Stream stream)
     {
+        ArgumentNullException.ThrowIfNull(expression);
+        ArgumentNullException.ThrowIfNull(stream);
+
         var doc = Transform(expression);
         using var writer = new StreamWriter(stream, _options.Encoding, leaveOpen: true);
         using var xmlWriter = XmlWriter.Create(writer, new() {
@@ -130,10 +148,13 @@ public class ExpressionXmlTransform(XmlOptions? options = null) : IExpressionTra
     /// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
     /// <returns>A Task&lt;Stream&gt; representing the asynchronous operation.</returns>
     public async Task<Stream> SerializeAsync(
-        Expression expression,
-        Stream stream,
+        [NotNull] Expression expression,
+        [NotNull] Stream stream,
         CancellationToken cancellationToken = default)
     {
+        ArgumentNullException.ThrowIfNull(expression);
+        ArgumentNullException.ThrowIfNull(stream);
+
         var doc = Transform(expression);
         var encoding = _options.Encoding;
         var settings = new XmlWriterSettings() {
@@ -163,8 +184,10 @@ public class ExpressionXmlTransform(XmlOptions? options = null) : IExpressionTra
     /// <param name="stream">The stream to get the XML document from.</param>
     /// <returns>Stream.</returns>
     public Expression Deserialize(
-        Stream stream)
+        [NotNull] Stream stream)
     {
+        ArgumentNullException.ThrowIfNull(stream);
+
         using var reader = new StreamReader(stream, _options.Encoding, leaveOpen: true);
         var readerSettings = new XmlReaderSettings()
         {
@@ -191,9 +214,11 @@ public class ExpressionXmlTransform(XmlOptions? options = null) : IExpressionTra
     /// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
     /// <returns>Stream.</returns>
     public async Task<Expression> DeserializeAsync(
-        Stream stream,
+        [NotNull] Stream stream,
         CancellationToken cancellationToken = default)
     {
+        ArgumentNullException.ThrowIfNull(stream);
+
         using var reader = new StreamReader(stream, _options.Encoding);
         var readerSettings = new XmlReaderSettings() {
             Async = true,

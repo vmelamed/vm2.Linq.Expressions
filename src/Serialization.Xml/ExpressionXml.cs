@@ -28,6 +28,10 @@ public static class ExpressionXml
     /// <summary>
     /// Deserializes a LINQ <see cref="Expression"/> from the XML content in the specified <paramref name="stream"/>.
     /// </summary>
+    /// <param name="stream">The stream containing the XML content to be deserialized.</param>
+    /// <param name="options">The options to control the deserialization process.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>The deserialized expression</returns>
     public static Task<Expression> FromStreamAsync(
         [NotNull] Stream stream,
         XmlOptions? options = null,
@@ -43,6 +47,9 @@ public static class ExpressionXml
     /// <summary>
     /// Deserializes a LINQ <see cref="Expression"/> from the specified <see cref="XmlReader"/>.
     /// </summary>
+    /// <param name="reader">The <see cref="XmlReader"/> to read the XML content from.</param>
+    /// <param name="options">The options to control the deserialization process.</param>
+    /// <returns>The deserialized expression</returns>
     public static Expression FromReader(
         [NotNull] XmlReader reader,
         XmlOptions? options = null)
@@ -57,6 +64,10 @@ public static class ExpressionXml
     /// <summary>
     /// Deserializes a LINQ <see cref="Expression"/> from the specified <see cref="XmlReader"/>.
     /// </summary>
+    /// <param name="reader">The <see cref="XmlReader"/> to read the XML content from.</param>
+    /// <param name="options">The options to control the deserialization process.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>The deserialized expression</returns>
     public static async Task<Expression> FromReaderAsync(
         [NotNull] XmlReader reader,
         XmlOptions? options = null,
@@ -74,6 +85,9 @@ public static class ExpressionXml
     /// <summary>
     /// Deserializes a LINQ <see cref="Expression"/> from the XML file at the specified <paramref name="filePath"/>.
     /// </summary>
+    /// <param name="filePath">The path to the XML file to be deserialized.</param>
+    /// <param name="options">The options to control the deserialization process.</param>
+    /// <returns>The deserialized expression</returns>
     public static Expression FromFile(
         [NotNull] string filePath,
         XmlOptions? options = null)
@@ -88,6 +102,10 @@ public static class ExpressionXml
     /// <summary>
     /// Deserializes a LINQ <see cref="Expression"/> from the XML file at the specified <paramref name="filePath"/>.
     /// </summary>
+    /// <param name="filePath">The path to the XML file to be deserialized.</param>
+    /// <param name="options">The options to control the deserialization process.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>The deserialized expression</returns>
     public static async Task<Expression> FromFileAsync(
         [NotNull] string filePath,
         XmlOptions? options = null,
@@ -105,6 +123,9 @@ public static class ExpressionXml
     /// <summary>
     /// Transforms the <see cref="XDocument"/> to a LINQ <see cref="Expression"/>.
     /// </summary>
+    /// <param name="document">The <see cref="XDocument"/> to be transformed.</param>
+    /// <param name="options">The options to control the deserialization process.</param>
+    /// <returns>The deserialized expression</returns>
     public static Expression FromXDocument(
         [NotNull] XDocument document,
         XmlOptions? options = null)
@@ -117,6 +138,9 @@ public static class ExpressionXml
     /// <summary>
     /// Transforms the <see cref="XElement"/> to a LINQ <see cref="Expression"/>.
     /// </summary>
+    /// <param name="element">The <see cref="XElement"/> to be transformed.</param>
+    /// <param name="options">The options to control the deserialization process.</param>
+    /// <returns>The deserialized expression</returns>
     public static Expression FromXElement(
         [NotNull] XElement element,
         XmlOptions? options = null)
@@ -131,6 +155,9 @@ public static class ExpressionXml
     /// <summary>
     /// Deserializes a LINQ <see cref="Expression"/> from the specified XML <paramref name="xml"/> string.
     /// </summary>
+    /// <param name="xml">The XML string to be deserialized.</param>
+    /// <param name="options">The options to control the deserialization process.</param>
+    /// <returns>The deserialized expression</returns>
     public static Expression FromString(
         [NotNull] string xml,
         XmlOptions? options = null)

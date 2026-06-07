@@ -8,7 +8,7 @@ namespace vm2.Linq.Expressions.Serialization.Xml;
 /// Implements the <see cref="ExpressionTransformVisitor{XElement}" />
 /// </summary>
 /// <seealso cref="ExpressionTransformVisitor{XElement}" />
-public partial class ToXmlTransformVisitor(XmlOptions options) : ExpressionTransformVisitor<XElement>
+partial class ToXmlTransformVisitor(XmlOptions options) : ExpressionTransformVisitor<XElement>
 {
     ToXmlDataTransform _dataTransform = new(options);
 

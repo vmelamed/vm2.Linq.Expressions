@@ -3,7 +3,7 @@
 
 namespace vm2.Linq.Expressions.Serialization.Xml;
 
-public partial class ToXmlTransformVisitor
+partial class ToXmlTransformVisitor
 {
     int _lastParamIdNumber;
     int _lastLabelIdNumber;

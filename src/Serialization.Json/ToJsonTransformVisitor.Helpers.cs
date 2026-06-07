@@ -3,7 +3,7 @@
 
 namespace vm2.Linq.Expressions.Serialization.Json;
 
-public partial class ToJsonTransformVisitor
+partial class ToJsonTransformVisitor
 {
     ToJsonDataTransform _dataTransform = new(options);
 

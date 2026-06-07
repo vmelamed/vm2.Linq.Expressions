@@ -13,7 +13,8 @@ public partial class FromXmlTransformVisitor
     /// </summary>
     /// <param name="element">The element to be visited.</param>
     /// <returns>The created expression.</returns>
-    public virtual Expression Visit(XElement element)
+    public virtual Expression Visit(
+        [NotNull] XElement element)
         => _transforms.TryGetValue(element.Name.LocalName, out var visit)
                 ? visit(this, element)
                 : throw new SerializationException($"Don't know how to deserialize the element '{element.Name}'.");

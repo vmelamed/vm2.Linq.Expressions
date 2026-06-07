@@ -124,9 +124,11 @@ public static partial class Transform
     /// <param name="convention">The naming convention.</param>
     /// <returns>The type name string.</returns>
     public static string TypeName(
-        Type type,
+        [NotNull] Type type,
         TypeNameConventions convention)
     {
+        ArgumentNullException.ThrowIfNull(type);
+
         if (Vocabulary.TypesToNames.TryGetValue(type, out var typeName))
             return typeName;
 

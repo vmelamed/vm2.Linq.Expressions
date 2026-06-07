@@ -38,8 +38,12 @@ public partial class JsonOptions : DocumentOptions
     /// <summary>
     /// Initializes a new instance of the <see cref="JsonOptions"/> class.
     /// </summary>
-    public JsonOptions(string filePath)
-        => LoadSchema(filePath);
+    public JsonOptions([NotNull] string filePath)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(filePath);
+
+        LoadSchema(filePath);
+    }
 
     /// <summary>
     /// Determines whether the expressions schemaUri <see cref="JsonOptions.Exs"/> was added.
@@ -87,7 +91,9 @@ public partial class JsonOptions : DocumentOptions
     /// <summary>
     /// Gets the json node options.
     /// </summary>
-    public static JsonNodeOptions JsonNodeOptions { get; } = new() { PropertyNameCaseInsensitive = false };
+    public static JsonNodeOptions JsonNodeOptions { get; } = new() {
+        PropertyNameCaseInsensitive = false
+    };
 
     /// <summary>
     /// Gets the json writer options based on these options
@@ -123,8 +129,10 @@ public partial class JsonOptions : DocumentOptions
     /// Loads the schema from the specified URL.
     /// </summary>
     /// <param name="schemaFilePath">The location of the schema file.</param>
-    public void LoadSchema(string schemaFilePath)
+    public void LoadSchema([NotNull] string schemaFilePath)
     {
+        ArgumentException.ThrowIfNullOrWhiteSpace(schemaFilePath);
+
         using var _ = _syncSchema.WriterLock();
         using var __ = _globalRegistryLock.WriterLock();
 
@@ -154,16 +162,22 @@ public partial class JsonOptions : DocumentOptions
     /// </summary>
     /// <param name="json">The JSON text to validate.</param>
     /// <returns>Json.Schema.EvaluationResults.</returns>
-    public void Validate(string json)
-        => Validate(JsonNode.Parse(json) ?? throw new SchemaValidationErrorsException("Invalid JSON text."));
+    public void Validate([NotNull] string json)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(json);
+
+        Validate(JsonNode.Parse(json) ?? throw new SchemaValidationErrorsException("Invalid JSON text."));
+    }
 
     /// <summary>
     /// Evaluates the specified jsonNode against the schema (by default the expressions schema).
     /// </summary>
     /// <param name="jsonNode">The jsonNode.</param>
     /// <returns>Json.Schema.EvaluationResults.</returns>
-    public void Validate(JsonNode jsonNode)
+    public void Validate([NotNull] JsonNode jsonNode)
     {
+        ArgumentNullException.ThrowIfNull(jsonNode);
+
         if (!MustValidate)
             return;
 
@@ -212,8 +226,10 @@ public partial class JsonOptions : DocumentOptions
     /// </summary>
     /// <param name="schemaFilePath">The location of the schema file.</param>
     /// <returns>A Task representing the asynchronous operation.</returns>Load
-    public void LoadSchema(string schemaFilePath)
+    public void LoadSchema([NotNull] string schemaFilePath)
     {
+        ArgumentException.ThrowIfNullOrWhiteSpace(schemaFilePath);
+
         string schemaText;
 
         using (var file = File.OpenText(schemaFilePath))
@@ -228,8 +244,10 @@ public partial class JsonOptions : DocumentOptions
     /// </summary>
     /// <param name="node">The JSON node.</param>
     /// <returns>Json.Schema.EvaluationResults.</returns>
-    public void Validate(JsonNode node)
+    public void Validate([NotNull] JsonNode node)
     {
+        ArgumentNullException.ThrowIfNull(node);
+
         if (!MustValidate)
             return;
 
@@ -256,8 +274,10 @@ public partial class JsonOptions : DocumentOptions
     /// </summary>
     /// <param name="json">The JSON string.</param>
     /// <returns>Json.Schema.EvaluationResults.</returns>
-    public void Validate(string json)
+    public void Validate([NotNull] string json)
     {
+        ArgumentException.ThrowIfNullOrWhiteSpace(json);
+
         if (!MustValidate)
             return;
 

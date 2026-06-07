@@ -8,7 +8,7 @@ namespace vm2.Linq.Expressions.Serialization.Json;
 /// Implements the <see cref="ExpressionTransformVisitor{XNode}" />
 /// </summary>
 /// <seealso cref="ExpressionTransformVisitor{XNode}" />
-public partial class ToJsonTransformVisitor(JsonOptions options) : ExpressionTransformVisitor<JElement>
+partial class ToJsonTransformVisitor(JsonOptions options) : ExpressionTransformVisitor<JElement>
 {
     /// <summary>
     /// Gets a properly named node corresponding to the current expression node.
