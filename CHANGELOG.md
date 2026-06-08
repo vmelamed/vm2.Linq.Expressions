@@ -1,5 +1,35 @@
 # Changelog
 
+## v3.0.0-preview.1 - 2026-06-08
+
+### Added
+
+- add max generation collection thresholds to CI environment variables [skip ci]
+
+### Fixed
+
+- fix spelling and remove duplicate rows
+- streamline the dev. environment for multi-OS/multi-IDE and for consistent configuration of AI
+- add SPDX
+- correct type for unsignedIntPtr in ConversionMapEdgeTests
+- update commit prefix for git-cliff to include 'tests' and adjust documentation
+- custom types must be version 1.0.0.0
+- update version numbers in nullable enum and struct test data
+
+### Internal
+
+- diff-shared changes
+- update changelog for v2.0.0 [skip ci]
+- add ExpressionTransformVisitorTests for stack operations and generic visit behavior
+- add new tests for JSON and XML serialization, including hash code round-trip and conversion edge cases
+- regenerated test data
+- add test data
+- simplify exception handling in XML deserialization tests
+- serialization methods and add null checks
+- JSON and XML serialization code for improved null handling and argument validation
+- **BREAKING:** lower the public interface surface by change accessibility of XNodeExtensions, ToJsonTransformVisitor, and ToXmlTransformVisitor to internal; small changes after copilot comments
+- **BREAKING:** lower the public interface surface by making FromJsonTransformVisitor, JElement, and JsonNodeExtensions internal. Add InternalsVisibleTo for Serialization.Json.Tests
+
 ## v2.0.0 - 2026-06-04
 
 See prereleases below.
