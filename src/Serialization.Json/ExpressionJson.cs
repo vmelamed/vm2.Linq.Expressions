@@ -40,7 +40,7 @@ public static class ExpressionJson
         [NotNull] JsonObject jsonObject,
         JsonOptions? options = null)
     {
-        ArgumentNullException.ThrowIfNull(jsonObject, nameof(jsonObject));
+        ArgumentNullException.ThrowIfNull(jsonObject);
 
         return new ExpressionJsonTransform(options).Transform(jsonObject);
     }
