@@ -15,6 +15,8 @@ namespace vm2.Benchmarks.Linq.Expressions;
 [MarkdownExporter]
 public class EqualityBenchmarks
 {
+    const int operationsPerInvoke = 1000;
+
     static readonly ParameterExpression _x = Expression.Parameter(typeof(int), "x");
     static readonly ParameterExpression _y = Expression.Parameter(typeof(int), "y");
     static readonly ParameterExpression _s = Expression.Parameter(typeof(string), "s");
@@ -67,16 +69,22 @@ public class EqualityBenchmarks
         _expression2 = _cases2[CaseName];
     }
 
-    [Benchmark(Description = "DeepEquals")]
+    [Benchmark(Description = "DeepEquals", OperationsPerInvoke = operationsPerInvoke)]
     public bool DeepEquals()
     {
-        return _expression.DeepEquals(_expression2);
+        var f = false;
+        for (int i = 0; i < operationsPerInvoke; i++)
+            f |= _expression.DeepEquals(_expression2);
+        return f;
     }
 
-    [Benchmark(Description = "GetDeepHashCode")]
+    [Benchmark(Description = "GetDeepHashCode", OperationsPerInvoke = operationsPerInvoke)]
     public int GetDeepHashCode()
     {
-        return _expression.GetDeepHashCode();
+        var f = 0;
+        for (int i = 0; i < operationsPerInvoke; i++)
+            f ^= _expression.GetDeepHashCode();
+        return f;
     }
 
     static Expression<Func<int, int, int>> BuildBlockExpression()

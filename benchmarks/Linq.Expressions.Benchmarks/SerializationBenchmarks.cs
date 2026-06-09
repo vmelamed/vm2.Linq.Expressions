@@ -16,6 +16,8 @@ namespace vm2.Benchmarks.Linq.Expressions;
 [MarkdownExporter]
 public class SerializationBenchmarks
 {
+    const int operationsPerInvoke = 1000;
+
     static readonly ParameterExpression _x = Expression.Parameter(typeof(int), "x");
     static readonly ParameterExpression _y = Expression.Parameter(typeof(int), "y");
     static readonly ParameterExpression _s = Expression.Parameter(typeof(string), "s");
@@ -150,27 +152,47 @@ public class SerializationBenchmarks
         throw new InvalidOperationException("Could not find the repository root (looked for vm2.Linq.Expressions.slnx).");
     }
 
-    [Benchmark(Description = "XML serialize")]
+    [Benchmark(Description = "XML serialize", OperationsPerInvoke = operationsPerInvoke)]
     public XDocument Xml_Serialize()
     {
-        return _xmlTransform.Transform(_expression);
+        XDocument x = null!;
+
+        for (int i = 0; i < operationsPerInvoke; i++)
+            x = _xmlTransform.Transform(_expression);
+
+        return x;
     }
 
-    [Benchmark(Description = "JSON serialize")]
+    [Benchmark(Description = "JSON serialize", OperationsPerInvoke = operationsPerInvoke)]
     public JsonObject Json_Serialize()
     {
-        return _jsonTransform.Transform(_expression);
+        JsonObject j = null!;
+
+        for (int i = 0; i < operationsPerInvoke; i++)
+            j = _jsonTransform.Transform(_expression);
+
+        return j;
     }
 
-    [Benchmark(Description = "XML deserialize")]
+    [Benchmark(Description = "XML deserialize", OperationsPerInvoke = operationsPerInvoke)]
     public Expression Xml_Deserialize()
     {
-        return _xmlTransform.Transform(_xmlDoc);
+        Expression x = null!;
+
+        for (int i = 0; i < operationsPerInvoke; i++)
+            x = _xmlTransform.Transform(_xmlDoc);
+
+        return x;
     }
 
-    [Benchmark(Description = "JSON deserialize")]
+    [Benchmark(Description = "JSON deserialize", OperationsPerInvoke = operationsPerInvoke)]
     public Expression Json_Deserialize()
     {
-        return _jsonTransform.Transform(_jsonDoc);
+        Expression x = null!;
+
+        for (int i = 0; i < operationsPerInvoke; i++)
+            x = _jsonTransform.Transform(_jsonDoc);
+
+        return x;
     }
 }
