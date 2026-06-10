@@ -155,12 +155,12 @@ public class SerializationBenchmarks
     [Benchmark(Description = "XML serialize", OperationsPerInvoke = operationsPerInvoke)]
     public XDocument Xml_Serialize()
     {
-        XDocument x = null!;
+        XDocument suppressOptimizationDiscard = null!;
 
         for (int i = 0; i < operationsPerInvoke; i++)
-            x = _xmlTransform.Transform(_expression);
+            suppressOptimizationDiscard = _xmlTransform.Transform(_expression);
 
-        return x;
+        return suppressOptimizationDiscard;
     }
 
     [Benchmark(Description = "JSON serialize", OperationsPerInvoke = operationsPerInvoke)]
@@ -177,22 +177,22 @@ public class SerializationBenchmarks
     [Benchmark(Description = "XML deserialize", OperationsPerInvoke = operationsPerInvoke)]
     public Expression Xml_Deserialize()
     {
-        Expression x = null!;
+        Expression suppressOptimizationDiscard = null!;
 
         for (int i = 0; i < operationsPerInvoke; i++)
-            x = _xmlTransform.Transform(_xmlDoc);
+            suppressOptimizationDiscard = _xmlTransform.Transform(_xmlDoc);
 
-        return x;
+        return suppressOptimizationDiscard;
     }
 
     [Benchmark(Description = "JSON deserialize", OperationsPerInvoke = operationsPerInvoke)]
     public Expression Json_Deserialize()
     {
-        Expression x = null!;
+        Expression suppressOptimizationDiscard = null!;
 
         for (int i = 0; i < operationsPerInvoke; i++)
-            x = _jsonTransform.Transform(_jsonDoc);
+            suppressOptimizationDiscard = _jsonTransform.Transform(_jsonDoc);
 
-        return x;
+        return suppressOptimizationDiscard;
     }
 }

@@ -72,19 +72,19 @@ public class EqualityBenchmarks
     [Benchmark(Description = "DeepEquals", OperationsPerInvoke = operationsPerInvoke)]
     public bool DeepEquals()
     {
-        var f = false;
+        var suppressOptimizationDiscard = false;
         for (int i = 0; i < operationsPerInvoke; i++)
-            f |= _expression.DeepEquals(_expression2);
-        return f;
+            suppressOptimizationDiscard |= _expression.DeepEquals(_expression2);
+        return suppressOptimizationDiscard;
     }
 
     [Benchmark(Description = "GetDeepHashCode", OperationsPerInvoke = operationsPerInvoke)]
     public int GetDeepHashCode()
     {
-        var f = 0;
+        var suppressOptimizationDiscard = 0;
         for (int i = 0; i < operationsPerInvoke; i++)
-            f ^= _expression.GetDeepHashCode();
-        return f;
+            suppressOptimizationDiscard ^= _expression.GetDeepHashCode();
+        return suppressOptimizationDiscard;
     }
 
     static Expression<Func<int, int, int>> BuildBlockExpression()
