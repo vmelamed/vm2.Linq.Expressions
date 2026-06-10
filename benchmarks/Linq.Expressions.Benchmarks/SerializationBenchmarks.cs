@@ -16,6 +16,7 @@ namespace vm2.Benchmarks.Linq.Expressions;
 [MarkdownExporter]
 public class SerializationBenchmarks
 {
+    const int operationsPerInvoke = 1000;
     static readonly ParameterExpression _x = Expression.Parameter(typeof(int), "x");
     static readonly ParameterExpression _y = Expression.Parameter(typeof(int), "y");
     static readonly ParameterExpression _s = Expression.Parameter(typeof(string), "s");
@@ -150,27 +151,47 @@ public class SerializationBenchmarks
         throw new InvalidOperationException("Could not find the repository root (looked for vm2.Linq.Expressions.slnx).");
     }
 
-    [Benchmark(Description = "XML serialize")]
-    public XDocument Xml_Serialize()
+    [Benchmark(Description = "XML serialize", OperationsPerInvoke = operationsPerInvoke)]
+    public XDocument? Xml_Serialize()
     {
-        return _xmlTransform.Transform(_expression);
+        XDocument? suppressOptimizationDiscard = null;
+
+        for (int i = 0; i < operationsPerInvoke; i++)
+            suppressOptimizationDiscard = _xmlTransform.Transform(_expression);
+
+        return suppressOptimizationDiscard;
     }
 
-    [Benchmark(Description = "JSON serialize")]
-    public JsonObject Json_Serialize()
+    [Benchmark(Description = "JSON serialize", OperationsPerInvoke = operationsPerInvoke)]
+    public JsonObject? Json_Serialize()
     {
-        return _jsonTransform.Transform(_expression);
+        JsonObject? suppressOptimizationDiscard = null;
+
+        for (int i = 0; i < operationsPerInvoke; i++)
+            suppressOptimizationDiscard = _jsonTransform.Transform(_expression);
+
+        return suppressOptimizationDiscard;
     }
 
-    [Benchmark(Description = "XML deserialize")]
-    public Expression Xml_Deserialize()
+    [Benchmark(Description = "XML deserialize", OperationsPerInvoke = operationsPerInvoke)]
+    public Expression? Xml_Deserialize()
     {
-        return _xmlTransform.Transform(_xmlDoc);
+        Expression? suppressOptimizationDiscard = null;
+
+        for (int i = 0; i < operationsPerInvoke; i++)
+            suppressOptimizationDiscard = _xmlTransform.Transform(_xmlDoc);
+
+        return suppressOptimizationDiscard;
     }
 
-    [Benchmark(Description = "JSON deserialize")]
-    public Expression Json_Deserialize()
+    [Benchmark(Description = "JSON deserialize", OperationsPerInvoke = operationsPerInvoke)]
+    public Expression? Json_Deserialize()
     {
-        return _jsonTransform.Transform(_jsonDoc);
+        Expression? suppressOptimizationDiscard = null;
+
+        for (int i = 0; i < operationsPerInvoke; i++)
+            suppressOptimizationDiscard = _jsonTransform.Transform(_jsonDoc);
+
+        return suppressOptimizationDiscard;
     }
 }
