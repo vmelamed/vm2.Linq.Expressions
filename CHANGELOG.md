@@ -1,5 +1,12 @@
 # Changelog
 
+## v3.0.1-preview.2 - 2026-06-11
+
+### Fixed
+
+- add operationsPerInvoke to benchmark methods for consistency
+- update serialization methods to remove nullable types
+
 ## v3.0.1-preview.1 - 2026-06-09
 
 ### Internal
