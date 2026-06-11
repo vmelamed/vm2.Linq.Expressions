@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.0.1-preview.3 - 2026-06-11
+
+### Internal
+
+- changed comments and UI for clarity [skip ci]
+
 ## v3.0.1-preview.2 - 2026-06-11
 
 ### Fixed
