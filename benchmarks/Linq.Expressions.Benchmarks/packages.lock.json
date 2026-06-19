@@ -230,7 +230,7 @@
       "vm2.Linq.Expressions.Serialization.Json": {
         "type": "Project",
         "dependencies": {
-          "JsonSchema.Net": "[9.2.1, )",
+          "JsonSchema.Net": "[9.2.2, )",
           "vm2.Linq.Expressions.Serialization.Abstractions": "[1.0.0, )"
         }
       },
@@ -242,9 +242,9 @@
       },
       "JsonSchema.Net": {
         "type": "CentralTransitive",
-        "requested": "[9.2.1, )",
-        "resolved": "9.2.1",
-        "contentHash": "jBBi3JG6+6/QLQvq6V0oLdrJKL08hEPKp8BScCNzI8X4ana87bgPwTDPDnAlDxWi4UuQuhahMKjbINaZgmuDWw==",
+        "requested": "[9.2.2, )",
+        "resolved": "9.2.2",
+        "contentHash": "S65LahlS1jA1cVshtBx7lnFPbQoTgZ4QdHX8fZ94VwUBlMQ9IvA2bu4ElUdrdu0VrJImMCxs5rpyybcvsrnmRA==",
         "dependencies": {
           "JsonPointer.Net": "7.0.1"
         }

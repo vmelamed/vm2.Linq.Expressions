@@ -50,7 +50,9 @@ public static partial class TypeExtensions
     /// Determines whether the specified type is a generic tuple class.
     /// </summary>
     public static bool IsTupleClass(
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)][NotNull] this Type type)
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)]
+        [NotNull]
+        this Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
 
@@ -60,7 +62,10 @@ public static partial class TypeExtensions
     /// <summary>
     /// Determines whether the specified type is a generic tuple struct.
     /// </summary>
-    public static bool IsTupleValue([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)][NotNull] this Type type)
+    public static bool IsTupleValue(
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)]
+        [NotNull]
+        this Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
 
@@ -70,7 +75,10 @@ public static partial class TypeExtensions
     /// <summary>
     /// Determines whether the specified type is a tuple (class or struct).
     /// </summary>
-    public static bool IsTuple([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)][NotNull] this Type type)
+    public static bool IsTuple(
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)]
+        [NotNull]
+        this Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
 
@@ -80,7 +88,9 @@ public static partial class TypeExtensions
     /// <summary>
     /// Determines whether the specified type is a <see cref="Memory{T}"/> or <see cref="ReadOnlyMemory{T}"/>.
     /// </summary>
-    public static bool IsMemory([NotNull] this Type type)
+    public static bool IsMemory(
+        [NotNull]
+        this Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
 
@@ -97,7 +107,9 @@ public static partial class TypeExtensions
     /// Determines whether the type implements the specified interface type.
     /// </summary>
     public static bool ImplementsInterface(
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)][NotNull] this Type type,
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)]
+        [NotNull]
+        this Type type,
         Type interfaceType)
     {
         ArgumentNullException.ThrowIfNull(type);
@@ -110,7 +122,9 @@ public static partial class TypeExtensions
     /// Determines whether the type implements an interface with the specified name.
     /// </summary>
     public static bool ImplementsInterface(
-        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)][NotNull] this Type type,
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)]
+        [NotNull]
+        this Type type,
         string interfaceName)
     {
         ArgumentNullException.ThrowIfNull(type);
@@ -123,7 +137,9 @@ public static partial class TypeExtensions
     /// Determines whether the specified type is a byte sequence:
     /// <c>byte[]</c>, <c>Memory&lt;byte&gt;</c>, <c>ReadOnlyMemory&lt;byte&gt;</c>, <c>ArraySegment&lt;byte&gt;</c>.
     /// </summary>
-    public static bool IsByteSequence([NotNull] this Type type)
+    public static bool IsByteSequence(
+        [NotNull]
+        this Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
 
@@ -134,7 +150,9 @@ public static partial class TypeExtensions
     /// <summary>
     /// Determines whether the specified type is a sequence of objects: array, list, set, etc.
     /// </summary>
-    public static bool IsSequence([NotNull] this Type type)
+    public static bool IsSequence(
+        [NotNull]
+        this Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
 
@@ -158,7 +176,10 @@ public static partial class TypeExtensions
     /// <summary>
     /// Determines whether the specified type implements <see cref="IDictionary"/>.
     /// </summary>
-    public static bool IsDictionary([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)][NotNull] this Type type)
+    public static bool IsDictionary(
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)]
+        [NotNull]
+        this Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
 
@@ -169,7 +190,8 @@ public static partial class TypeExtensions
     /// Determines whether the method has the specified name and a single parameter of type <c>IEnumerable&lt;&gt;</c>.
     /// </summary>
     public static bool MethodHas1EnumerableParameter(
-        [NotNull] this MethodInfo mi,
+        [NotNull]
+        this MethodInfo mi,
         string name)
     {
         ArgumentNullException.ThrowIfNull(mi);
@@ -187,7 +209,8 @@ public static partial class TypeExtensions
     /// Determines whether the method has the specified name and a single parameter of type <c>IEnumerable&lt;&gt;</c>.
     /// </summary>
     public static bool MethodHas1EnumerableParameterAndComparer(
-        [NotNull] this MethodInfo mi,
+        [NotNull]
+        this MethodInfo mi,
         string name)
     {
         ArgumentNullException.ThrowIfNull(mi);
@@ -207,7 +230,8 @@ public static partial class TypeExtensions
     /// Determines whether the constructor has a single array parameter.
     /// </summary>
     public static bool ConstructorHas1ArrayParameter(
-        [NotNull] this ConstructorInfo ci)
+        [NotNull]
+        this ConstructorInfo ci)
     {
         ArgumentNullException.ThrowIfNull(ci);
 
@@ -220,7 +244,8 @@ public static partial class TypeExtensions
     /// Determines whether the constructor has a single parameter of type <c>IEnumerable&lt;&gt;</c>.
     /// </summary>
     public static bool ConstructorHas1EnumerableParameter(
-        [NotNull] this ConstructorInfo ci)
+        [NotNull]
+        this ConstructorInfo ci)
     {
         ArgumentNullException.ThrowIfNull(ci);
 
@@ -233,7 +258,8 @@ public static partial class TypeExtensions
     /// Determines whether the constructor has a single parameter of type <c>IList&lt;&gt;</c>.
     /// </summary>
     public static bool ConstructorHas1ListParameter(
-        [NotNull] this ConstructorInfo ci)
+        [NotNull]
+        this ConstructorInfo ci)
     {
         ArgumentNullException.ThrowIfNull(ci);
 

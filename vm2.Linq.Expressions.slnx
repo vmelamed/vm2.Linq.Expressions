@@ -35,7 +35,7 @@
         <File Path=".github/workflows/Release.yaml" />
         <File Path=".github/workflows/ClearCache.yaml" />
         <File Path=".github/workflows/AutoMerge.yaml" />
-        <File Path=".github/workflows/RefreshLockfiles.yaml" />
+        <File Path=".github/workflows/RefreshLockFiles.yaml" />
     </Folder>
     <Folder Name="/solution Items/changelog/">
         <File Path="changelog/cliff.prerelease.toml" />
