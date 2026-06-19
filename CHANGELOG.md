@@ -1,5 +1,16 @@
 # Changelog
 
+## v3.0.2-preview.1 - 2026-06-19
+
+### Internal
+
+- promote to stable v3.0.1 [skip ci]
+- update changelog for v3.0.1 [skip ci]
+- update cache-pattern description for clarity
+- sync, no code changes [skip ci]
+- Bump the minor-and-patch group with 1 update
+- Bump the minor-and-patch group with 1 update
+
 ## v3.0.1 - 2026-06-11
 
 See prereleases below.
