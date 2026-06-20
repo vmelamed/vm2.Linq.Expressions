@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.0.2-preview.2 - 2026-06-20
+
+### Internal
+
+- update AI docs
+
 ## v3.0.2-preview.1 - 2026-06-19
 
 ### Internal
