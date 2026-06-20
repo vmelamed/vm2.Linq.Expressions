@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.0.2-preview.3 - 2026-06-20
+
+### Internal
+
+- update dependencies
+
 ## v3.0.2-preview.2 - 2026-06-20
 
 ### Internal
