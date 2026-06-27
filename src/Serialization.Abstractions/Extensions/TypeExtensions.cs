@@ -15,7 +15,7 @@ public static partial class TypeExtensions
     /// Determines whether the specified type is a basic type: primitive, enum, decimal, string, Guid, Uri, DateTime,
     /// TimeSpan, DateTimeOffset, IntPtr, UIntPtr.
     /// </summary>
-    public static bool IsBasicType([NotNull] this Type type)
+    public static bool IsBasicType(this Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
 
@@ -29,7 +29,7 @@ public static partial class TypeExtensions
     /// <summary>
     /// Determines whether the specified type is an anonymous type.
     /// </summary>
-    public static bool IsAnonymous([NotNull] this Type type)
+    public static bool IsAnonymous(this Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
 
@@ -39,7 +39,7 @@ public static partial class TypeExtensions
     /// <summary>
     /// Determines whether the specified type is a generic <see cref="Nullable{T}"/>.
     /// </summary>
-    public static bool IsNullable([NotNull] this Type type)
+    public static bool IsNullable(this Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
 
@@ -51,7 +51,6 @@ public static partial class TypeExtensions
     /// </summary>
     public static bool IsTupleClass(
         [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)]
-        [NotNull]
         this Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
@@ -64,7 +63,6 @@ public static partial class TypeExtensions
     /// </summary>
     public static bool IsTupleValue(
         [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)]
-        [NotNull]
         this Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
@@ -77,7 +75,6 @@ public static partial class TypeExtensions
     /// </summary>
     public static bool IsTuple(
         [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)]
-        [NotNull]
         this Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
@@ -88,9 +85,7 @@ public static partial class TypeExtensions
     /// <summary>
     /// Determines whether the specified type is a <see cref="Memory{T}"/> or <see cref="ReadOnlyMemory{T}"/>.
     /// </summary>
-    public static bool IsMemory(
-        [NotNull]
-        this Type type)
+    public static bool IsMemory(this Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
 
@@ -108,7 +103,6 @@ public static partial class TypeExtensions
     /// </summary>
     public static bool ImplementsInterface(
         [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)]
-        [NotNull]
         this Type type,
         Type interfaceType)
     {
@@ -123,7 +117,6 @@ public static partial class TypeExtensions
     /// </summary>
     public static bool ImplementsInterface(
         [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)]
-        [NotNull]
         this Type type,
         string interfaceName)
     {
@@ -137,9 +130,7 @@ public static partial class TypeExtensions
     /// Determines whether the specified type is a byte sequence:
     /// <c>byte[]</c>, <c>Memory&lt;byte&gt;</c>, <c>ReadOnlyMemory&lt;byte&gt;</c>, <c>ArraySegment&lt;byte&gt;</c>.
     /// </summary>
-    public static bool IsByteSequence(
-        [NotNull]
-        this Type type)
+    public static bool IsByteSequence(this Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
 
@@ -150,9 +141,7 @@ public static partial class TypeExtensions
     /// <summary>
     /// Determines whether the specified type is a sequence of objects: array, list, set, etc.
     /// </summary>
-    public static bool IsSequence(
-        [NotNull]
-        this Type type)
+    public static bool IsSequence(this Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
 
@@ -178,7 +167,6 @@ public static partial class TypeExtensions
     /// </summary>
     public static bool IsDictionary(
         [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)]
-        [NotNull]
         this Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
@@ -190,7 +178,6 @@ public static partial class TypeExtensions
     /// Determines whether the method has the specified name and a single parameter of type <c>IEnumerable&lt;&gt;</c>.
     /// </summary>
     public static bool MethodHas1EnumerableParameter(
-        [NotNull]
         this MethodInfo mi,
         string name)
     {
@@ -209,7 +196,6 @@ public static partial class TypeExtensions
     /// Determines whether the method has the specified name and a single parameter of type <c>IEnumerable&lt;&gt;</c>.
     /// </summary>
     public static bool MethodHas1EnumerableParameterAndComparer(
-        [NotNull]
         this MethodInfo mi,
         string name)
     {
@@ -229,9 +215,7 @@ public static partial class TypeExtensions
     /// <summary>
     /// Determines whether the constructor has a single array parameter.
     /// </summary>
-    public static bool ConstructorHas1ArrayParameter(
-        [NotNull]
-        this ConstructorInfo ci)
+    public static bool ConstructorHas1ArrayParameter(this ConstructorInfo ci)
     {
         ArgumentNullException.ThrowIfNull(ci);
 
@@ -243,9 +227,7 @@ public static partial class TypeExtensions
     /// <summary>
     /// Determines whether the constructor has a single parameter of type <c>IEnumerable&lt;&gt;</c>.
     /// </summary>
-    public static bool ConstructorHas1EnumerableParameter(
-        [NotNull]
-        this ConstructorInfo ci)
+    public static bool ConstructorHas1EnumerableParameter(this ConstructorInfo ci)
     {
         ArgumentNullException.ThrowIfNull(ci);
 
@@ -257,9 +239,7 @@ public static partial class TypeExtensions
     /// <summary>
     /// Determines whether the constructor has a single parameter of type <c>IList&lt;&gt;</c>.
     /// </summary>
-    public static bool ConstructorHas1ListParameter(
-        [NotNull]
-        this ConstructorInfo ci)
+    public static bool ConstructorHas1ListParameter(this ConstructorInfo ci)
     {
         ArgumentNullException.ThrowIfNull(ci);
 

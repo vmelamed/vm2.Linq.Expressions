@@ -14,7 +14,7 @@ public static class ExpressionJson
     /// Deserializes a LINQ <see cref="Expression"/> from the specified JSON <paramref name="json"/> string.
     /// </summary>
     public static Expression FromString(
-        [NotNull] string json,
+        string json,
         JsonOptions? options = null)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(json, nameof(json));
@@ -37,7 +37,7 @@ public static class ExpressionJson
     /// <param name="options">The options to control the transformation process.</param>
     /// <returns>The deserialized expression</returns>
     public static Expression FromJsonObject(
-        [NotNull] JsonObject jsonObject,
+        JsonObject jsonObject,
         JsonOptions? options = null)
     {
         ArgumentNullException.ThrowIfNull(jsonObject);
@@ -54,7 +54,7 @@ public static class ExpressionJson
     /// <param name="options">The options to control the deserialization process.</param>
     /// <returns>The deserialized expression</returns>
     public static Expression FromStream(
-        [NotNull] Stream stream,
+        Stream stream,
         JsonOptions? options = null)
     {
         ArgumentNullException.ThrowIfNull(stream, nameof(stream));
@@ -70,7 +70,7 @@ public static class ExpressionJson
     /// <param name="cancellationToken">The cancellation token to observe while waiting for the deserialization to complete.</param>
     /// <returns>A task that represents the asynchronous deserialization operation. The task result contains the deserialized expression.</returns>
     public static Task<Expression> FromStreamAsync(
-        [NotNull] Stream stream,
+        Stream stream,
         JsonOptions? options = null,
         CancellationToken cancellationToken = default)
     {
@@ -88,7 +88,7 @@ public static class ExpressionJson
     /// <param name="options">The options to control the deserialization process.</param>
     /// <returns>The deserialized expression</returns>
     public static Expression FromReader(
-        [NotNull] TextReader reader,
+        TextReader reader,
         JsonOptions? options = null)
     {
         ArgumentNullException.ThrowIfNull(reader, nameof(reader));
@@ -106,7 +106,7 @@ public static class ExpressionJson
     /// <param name="cancellationToken">The cancellation token to observe while waiting for the deserialization to complete.</param>
     /// <returns>The deserialized expression</returns>
     public static async Task<Expression> FromReaderAsync(
-        [NotNull] TextReader reader,
+        TextReader reader,
         JsonOptions? options = null,
         CancellationToken cancellationToken = default)
     {
@@ -126,7 +126,7 @@ public static class ExpressionJson
     /// <param name="options">The options to control the deserialization process.</param>
     /// <returns>The deserialized expression</returns>
     public static Expression FromFile(
-        [NotNull] string filePath,
+        string filePath,
         JsonOptions? options = null)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(filePath, nameof(filePath));
@@ -144,7 +144,7 @@ public static class ExpressionJson
     /// <param name="cancellationToken">The cancellation token to observe while waiting for the deserialization to complete.</param>
     /// <returns>A task that represents the asynchronous deserialization operation. The task result contains the deserialized expression.</returns>
     public static async Task<Expression> FromFileAsync(
-        [NotNull] string filePath,
+        string filePath,
         JsonOptions? options = null,
         CancellationToken cancellationToken = default)
     {

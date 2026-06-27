@@ -123,7 +123,7 @@ public static partial class Transform
     /// <param name="convention">The naming convention.</param>
     /// <returns>The type name string.</returns>
     public static string TypeName(
-        [NotNull] Type type,
+        Type type,
         TypeNameConventions convention)
     {
         ArgumentNullException.ThrowIfNull(type);

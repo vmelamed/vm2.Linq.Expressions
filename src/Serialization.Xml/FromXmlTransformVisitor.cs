@@ -14,7 +14,7 @@ public partial class FromXmlTransformVisitor
     /// <param name="element">The element to be visited.</param>
     /// <returns>The created expression.</returns>
     public virtual Expression Visit(
-        [NotNull] XElement element)
+        XElement element)
     {
         ArgumentNullException.ThrowIfNull(element);
 

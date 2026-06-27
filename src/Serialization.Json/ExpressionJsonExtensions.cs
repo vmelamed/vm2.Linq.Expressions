@@ -17,7 +17,7 @@ public static class ExpressionJsonExtensions
     /// <param name="options">The options to control the transformation process.</param>
     /// <returns>The resultant top level document model document <see cref="JsonObject"/>.</returns>
     public static JsonObject ToJsonDocument(
-        [NotNull] this Expression expression,
+        this Expression expression,
         JsonOptions? options = null)
     {
         ArgumentNullException.ThrowIfNull(expression);
@@ -34,7 +34,7 @@ public static class ExpressionJsonExtensions
     /// <param name="options">The options to control the transformation process.</param>
     /// <returns>The resultant JSON string.</returns>
     public static string ToJsonString(
-        [NotNull] this Expression expression,
+        this Expression expression,
         JsonOptions? options = null)
     {
         ArgumentNullException.ThrowIfNull(expression);
@@ -55,8 +55,8 @@ public static class ExpressionJsonExtensions
     /// <param name="stream">The stream to which the JSON will be written.</param>
     /// <param name="options">The options to control the transformation process.</param>
     public static void ToJsonStream(
-        [NotNull] this Expression expression,
-        [NotNull] Stream stream,
+        this Expression expression,
+        Stream stream,
         JsonOptions? options = null)
     {
         ArgumentNullException.ThrowIfNull(expression);
@@ -73,8 +73,8 @@ public static class ExpressionJsonExtensions
     /// <param name="options">The options to control the transformation process.</param>
     /// <param name="cancellationToken">The cancellation token.</param>
     public static Task ToJsonStreamAsync(
-        [NotNull] this Expression expression,
-        [NotNull] Stream stream,
+        this Expression expression,
+        Stream stream,
         JsonOptions? options = null,
         CancellationToken cancellationToken = default)
     {
@@ -93,8 +93,8 @@ public static class ExpressionJsonExtensions
     /// <param name="writer">The <see cref="Utf8JsonWriter"/> to which the JSON will be written.</param>
     /// <param name="options">The options to control the transformation process.</param>
     public static void ToJsonWriter(
-        [NotNull] this Expression expression,
-        [NotNull] Utf8JsonWriter writer,
+        this Expression expression,
+        Utf8JsonWriter writer,
         JsonOptions? options = null)
     {
         ArgumentNullException.ThrowIfNull(expression);
@@ -117,8 +117,8 @@ public static class ExpressionJsonExtensions
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>A task that represents the asynchronous write operation.</returns>
     public static async Task ToJsonWriterAsync(
-        [NotNull] this Expression expression,
-        [NotNull] Utf8JsonWriter writer,
+        this Expression expression,
+        Utf8JsonWriter writer,
         JsonOptions? options = null,
         CancellationToken cancellationToken = default)
     {
@@ -142,8 +142,8 @@ public static class ExpressionJsonExtensions
     /// <param name="filePath">The path of the file to which the JSON will be written.</param>
     /// <param name="options">The options to control the transformation process.</param>
     public static void ToJsonFile(
-        [NotNull] this Expression expression,
-        [NotNull] string filePath,
+        this Expression expression,
+        string filePath,
         JsonOptions? options = null)
     {
         ArgumentNullException.ThrowIfNull(expression);

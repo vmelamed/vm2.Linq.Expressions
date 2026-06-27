@@ -82,7 +82,7 @@ public abstract class DocumentOptions
     /// </summary>
     /// <param name="type">The type to be transformed to a readable string.</param>
     /// <returns>The human readable transformation of the parameter <paramref name="type"/>.</returns>
-    public string TransformTypeName([NotNull] Type type)
+    public string TransformTypeName(Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
 
@@ -95,11 +95,11 @@ public abstract class DocumentOptions
     /// </summary>
     /// <param name="identifier">The identifier to be transformed.</param>
     /// <returns>The transformed <paramref name="identifier"/>.</returns>
-    public string TransformIdentifier([NotNull] string identifier)
+    public string TransformIdentifier(string identifier)
     {
         ArgumentNullException.ThrowIfNull(identifier);
 
-         return Transform.Identifier(identifier, Identifiers);
+        return Transform.Identifier(identifier, Identifiers);
     }
 
     /// <summary>

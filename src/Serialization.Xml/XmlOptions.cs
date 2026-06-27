@@ -62,7 +62,7 @@ public partial class XmlOptions : DocumentOptions
     /// <param name="url">The location of the schema file.</param>
     [ExcludeFromCodeCoverage]
     public static void SetSchemaLocation(
-        [NotNull] string schemaUri,
+        string schemaUri,
         string? url)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(schemaUri);
@@ -82,7 +82,7 @@ public partial class XmlOptions : DocumentOptions
     /// <param name="schemaUrisUrls">The schema URIs and their URLs.</param>
     /// <param name="reset">if set to <c>true</c> the method will first reset the schema collection.</param>
     public static void SetSchemasLocations(
-        [NotNull] IEnumerable<KeyValuePair<string, string?>> schemaUrisUrls,
+        IEnumerable<KeyValuePair<string, string?>> schemaUrisUrls,
         bool reset = false)
     {
         ArgumentNullException.ThrowIfNull(schemaUrisUrls);
@@ -170,7 +170,7 @@ public partial class XmlOptions : DocumentOptions
     /// Validates the specified document against the schema.
     /// </summary>
     /// <param name="document">The document.</param>
-    public void Validate([NotNull] XDocument document)
+    public void Validate(XDocument document)
     {
         ArgumentNullException.ThrowIfNull(document);
 
@@ -194,7 +194,7 @@ public partial class XmlOptions : DocumentOptions
     /// </summary>
     /// <param name="element">The element.</param>
     [ExcludeFromCodeCoverage]
-    public void Validate([NotNull] XElement element)
+    public void Validate(XElement element)
     {
         ArgumentNullException.ThrowIfNull(element);
 
@@ -246,7 +246,7 @@ public partial class XmlOptions : DocumentOptions
     /// </summary>
     /// <param name="comment">The comment.</param>
     /// <returns>The comment object System.Nullable&lt;XComment&gt;.</returns>
-    internal XComment? Comment([NotNull] string comment)
+    internal XComment? Comment(string comment)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(comment);
 
@@ -258,7 +258,7 @@ public partial class XmlOptions : DocumentOptions
     /// </summary>
     /// <param name="expression">The expression.</param>
     /// <returns>System.Nullable&lt;XComment&gt;.</returns>
-    internal XComment? Comment([NotNull] Expression expression)
+    internal XComment? Comment(Expression expression)
     {
         ArgumentNullException.ThrowIfNull(expression);
 
@@ -272,8 +272,8 @@ public partial class XmlOptions : DocumentOptions
     /// <param name="comment">The comment.</param>
     [ExcludeFromCodeCoverage]
     internal void AddComment(
-        [NotNull] XContainer parent,
-        [NotNull] string comment)
+        XContainer parent,
+        string comment)
     {
         ArgumentNullException.ThrowIfNull(parent);
         ArgumentException.ThrowIfNullOrWhiteSpace(comment);
@@ -289,8 +289,8 @@ public partial class XmlOptions : DocumentOptions
     /// <param name="expression">The expression.</param>
     [ExcludeFromCodeCoverage]
     internal void AddComment(
-        [NotNull] XContainer parent,
-        [NotNull] Expression expression)
+        XContainer parent,
+        Expression expression)
     {
         ArgumentNullException.ThrowIfNull(parent);
         ArgumentNullException.ThrowIfNull(expression);
@@ -305,7 +305,7 @@ public partial class XmlOptions : DocumentOptions
     /// </summary>
     /// <param name="type">The type.</param>
     /// <returns>The comment as System.Nullable&lt;XComment&gt;.</returns>
-    public XComment? TypeComment([NotNull] Type type)
+    public XComment? TypeComment(Type type)
     {
         ArgumentNullException.ThrowIfNull(type);
 
