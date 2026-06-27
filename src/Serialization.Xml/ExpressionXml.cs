@@ -17,7 +17,7 @@ public static class ExpressionXml
     /// <param name="options">The options to control the deserialization process.</param>
     /// <returns>The deserialized expression</returns>
     public static Expression FromStream(
-        [NotNull] Stream stream,
+        Stream stream,
         XmlOptions? options = null)
     {
         ArgumentNullException.ThrowIfNull(stream);
@@ -33,7 +33,7 @@ public static class ExpressionXml
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>The deserialized expression</returns>
     public static Task<Expression> FromStreamAsync(
-        [NotNull] Stream stream,
+        Stream stream,
         XmlOptions? options = null,
         CancellationToken cancellationToken = default)
     {
@@ -51,7 +51,7 @@ public static class ExpressionXml
     /// <param name="options">The options to control the deserialization process.</param>
     /// <returns>The deserialized expression</returns>
     public static Expression FromReader(
-        [NotNull] XmlReader reader,
+        XmlReader reader,
         XmlOptions? options = null)
     {
         ArgumentNullException.ThrowIfNull(reader);
@@ -69,7 +69,7 @@ public static class ExpressionXml
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>The deserialized expression</returns>
     public static async Task<Expression> FromReaderAsync(
-        [NotNull] XmlReader reader,
+        XmlReader reader,
         XmlOptions? options = null,
         CancellationToken cancellationToken = default)
     {
@@ -89,7 +89,7 @@ public static class ExpressionXml
     /// <param name="options">The options to control the deserialization process.</param>
     /// <returns>The deserialized expression</returns>
     public static Expression FromFile(
-        [NotNull] string filePath,
+        string filePath,
         XmlOptions? options = null)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(filePath);
@@ -107,7 +107,7 @@ public static class ExpressionXml
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>The deserialized expression</returns>
     public static async Task<Expression> FromFileAsync(
-        [NotNull] string filePath,
+        string filePath,
         XmlOptions? options = null,
         CancellationToken cancellationToken = default)
     {
@@ -127,7 +127,7 @@ public static class ExpressionXml
     /// <param name="options">The options to control the deserialization process.</param>
     /// <returns>The deserialized expression</returns>
     public static Expression FromXDocument(
-        [NotNull] XDocument document,
+        XDocument document,
         XmlOptions? options = null)
     {
         ArgumentNullException.ThrowIfNull(document);
@@ -142,7 +142,7 @@ public static class ExpressionXml
     /// <param name="options">The options to control the deserialization process.</param>
     /// <returns>The deserialized expression</returns>
     public static Expression FromXElement(
-        [NotNull] XElement element,
+        XElement element,
         XmlOptions? options = null)
     {
         ArgumentNullException.ThrowIfNull(element);
@@ -159,7 +159,7 @@ public static class ExpressionXml
     /// <param name="options">The options to control the deserialization process.</param>
     /// <returns>The deserialized expression</returns>
     public static Expression FromString(
-        [NotNull] string xml,
+        string xml,
         XmlOptions? options = null)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(xml);

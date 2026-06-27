@@ -21,7 +21,7 @@ public class ExpressionJsonTransform(JsonOptions? options = null) : IExpressionT
     /// </summary>
     /// <param name="expression">The expression to be transformed.</param>
     /// <returns>The resultant top level document model document <see cref="JsonNode"/>.</returns>
-    public JsonObject Transform([NotNull] Expression expression)
+    public JsonObject Transform(Expression expression)
     {
         ArgumentNullException.ThrowIfNull(expression);
 
@@ -51,7 +51,7 @@ public class ExpressionJsonTransform(JsonOptions? options = null) : IExpressionT
     /// <param name="document">The document document to be transformed.</param>
     /// <returns>The resultant <see cref="Expression"/>.</returns>
     public Expression Transform(
-        [NotNull] JsonObject document)
+        JsonObject document)
     {
         ArgumentNullException.ThrowIfNull(document);
 
@@ -78,8 +78,8 @@ public class ExpressionJsonTransform(JsonOptions? options = null) : IExpressionT
     /// <param name="stream">The stream to put the JSON document to.</param>
     /// <returns>Stream.</returns>
     public void Serialize(
-        [NotNull] Expression expression,
-        [NotNull] Stream stream)
+        Expression expression,
+        Stream stream)
     {
         ArgumentNullException.ThrowIfNull(expression);
         ArgumentNullException.ThrowIfNull(stream);
@@ -96,8 +96,8 @@ public class ExpressionJsonTransform(JsonOptions? options = null) : IExpressionT
     /// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
     /// <returns>Stream.</returns>
     public async Task SerializeAsync(
-        [NotNull] Expression expression,
-        [NotNull] Stream stream,
+        Expression expression,
+        Stream stream,
         CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(expression);
@@ -130,7 +130,7 @@ public class ExpressionJsonTransform(JsonOptions? options = null) : IExpressionT
     /// <param name="stream">The stream to get the JSON document from.</param>
     /// <returns>Stream.</returns>
     public Expression Deserialize(
-        [NotNull] Stream stream)
+        Stream stream)
     {
         ArgumentNullException.ThrowIfNull(stream);
 
@@ -162,7 +162,7 @@ public class ExpressionJsonTransform(JsonOptions? options = null) : IExpressionT
     /// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
     /// <returns>Stream.</returns>
     public async Task<Expression> DeserializeAsync(
-        [NotNull] Stream stream,
+        Stream stream,
         CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(stream);

@@ -35,7 +35,9 @@ public static class ReaderWriterLockExtensions
     /// <param name="readerWriterLock">The reader writer lock.</param>
     /// <param name="waitMs">How long to wait for the lock to be acquired in ms. If 0 - wait indefinitely.</param>
     /// <returns><see cref="UpgradeableReaderSync" /> object.</returns>
-    public static UpgradeableReaderSync UpgradeableReaderLock([NotNull] this ReaderWriterLockSlim readerWriterLock, int waitMs = 0)
+    public static UpgradeableReaderSync UpgradeableReaderLock(
+        this ReaderWriterLockSlim readerWriterLock,
+        int waitMs = 0)
     {
         ArgumentNullException.ThrowIfNull(readerWriterLock);
 
@@ -48,7 +50,9 @@ public static class ReaderWriterLockExtensions
     /// <param name="readerWriterLock">The reader writer lock.</param>
     /// <param name="waitMs">How long to wait for the lock to be acquired in ms. If 0 - wait indefinitely.</param>
     /// <returns><see cref="ReaderSync" /> object.</returns>
-    public static ReaderSync ReaderLock([NotNull] this ReaderWriterLockSlim readerWriterLock, int waitMs = 0)
+    public static ReaderSync ReaderLock(
+        this ReaderWriterLockSlim readerWriterLock,
+        int waitMs = 0)
     {
         ArgumentNullException.ThrowIfNull(readerWriterLock);
 
@@ -61,7 +65,9 @@ public static class ReaderWriterLockExtensions
     /// <param name="readerWriterLock">The reader writer lock.</param>
     /// <param name="waitMs">How long to wait for the lock to be acquired in ms. If 0 - wait indefinitely.</param>
     /// <returns><see cref="WriterSync" /> object.</returns>
-    public static WriterSync WriterLock([NotNull] this ReaderWriterLockSlim readerWriterLock, int waitMs = 0)
+    public static WriterSync WriterLock(
+        this ReaderWriterLockSlim readerWriterLock,
+        int waitMs = 0)
     {
         ArgumentNullException.ThrowIfNull(readerWriterLock);
 
@@ -90,7 +96,7 @@ public sealed class ReaderSync : IReaderWriterSync
     /// <param name="readerWriterLock">The reader writer lock.</param>
     /// <param name="waitMs">How long to wait for the lock to be acquired in ms. If 0 - wait indefinitely.</param>
     public ReaderSync(
-        [NotNull] ReaderWriterLockSlim readerWriterLock,
+        ReaderWriterLockSlim readerWriterLock,
         int waitMs = 0)
     {
         ArgumentNullException.ThrowIfNull(readerWriterLock);
@@ -138,7 +144,7 @@ public sealed class WriterSync : IReaderWriterSync
     /// <param name="readerWriterLock">The reader-writer lock.</param>
     /// <param name="waitMs">How long to wait for the lock to be acquired in ms. If 0 - wait indefinitely.</param>
     public WriterSync(
-        [NotNull] ReaderWriterLockSlim readerWriterLock,
+        ReaderWriterLockSlim readerWriterLock,
         int waitMs = 0)
     {
         ArgumentNullException.ThrowIfNull(readerWriterLock);
@@ -187,7 +193,7 @@ public sealed class UpgradeableReaderSync : IReaderWriterSync
     /// <param name="readerWriterLock">The reader writer lock.</param>
     /// <param name="waitMs">How long to wait for the lock to be acquired in ms. If 0 - wait indefinitely.</param>
     public UpgradeableReaderSync(
-        [NotNull] ReaderWriterLockSlim readerWriterLock,
+        ReaderWriterLockSlim readerWriterLock,
         int waitMs = 0)
     {
         ArgumentNullException.ThrowIfNull(readerWriterLock);

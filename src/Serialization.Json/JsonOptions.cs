@@ -38,7 +38,7 @@ public partial class JsonOptions : DocumentOptions
     /// <summary>
     /// Initializes a new instance of the <see cref="JsonOptions"/> class.
     /// </summary>
-    public JsonOptions([NotNull] string filePath)
+    public JsonOptions(string filePath)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(filePath);
 
@@ -129,7 +129,7 @@ public partial class JsonOptions : DocumentOptions
     /// Loads the schema from the specified URL.
     /// </summary>
     /// <param name="schemaFilePath">The location of the schema file.</param>
-    public void LoadSchema([NotNull] string schemaFilePath)
+    public void LoadSchema(string schemaFilePath)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(schemaFilePath);
 
@@ -162,7 +162,7 @@ public partial class JsonOptions : DocumentOptions
     /// </summary>
     /// <param name="json">The JSON text to validate.</param>
     /// <returns>Json.Schema.EvaluationResults.</returns>
-    public void Validate([NotNull] string json)
+    public void Validate(string json)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(json);
 
@@ -174,7 +174,7 @@ public partial class JsonOptions : DocumentOptions
     /// </summary>
     /// <param name="jsonNode">The jsonNode.</param>
     /// <returns>Json.Schema.EvaluationResults.</returns>
-    public void Validate([NotNull] JsonNode jsonNode)
+    public void Validate(JsonNode jsonNode)
     {
         ArgumentNullException.ThrowIfNull(jsonNode);
 
@@ -225,7 +225,7 @@ public partial class JsonOptions : DocumentOptions
     /// Loads the schema from the specified URL.
     /// </summary>
     /// <param name="schemaFilePath">The location of the schema file.</param>
-    public void LoadSchema([NotNull] string schemaFilePath)
+    public void LoadSchema(string schemaFilePath)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(schemaFilePath);
 
@@ -243,7 +243,7 @@ public partial class JsonOptions : DocumentOptions
     /// </summary>
     /// <param name="node">The JSON node.</param>
     /// <returns>Json.Schema.EvaluationResults.</returns>
-    public void Validate([NotNull] JsonNode node)
+    public void Validate(JsonNode node)
     {
         ArgumentNullException.ThrowIfNull(node);
 
@@ -273,7 +273,7 @@ public partial class JsonOptions : DocumentOptions
     /// </summary>
     /// <param name="json">The JSON string.</param>
     /// <returns>Json.Schema.EvaluationResults.</returns>
-    public void Validate([NotNull] string json)
+    public void Validate(string json)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(json);
 

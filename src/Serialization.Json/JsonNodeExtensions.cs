@@ -19,7 +19,7 @@ static class JsonNodeExtensions
     /// <c>false</c> if the <paramref name="jsObj"/> already has a property with the elements' <see cref="JElement.Name"/>.
     /// </returns>
     public static bool TryAdd(
-        [NotNull] this JsonObject jsObj,
+        this JsonObject jsObj,
         JElement? element)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
@@ -43,7 +43,7 @@ static class JsonNodeExtensions
     /// If a property with the key of the <paramref name="element"/> already exists in the <paramref name="jsObj"/>.
     /// </exception>
     public static JsonObject Add(
-        [NotNull] this JsonObject jsObj,
+        this JsonObject jsObj,
         JElement? element)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
@@ -71,8 +71,8 @@ static class JsonNodeExtensions
     /// If there is a property with empty key.
     /// </exception>
     public static bool TryAdd(
-        [NotNull] this JsonObject jsObj,
-        [NotNull] params JElement?[] elements)
+        this JsonObject jsObj,
+        params JElement?[] elements)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
         ArgumentNullException.ThrowIfNull(elements);
@@ -91,8 +91,8 @@ static class JsonNodeExtensions
     /// If there is a property with empty key.
     /// </exception>
     public static JsonObject Add(
-        [NotNull] this JsonObject jsObj,
-        [NotNull] params JElement?[] elements)
+        this JsonObject jsObj,
+        params JElement?[] elements)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
         ArgumentNullException.ThrowIfNull(elements);
@@ -116,8 +116,8 @@ static class JsonNodeExtensions
     /// If there is a property with empty key.
     /// </exception>
     public static bool TryAdd(
-        [NotNull] this JsonObject jsObj,
-        [NotNull] params object?[] elements)
+        this JsonObject jsObj,
+        params object?[] elements)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
         ArgumentNullException.ThrowIfNull(elements);
@@ -149,8 +149,8 @@ static class JsonNodeExtensions
     /// If there is a property with empty key.
     /// </exception>
     public static JsonObject Add(
-        [NotNull] this JsonObject jsObj,
-        [NotNull] params object?[] elements)
+        this JsonObject jsObj,
+        params object?[] elements)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
         ArgumentNullException.ThrowIfNull(elements);
@@ -179,8 +179,8 @@ static class JsonNodeExtensions
     /// If there is a property with empty key.
     /// </exception>
     public static bool TryAdd(
-        [NotNull] this JsonObject jsObj,
-        [NotNull] IEnumerable<JElement?> elements)
+        this JsonObject jsObj,
+        IEnumerable<JElement?> elements)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
         ArgumentNullException.ThrowIfNull(elements);
@@ -205,8 +205,8 @@ static class JsonNodeExtensions
     /// If there is a property with empty key.
     /// </exception>
     public static JsonObject Add(
-        [NotNull] this JsonObject jsObj,
-        [NotNull] IEnumerable<JElement?> elements)
+        this JsonObject jsObj,
+        IEnumerable<JElement?> elements)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
         ArgumentNullException.ThrowIfNull(elements);
@@ -237,8 +237,8 @@ static class JsonNodeExtensions
     /// <param name="propertyName">The name of the property.</param>
     /// <returns>JsonNode?.</returns>
     public static JsonNode? GetPropertyValue(
-        [NotNull] this JsonObject jsObj,
-        [NotNull] string propertyName)
+        this JsonObject jsObj,
+        string propertyName)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
         ArgumentException.ThrowIfNullOrWhiteSpace(propertyName);
@@ -256,8 +256,8 @@ static class JsonNodeExtensions
     /// <param name="value">The output value.</param>
     /// <returns><c>true</c> if a property name and type was found, <c>false</c> otherwise.</returns>
     public static bool TryGetPropertyValue<T>(
-        [NotNull] this JsonObject jsObj,
-        [NotNull] string propertyName,
+        this JsonObject jsObj,
+        string propertyName,
         out T? value)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
@@ -276,8 +276,8 @@ static class JsonNodeExtensions
     /// <param name="propertyName">The name of the property.</param>
     /// <returns>JsonNode?.</returns>
     public static T? GetPropertyValue<T>(
-        [NotNull] this JsonObject jsObj,
-        [NotNull] string propertyName)
+        this JsonObject jsObj,
+        string propertyName)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
         ArgumentException.ThrowIfNullOrWhiteSpace(propertyName);
@@ -296,8 +296,8 @@ static class JsonNodeExtensions
     /// <param name="node">The found node.</param>
     /// <returns><c>true</c> if a property was found, <c>false</c> otherwise.</returns>
     public static bool TryGetOneOf(
-        [NotNull] this JsonObject jsObj,
-        [NotNull] IEnumerable<string> names,
+        this JsonObject jsObj,
+        IEnumerable<string> names,
         [NotNullWhen(true)] out string? propertyName,
         out JsonNode? node)
     {
@@ -319,7 +319,7 @@ static class JsonNodeExtensions
     /// <param name="names">The names of the sought properties.</param>
     /// <returns><c>true</c> if a property was found, <c>false</c> otherwise.</returns>
     public static (string, JsonNode?) GetOneOf(
-        [NotNull] this JsonObject jsObj,
+        this JsonObject jsObj,
         IEnumerable<string> names)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
@@ -336,7 +336,7 @@ static class JsonNodeExtensions
     /// <param name="jsObj">The extended JsonObject.</param>
     /// <returns><c>true</c> if the .NET node of the specified js object is <see langword="null"/>; otherwise, <c>false</c>.</returns>
     public static bool IsNil(
-        [NotNull] this JsonObject jsObj)
+        this JsonObject jsObj)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
 
@@ -352,7 +352,7 @@ static class JsonNodeExtensions
     /// <param name="propertyValueName">The name of the 'Node' property.</param>
     /// <returns><c>true</c> if property exists, <c>false</c> otherwise.</returns>
     public static bool TryGetValue(
-        [NotNull] this JsonObject jsObj,
+        this JsonObject jsObj,
         [NotNullWhen(true)] out JsonNode? node,
         string propertyValueName = Vocabulary.Value)
     {
@@ -368,7 +368,7 @@ static class JsonNodeExtensions
     /// <param name="jsObj">The extended JsonObject.</param>
     /// <param name="propertyValueName">The name of the 'Node' property.</param>
     public static JsonNode? GetValue(
-        [NotNull] this JsonObject jsObj,
+        this JsonObject jsObj,
         string propertyValueName = Vocabulary.Value)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
@@ -387,7 +387,7 @@ static class JsonNodeExtensions
     /// <param name="propertyLengthName">The name of the property length.</param>
     /// <returns><c>true</c> if property exists, <c>false</c> otherwise.</returns>
     public static bool TryGetLength(
-        [NotNull] this JsonObject jsObj,
+        this JsonObject jsObj,
         out int length,
         string propertyLengthName = Vocabulary.Length)
     {
@@ -410,7 +410,7 @@ static class JsonNodeExtensions
     /// <param name="jsObj">The extended JsonObject.</param>
     /// <param name="propertyLengthName">The name of the property length.</param>
     public static int GetLength(
-        [NotNull] this JsonObject jsObj,
+        this JsonObject jsObj,
         string propertyLengthName = Vocabulary.Length)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
@@ -430,7 +430,7 @@ static class JsonNodeExtensions
     /// <param name="propertyTypeName">Name of the property type.</param>
     /// <returns><c>true</c> if successfully determined the type of this JsonObject, <c>false</c> otherwise.</returns>
     public static bool TryGetType(
-        [NotNull] this JsonObject jsObj,
+        this JsonObject jsObj,
         out Type? type,
         string propertyTypeName = Vocabulary.Type)
     {
@@ -461,7 +461,7 @@ static class JsonNodeExtensions
     /// <param name="propertyTypeName">Name of the property type.</param>
     /// <returns>Type.</returns>
     public static Type GetType(
-        [NotNull] this JsonObject jsObj,
+        this JsonObject jsObj,
         string propertyTypeName = Vocabulary.Type)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
@@ -480,7 +480,7 @@ static class JsonNodeExtensions
     /// <param name="child">The found array.</param>
     /// <returns><c>true</c> if JsonObject array node was found, <c>false</c> otherwise.</returns>
     public static bool TryGetObject(
-        [NotNull] this JsonObject jsObj,
+        this JsonObject jsObj,
         string propertyName,
         out JsonObject? child)
     {
@@ -505,7 +505,7 @@ static class JsonNodeExtensions
     /// <param name="propertyName">Name of the property holding the JsonObject.</param>
     /// <returns>JsonObject</returns>
     public static JsonObject GetObject(
-        [NotNull] this JsonObject jsObj,
+        this JsonObject jsObj,
         string propertyName)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
@@ -524,7 +524,7 @@ static class JsonNodeExtensions
     /// <param name="array">The found array.</param>
     /// <returns><c>true</c> if JsonArray node was found, <c>false</c> otherwise.</returns>
     public static bool TryGetArray(
-        [NotNull] this JsonObject jsObj,
+        this JsonObject jsObj,
         string propertyName,
         out JsonArray? array)
     {
@@ -549,7 +549,7 @@ static class JsonNodeExtensions
     /// <param name="propertyName">Name of the property holding the array.</param>
     /// <returns>JsonObject</returns>
     public static JsonArray GetArray(
-        [NotNull] this JsonObject jsObj,
+        this JsonObject jsObj,
         string propertyName)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
@@ -568,7 +568,7 @@ static class JsonNodeExtensions
     /// <param name="child">The found array.</param>
     /// <returns><c>true</c> if JsonObject array node was found, <c>false</c> otherwise.</returns>
     public static bool TryGetFirstObject(
-        [NotNull] this JsonObject jsObj,
+        this JsonObject jsObj,
         [NotNullWhen(true)] out string? propertyName,
         out JsonObject? child)
     {
@@ -587,7 +587,7 @@ static class JsonNodeExtensions
     /// <param name="jsObj">The extended JsonObject.</param>
     /// <returns>JsonObject</returns>
     public static (string, JsonObject) GetFirstObject(
-        [NotNull] this JsonObject jsObj)
+        this JsonObject jsObj)
     {
         ArgumentNullException.ThrowIfNull(jsObj);
 
@@ -606,7 +606,7 @@ static class JsonNodeExtensions
     /// <param name="message">The exception message will be appended with &quot; -- &apos;&lt;the node path&gt;&apos;.&quot;.</param>
     /// <exception cref="SerializationException"></exception>
     public static T ThrowSerializationException<T>(
-        [NotNull] this JsonNode node,
+        this JsonNode node,
         string message = "Invalid JSON")
     {
         ArgumentNullException.ThrowIfNull(node);
