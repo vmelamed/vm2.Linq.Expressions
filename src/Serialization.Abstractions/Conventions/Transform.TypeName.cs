@@ -72,6 +72,7 @@ public static partial class Transform
         foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
             if (asm.GetType(typeName, false, false) is Type t)
                 return t;
+
         return null;
     }
 
@@ -95,7 +96,7 @@ public static partial class Transform
 
         // Now split the arguments at level 0 into the pre-allocated array args.
         var args = new string[count];
-        var idx = 0;
+        var idx  = 0;
         var start = 0;
 
         depth = 0;
@@ -142,12 +143,12 @@ public static partial class Transform
 
             // Name convention: use angle-bracket display form (not intended for round-tripping).
             // Avoid Split('`') — just scan for the backtick and take the prefix span.
-            var defName = TypeName(type.GetGenericTypeDefinition(), convention);
-            var tickIdx = defName.IndexOf('`');
+            var defName  = TypeName(type.GetGenericTypeDefinition(), convention);
+            var tickIdx  = defName.IndexOf('`');
             var baseName = tickIdx >= 0 ? defName.AsSpan(0, tickIdx) : defName.AsSpan();
 
             var args = type.GetGenericArguments();
-            var sb = new StringBuilder(baseName.Length + args.Length * 8);
+            var sb   = new StringBuilder(baseName.Length + args.Length * 8);
             sb.Append(baseName);
             sb.Append('<');
             for (var i = 0; i < args.Length; i++)
@@ -194,7 +195,7 @@ public static partial class Transform
             return;
         }
 
-        var def = type.GetGenericTypeDefinition();
+        var def  = type.GetGenericTypeDefinition();
         var args = type.GetGenericArguments();
 
         sb.Append(def.FullName ?? def.Name);
