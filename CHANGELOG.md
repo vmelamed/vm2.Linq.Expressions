@@ -1,5 +1,19 @@
 # Changelog
 
+## v3.0.2-preview.4 - 2026-07-01
+
+### Fixed
+
+- update conventions for async handling and error management [skip ci]
+
+### Internal
+
+- Bump the minor-and-patch group with 1 update
+- change `.github/copilot-instructions.md` to refer to both `CONVENTIONS.md` AND to `../CLAUDE.md` [skip ci]
+- remove unnecessary `NotNullAttribute`-s
+- update project conventions and workflows
+- remove obsolete `COPILOT_INSTRUCTIONS.md` file reference
+
 ## v3.0.2-preview.3 - 2026-06-20
 
 ### Internal
