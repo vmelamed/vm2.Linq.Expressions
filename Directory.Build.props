@@ -103,10 +103,17 @@
         <VerifyReferenceAotCompatibility>true</VerifyReferenceAotCompatibility>
     </PropertyGroup>
 
-    <!-- ================ Common Package References for All projects ================ -->
+    <!-- ================ Common Package References and usings for All projects ================ -->
     <ItemGroup>
-        <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="all" />
-        <PackageReference Include="MinVer" PrivateAssets="all" />
+        <!-- The following package references are available to all projects during the build but are NOT listed
+             as dependencies in the published .nuspec — consumers of your NuGet package will not transitively
+             receive them. This is controlled by PrivateAssets="all": all assets are private to this project.
+             To expose one of these packages to consumers in a specific project, override it with, e.g.,
+             <PackageReference Update="PackageName" PrivateAssets="none" /> or the NuGet default
+             <PackageReference Update="PackageName" PrivateAssets="contentfiles;analyzers;build" />
+        -->
+        <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="all" /><!-- needed only during the build process for source link references to GitHub repositories -->
+        <PackageReference Include="MinVer" PrivateAssets="all" /><!-- needed only during building/packaging to determine the version numbers based on the git history -->
         <!-- Add more, repo-specific package references below in the designated placeholder -->
     </ItemGroup>
 
