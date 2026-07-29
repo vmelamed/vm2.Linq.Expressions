@@ -1,5 +1,17 @@
 # Changelog
 
+## v3.0.3-preview.1 - 2026-07-29
+
+### Internal
+
+- promote to stable v3.0.2 [skip ci]
+- update changelog for v3.0.2 [skip ci]
+- update Copilot instructions header to reflect correct package name [skip ci]
+- enhance conventions for instance and extension methods [skip ci]
+- update conventions to include interface honesty and AI co-authorship guidelines [skip ci]
+- enhance conventions for AI coding assistants and testing requirements
+- Update package dependencies in Serialization tests
+
 ## v3.0.2 - 2026-07-01
 
 See prereleases below.
