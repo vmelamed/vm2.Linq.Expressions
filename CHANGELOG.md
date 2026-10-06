@@ -1,5 +1,19 @@
 # Changelog
 
+## v3.0.3-preview.2 - 2026-10-06
+
+### Fixed
+
+- change the MinVerDefaultPreReleaseIdentifiers to preview.0; separate artifacts output layout settings with a comment
+
+### Internal
+
+- remove unused package-projects-len output from workflows
+- update vm2.TestUtilities to version 2.1.4 and JsonSchema.Net to version 9.4.0
+- drop UTF-8 BOM from *.cs files; standardize on charset = utf-8
+- update dependencies
+- CI work after CI big bang
+
 ## v3.0.3-preview.1 - 2026-07-29
 
 ### Internal
