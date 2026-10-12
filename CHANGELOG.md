@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.0.3-preview.5 - 2026-10-12
+
+### Internal
+
+- diff-shared CONVENTIONS.md
+
 ## v3.0.3-preview.4 - 2026-10-08
 
 ### Internal
