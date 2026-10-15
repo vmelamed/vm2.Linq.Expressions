@@ -1,5 +1,13 @@
 # Changelog
 
+## v3.0.3-preview.6 - 2026-10-15
+
+### Internal
+
+- update NuGet package versions in Directory.Packages.props
+- upgrade .NET SDK to 10.0.402
+- update lock files
+
 ## v3.0.3-preview.5 - 2026-10-12
 
 ### Internal
