@@ -1,5 +1,12 @@
 # Changelog
 
+## v3.0.3-preview.7 - 2026-10-25
+
+### Fixed
+
+- instead of examples/*.lock.json -> examples/packages.lock.json
+- remove remove_traps
+
 ## v3.0.3-preview.6 - 2026-10-15
 
 ### Internal
